@@ -9,7 +9,7 @@
 
     a {
       text-decoration: none;
-      color: gray;
+      color: #000;
     }
 
     li {
@@ -86,12 +86,15 @@
   /* Navbar socials*/
   .header__nav-socials {
     display: flex;
-    padding: 30px 40px;
+    padding-left: 10vw;
+    position: absolute;
+    bottom: 15vh;
     gap: 10px;
   }
 
   .header__nav-socials li {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    
   }
 
   /* End Navbar socials */
@@ -114,38 +117,39 @@
   /* Open btn */
 
   .header__logo button {
-    font-size: 40px;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #313638;
-    padding-right: 10px;
-    background-color: #fff;
+    padding-right: 6vw;
+    background-color: initial;
     border: none;
     font-weight: 100;
+    z-index:20;
   }
 
   /* End Open Navbar */
 
   .header__nav {
-    position: sticky;
-    z-index: 9;
+    z-index: 10;
     left: 0;
     justify-content: center;
     top: 0;
     background-color: #fff;
     overflow-x: hidden;
-    padding: 15px 5px;
+    position:absolute;
+    width: 100%;
     height: 100vh;
     transition: 120ms transform ease-in-out;
   }
 
   .header__menu {
-    position: relative;
-    padding-top: 50px;
-    padding-left: 40px;
+    padding-top: 25vh;
+    padding-left: 10vw;
     transition: 0.5s;
-    transition: all 0.5s ease-out;
+    transition: all 1.5s ease-out;
     display: flex;
     flex-direction: column;
+    
 
   }
 
@@ -170,8 +174,8 @@
 
   /* Book btn */
   .header__nav-bookbtn {
-    /* position: absolute; */
-    bottom: 25px;
+    position: absolute;
+    bottom: 6vh;
     left: 20px;
     transform: translateY(0);
   }
@@ -472,6 +476,9 @@
     display: flex;
     flex-direction: column;
     width: 92%;
+    position: relative;
+    z-index: 1;
+    
 
 
 
@@ -492,20 +499,26 @@
     margin-top: 5px;
   }
 
+  .appointment__services {
+    overflow-y: auto;
+    height: 69vh;
+    -webkit-overflow-scrolling: ;
+  }
+
   .appointment__service-duration {
     color: gray;
   }
 
   .appointment__button {
     display: flex;
-    bottom: 0;
     border-top: 1px solid #6f6f6f;
     justify-content: space-between;
     position: absolute;
     width: 90%;
-    bottom: 0;
+    bottom: 1vh;
     padding-top: 10px;
-    padding-bottom: 10px;
+    z-index: 2;
+    background-color: #fff;
 
 
   }

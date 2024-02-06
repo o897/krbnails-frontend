@@ -23,38 +23,43 @@ const BookService = () => {
       <form>
         <div className="appointment">
           <div className="appointment__head-title">Select Service</div>
-
+          <div className="appointment__services">
             {services.map((service) => (
-                <div className="appointment__service-select">
-
+              <div className="appointment__service-select">
                 <div className="appointment__service">
-                  <div className="appointment__service-title">{service.title}</div>
+                  <div className="appointment__service-title">
+                    {service.title}
+                  </div>
                   <div className="appointment__service-duration">
                     1h - 1h:15min
                   </div>
-                  <div className="appointment__service-title">{service.price}</div>
-
+                  <div className="appointment__service-title">
+                    {service.price}
+                  </div>
                 </div>
                 <div>
-                  <input type="checkbox" onClick={() => console.log(service.title)} />
+                  <input
+                    type="checkbox"
+                    onClick={() => console.log(service.title)}
+                  />
                 </div>
-                </div>
-
+              </div>
             ))}
+          </div>
 
           <div className="appointment__button">
             <div className="appointment__button-total">
-                <div className="appointment__button-price">
-                    R200
-                </div>
-                <div className="appointment__button-services">
-                    2 Services - 1h 15min
-                </div>
+              <div className="appointment__button-price">R200</div>
+              <div className="appointment__button-services">
+                2 Services - 1h 15min
+              </div>
             </div>
             <div className="appointment__button-continue">
-              
-
-              <button><Link to='/date' style={{ color:'white' }}>Continue</Link></button>
+              <button>
+                <Link to="/date" style={{ color: "white" }}>
+                  Continue
+                </Link>
+              </button>
             </div>
           </div>
         </div>
