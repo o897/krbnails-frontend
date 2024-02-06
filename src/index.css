@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@media only screen and (max-width: 480px) {
+  :root {
+    margin: 0;
+    padding: 0;
+    background-color: #F5F3F2;
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+
+    li {
+      list-style-type: none;
+      margin-bottom: 15px;
+    }
+
+    input[type='checkbox'] {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #fff;
+      margin: 0;
+      width: 2.15em;
+      height: 2.15em;
+      border: 0.15em solid currentColor;
+      border-radius: .7em;
+      transform: translateY(-0.07em);
+      display: grid;
+      place-content: center;
+    }
+
+
+    input[type='checkbox']::before {
+      content: "";
+      width: 1.65em;
+      height: 1.65em;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em #c229b3;
+      background-color: CanvasText;
+      /* transform-origin: bottom left; */
+      /* clip-path: polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0,43% 62%); */
+
+
+    }
+
+    input[type='checkbox']:checked::before {
+      transform: scale(1);
+    }
+  }
+
+  h1 {
+    position: absolute;
+    font-size: 3.7rem;
+    font-weight: 500;
+    line-height: 1em;
+    top: 30vh;
+    opacity: 1;
+    z-index: 2;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: normal;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Navbar socials*/
+  .header__nav-socials {
+    display: flex;
+    padding: 30px 40px;
+    gap: 10px;
+  }
+
+  .header__nav-socials li {
+    font-size: 1.5rem;
+  }
+
+  /* End Navbar socials */
+
+  /* Navbar / Sidepanel*/
+
+  /* logo */
+  .header__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__log-title {
+    padding-left: 10px;
+    font-size: 20px;
+  }
+
+  /* End Logo */
+
+  /* Open btn */
+
+  .header__logo button {
+    font-size: 40px;
+    cursor: pointer;
+    color: #313638;
+    padding-right: 10px;
+    background-color: #fff;
+    border: none;
+    font-weight: 100;
+  }
+
+  /* End Open Navbar */
+
+  .header__nav {
+    position: sticky;
+    z-index: 9;
+    left: 0;
+    justify-content: center;
+    top: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding: 15px 5px;
+    height: 100vh;
+    transition: 120ms transform ease-in-out;
+  }
+
+  .header__menu {
+    position: relative;
+    padding-top: 50px;
+    padding-left: 40px;
+    transition: 0.5s;
+    transition: all 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .header__menu a {
+    font-family: "Pontano Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    transition: opacity 250ms cubic-bezier(.4,0,.2,1)
+  }
+
+  .header__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* End Navar */
+
+  /* Book btn */
+  .header__nav-bookbtn {
+    /* position: absolute; */
+    bottom: 25px;
+    left: 20px;
+    transform: translateY(0);
+  }
+
+  .header__nav-bookbtn button {
+    height: 50px;
+    width: 200px;
+    background-color: #fff;
+    font-family: "Pontano Sans", sans-serif;
+    font-weight: 500;
+    border: 2px solid black;
+  }
+
+  /* End Book btn */
+
+  /*Hero / home image */
+
+  .hero {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero__welcome {
+    height: 86vh;
+  }
+
+
+  .hero__welcome img {
+    /* display: block; */
+    /* z-index: 1; */
+    margin: auto;
+    opacity: 0.68;
+    position: relative;
+    width: 88%;
+    top: 1vh;
+    height: 86vh;
+    right: 6vw;
+    bottom: 6vw;
+    left: 6vw;
+    object-fit: cover;
+  }
+
+  /* End home image */
+
+  /* landing page*/
+  .hero__bookbtn {
+    z-index: 2;
+    width: 245px;
+    height: 55px;
+    position: absolute;
+    background-color: initial;
+    top: 57vh;
+    border: 2px solid black;
+    margin: auto;
+    left: 10vw;
+    right: 10vw;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .hero__bookbtn :hover {
+    background-color: #fff;
+  }
+
+  /* End Welcome page */
+
+  /* Services */
+  .services {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .services__container {
+    margin-bottom: 20px;
+  }
+
+  .services__container-big img {
+    height: 14rem;
+    width: 15rem;
+    object-fit: stretch;
+  }
+
+  .services__container-small img {
+    height: 11rem;
+    width: 12rem;
+  }
+
+  .services__title {
+    text-transform: uppercase;
+    font-size: 0.937rem;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .1em;
+  }
+
+  .services__sub {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8rem;
+    color: #6f6f6f;
+    font-style: normal;
+    margin-top: .4rem;
+    margin-bottom: .625rem;
+
+  }
+
+  .services__container-btn {
+    background-color: transparent;
+    width: 240px;
+    height: 40px;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    border: 2px solid #333;
+    font-weight: 500;
+  }
+
+  .services__container-btn:hover {
+    background-color: gray;
+    color: #fff;
+  }
+
+  /* End Services */
+
+  /* Social */
+  .socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("./assets/krbhome.jpg");
+    height: 300px;
+    width: 100%;
+    color: #fff;
+    z-index: 1;
+  }
+
+  .socials__title {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    position: relative;
+    top: 30px;
+    z-index: 2;
+    font-weight: 600;
+  }
+
+  .socials__followus {
+    position: relative;
+    top: 60px;
+  }
+
+  .socials__title {}
+
+  .socials_link-btn {
+    background-color: initial;
+    width: 230px;
+    height: 49px;
+    position: relative;
+    top: 80px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .social__sub-title {
+    margin-top: 30px;
+  }
+
+  /* End Social */
+
+  /* Gallery */
+  .gallery {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .gallery__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .gallery__container img {
+
+    margin-bottom: 0;
+    width: 170px;
+  }
+
+
+  /* End Gallery */
+
+  /* Reviews */
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    background-color: #c3c3c3;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .review__title {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .review__container-review {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 3vh;
+    margin-top: 20px;
+    line-height: 1.7rem;
+    width: 330px;
+  }
+
+  .review__container-name {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* End Reviews */
+  /* Footer */
+  .footer__visit-tile {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    padding-left: 6vw;
+    margin-bottom: 20px;
+  }
+
+  .footer__container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .footer__title {
+    color: #ffa0a0;
+    font-weight: 500;
+    width: 4.7rem;
+    position: relative;
+    left: 15vw;
+    font-family: "Montserrat", sans-serif;
+    padding-right: 25px;
+  }
+
+  .footer__socials {
+    padding-left: 16vw;
+    color: gray;
+    font-size: 21px;
+    padding-top: 10px;
+  }
+
+  .footer__details {
+    font-family: "Montserrat", sans-serif;
+    font-size: .9rem;
+  }
+
+
+  .footer__details {
+    padding-left: 40px;
+  }
+
+
+
+  /*End Footer*/
+
+  /*  Booking form*/
+
+
+
+  /* End Booking form */
+  /* Choose service - appointment */
+  .appointment {
+    margin: 0 6vw;
+    
+  }
+
+  .appointment__head-title {
+    font-weight: 550;
+    font-size: 2em;
+    color: #0d1619;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    margin-bottom: 50px;
+  }
+
+  .appointment__service {
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+
+
+
+  }
+
+  .appointment__service-select {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+    align-items: center;
+    width: 100%;
+  }
+
+  .appointment__service-title {
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .appointment__service-duration {
+    color: gray;
+  }
+
+  .appointment__button {
+    display: flex;
+    bottom: 0;
+    border-top: 1px solid #6f6f6f;
+    justify-content: space-between;
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+
+  }
+
+
+  .appointment__button button {
+    width: 100%;
+    background-color: #0d1619;
+    color: #fff;
+    border-radius: 8px;
+    width: 113px;
+    height: 48px;
+    background-color: #0d1619;
+    border-color: #0d1619;
+    font-family: "Noto Sans", sans-serif;
+    font-size: .9rem;
+    font-weight: 500;
+    border: none;
+
+
+  }
+
+  .appointment__button-services {
+    color: gray;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Choose services /End */
+
+  /* / Menu */
+
+  .menu__container {
+    background-color: #ECEDF5;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 10px;
+    padding-bottom: 32px;
+
+  }
+
+  .menu__title {
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+  }
+  
+  .menu__pricelist li {
+    
+    font-family: 'Open Sans', sans-serif;
+  }
+
+/* End Menu */
+
+
+}
