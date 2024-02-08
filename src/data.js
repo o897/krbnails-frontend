@@ -78,12 +78,12 @@ export const images = [
 export const services = [
     {
         title : 'Pedicure', 
-        price : 'R100',
+        price : 'R110',
         duration: 30
     },
     {
-        title : 'Design',
-        price : 'R200',
+        title : 'Drawings (per nail)',
+        price : 'R5',
         duration : 1
     },
     {
@@ -92,7 +92,9 @@ export const services = [
         duration: 40
     },
     {
-       title : 'Gel Overlay (Add-On Service)'
+       title : 'Gel Overlay (Add-On Service)',
+       price : 'R180'
+       
     },
     {
         title : 'Buff & Shine (Add-On Service)'

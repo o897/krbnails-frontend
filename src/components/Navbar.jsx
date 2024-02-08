@@ -57,7 +57,10 @@ const Navbar = () => {
         </div>
 
         <div className="header__nav-bookbtn">
+        <Link to='book'>
           <button>BOOK NOW</button>
+        </Link>
+          
         </div>
 
       </div>

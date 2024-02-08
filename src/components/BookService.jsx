@@ -46,8 +46,8 @@ const BookService = () => {
               </div>
             ))}
           </div>
-
-          <div className="appointment__button">
+        </div>
+        <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">R200</div>
               <div className="appointment__button-services">
@@ -62,7 +62,6 @@ const BookService = () => {
               </button>
             </div>
           </div>
-        </div>
       </form>
     </>
   );
