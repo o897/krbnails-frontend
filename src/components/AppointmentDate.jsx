@@ -9,7 +9,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 const AppointmentDate = () => {
   const [appointmentDate, setAppointmentDate] = useState();
   const [appointmentTime, setAppointmentTime] = useState();
-
+  console.log(appointmentTime)
   const formSubmit = () => {};
 
   return (
@@ -26,6 +26,9 @@ const AppointmentDate = () => {
               {day.time}
             </div>
           ))}
+        </div>
+        <div className="time-confirmation">
+          Your appointment time is : {appointmentTime}
         </div>
 
         <button className="hero__bookbtn">BOOK AN APPOINTMENT</button>
