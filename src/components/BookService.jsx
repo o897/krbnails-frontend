@@ -3,7 +3,6 @@ import { services } from "../data";
 import { Link } from "react-router-dom";
 
 const BookService = () => {
-  console.log(services.map((service) => console.log(service.title)));
   const [formData, seFormData] = useState({
     appointmentTitle: [],
     appointmentDuration: "",
@@ -25,7 +24,7 @@ const BookService = () => {
           <div className="appointment__head-title">Select Service</div>
           <div className="appointment__services">
             {services.map((service) => (
-              <div className="appointment__service-select">
+              <div className="appointment__service-select" key={service.title}>
                 <div className="appointment__service">
                   <div className="appointment__service-title">
                     {service.title}
