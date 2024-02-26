@@ -1,24 +1,43 @@
 import React from "react";
 import { worktimes } from "../data";
-import { Link } from "react-router-dom";
-import dayjs from "dayjs";
+import { Link, useFetcher } from "react-router-dom";
+import dayjs from "dayjs"
 
-import { useState } from "react";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
-import TextField from '@mui/material/TextField'; // Import TextField from MUI
+import { useState } from "react"
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
+import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker"
+import TextField from '@mui/material/TextField'
 
 const AppointmentDate = () => {
-  const [appointmentDate, setAppointmentDate] = useState(null);
-  const [appointmentTime, setAppointmentTime] = useState();
-  const formSubmit = () => {};
+  const [appointmentDate, setAppointmentDate] = useState(null)
+  const [appointmentTime, setAppointmentTime] = useState()
+  const [error,setError] = useState(null)
+
+
+  const formSubmit = async (e) => {
+    e.preventDefault()
+
+    const response = await fetch('/api/appintments',{
+      method : 'POST',
+      body: JSON.stringify(appointments),
+      headers : {
+        'Content-Type' : 'application/json'
+      }
+    })
+
+    const json = await response.json()
+
+    if(!response.ok) {
+
+    }
+  };
   
  
   
   return (
     <div className="appointment__form-date">
-      <form onSubmit={formSubmit()}>
+      <form onSubmit={formSubmit}>
         <div className="date">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <MobileDatePicker
@@ -40,8 +59,11 @@ const AppointmentDate = () => {
             </div>
           ))}
         </div>
-        <div className="time-confirmation">
-          Your appointment time is : {appointmentTime} on the {appointmentDate ? appointmentDate.toString(): '___'}
+        <div className="time__confirmation">
+          Your appointment time is at: {appointmentTime}
+        </div>
+        <div className="date__confirmation">
+            Date is {appointmentDate ? appointmentDate.toString(): ''}
         </div>
 
         <button className="hero__bookbtn">BOOK AN APPOINTMENT</button>
