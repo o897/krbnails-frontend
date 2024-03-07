@@ -1,6 +1,6 @@
 import React from "react";
 import { worktimes } from "../data";
-import { Link, useFetcher } from "react-router-dom";
+import { Link } from "react-router-dom";
 import dayjs from "dayjs"
 
 import { useState } from "react"
@@ -65,8 +65,12 @@ const AppointmentDate = () => {
         <div className="date__confirmation">
             Date is {appointmentDate ? appointmentDate.toString(): ''}
         </div>
-
-        <button className="hero__bookbtn">BOOK AN APPOINTMENT</button>
+       
+        <button className="hero__bookbtn">
+          <Link to='/deposit'>
+            BOOK AN APPOINTMENT
+          </Link>
+        </button>
       </form>
     </div>
   );

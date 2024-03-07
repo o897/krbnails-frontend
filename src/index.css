@@ -20,12 +20,13 @@
     input[type='checkbox'] {
       -webkit-appearance: none;
       appearance: none;
-      background-color: #fff;
+      background-color: #e9e9e9;
+      background-image: url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>');
       margin: 0;
       width: 2.15em;
-      height: 2.15em;
+      height: 2.3em;
       border: 0.15em solid currentColor;
-      border-radius: .7em;
+      border-radius: .4em;
       transform: translateY(-0.07em);
       display: grid;
       place-content: center;
@@ -34,16 +35,14 @@
 
     input[type='checkbox']::before {
       content: "";
-      width: 1.65em;
-      height: 1.65em;
+      width: 15px;
+      height: 15px;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em #c229b3;
-      background-color: CanvasText;
+      box-shadow: inset 0.8em 0.8em #dd67f5;
+      background-color: transparent;
       /* transform-origin: bottom left; */
-      /* clip-path: polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0,43% 62%); */
-
-
+      clip-path: polygon(20% 44%, 0 65%, 50% 100%, 100% 16%, 85% 0, 48% 62%);
     }
 
     input[type='checkbox']:checked::before {
@@ -236,6 +235,10 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+  }
+
+  .appointment__bookbtn {
+    
   }
 
   .hero__bookbtn :hover {

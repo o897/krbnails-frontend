@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import BookService from './components/BookService'
 import AppointmentDate from './components/AppointmentDate'
 import Menu from './components/menu'
+import Deposit from './components/Deposit'
 function App() {
   
 
@@ -25,6 +26,11 @@ function App() {
           <Route
             path='/date'
             element={<AppointmentDate/>}
+          />
+
+          <Route
+            path='/deposit'
+            element={<Deposit/>}
           />
 
           <Route
