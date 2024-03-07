@@ -15,23 +15,23 @@ const AppointmentDate = () => {
   const [error,setError] = useState(null)
 
 
-  // const formSubmit = async (e) => {
-  //   e.preventDefault()
+  const formSubmit = async (e) => {
+    e.preventDefault()
 
-  //   const response = await fetch('/api/appintments',{
-  //     method : 'POST',
-  //     body: JSON.stringify(appointments),
-  //     headers : {
-  //       'Content-Type' : 'application/json'
-  //     }
-  //   })
+    // const response = await fetch('/api/appintments',{
+    //   method : 'POST',
+    //   body: JSON.stringify(appointments),
+    //   headers : {
+    //     'Content-Type' : 'application/json'
+    //   }
+    // })
 
-  //   const json = await response.json()
+    // const json = await response.json()
 
-  //   if(!response.ok) {
+    // if(!response.ok) {
 
-  //   }
-  // };
+    // }
+  };
   
  
   
