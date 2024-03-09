@@ -10,7 +10,7 @@ const Deposit = () => {
         <button>South African Rands</button>
         <div className="payment">
             <div className="payment__title">
-                You can easily make a deposit into our account.
+                Deposit ZAR - South African Rands
             </div>
 
             <div className="payment__details">
