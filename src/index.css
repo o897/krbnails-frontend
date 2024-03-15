@@ -67,6 +67,7 @@
     text-align: center;
     overflow: hidden;
     margin: 0;
+    letter-spacing: -2.5px;
   }
 
   h2 {
@@ -388,7 +389,7 @@
   /* Gallery */
   .gallery__heading {
     margin-bottom: 29px;
-    line-height: 42px;
+    line-height: 55px;
     font-family: "Playfair Display", serif;
     font-size: 3.6rem;
     text-align: center;
