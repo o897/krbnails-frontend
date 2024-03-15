@@ -20,9 +20,11 @@ const Navbar = () => {
     <>
       <div className="header__logo">
         <p className="header__log-title">KRBNails</p>
-        <button onClick={() => toggleWidth()}>
-          <FontAwesomeIcon icon={faBars} />
-        </button>
+        <Link to='book'>
+          {/* <FontAwesomeIcon icon={faBars} /> */}
+
+          <button>BOOK</button> 
+        </Link>
       </div>
 
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>

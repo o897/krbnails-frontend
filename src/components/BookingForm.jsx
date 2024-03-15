@@ -9,8 +9,28 @@ const BookingForm = () => {
 
     const handleSubmit = () => {
         try {
+          fetch('http://tlamis/createBooking', {
+            method : 'POST',
+            headers : {
+              'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({
+              title : 'title',
+              name : 'name',
+              phone : 'phone',
+              date : 'date'
+            }),
+          })
+          .then(response => {
+            if(!response.ok) {
+              throw new Error('Could submit post to mongo api')
+            }
+          })
+
 
         } catch(error) {
+          console.error('There was a problem with the fetch operation:', error);
+
             
         }
     }

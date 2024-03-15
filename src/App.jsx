@@ -18,8 +18,7 @@ function App() {
             path='/'
             element={<Home/>}
           />
-          <Route
-          
+          <Route  
             path='/book'
             element={<BookService/>}
           />

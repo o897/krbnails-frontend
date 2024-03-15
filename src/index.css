@@ -3,9 +3,11 @@
 
 @media only screen and (max-width: 480px) {
   :root {
+    --darkAccent-hsl: 240,2.60869565%,22.54901961%;
     margin: 0;
     padding: 0;
-    background-color: #F5F3F2;
+    /* background-color: #F5F3F2; */
+    background-color: hsla(var(0,0%,100%),1)
 
     a {
       text-decoration: none;
@@ -54,11 +56,11 @@
     position: absolute;
     font-size: 3.7rem;
     font-weight: 500;
-    line-height: 1em;
+    line-height: .95em;
     top: 30vh;
     opacity: 1;
     z-index: 2;
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
     font-optical-sizing: auto;
     font-style: normal;
     text-align: center;
@@ -205,15 +207,15 @@
   .hero__welcome img {
     /* display: block; */
     /* z-index: 1; */
-    margin: auto;
+    margin: 0 auto;
     opacity: 0.68;
     position: relative;
-    width: 88%;
-    top: 1vh;
+    width: 92%;
+    top: 0.9vh;
     height: 86vh;
-    right: 6vw;
+    right: 4vw;
     bottom: 6vw;
-    left: 6vw;
+    left: 4vw;
     object-fit: cover;
   }
 
@@ -357,7 +359,38 @@
 
   /* End Social */
 
+  /* book */
+  .book {
+    margin-top: 30px;
+    position: relative;
+    height: 400px;
+    background-color: hsla(var(--darkAccent-hsl), 1);;
+  }
+
+  .book__btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px; /* Adjust as needed */
+    background-color: initial; /* Adjust as needed */
+    color: white; /* Adjust as needed */
+    border: 1px solid #6f6f6f;
+    cursor: pointer;
+    height: 40px;
+    width: 240px;
+  }
+
+  /* End book */
   /* Gallery */
+  .gallery__heading {
+    margin-bottom: 29px;
+    line-height: 42px;
+    font-family: Playfair Display;
+    font-size: 3.6rem;
+    text-align: center;
+
+  }
   .gallery {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -462,7 +495,7 @@
   /* End Booking form */
   /* Choose service - appointment */
   .appointment {
-    padding: 0 6vw;
+    padding-left: 6vw;
     
   }
 
@@ -490,7 +523,7 @@
   .appointment__service-select {
     display: flex;
     padding-bottom: 10px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #cdc6c6;
     align-items: center;
     width: 100%;
   }
@@ -504,7 +537,9 @@
 
   .appointment__services {
     overflow: auto;
+    scroll-behavior: smooth;
     height: 69vh;
+    padding-right: 6vw;
   }
 
   .appointment__service-duration {
@@ -620,18 +655,62 @@
 
 /* Payment page */
 .payment {
-  border : 1px solid gray;
-  width : 400px;
-  justify-content: flex-end;
+  border : 1px solid rgb(188, 188, 188);
+  width : 89%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  
+}
+
+.payment__content {
+  width: 90%;
   margin: 0 auto;
 }
 .payment__title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
   border-bottom: 1px solid gray;
   margin-bottom: 10px;
-  padding: 4px;
+  padding: 7px 15px;
 }
+
+.payment__sub {
+  margin-bottom: 15px;
+  line-height: 20px;
+}
+.payment__minimum { 
+  font-weight: 600;
+  margin: 14px 0;
+
+}
+
+.payment__details {
+  background-color: rgb(21, 182, 21);
+  border: 1px solid black;
+  width: 250px;
+  margin: 0 auto;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  inline-size: 75%;
+  font-weight: 500;
+}
+
+.payment__bank-account {
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
 /* Payment */
+
 
 }

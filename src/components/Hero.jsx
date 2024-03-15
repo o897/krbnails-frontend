@@ -22,9 +22,9 @@ function Hero() {
     
       <section className="hero">
         <div className="hero__welcome">
-          <h1>Welcome to Tlamis Nail Gallery</h1>
+          <h1>Elevate Your Look, One Nail at a Time</h1>
           <div className="hero__welcome-img">
-            <img src={homeImg} alt="landing img" />
+            <img src='https://www.refinery29.com/images/8448082.jpg' alt="landing img" />
           </div>
           <Link to='book'>
             <button className="hero__bookbtn">BOOK AN APPOINTMENT</button>
@@ -62,7 +62,7 @@ function Hero() {
             </div>
             <div className="services__container">
             <Link to='menu'>
-            <button className="services__container-btn">MENU</button>
+            <button className="services__container-btn">LEARN MORE</button>
             </Link>
             </div>
           </div>
@@ -76,7 +76,14 @@ function Hero() {
             <FontAwesomeIcon icon={faInstagram} /> @tlamis_nail_gallery
           </button>
         </section> */}
+        <section>
+          <div className="book">
+            <button className="book__btn">BOOK AN APPOINTMENT</button>
+
+          </div>
+        </section>
         <section className="gallery">
+            <div className='gallery__heading'>Follow our journey</div>
             <div className="gallery__container">
               <img src={images[1].source} alt="" />
               <img src={images[2].source} alt="" />
@@ -98,21 +105,21 @@ function Hero() {
           <div className="review__title">They're Talking</div>
           <div className="review__container">
             <div className="review__container-review">
-            Positive vibes all the way at [Salon Name]! Hygienic, long-lasting gel manicure, and a friendly staff. Found my new favorite spot – definitely coming back!
+            Positive vibes all the way. Hygienic, long-lasting gel manicure, and a friendly staff. Found my new favorite spot – definitely coming back!
             </div>
-            <div className="review__container-name">- Tshepang</div>
+            <div className="review__container-name">- Rearabilwe</div>
           </div>
           <div className="review__container">
             <div className="review__container-review">
-              Had an amazing nail art session at [Salon Name]. Creative team,
+              Had an amazing nail art session. Creative team,
               clean space, and a relaxing vibe. Definitely exceeded my
               expectations. Highly recommend!
             </div>
-            <div className="review__container-name">Tshepang</div>
+            <div className="review__container-name">Kearabilwe</div>
           </div>
           <div className="review__container">
             <div className="review__container-review">
-              Absolutely loved my experience at [Salon Name]! Flawless manicure,
+              Absolutely loved my experience. Flawless manicure,
               friendly staff, and a welcoming atmosphere. Can't wait to go back
               for more pampering.
             </div>
