@@ -53,7 +53,7 @@
     }
   }
 
-  h1 {
+  .hero__welcome-title {
     position: absolute;
     font-size: 3.7rem;
     font-weight: 500;

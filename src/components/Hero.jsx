@@ -22,7 +22,7 @@ function Hero() {
     
       <section className="hero">
         <div className="hero__welcome">
-          <h1>Elevate Your Look, One Nail at a Time</h1>
+          <div className="hero__welcome-title">Elevate Your Look, One Nail at a Time</div>
           <div className="hero__welcome-img">
             <img src='https://www.refinery29.com/images/8448082.jpg' alt="landing img" />
           </div>
