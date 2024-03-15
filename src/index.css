@@ -111,6 +111,7 @@
   .header__log-title {
     padding-left: 10px;
     font-size: 20px;
+   
   }
 
   /* End Logo */
@@ -237,7 +238,7 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   .appointment__bookbtn {
@@ -387,7 +388,7 @@
   .gallery__heading {
     margin-bottom: 29px;
     line-height: 42px;
-    font-family: Playfair Display;
+    font-family: "Playfair Display", serif;
     font-size: 3.6rem;
     text-align: center;
 
