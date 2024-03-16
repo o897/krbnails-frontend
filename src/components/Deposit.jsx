@@ -28,13 +28,13 @@ const Deposit = () => {
               Bank : <strong>Capitec</strong>
             </div>
             <div>
-              Account: 54564564<strong></strong>
+              Account : 54564564<strong></strong>
             </div>
             <div>
               Branch code : 21515<strong></strong>
             </div>
             <div>
-              Account number :89484544<strong></strong>
+              Account number : 89484544<strong></strong>
             </div>
             <div>
               Reference: <strong>Your contact number</strong>
@@ -51,6 +51,10 @@ const Deposit = () => {
                 whatever
               </li>
               <li> 2. Payments using payshap appear immeditley.</li>
+              <li> 3. Kindly double-check the account details provided before initiating your deposit.</li>
+              <li> 4. Note that deposits made after the specified cut-off time may be processed on the following business day.</li>
+              <li> 5.Kindly double-check the account details provided before initiating your deposit.</li>
+
             </ul>
           </div>
         </div>

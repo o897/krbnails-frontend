@@ -780,7 +780,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-
+.please__note {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
 
 /* Payment */
 
