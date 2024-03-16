@@ -719,7 +719,7 @@
 
 /* Payment page */
 .payment {
-  border : 1px solid rgb(188, 188, 188);
+  border: 1px solid #6f6f6f;
   width : 89%;
   margin: 0 auto;
   background-color: #fff;
@@ -734,7 +734,7 @@
 .payment__title {
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   border-bottom: 1px solid gray;
   margin-bottom: 10px;
   padding: 7px 15px;
@@ -742,17 +742,22 @@
 
 .payment__sub {
   margin-bottom: 15px;
-  line-height: 20px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+
 }
 .payment__minimum { 
   font-weight: 600;
   margin: 14px 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 19px;
+
 
 }
 
 .payment__details {
-  background-color: rgb(21, 182, 21);
-  border: 1px solid black;
+  background-color:#28a745;
+  border: none;
   width: 250px;
   margin: 0 auto;
   height: 90px;
@@ -762,14 +767,16 @@
   text-align: center;
   color: #fff;
   padding: 10px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   inline-size: 75%;
-  font-weight: 500;
+  width: 291px;
+  
 }
 
 .payment__bank-account {
   margin-bottom: 30px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 

@@ -28,13 +28,13 @@ const Deposit = () => {
               Bank : <strong>Capitec</strong>
             </div>
             <div>
-              Account: <strong></strong>
+              Account: 54564564<strong></strong>
             </div>
             <div>
-              Branch code : <strong></strong>
+              Branch code : 21515<strong></strong>
             </div>
             <div>
-              Account number : <strong></strong>
+              Account number :89484544<strong></strong>
             </div>
             <div>
               Reference: <strong>Your contact number</strong>
