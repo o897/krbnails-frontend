@@ -20,7 +20,7 @@ const Deposit = () => {
           </div>
 
           <div className="payment__minimum">
-            Please note. There is a minimum deposi amount of R100
+            Please note. There is a minimum deposi amount of R150.
           </div>
 
           <div className="payment__bank-account">

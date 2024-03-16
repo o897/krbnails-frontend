@@ -782,6 +782,17 @@
   border-radius: 4px;
   
 }
+.please__note-detail {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+
+}
+
+.please__note-detail li {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+
+}
 
 .payment__bank-account {
   margin-bottom: 30px;
@@ -789,9 +800,10 @@
   font-size: 14px;
 }
 
-.please__note {
+.please__note ul li {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+  margin-bottom: 9px;
 }
 
 /* Payment */
