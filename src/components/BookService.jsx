@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
+import Checkbox from '@mui/material/Checkbox';
 
 const BookService = () => {
   const [formData, seFormData] = useState({
@@ -9,6 +10,8 @@ const BookService = () => {
     appointmentPrice: "",
     numServices: 0,
   });
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
 
   const [checked, setIsChecked] = useState(false);
 
@@ -37,10 +40,12 @@ const BookService = () => {
                   </div>
                 </div>
                 <div>
-                  <input
+                  {/* <input
                     type="checkbox"
                     onClick={() => console.log(service.title)}
-                  />
+                  /> */}
+                  <Checkbox {...label}  onClick={() => console.log(service.title)}/>
+
                 </div>
               </div>
             ))}

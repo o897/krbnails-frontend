@@ -38,24 +38,24 @@ function Hero() {
         <section className="services">
           <h2>Services</h2>
           <div className="services">
-            <div className="services__container services__container-big">
+            <div className="services__container services__container-big" data-aos='fade-right'>
               <img src={acrylicImg} alt="" srcSet="" />
               <div className="services__title">Acrylic</div>
               <div className="services__sub">4 Services</div>
 
             </div>
-            <div className="services__container services__container-small">
+            <div className="services__container services__container-small" data-aos='fade-left'>
               <img src={pedicureImg} alt="" srcSet="" />
               <div className="services__title">Pedicure</div>
               <div className="services__sub">2 Services</div>
 
             </div>
-            <div className="services__container services__container-big">
+            <div className="services__container services__container-big" data-aos='fade-right'>
               <img src={designImg} alt="" srcSet="" />
               <div className="services__title">Designs</div>
               <div className="services__sub">4 Services</div>
             </div>
-            <div className="services__container services__container-small">
+            <div className="services__container services__container-small" data-aos='fade-left'>
               <img src={homeImg} alt="" srcSet="" />
               <div className="services__title">Buff & Shine</div>
               <div className="services__sub">2 Services</div>
@@ -78,8 +78,8 @@ function Hero() {
         </section> */}
         <section>
           <div className="book">
+            <div className="book__heading">Nail Your Look, Every Day!</div>
             <button className="book__btn">BOOK AN APPOINTMENT</button>
-
           </div>
         </section>
         <section className="gallery">

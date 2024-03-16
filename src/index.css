@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     /* background-color: #F5F3F2; */
-    background-color: hsla(var(0,0%,100%),1)
+    background-color: hsla(var(0,0%,100%),1);
 
     a {
       text-decoration: none;
@@ -68,7 +68,8 @@
     overflow: hidden;
     margin: 0;
     letter-spacing: -2.5px;
-    width: 87%;
+    width: 72%;
+    /* width: 87%; */
     position: absolute;
     left: 50%;
     top: 50%;
@@ -372,14 +373,25 @@
   .book {
     margin-top: 30px;
     position: relative;
-    height: 400px;
-    background-color: hsla(var(--darkAccent-hsl), 1);;
+    height: 600px;
+    background-color: hsla(var(--darkAccent-hsl), 1);
+  }
+
+  .book__heading {
+    margin-bottom: 29px;
+    line-height: 50px;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: 35%;
   }
 
   .book__btn {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
     padding: 10px 20px; /* Adjust as needed */
     background-color: initial; /* Adjust as needed */
