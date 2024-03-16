@@ -4,6 +4,7 @@
 
 @media only screen and (max-width: 480px) {
   :root {
+    overflow-x: hidden;
     --darkAccent-hsl: 240,2.60869565%,22.54901961%;
     margin: 0;
     padding: 0;
@@ -88,6 +89,8 @@
   body {
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+
   }
 
   /* Navbar socials*/
@@ -208,6 +211,7 @@
 
   .hero__welcome {
     height: 86vh;
+    position: relative;
   }
 
 
@@ -222,7 +226,7 @@
     height: 86vh;
     right: 6vw;
     bottom: 6vw;
-    left: 6vw;
+    left: 4vw;
     object-fit: cover;
   }
 
@@ -557,7 +561,7 @@
   .appointment__services {
     overflow: auto;
     scroll-behavior: smooth;
-    height: 69vh;
+    height: 60vh;
     padding-right: 6vw;
   }
 
@@ -609,11 +613,37 @@
 
   /* / Menu */
 
+  .menu {
+    margin-left: 6vw;
+
+  }
+
+  .menu__heading {
+    font-size: 2.2rem;
+  }
+
+  .menu__subheading {
+    color: #6f6f6f;
+    margin-bottom: 20px;
+  }
   .menu__container {
     background-color: #fcf8fe;
     width: 90%;
+    margin-bottom: 30px;
 
   }
+
+  .menu__pricelist-row {
+    display: flex;
+    justify-content: space-between;
+    height : 20px;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    font-size: .8rem;
+  }
+
+  
+  
 
   .menu__title {
     text-align: left;
@@ -627,7 +657,15 @@
     width: 300px;
     height: 40px;
     background-color: #ac92bc;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: #fff;
 
+  }
+
+  .menu__bg-pink {
+    background-color: #c3c3c3;
   }
   
   .menu__pricelist li {
