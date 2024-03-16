@@ -619,7 +619,7 @@
   }
 
   .menu__heading {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .menu__subheading {
@@ -695,6 +695,7 @@
       place-items: center;
       height: 100px;
       overflow-y: auto;
+      margin-bottom: 40px;
 
     }
 
@@ -707,6 +708,11 @@
     .time__confirmation {
       color : red;
       margin-bottom: 10px;
+      padding-left: 10vw;
+    }
+    .date__confirmation {
+      padding-left: 10vw;
+
     }
 
 /* End Appointment Date -selection  */

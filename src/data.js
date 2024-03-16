@@ -97,13 +97,17 @@ export const services = [
        
     },
     {
-        title : 'Buff & Shine (Add-On Service)'
+        title : 'Buff & Shine (Add-On Service)',
+        price : 'R110'
+
      },
      {
-        title : 'Foot Treatment (Add-On Service)'
+        title : 'Foot Treatment (Add-On Service)',
+        price : 'R110'
      },
      {
-        title : 'Soak Off (Add-On Service)'
+        title : 'Soak Off (Add-On Service)',
+        price : 'R80'
      }
 ]
 

@@ -6,9 +6,8 @@ const Menu = () => {
       <div className="menu">
         <div className="menu__heading">Tlami's Nail Gallery</div>
         <div className="menu__subheading">PRICELIST</div>
+        <div className="menu__title">Nail Services - Acrylic</div>
         <div className="menu__container">
-          <div className="menu__title">Nail Services - Acrylic</div>
-
           <div className="menu__pricelist">
             <div className="menu__pricelist-row">
               <div className="menu__pricelist-row--title">
@@ -42,9 +41,9 @@ const Menu = () => {
             </div>
           </div>
         </div>
-
+        
+        <div className="menu__title">Pedicures</div>
         <div className="menu__container">
-          <div className="menu__title">Pedicures</div>
           <div className="menu__pricelist">
             <div className="menu__pricelist-row  menu__bg-pink">
               <div className="menu__pricelist-row--title">
@@ -61,8 +60,8 @@ const Menu = () => {
           </div>
         </div>
 
+        <div className="menu__title">Added services</div>
         <div className="menu__container">
-          <div className="menu__title">Added services</div>
           <div className="menu__pricelist">
           <div className="menu__pricelist-row ">
               <div className="menu__pricelist-row--title">Gel Overlay</div>
@@ -83,8 +82,8 @@ const Menu = () => {
           </div>
         </div>
 
+        <div className="menu__title">Designs</div>
         <div className="menu__container">
-          <div className="menu__title">Designs</div>
           <div className="menu__pricelist">
           <div className="menu__pricelist-row">
               <div className="menu__pricelist-row--title">Drawings</div>
