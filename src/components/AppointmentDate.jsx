@@ -50,7 +50,7 @@ const AppointmentDate = () => {
           Your appointment time is at: {appointmentTime}
         </div>
         <div className="date__confirmation">
-            Date is {appointmentDate ? appointmentDate.toString(): ''}
+            Date is {appointmentDate ? appointmentDate.toString().slice(0 , 16): ''}
         </div>
        
         <button className="hero__bookbtn">

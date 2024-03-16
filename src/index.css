@@ -706,12 +706,18 @@
     }
 
     .time__confirmation {
-      color : red;
+      font-weight: 600;
+      
       margin-bottom: 10px;
       padding-left: 10vw;
+      letter-spacing: .3px;
+      font-family: "Raleway", sans-serif;
     }
     .date__confirmation {
       padding-left: 10vw;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+
 
     }
 
