@@ -66,13 +66,11 @@
     font-style: normal;
     text-align: center;
     overflow: hidden;
-    margin: 0;
     letter-spacing: -2.5px;
     width: 72%;
-    /* width: 87%; */
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
   }
 
@@ -222,9 +220,9 @@
     width: 92%;
     top: 0.9vh;
     height: 86vh;
-    right: 4vw;
+    right: 6vw;
     bottom: 6vw;
-    left: 4vw;
+    left: 6vw;
     object-fit: cover;
   }
 
@@ -612,22 +610,23 @@
   /* / Menu */
 
   .menu__container {
-    background-color: #ECEDF5;
+    background-color: #fcf8fe;
     width: 90%;
-    margin: 0 auto;
-    padding: 5px 10px;
-    padding-bottom: 32px;
 
   }
 
   .menu__title {
-    text-align: center;
+    text-align: left;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
     font-size: .9rem;
     letter-spacing: .1rem;
     text-transform: uppercase;
     margin-bottom: 20px;
+    border: none;
+    width: 300px;
+    height: 40px;
+    background-color: #ac92bc;
 
   }
   

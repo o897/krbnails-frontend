@@ -103,21 +103,21 @@ function Hero() {
         </section>
         <section className="reviews">
           <div className="review__title">They're Talking</div>
-          <div className="review__container">
+          <div className="review__container" data-aos='fade-left'>
             <div className="review__container-review">
             Positive vibes all the way. Hygienic, long-lasting gel manicure, and a friendly staff. Found my new favorite spot – definitely coming back!
             </div>
             <div className="review__container-name">- Rearabilwe</div>
           </div>
-          <div className="review__container">
-            <div className="review__container-review">
+          <div className="review__container" data-aos='fade-down'>
+            <div className="review__container-review" >
               Had an amazing nail art session. Creative team,
               clean space, and a relaxing vibe. Definitely exceeded my
               expectations. Highly recommend!
             </div>
             <div className="review__container-name">Kearabilwe</div>
           </div>
-          <div className="review__container">
+          <div className="review__container" data-aos='fade-down'>
             <div className="review__container-review">
               Absolutely loved my experience. Flawless manicure,
               friendly staff, and a welcoming atmosphere. Can't wait to go back

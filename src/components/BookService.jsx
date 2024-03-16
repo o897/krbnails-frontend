@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import Checkbox from '@mui/material/Checkbox';
+import { CustomScroll } from "react-custom-scroll";
+
 
 const BookService = () => {
   const [formData, seFormData] = useState({
@@ -26,6 +28,8 @@ const BookService = () => {
         <div className="appointment">
           <div className="appointment__head-title">Select Service</div>
           <div className="appointment__services">
+          <CustomScroll>
+
             {services.map((service) => (
               <div className="appointment__service-select" key={service.title}>
                 <div className="appointment__service">
@@ -49,6 +53,7 @@ const BookService = () => {
                 </div>
               </div>
             ))}
+            </CustomScroll>
           </div>
         </div>
         <div className="appointment__button">
