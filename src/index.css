@@ -758,6 +758,7 @@
   margin: 14px 0;
   font-family: 'Open Sans', sans-serif;
   line-height: 19px;
+  font-size: 14px;
 
 
 }
@@ -785,6 +786,7 @@
 .payment__bank-account {
   margin-bottom: 30px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
 
 .please__note {
