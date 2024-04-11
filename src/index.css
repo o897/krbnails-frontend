@@ -530,11 +530,12 @@
   }
 
   .appointment__head-title {
-    font-weight: 550;
-    font-size: 2em;
+    font-weight: 500;
+    font-size: 1.7em;
     color: #0d1619;
     font-style: normal;
     margin-bottom: 30px;
+    letter-spacing: .1px;
     
   }
 
