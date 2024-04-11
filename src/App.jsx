@@ -1,18 +1,19 @@
+import React from 'react'
 import Home from './pages/Home'
 import "./main"
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
 import BookService from './components/BookService'
 import AppointmentDate from './components/AppointmentDate'
 import Menu from './components/menu'
 import Deposit from './components/Deposit'
+import BookingForm from './components/BookingForm'
 function App() {
   
 
   return (
     
       <BrowserRouter>
-        <Navbar/>
+       
         <Routes>
           <Route
             path='/'
@@ -27,6 +28,13 @@ function App() {
             element={<AppointmentDate/>}
           />
 
+          <Route 
+            path='/details'
+            element={<BookingForm />}
+          
+          />
+
+          
           <Route
             path='/deposit'
             element={<Deposit/>}
