@@ -305,6 +305,40 @@
     color: #fff;
   }
 
+  .nail {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 48px;
+    width: 119px;
+    background-color: #ac92bc;
+    border-radius: 16px;
+    justify-content: center;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  /* .num_nails {
+    width: 20px;
+    border: 1px solid black;
+    position: relative;
+    text-align: center;
+  } */
+
+  .nail button {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    border: none;
+    justify-content: center;
+  }
+
+  .nail .nail-btn {
+    width: 1em;
+    height: 1.4em;
+    display: inline-block;
+
+  }
   /* End Services */
 
   /* Social */
@@ -702,7 +736,7 @@
     .times {
       display: grid;
       place-items: center;
-      height: 100px;
+      height: 140px;
       overflow-y: auto;
       margin-bottom: 40px;
 
@@ -713,6 +747,7 @@
       border-bottom: 1px solid rgb(238, 220, 220);
       padding-bottom: 10px;
     }
+
 
     .time__confirmation {
       font-weight: 600;
@@ -849,7 +884,7 @@
 .table-body {
   font-family: "PT Sans", sans-serif;
   margin-bottom: 20px;
-  border: 1px solid #6f6f6f;
+  /* border: 1px solid #6f6f6f; */
 }
 
 .table-row {
@@ -902,7 +937,14 @@
   margin-bottom: 8px;
   font-size: 14px;
   padding-left: 15px;
+  transition: .5s;
   
+}
+
+ input:focus {
+  box-shadow: 2px 2px 5px rgba(201, 14, 14, 0.3);
+  /* border: 2px solid red; */
+
 }
 
 

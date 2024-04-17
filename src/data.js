@@ -78,36 +78,31 @@ export const images = [
 export const services = [
     {
         title : 'Pedicure', 
-        price : 'R110',
+        price : 110,
         duration: 30
     },
     {
-        title : 'Drawings (per nail)',
-        price : 'R5',
-        duration : 1
-    },
-    {
         title : 'Acrylic',
-        price : 'R300',
+        price : 300,
         duration: 40
     },
     {
-       title : 'Gel Overlay (Add-On Service)',
-       price : 'R180'
+       title : 'Gel Overlay (Add - On Service)',
+       price : 180
        
     },
     {
-        title : 'Buff & Shine (Add-On Service)',
-        price : 'R110'
+        title : 'Buff & Shine (Add - On Service)',
+        price : 110
 
      },
      {
-        title : 'Foot Treatment (Add-On Service)',
-        price : 'R110'
+        title : 'Foot Treatment (Add - On Service)',
+        price : 110
      },
      {
-        title : 'Soak Off (Add-On Service)',
-        price : 'R80'
+        title : 'Soak Off (Add - On Service)',
+        price : 80
      }
 ]
 

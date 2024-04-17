@@ -1,6 +1,10 @@
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+// import {AdapterDateFns} from '@mui/lab/AdapterDateFns';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,14 +14,31 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import TextField from "@mui/material/TextField";
 
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault('Africa/Johannesburg');
+
 const AppointmentDate = () => {
+  
+
+
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState();
   const [error, setError] = useState(null);
-
+  const [bold,setBold] = useState(false);
+  
   const formSubmit = async (e) => {
     e.preventDefault();
   };
+
+  const handleTimeClick = (e,time) => {
+    e.preventDefault();
+    setBold(!bold);
+    console.log(time);
+    setAppointmentTime(time);
+
+  }
 
   return (
     <>
@@ -35,20 +56,22 @@ const AppointmentDate = () => {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <MobileDatePicker
                 label="Select Date"
-                value={appointmentDate ? appointmentDate : null}
+                timezone="Africa/Johannesburg"
+                value={appointmentDate}
+                format="DD-MMMM-YYYY"
                 onChange={(newValue) => setAppointmentDate(newValue)}
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
           </div>
           <div className="times">
-            {worktimes.map((day) => (
+            {worktimes.map(({time},index) => (
               <div
                 className="time"
-                key={day.time}
-                onClick={() => setAppointmentTime(day.time)}
+                key={index}
+                onClick={() => setAppointmentTime(time)}
               >
-                {day.time}
+                {time}
               </div>
             ))}
           </div>
@@ -56,10 +79,11 @@ const AppointmentDate = () => {
             Your appointment time is at: {appointmentTime}
           </div>
           <div className="date__confirmation">
-            Date is{" "}
-            {appointmentDate ? appointmentDate.toString().slice(0, 16) : ""}
+           
+            {appointmentDate ? appointmentDate.format("dddd , DD-MMMM-YYYY") : " Available on the"}
           </div>
-
+          
+{/* toString().slice(0, 16) */}
           <button className="hero__bookbtn">
             <Link to="/details">Continue</Link>
           </button>

@@ -77,6 +77,11 @@ const BookingForm = () => {
             <div className="table-row">
             <div>With <strong>Karabo Tlhopane</strong>  @ 12:30pm</div>
             </div>
+           
+            <div className="table-row">
+              <div>Total</div>
+              <div>R120</div>
+            </div>
             <div className="custom-hr "></div>
           </div>
 
@@ -95,7 +100,7 @@ const BookingForm = () => {
         </div>
         <div className="contact__group">
           <label htmlFor="">Email</label>
-          <input type="text" />
+          <input type="email" />
         </div>
         <div className="contact__group">
           <label htmlFor="">Include a message (optional)</label>
