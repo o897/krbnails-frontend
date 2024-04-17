@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import { CustomScroll } from "react-custom-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faMinus,faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const BookService = () => {
   const [formData, setFormData] = useState({
@@ -72,7 +72,7 @@ const BookService = () => {
             <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
           </span>
         </Link>
-        1 / 3 Select one or more services
+        1 / 3 Select one or more services 
       </div>
       <form>
         <div className="appointment">
@@ -88,9 +88,9 @@ const BookService = () => {
               </div>
               <div>
                 <div className="nail">
-                  <button onClick={minusNails}><span className="nail-btn">-</span></button>
+                  <button onClick={minusNails}><span className="nail-btn"><FontAwesomeIcon icon={faMinus} /></span></button>
                   <div className="num_nails">{nails}</div>
-                  <button onClick={addNails}><span className="nail-btn">+</span></button>
+                  <button onClick={addNails}><span className="nail-btn"><FontAwesomeIcon icon={faPlus} /></span></button>
                 </div>
               </div>
             </div>

@@ -80,10 +80,9 @@ const AppointmentDate = () => {
           </div>
           <div className="date__confirmation">
            
-            {appointmentDate ? appointmentDate.format("dddd , DD-MMMM-YYYY") : " Available on the"}
+            {appointmentDate ? appointmentDate.format("dddd , DD-MMMM-YYYY") : ""}
           </div>
           
-{/* toString().slice(0, 16) */}
           <button className="hero__bookbtn">
             <Link to="/details">Continue</Link>
           </button>

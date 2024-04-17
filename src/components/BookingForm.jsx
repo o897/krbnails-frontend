@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faMinus } from "@fortawesome/free-solid-svg-icons";
+
 const BookingForm = () => {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
@@ -75,7 +76,7 @@ const BookingForm = () => {
               <div>R20.5</div>
             </div>
             <div className="table-row">
-            <div>With <strong>Karabo Tlhopane</strong>  @ 12:30pm</div>
+            <div className="nail-tech">With <strong>Karabo Tlhopane</strong>  @ 12:30pm</div>
             </div>
            
             <div className="table-row">
