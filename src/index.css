@@ -14,7 +14,7 @@
     
     a {
       text-decoration: none;
-      color: #000;
+      color: inherit;
     }
 
     li {
@@ -663,6 +663,7 @@
 
   .menu__heading {
     font-size: 2rem;
+    margin-bottom: 5px;
   }
 
   .menu__subheading {
