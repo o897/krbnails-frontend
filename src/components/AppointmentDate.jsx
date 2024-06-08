@@ -21,8 +21,6 @@ dayjs.tz.setDefault('Africa/Johannesburg');
 
 const AppointmentDate = () => {
   
-
-
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState();
   const [error, setError] = useState(null);

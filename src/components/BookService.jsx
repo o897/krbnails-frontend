@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import { CustomScroll } from "react-custom-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faMinus,faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faMinus,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import GlobalContext from "../GlobalContext";
 
 const BookService = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +18,13 @@ const BookService = () => {
     appointmentDuration: "",
     total: 0,
     numServices: 0,
+    checkedState: new Array(services.length).fill(false),
   });
 
   const [total, setTotal] = useState(0);
   const [nails, setNails] = useState(0);
   const [totalService, setTotalService] = useState(0);
+  // const [appointmentTitle, setAppointmentTitle] = useState([]);
   const [checkedState, setCheckedState] = useState(
     new Array(services.length).fill(false)
   );
@@ -24,12 +32,27 @@ const BookService = () => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   // if checked add them to the array if check is false filter them out
-  const handleOnChange = (position) => {
+  const handleOnChange = (event, position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
-    ); //returns a new array
+    );
 
     setCheckedState(updatedCheckedState);
+
+    // setAppointmentTitle(
+    //   event.target.checked
+    //     ? [...appointmentTitle, services[position].title]
+    //     : appointmentTitle.filter((items) => items !== services[position].title)
+    // );
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      appointmentTitle: event.target.checked
+        ? [...prevFormData.appointmentTitle, services[position].title]
+        : prevFormData.appointmentTitle.filter(
+            (title) => title !== services[position].title
+          ),
+    }));
 
     const totalPrice = updatedCheckedState.reduce(
       (sum, currentState, index) => {
@@ -41,18 +64,25 @@ const BookService = () => {
       0
     );
 
-    const totalService = updatedCheckedState.reduce(
-      (sum, currentState, index) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      numServices: updatedCheckedState.reduce((sum, currentState) => {
         if (currentState === true) {
           return sum + 1;
         }
-        return sum; //return the total
-      },
-      0
-    );
+        return sum; //returnuseNavigate,  the total
+      }, 0),
+      total: updatedCheckedState.reduce((sum, currentState, index) => {
+        if (currentState === true) {
+          return sum + services[index].price;
+        }
+        return sum;
+      }, 0),
+    }));
 
-    setTotalService(totalService);
-    setTotal(totalPrice);
+    // setTotalService(totalService);
+    // setTotal(totalPrice);
+    console.log(formData.numServices);
   };
 
   const minusNails = (e) => {
@@ -64,80 +94,100 @@ const BookService = () => {
     e.preventDefault();
     setNails(nails + 1);
   };
+
+  useEffect(() => {
+    console.log("appointment title : ", formData.appointmentTitle);
+  }, [formData]);
   return (
     <>
-      <div className="bookform__header">
-        <Link to="/" style={{ color: "white" }}>
-          <span>
-            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
-          </span>
-        </Link>
-        1 / 3 Select one or more services 
-      </div>
-      <form>
-        <div className="appointment">
-          <div className="appointment__head-title">Select Service</div>
-          <div className="appointment__services">
-            <div className="appointment__service-select">
-              <div className="appointment__service">
-                <div className="appointment__service-title">Drawings</div>
-                <div className="appointment__service-duration">
-                  number of nails
+        <div className="bookform__header">
+          <Link to="/" style={{ color: "white" }}>
+            <span>
+              <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
+            </span>
+          </Link>
+          1 / 3 Select one or more services
+        </div>
+        <form>
+          <div className="appointment">
+            <div className="appointment__head-title">Select Service</div>
+            <div className="appointment__services">
+              <div className="appointment__service-select">
+                <div className="appointment__service">
+                  <div className="appointment__service-title">Drawings</div>
+                  <div className="appointment__service-duration">
+                    number of nails
+                  </div>
+                  <div className="appointment__service-title">R5 per nail</div>
                 </div>
-                <div className="appointment__service-title">R5 per nail</div>
-              </div>
-              <div>
-                <div className="nail">
-                  <button onClick={minusNails}><span className="nail-btn"><FontAwesomeIcon icon={faMinus} /></span></button>
-                  <div className="num_nails">{nails}</div>
-                  <button onClick={addNails}><span className="nail-btn"><FontAwesomeIcon icon={faPlus} /></span></button>
-                </div>
-              </div>
-            </div>
-
-            <CustomScroll>
-              {services.map(({ title, price }, index) => (
-                <div key={index}>
-                  <div className="appointment__service-select" key={title}>
-                    <div className="appointment__service">
-                      <div className="appointment__service-title">{title}</div>
-                      <div className="appointment__service-duration">
-                        1h - 1h:15min
-                      </div>
-                      <div className="appointment__service-title">R{price}</div>
-                    </div>
-                    <div>
-                      <Checkbox
-                        {...label}
-                        value={price}
-                        checked={checkedState[index]}
-                        onChange={() => handleOnChange(index)}
-                      />
-                    </div>
+                <div>
+                  <div className="nail">
+                    <button onClick={minusNails}>
+                      <span className="nail-btn">
+                        <FontAwesomeIcon icon={faMinus} />
+                      </span>
+                    </button>
+                    <div className="num_nails">{nails}</div>
+                    <button onClick={addNails}>
+                      <span className="nail-btn">
+                        <FontAwesomeIcon icon={faPlus} />
+                      </span>
+                    </button>
                   </div>
                 </div>
-              ))}
-            </CustomScroll>
-          </div>
-        </div>
-        <div className="appointment__button">
-          <div className="appointment__button-total">
-            <div className="appointment__button-price">
-              R{total ? total : 0}
+              </div>
+
+              <CustomScroll>
+                {services.map(({ title, price }, index) => (
+                  <div key={index}>
+                    <div className="appointment__service-select" key={title}>
+                      <div className="appointment__service">
+                        <div className="appointment__service-title">
+                          {title}
+                        </div>
+                        <div className="appointment__service-duration">
+                          1h - 1h:15min
+                        </div>
+                        <div className="appointment__service-title">
+                          R{price}
+                        </div>
+                      </div>
+                      <div>
+                        <Checkbox
+                          {...label}
+                          value={price}
+                          checked={checkedState[index]}
+                          onChange={() => handleOnChange(event, index)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </CustomScroll>
             </div>
-            <div className="appointment__button-services">
-              {totalService} Services - 1h 15min
+          </div>
+          <div className="appointment__button">
+            <div className="appointment__button-total">
+              <div className="appointment__button-price">
+                R{formData.total ? formData.total : 0}
+              </div>
+              <div className="appointment__button-services">
+                {formData.totalService} Services - 1h 15min
+              </div>
+            </div>
+            <div className="appointment__button-continue">
+              <button>
+                <Link
+                  to="/date"
+                  state={{ formData }}
+                  style={{ color: "white" }}
+                >
+                  Continue
+                </Link>
+              </button>
             </div>
           </div>
-          <div className="appointment__button-continue">
-            <button>
-              <Link to="/date" style={{ color: "white" }}>
-                Continue
-              </Link>
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
     </>
   );
 };

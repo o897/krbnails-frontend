@@ -8,38 +8,39 @@ const BookingForm = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
+  const [message,setMessage] = useState();
 
   const handleSubmit = () => {
+    const formData = new FormData();
+
+    formData.append("name", "Orapeleng");
+    formData.append("phone", "0724514512");
+    formData.append("email", "pele1@gmail.com");
+    formData.append("message", "message");
+    formData.append("date","given Date");
+    formData.append("time","")
+
     try {
-      fetch("http://tlamis/createBooking", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title: "title",
-          name: "name",
-          phone: "phone",
-          date: "date",
-        }),
-      }).then((response) => {
-        if (!response.ok) {
-          throw new Error("Could submit post to mongo api");
-        }
-      });
+       const response = fetch("/localhost:3000/upload", {
+      method: "POST",
+      body: formData,
+    });
     } catch (error) {
-      console.error("There was a problem with the fetch operation:", error);
+      console.log(error);
+      // set err message
+      setMessage("Error")
     }
+
   };
   return (
     <>
       <div className="bookform__header">
-      <Link to="/date" style={{ color: "white" }}>
+        <Link to="/date" style={{ color: "white" }}>
           <span>
             <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
           </span>
-      </Link>
-      <div>3 / 3 Enter your details</div>
+        </Link>
+        <div>3 / 3 Enter your details</div>
       </div>
       <div className="review">
         <div className="review__heading">Review your Booking</div>
@@ -76,21 +77,22 @@ const BookingForm = () => {
               <div>R20.5</div>
             </div>
             <div className="table-row">
-            <div className="nail-tech">With <strong>Karabo Tlhopane</strong>  @ 12:30pm</div>
+              <div className="nail-tech">
+                With <strong>Karabo Tlhopane</strong> @ 12:30pm
+              </div>
             </div>
-           
+
             <div className="table-row">
               <div>Total</div>
               <div>R120</div>
             </div>
             <div className="custom-hr "></div>
           </div>
-
         </div>
       </div>
-      
+
       <div className="contact">
-      <div className="contact-header">Contact info</div>
+        <div className="contact-header">Contact info</div>
         <div className="contact__group">
           <label htmlFor="">Fullname</label>
           <input type="text" />
@@ -108,7 +110,6 @@ const BookingForm = () => {
           <textarea name="" id="" cols="30" rows="4"></textarea>
         </div>
         <button className="contact__bookbtn">Book</button>
-        
       </div>
     </>
   );
