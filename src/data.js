@@ -107,15 +107,15 @@ export const services = [
 ]
 
 export const worktimes = [{
-        time : '10:00'
+        time : '10:00 am'
     },
     {
-        time : '12:00'
+        time : '12:00 pm'
     },
     {
-        time : '14:00'
+        time : '14:00 pm'
     },
     {
-        time : '16:00'
+        time : '16:00 pm'
     }
 ]

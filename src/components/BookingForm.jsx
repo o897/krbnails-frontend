@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faMinus } from "@fortawesome/free-solid-svg-icons";
-
+import GlobalContext from "../GlobalContext";
 const BookingForm = () => {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [message,setMessage] = useState();
-
+  const {globalData} = useContext(GlobalContext)
+ 
   const handleSubmit = () => {
     const formData = new FormData();
-
     formData.append("name", "Orapeleng");
     formData.append("phone", "0724514512");
     formData.append("email", "pele1@gmail.com");
@@ -32,6 +32,8 @@ const BookingForm = () => {
     }
 
   };
+
+  console.log(globalData);
   return (
     <>
       <div className="bookform__header">
@@ -72,10 +74,10 @@ const BookingForm = () => {
               <div>Manicure</div>
               <div>R20.5</div>
             </div>
-            <div className="table-row">
+            {/* <div className="table-row">
               <div>Acrylic</div>
               <div>R20.5</div>
-            </div>
+            </div> */}
             <div className="table-row">
               <div className="nail-tech">
                 With <strong>Karabo Tlhopane</strong> @ 12:30pm

@@ -21,6 +21,7 @@
     "@mui/x-date-pickers": "^6.19.4",
     "aos": "^2.3.4",
     "dayjs": "^1.11.10",
+    "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-custom-scroll": "^7.0.0",
     "react-dom": "^18.2.0",

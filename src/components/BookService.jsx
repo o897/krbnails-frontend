@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
@@ -13,6 +13,8 @@ import { useEffect } from "react";
 import GlobalContext from "../GlobalContext";
 
 const BookService = () => {
+  const {globalData,updateGlobalData} = useContext(GlobalContext)
+    // replace form data with global data
   const [formData, setFormData] = useState({
     appointmentTitle: [],
     appointmentDuration: "",
@@ -21,9 +23,7 @@ const BookService = () => {
     checkedState: new Array(services.length).fill(false),
   });
 
-  const [total, setTotal] = useState(0);
   const [nails, setNails] = useState(0);
-  const [totalService, setTotalService] = useState(0);
   // const [appointmentTitle, setAppointmentTitle] = useState([]);
   const [checkedState, setCheckedState] = useState(
     new Array(services.length).fill(false)
@@ -38,39 +38,20 @@ const BookService = () => {
     );
 
     setCheckedState(updatedCheckedState);
-
-    // setAppointmentTitle(
-    //   event.target.checked
-    //     ? [...appointmentTitle, services[position].title]
-    //     : appointmentTitle.filter((items) => items !== services[position].title)
-    // );
+    
 
     setFormData((prevFormData) => ({
       ...prevFormData,
       appointmentTitle: event.target.checked
-        ? [...prevFormData.appointmentTitle, services[position].title]
-        : prevFormData.appointmentTitle.filter(
-            (title) => title !== services[position].title
-          ),
-    }));
-
-    const totalPrice = updatedCheckedState.reduce(
-      (sum, currentState, index) => {
-        if (currentState === true) {
-          return sum + services[index].price;
-        }
-        return sum;
-      },
-      0
-    );
-
-    setFormData((prevFormData) => ({
-      ...prevFormData,
+      ? [...prevFormData.appointmentTitle, services[position].title]
+      : prevFormData.appointmentTitle.filter(
+          (title) => title !== services[position].title
+        ),
       numServices: updatedCheckedState.reduce((sum, currentState) => {
         if (currentState === true) {
           return sum + 1;
         }
-        return sum; //returnuseNavigate,  the total
+        return sum;
       }, 0),
       total: updatedCheckedState.reduce((sum, currentState, index) => {
         if (currentState === true) {
@@ -79,10 +60,9 @@ const BookService = () => {
         return sum;
       }, 0),
     }));
-
+    updateGlobalData({formData})
     // setTotalService(totalService);
     // setTotal(totalPrice);
-    console.log(formData.numServices);
   };
 
   const minusNails = (e) => {
@@ -96,8 +76,8 @@ const BookService = () => {
   };
 
   useEffect(() => {
-    console.log("appointment title : ", formData.appointmentTitle);
-  }, [formData]);
+    console.log("appointment title : ", globalData);
+  }, [globalData]);
   return (
     <>
         <div className="bookform__header">

@@ -3,16 +3,16 @@ import { createContext,useState } from "react";
 const GlobalContext = createContext()
 
 export const GlobalProvider = ({children}) => {
-    const [formData,setFormData] = useState({})
+    const [globalData,setGlobalData] = useState({})
 
     // func adds data to our parent
-    const updateFormData = (newData) => {
+    const updateGlobalData = (newData) => {
         // update properties if theres new data
-        setFormData((prevData) => ({...prevData, ...newData}))
+        setGlobalData((prevData) => ({...prevData, ...newData}))
     }
 
     return (
-        <GlobalContext.Provider value={{ formData,updateFormData }}>
+        <GlobalContext.Provider value={{ globalData,updateGlobalData }}>
             {children}
         </GlobalContext.Provider>
     )

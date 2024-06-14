@@ -391,12 +391,12 @@
 
   /* heading at the top */
   .bookform__header {
-    font-size: .9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     font-family: "PT Sans", sans-serif;
     padding: 15px 0;
     color: #fff;
-    background-color: black;
+    background-color: #663399;
     display: flex;
     align-items: center;
     margin-bottom: 23px;
@@ -630,7 +630,7 @@
 
 
   .appointment__button button {
-    background-color: #0d1619;
+    background-color: #663399;
     color: #fff;
     border-radius: 8px;
     width: 113px;
@@ -740,19 +740,25 @@
       height: 100px;
       overflow-y: auto;
       margin-bottom: 40px;
-
     }
 
     .time {
-      font-size: 2rem;
-      border-bottom: 1px solid rgb(238, 220, 220);
-      padding-bottom: 10px;
+        display: flex;
+        font-size: 1rem;
+        border: 1px solid #C0C0C0;
+        color: #000;
+        border-radius: 20px;
+        width: 300px;
+        font-weight: 500;
+        align-items: center;
+        margin-bottom: 10px;
+        height: 40px;
+        justify-content: center;
     }
 
 
     .time__confirmation {
       font-weight: 600;
-      
       margin-bottom: 10px;
       padding-left: 10vw;
       letter-spacing: .3px;
@@ -762,7 +768,23 @@
       padding-left: 10vw;
       font-family: "Raleway", sans-serif;
       font-weight: 600;
+    
+    }
 
+    .appointment__form-date-btn {
+      background-color: #663399;
+      background-color: #663399;
+      color: #fff;
+      width: 220px;
+      display: flex;
+      margin: 27px auto 60px;
+      font-size: .9rem;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: none;
+      border-radius: 18px;
 
     }
 
@@ -959,7 +981,7 @@
 }
 
 .contact__bookbtn {
-  background-color: #000;
+  background-color: #663399;
   color: #fff;
   height: 35px;
   border-radius: 20px;
@@ -970,12 +992,9 @@
   width: 150px;
   justify-content: center;
   height: 40px;
-  font-size: 15px;
+  font-size: 1rem;
   cursor: pointer;
-  border-color: #000;
-
- 
-
+  border: none;
 
 }
 
