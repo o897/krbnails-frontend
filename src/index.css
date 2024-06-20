@@ -186,8 +186,6 @@
     overflow-x: hidden;
   }
 
-  
-
   .hero {
     position: relative;
     z-index: 1;
@@ -200,14 +198,12 @@
 
 
   .hero__welcome img {
-    /* display: block; */
-    /* z-index: 1; */
     margin: 0 auto;
     opacity: 0.68;
     position: relative;
     width: 92%;
     top: 0.9vh;
-    height: 86vh;
+    height: 90vh;
     right: 6vw;
     bottom: 6vw;
     left: 4vw;

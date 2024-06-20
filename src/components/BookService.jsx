@@ -4,17 +4,14 @@ import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import { CustomScroll } from "react-custom-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleLeft,
-  faMinus,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import {faAngleLeft,faMinus,faPlus} from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import GlobalContext from "../GlobalContext";
 
 const BookService = () => {
   const {globalData,updateGlobalData} = useContext(GlobalContext)
-    // replace form data with global data
+  
+  // replace form data with global data
   const [formData, setFormData] = useState({
     appointmentTitle: [],
     appointmentDuration: "",
@@ -24,7 +21,6 @@ const BookService = () => {
   });
 
   const [nails, setNails] = useState(0);
-  // const [appointmentTitle, setAppointmentTitle] = useState([]);
   const [checkedState, setCheckedState] = useState(
     new Array(services.length).fill(false)
   );
@@ -38,7 +34,6 @@ const BookService = () => {
     );
 
     setCheckedState(updatedCheckedState);
-    
 
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -60,9 +55,7 @@ const BookService = () => {
         return sum;
       }, 0),
     }));
-    updateGlobalData({formData})
-    // setTotalService(totalService);
-    // setTotal(totalPrice);
+    
   };
 
   const minusNails = (e) => {
@@ -76,8 +69,8 @@ const BookService = () => {
   };
 
   useEffect(() => {
-    console.log("appointment title : ", globalData);
-  }, [globalData]);
+    updateGlobalData({formData})
+  }, [formData]);
   return (
     <>
         <div className="bookform__header">

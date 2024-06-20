@@ -1,59 +1,138 @@
+import { useEffect, useState, useRef } from "react";
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-// import {AdapterDateFns} from '@mui/lab/AdapterDateFns';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import dayjs from "dayjs";
+import { styled } from "@mui/system";
 
-import { useState } from "react";
+import Badge from "@mui/material/Badge";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
-import TextField from "@mui/material/TextField";
+import { PickersDay } from "@mui/x-date-pickers/PickersDay";
+import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
+import { StaticDatePicker } from "@mui/x-date-pickers";
 import GlobalContext from "../GlobalContext";
-import { useContext } from "react";
-
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
-import { useEffect } from "react";
 import moment from "moment";
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
-dayjs.tz.setDefault("Africa/Johannesburg");
+function getRandomNumber(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
 
-const AppointmentDate = () => {
-  const { globalData, updateGlobalData } = useContext(GlobalContext);
+/**
+ * Mimic fetch with abort controller https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort
+ * ⚠️ No IE11 support
+ */
 
-  const [appointmentDate, setAppointmentDate] = useState(null);
-  const [appointmentTime, setAppointmentTime] = useState();
-  const [error, setError] = useState(null);
-  const [bold, setBold] = useState(false);
+// so let this fetch the dates clients have booked
+function fakeFetch(date, { signal }) {
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => {
+      const daysInMonth = date.daysInMonth();
+      const daysToHighlight = [2, 3, 5].map(() =>
+        getRandomNumber(1, daysInMonth)
+      );
+
+      resolve({ daysToHighlight });
+    }, 500);
+
+    signal.onabort = () => {
+      clearTimeout(timeout);
+      reject(new DOMException("aborted", "AbortError"));
+    };
+  });
+}
+
+// Server
+function ServerDay(props) {
+  const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
+
+  const isSelected =
+    !props.outsideCurrentMonth &&
+    highlightedDays.indexOf(props.day.date()) >= 0;
+
+     // Only apply the badge if the day is not outside the current month
+  if (outsideCurrentMonth) {
+    return <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />;
+  }
+
+    const StyledBadge = styled(Badge)(({ color }) => ({
+      '& .MuiBadge-badge': {
+        top : 27, // Adjust this value to position the badge below the day
+        left: '50%',
+        transform: 'translateX(-50%)',
+        height: 2, // Set the height of the badge to create a dot
+        backgroundColor: color, // Dynamically set the background color of the badge
+        color: 'transparent', // Make the badge content invisible
+      },
+    }));
+
+  // the key takes the specific day
+  return (
+    <StyledBadge
+    key={day.toString()}
+    overlap="circular"
+    badgeContent=" " // Always show the dot
+    color={isSelected ? 'green' : ''} // Set color based on whether the day is highlighted
+  >
+    <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
+  </StyledBadge>
+  );
+}
+
+export default function AppointmentDate() {
+  const requestAbortController = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
   const CustomActionBar = () => null; // Empty component to override the default action bar
 
-  const [highlightedDays, setHighlitedDays] = useState([
-    "2024-06-13",
-    "2024-06-09",
-    "2024-06-21",
-    "2024-06-12",
-  ]);
+  // days to highlight
+  const [highlightedDays, setHighlightedDays] = useState([1, 2, 15, 16]);
+  const [appointmentDate, setAppointmentDate] = useState(null);
+  const [appointmentTime, setAppointmentTime] = useState();
 
   const formSubmit = async (e) => {
     e.preventDefault();
   };
 
-  const handleTimeClick = (e, time) => {
-    e.preventDefault();
-    setBold(!bold);
-    setAppointmentTime(time);
+  // this is a where it all happens
+  const fetchHighlightedDays = (date) => {
+    const controller = new AbortController();
+    // fake fetch comes with clients booked dates, then pushes this dates to the "highlighted dates" slot props to highlight calendar
+    fakeFetch(date, {
+      signal: controller.signal,
+    })
+      .then(({ daysToHighlight }) => {
+        setHighlightedDays(daysToHighlight); //this updates the [highlighteddays ] State
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        // ignore the error if it's caused by `controller.abort`
+        if (error.name !== "AbortError") {
+          throw error;
+        }
+      });
+
+    requestAbortController.current = controller;
   };
 
   useEffect(() => {
-    updateGlobalData({appointmentDate : moment(appointmentDate).format("dddd, DD-MMMM-YYYY")});
-    updateGlobalData({ appointmentTime : appointmentTime});
-  },[appointmentDate,appointmentTime])
+    // fetchHighlightedDays(initialValue);
+    // abort request on unmount
+    return () => requestAbortController.current?.abort();
+  }, []);
+
+  const handleMonthChange = (date) => {
+    if (requestAbortController.current) {
+      // make sure that you are aborting useless requests
+      // because it is possible to switch between months pretty quickly
+      requestAbortController.current.abort();
+    }
+
+    setIsLoading(true);
+    setHighlightedDays([]);
+    // handles month changes, fetches highlighted dates in the arr and it pushes them onto the "badges"
+    fetchHighlightedDays(date);
+  };
 
   return (
     <>
@@ -71,43 +150,43 @@ const AppointmentDate = () => {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <StaticDatePicker
                 label="Select Date"
-                timezone="Africa/Johannesburg"
+                loading={isLoading}
                 value={appointmentDate}
-                format="DD-MMMM-YYYY"
                 onChange={(newValue) => setAppointmentDate(newValue)}
-                slots={{ actionBar: CustomActionBar,toolbar: CustomActionBar }}
-                renderInput={(params) => <TextField {...params} />}
+                onMonthChange={handleMonthChange}
+                renderLoading={() => <DayCalendarSkeleton />}
+                slots={{
+                  day: ServerDay,
+                  actionBar: CustomActionBar,
+                  toolbar: CustomActionBar,
+                  textField: (params) => <TextField {...params} />,
+                }}
+                slotProps={{
+                  day: { highlightedDays },
+                }}
               />
             </LocalizationProvider>
           </div>
-         <div className="times">
-            {worktimes.map(({ time }, index) => (
-              <div
-                className="time"
-                key={index}
-                onClick={() => setAppointmentTime(time)}
-              >
-                {time}
-              </div>
-            ))}
-          </div> 
-           {/* <div className="time__confirmation">
-            Your appointment time is at: {appointmentTime}
-          </div> */}
-          {/* <div className="date__confirmation">
-            {appointmentDate
-              ? appointmentDate.format("dddd , DD-MMMM-YYYY")
-              : ""}
-          </div>  */}
-
-          { appointmentDate && appointmentTime &&
-            <button className="appointment__form-date-btn">
-            <Link to="/details">{`${appointmentDate.format("DD-MMMM-YYYY")} @ ${appointmentTime}`}</Link>
-          </button>}
         </form>
       </div>
+      <div className="times">
+        {worktimes.map(({ time }, index) => (
+          <div
+            className="time"
+            key={index}
+            onClick={() => setAppointmentTime(time)}
+          >
+            {time}
+          </div>
+        ))}
+      </div>
+      {appointmentDate && appointmentTime && (
+        <button className="appointment__form-date-btn">
+          <Link to="/details">{`${appointmentDate.format(
+            "DD-MMMM-YYYY"
+          )} @ ${appointmentTime}`}</Link>
+        </button>
+      )}
     </>
   );
-};
-
-export default AppointmentDate;
+}

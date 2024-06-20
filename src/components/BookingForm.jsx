@@ -32,8 +32,9 @@ const BookingForm = () => {
     }
 
   };
-
   console.log(globalData);
+  const {appointmentDate, appointmentTime} = globalData;
+
   return (
     <>
       <div className="bookform__header">
@@ -54,12 +55,12 @@ const BookingForm = () => {
         <div className="custom-hr "></div>
         <div className="table-row">
           <div>Date</div>
-          <div>Friday, Apr 6, 2024</div>
+          <div>{appointmentDate}</div>
         </div>
         <div className="custom-hr "></div>
         <div className="table-row">
           <div>Time</div>
-          <div>14:00pm</div>
+          <div>{appointmentTime}</div>
         </div>
         <div className="custom-hr "></div>
 
@@ -105,7 +106,7 @@ const BookingForm = () => {
         </div>
         <div className="contact__group">
           <label htmlFor="">Email</label>
-          <input type="email" />
+          <input type="email" onChange={(e) => e.target.value} />
         </div>
         <div className="contact__group">
           <label htmlFor="">Include a message (optional)</label>
