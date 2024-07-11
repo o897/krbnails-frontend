@@ -33,13 +33,23 @@ function fakeFetch(date, { signal }) {
   });
 }
 
-const CustomPickersDay = styled(PickersDay)(({ theme, isHighlighted }) => ({
-  borderBottom: isHighlighted ? "3px solid red" : "2px solid green",
+const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
+  position: 'relative', // Needed for pseudo-element positioning
+  // Styles for the circle
+  '::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: 0,
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: 15, // Adjust for circle size
+    height: 3,
+    backgroundColor: isHighlighted ? 'red' : 'green',
+  },
 }));
 
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
-
   const isHighlighted = highlightedDays.includes(day.date());
 
   return (
