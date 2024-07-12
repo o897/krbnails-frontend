@@ -50,9 +50,10 @@ const BookingForm = () => {
     //   setMessage("Error");
     // }
   };
-  console.log(globalData);
-  const { appointmentDate, appointmentTime } = globalData;
 
+  const { appointmentDate, appointmentTime,formData } = globalData;
+  const appointmentTitles = formData?.appointmentTitle;
+  console.log("appointmentTitles ", appointmentTitles);
   return (
     <>
       <div className="bookform__header">
@@ -89,14 +90,19 @@ const BookingForm = () => {
           </div>
           <div className="custom-hr "></div>
           <div className="table-body">
+         { appointmentTitles &&
+          appointmentTitles.map((value) => {
             <div className="table-row">
-              <div>Manicure</div>
+              <div>{value}</div>
               <div>R20.5</div>
             </div>
-            <div className="table-row">
+          })
+         }
+            
+            {/* <div className="table-row">
               <div>Acrylic</div>
               <div>R20.5</div>
-            </div>
+            </div> */}
             <div className="table-row">
               <div className="nail-tech">
                 With <strong>Karabo Tlhopane</strong> @ 12:30pm

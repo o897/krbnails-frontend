@@ -11,6 +11,7 @@ import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { StaticDatePicker } from "@mui/x-date-pickers";
 import moment from "moment";
 
+
 function getRandomNumber(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
@@ -34,17 +35,22 @@ function fakeFetch(date, { signal }) {
 }
 
 const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
+  // "&.Mui-selected": {
+  //   backgroundColor: "red",
+  // },
+ 
   position: 'relative', // Needed for pseudo-element positioning
   // Styles for the circle
   '::after': {
     content: '""',
     position: 'absolute',
-    bottom: 0,
+    bottom: 6,
     left: '50%',
     transform: 'translateX(-50%)',
-    width: 15, // Adjust for circle size
-    height: 3,
+    width: 13, // Adjust for circle size
+    height: 2.5,
     backgroundColor: isHighlighted ? 'red' : 'green',
+    
   },
 }));
 
@@ -130,6 +136,7 @@ export default function AppointmentDate() {
               value={appointmentDate}
               onChange={handleDateSelect}
               onMonthChange={handleMonthChange}
+
               renderLoading={() => <DayCalendarSkeleton />}
               slots={{
                 day: (params) => (
@@ -148,6 +155,7 @@ export default function AppointmentDate() {
             className="time"
             key={index}
             onClick={() => setAppointmentTime(time)}
+            style={{ backgroundColor: time !== null ? "gray" : "none"}}
           >
             {time}
           </div>
