@@ -10,6 +10,7 @@ import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { StaticDatePicker } from "@mui/x-date-pickers";
 import moment from "moment";
+import "./../assets/css/CustomDatePicker.module.css"
 
 
 function getRandomNumber(min, max) {
@@ -35,9 +36,12 @@ function fakeFetch(date, { signal }) {
 }
 
 const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
-  // "&.Mui-selected": {
-  //   backgroundColor: "red",
-  // },
+  "&.Mui-selected": {
+    backgroundColor: "red",
+  },
+  "&.css-r0kd0v-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover" : {
+    backgroundColor: "purple"
+  },
  
   position: 'relative', // Needed for pseudo-element positioning
   // Styles for the circle
@@ -45,7 +49,7 @@ const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
     content: '""',
     position: 'absolute',
     bottom: 6,
-    left: '50%',
+    left: '52%',
     transform: 'translateX(-50%)',
     width: 13, // Adjust for circle size
     height: 2.5,
@@ -76,6 +80,7 @@ export default function AppointmentDate() {
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState(null);
+  const [toggle,setToggle] = useState(false);
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
@@ -154,8 +159,8 @@ export default function AppointmentDate() {
           <div
             className="time"
             key={index}
-            onClick={() => setAppointmentTime(time)}
-            style={{ backgroundColor: time !== null ? "gray" : "none"}}
+            onClick={() => {setAppointmentTime(time);}}
+            style={{ backgroundColor: appointmentTime === time ? "#ce86f7" : "white"}}
           >
             {time}
           </div>
