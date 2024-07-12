@@ -35,17 +35,16 @@ function fakeFetch(date, { signal }) {
   });
 }
 
-const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
+const CustomPickersDay = styled(PickersDay)(({ isHighlighted, day }) => ({
   "&.Mui-selected": {
     backgroundColor: "#d98af1",
   },
   "&.css-r0kd0v-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover" : {
     backgroundColor: "purple"
   },
- 
   position: 'relative', // Needed for pseudo-element positioning
   // Styles for the circle
-  '::after': {
+  '::after': day.isAfter(new Date()) ? { // Only apply highlight if date is in the future
     content: '""',
     position: 'absolute',
     bottom: 6,
@@ -54,8 +53,7 @@ const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
     width: 13, // Adjust for circle size
     height: 2.5,
     backgroundColor: isHighlighted ? 'red' : 'green',
-    
-  },
+  } : null,
 }));
 
 function ServerDay(props) {
@@ -140,6 +138,7 @@ export default function AppointmentDate() {
               loading={isLoading}
               value={appointmentDate}
               onChange={handleDateSelect}
+              disablePast={true}
               onMonthChange={handleMonthChange}
 
               renderLoading={() => <DayCalendarSkeleton />}

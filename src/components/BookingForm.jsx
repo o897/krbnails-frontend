@@ -51,9 +51,10 @@ const BookingForm = () => {
     // }
   };
 
-  const { appointmentDate, appointmentTime,formData } = globalData;
+  const { appointmentDate, appointmentTime, formData } = globalData;
   const appointmentTitles = formData?.appointmentTitle;
-  console.log("appointmentTitles ", appointmentTitles);
+  console.log("appointment time", appointmentTime);
+  console.log("appointmentTitles ", formData);
   return (
     <>
       <div className="bookform__header">
@@ -90,14 +91,14 @@ const BookingForm = () => {
           </div>
           <div className="custom-hr "></div>
           <div className="table-body">
-         { appointmentTitles &&
+         {/* { appointmentTitles &&
           appointmentTitles.map((value) => {
             <div className="table-row">
               <div>{value}</div>
               <div>R20.5</div>
             </div>
           })
-         }
+         } */}
             
             {/* <div className="table-row">
               <div>Acrylic</div>
