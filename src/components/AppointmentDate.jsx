@@ -37,7 +37,7 @@ function fakeFetch(date, { signal }) {
 
 const CustomPickersDay = styled(PickersDay)(({ isHighlighted }) => ({
   "&.Mui-selected": {
-    backgroundColor: "red",
+    backgroundColor: "#d98af1",
   },
   "&.css-r0kd0v-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover" : {
     backgroundColor: "purple"
