@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef,useContext } from "react";
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,21 +9,15 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { StaticDatePicker } from "@mui/x-date-pickers";
+import GlobalContext from "../GlobalContext";
 import moment from "moment";
-import "./../assets/css/CustomDatePicker.module.css"
 
-
-function getRandomNumber(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
 
 function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       const daysInMonth = date.daysInMonth();
-      const daysToHighlight = [2, 3, 5].map(() =>
-        getRandomNumber(1, daysInMonth)
-      );
+      const daysToHighlight = [2, 3, 5];
 
       resolve({ daysToHighlight });
     }, 500);
@@ -73,12 +67,12 @@ function ServerDay(props) {
 export default function AppointmentDate() {
   const requestAbortController = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
-  const CustomActionBar = () => null;
-
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState(null);
-  const [toggle,setToggle] = useState(false);
+  const {globalData,updateGlobalData} = useContext(GlobalContext)
+  const CustomActionBar = () => null;
+
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
@@ -100,8 +94,12 @@ export default function AppointmentDate() {
   };
 
   useEffect(() => {
+    // console.log(globalData);
+    updateGlobalData({ appointmentTime : appointmentTime })
+    updateGlobalData({ appointmentDate :moment(appointmentDate).format('DD-MMMM-YYYY')})
+
     return () => requestAbortController.current?.abort();
-  }, []);
+  }, [appointmentTime,appointmentDate]);
 
   const handleMonthChange = (date) => {
     if (requestAbortController.current) {
@@ -111,14 +109,9 @@ export default function AppointmentDate() {
     setIsLoading(true);
     setHighlightedDays([]);
     setAppointmentDate(null);
-
     fetchHighlightedDays(date);
   };
-
-  const handleDateSelect = (newValue) => {
-    setAppointmentDate(newValue);
-    console.log("Selected Date:", newValue.format("YYYY-MM-DD"));
-  };
+  // updateGlobalData(globalData.appointmentDate =  moment(appointmentDate).format('DD-MMMM-YYYY'))
 
   return (
     <>
@@ -137,10 +130,9 @@ export default function AppointmentDate() {
               label="Select Date"
               loading={isLoading}
               value={appointmentDate}
-              onChange={handleDateSelect}
+              onChange={(newValue) => setAppointmentDate(newValue)}
               disablePast={true}
               onMonthChange={handleMonthChange}
-
               renderLoading={() => <DayCalendarSkeleton />}
               slots={{
                 day: (params) => (

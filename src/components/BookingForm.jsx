@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faMinus } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
-import emailjs from "@emailjs/browser"
+import emailjs from "@emailjs/browser";
+import { services } from "../data";
 
 const BookingForm = () => {
   const [title, setTitle] = useState("");
@@ -14,20 +15,20 @@ const BookingForm = () => {
   const { globalData } = useContext(GlobalContext);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     emailjs
-    .sendForm('your service id','template id', form.current, {
-      publicKey: 'your public key'
-    })
-    .then(
-      () => {
-        console.log('success!');
-      },
-      (error) => {
-        console.log('Failed...', error.text);
-      }
-    )
+      .sendForm("your service id", "template id", form.current, {
+        publicKey: "your public key",
+      })
+      .then(
+        () => {
+          console.log("success!");
+        },
+        (error) => {
+          console.log("Failed...", error.text);
+        }
+      );
 
     const form = useRef();
 
@@ -51,10 +52,8 @@ const BookingForm = () => {
     // }
   };
 
-  const { appointmentDate, appointmentTime, formData } = globalData;
-  const appointmentTitles = formData?.appointmentTitle;
-  console.log("appointment time", appointmentTime);
-  console.log("appointmentTitles ", formData);
+  const { appointmentDate, appointmentTime, formData, services } = globalData;
+  console.log("service in gd",globalData);
   return (
     <>
       <div className="bookform__header">
@@ -91,19 +90,14 @@ const BookingForm = () => {
           </div>
           <div className="custom-hr "></div>
           <div className="table-body">
-         {/* { appointmentTitles &&
-          appointmentTitles.map((value) => {
-            <div className="table-row">
-              <div>{value}</div>
-              <div>R20.5</div>
-            </div>
-          })
-         } */}
-            
-            {/* <div className="table-row">
-              <div>Acrylic</div>
-              <div>R20.5</div>
-            </div> */}
+            {services.map((service, index) => (
+              <div key={index}>
+                <div className="table-row">
+                  <div>{service.service}</div>
+                  <div>{service.price}</div>
+                </div>
+              </div>
+            ))}
             <div className="table-row">
               <div className="nail-tech">
                 With <strong>Karabo Tlhopane</strong> @ 12:30pm
@@ -124,11 +118,11 @@ const BookingForm = () => {
           <div className="contact-header">Contact info</div>
           <div className="contact__group">
             <label htmlFor="">Fullname</label>
-            <input type="text" name="username"/>
+            <input type="text" name="username" />
           </div>
           <div className="contact__group">
             <label htmlFor="">Cell phone</label>
-            <input type="text" name="phone"/>
+            <input type="text" name="phone" />
           </div>
           <div className="contact__group">
             <label htmlFor="">Email</label>

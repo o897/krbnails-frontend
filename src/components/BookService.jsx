@@ -12,8 +12,9 @@ const BookService = () => {
   const {globalData,updateGlobalData} = useContext(GlobalContext)
   
   // replace form data with global data
+  const [service,setService] = useState([])
   const [formData, setFormData] = useState({
-    appointmentTitle: [],
+    appointmentTitle: {},
     appointmentDuration: "",
     total: 0,
     numServices: 0,
@@ -35,10 +36,20 @@ const BookService = () => {
 
     setCheckedState(updatedCheckedState);
 
+    setService((prevService) => (
+      [...prevService,
+      event.target.checked
+      ? {service : services[position].title,price : services[position].price}
+      : service.appointmentTitle.filter(
+          (title) => title !== services[position].title
+        )] 
+    ))
+     
+
     setFormData((prevFormData) => ({
       ...prevFormData,
       appointmentTitle: event.target.checked
-      ? [...prevFormData.appointmentTitle, services[position].title]
+      ? {...prevFormData.appointmentTitle, service : services[position].title,price : services[position].price}
       : prevFormData.appointmentTitle.filter(
           (title) => title !== services[position].title
         ),
@@ -69,8 +80,10 @@ const BookService = () => {
   };
 
   useEffect(() => {
+    console.log(services);
+    updateGlobalData({services : service})
     updateGlobalData({formData})
-  }, [formData]);
+  }, [formData,service]);
   return (
     <>
         <div className="bookform__header">
