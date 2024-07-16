@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 @media only screen and (max-width: 480px) {
   :root {
     /* overflow-x: hidden; */
-    --darkAccent-hsl: 240,2.60869565%,22.54901961%;
+    --darkAccent-hsl: 240, 2.60869565%, 22.54901961%;
     margin: 0;
     padding: 0;
     /* background-color: #F5F3F2; */
-    background-color: hsla(var(0,0%,100%),1);
-    
+    background-color: hsla(var(0, 0%, 100%), 1);
+
     a {
       text-decoration: none;
       color: inherit;
@@ -21,19 +20,18 @@
       list-style-type: none;
       margin-bottom: 15px;
     }
-    
   }
 
   .custom-hr {
     border-bottom: 1px solid #e7e6e7;
-    height: .4em;
+    height: 0.4em;
   }
 
   .hero__welcome-title {
     position: absolute;
     font-size: 3.7rem;
     font-weight: 500;
-    line-height: .95em;
+    line-height: 0.95em;
     top: 30vh;
     opacity: 1;
     z-index: 2;
@@ -65,7 +63,6 @@
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-
   }
 
   /* Navbar socials*/
@@ -79,7 +76,6 @@
 
   .header__nav-socials li {
     font-size: 1.2rem;
-    
   }
 
   /* End Navbar socials */
@@ -98,7 +94,6 @@
     /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     font-weight: 700;
     font-family: "Raleway", sans-serif;
-   
   }
 
   /* End Logo */
@@ -113,7 +108,7 @@
     background-color: initial;
     border: none;
     font-weight: 100;
-    z-index:20;
+    z-index: 20;
   }
 
   /* End Open Navbar */
@@ -125,7 +120,7 @@
     top: 0;
     background-color: #fff;
     overflow-x: hidden;
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100vh;
     transition: 120ms transform ease-in-out;
@@ -138,8 +133,6 @@
     transition: all 1.5s ease-out;
     display: flex;
     flex-direction: column;
-    
-
   }
 
   .header__menu a {
@@ -150,7 +143,7 @@
     font-size: 1.6rem;
     text-transform: uppercase;
     padding-bottom: 20px;
-    transition: opacity 250ms cubic-bezier(.4,0,.2,1)
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .header__logo {
@@ -196,7 +189,6 @@
     position: relative;
   }
 
-
   .hero__welcome img {
     margin: 0 auto;
     opacity: 0.68;
@@ -232,7 +224,6 @@
   }
 
   .appointment__bookbtn {
-    
   }
 
   .hero__bookbtn :hover {
@@ -247,17 +238,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
+
+  .services-menu {
+    display: flex;
+    gap: 13px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+ 
 
   .services__container {
     margin-bottom: 20px;
   }
 
   .services__container-big img {
+    border-radius: 11px;
     height: 14rem;
-    width: 15rem;
-    object-fit: stretch;
+    width: 22rem;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .services-description {
+    font-family: "Poppins", sans-serif;
+    width: 22rem;
+    margin: 14px 0vw;
   }
 
   .services__container-small img {
@@ -272,17 +281,16 @@
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 500;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
   }
 
   .services__sub {
-    font-family: 'Open Sans', sans-serif;
-    font-size: .8rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8rem;
     color: #6f6f6f;
     font-style: normal;
-    margin-top: .4rem;
-    margin-bottom: .625rem;
-
+    margin-top: 0.4rem;
+    margin-bottom: 0.625rem;
   }
 
   .services__container-btn {
@@ -307,14 +315,14 @@
     align-items: center;
     height: 48px;
     width: 119px;
-    background-color:#ac92bc;
+    background-color: #ac92bc;
     border-radius: 16px;
     justify-content: center;
     font-weight: 500;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
   }
-
- 
 
   .nail button {
     border-radius: 50%;
@@ -324,16 +332,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
   .nail .nail-btn {
-    width: 1em; 
+    width: 1em;
     height: 1em;
-    color: #646060;    
-
+    color: #646060;
   }
-
 
   /* End Services */
 
@@ -363,7 +368,8 @@
     top: 60px;
   }
 
-  .socials__title {}
+  .socials__title {
+  }
 
   .socials_link-btn {
     background-color: initial;
@@ -399,12 +405,11 @@
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    
   }
   .angle-icon {
-   margin: 0 25px;
+    margin: 0 25px;
   }
-/* end heading at the top */
+  /* end heading at the top */
   /* End  */
   /* book */
   .book {
@@ -447,7 +452,6 @@
     font-family: "Playfair Display", serif;
     font-size: 3.6rem;
     text-align: center;
-
   }
   .gallery {
     margin-top: 40px;
@@ -460,11 +464,9 @@
   }
 
   .gallery__container img {
-
     margin-bottom: 0;
     width: 170px;
   }
-
 
   /* End Gallery */
 
@@ -534,21 +536,16 @@
 
   .footer__details {
     font-family: "Montserrat", sans-serif;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-
 
   .footer__details {
     padding-left: 40px;
   }
 
-
-
   /*End Footer*/
 
   /*  Booking form*/
-
-
 
   /* End Booking form */
   /* Choose service - appointment */
@@ -556,7 +553,6 @@
     padding-left: 6vw;
     margin-top: 15px;
     font-family: "Roboto", sans-serif;
-
   }
 
   .appointment__head-title {
@@ -565,8 +561,7 @@
     color: #0d1619;
     font-style: normal;
     margin-bottom: 30px;
-    letter-spacing: .1px;
-    
+    letter-spacing: 0.1px;
   }
 
   .appointment__service {
@@ -575,10 +570,11 @@
     width: 92%;
     position: relative;
     z-index: 1;
-    
+  }
 
-
-
+  .appointment__service img {
+    width: 100%;
+    height: 200px;
   }
 
   .appointment__service-select {
@@ -609,7 +605,7 @@
 
   .appointment__button {
     display: flex;
-    
+
     border-top: 1px solid #e7e6e7;
     justify-content: space-between;
     position: fixed;
@@ -620,10 +616,7 @@
     background-color: #fff;
     padding-bottom: 10px;
     font-family: "Roboto", sans-serif;
-
-
   }
-
 
   .appointment__button button {
     background-color: #663399;
@@ -633,11 +626,10 @@
     height: 48px;
     border-color: #0d1619;
     font-family: "Noto Sans", sans-serif;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 500;
     border: none;
     margin-right: 8vw;
-
   }
 
   .appointment__button-services {
@@ -654,7 +646,6 @@
 
   .menu {
     margin-left: 6vw;
-
   }
 
   .menu__heading {
@@ -670,27 +661,23 @@
     background-color: #fcf8fe;
     width: 90%;
     margin-bottom: 30px;
-
   }
 
   .menu__pricelist-row {
     display: flex;
     justify-content: space-between;
-    height : 20px;
+    height: 20px;
     align-items: center;
     font-family: "Raleway", sans-serif;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
-
-  
-  
 
   .menu__title {
     text-align: left;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
-    font-size: .9rem;
-    letter-spacing: .1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     margin-bottom: 20px;
     border: none;
@@ -701,308 +688,282 @@
     align-items: center;
     padding-left: 10px;
     color: #fff;
-
   }
 
   .menu__bg-pink {
     background-color: #c3c3c3;
   }
-  
+
   .menu__pricelist li {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 
-/* End Menu */
+  /* End Menu */
 
-/* Appointment Date -selection */
-    .appointment__form-date {
-      margin: 0 6vw;
-    }
-    .date {
-     display: flex;
-     justify-content: center;
-     margin-bottom: 50px;
-     margin-top: 80px;
-    } 
+  /* Appointment Date -selection */
+  .appointment__form-date {
+    margin: 0 6vw;
+  }
+  .date {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 80px;
+  }
 
-    .date input {
-      width: 200px;
-      padding: 5px auto;
-    }
+  .date input {
+    width: 200px;
+    padding: 5px auto;
+  }
 
-    .times {
-      display: grid;
-      place-items: center;
-      height: 100px;
-      overflow-y: auto;
-      margin-bottom: 40px;
-    }
+  .times {
+    display: grid;
+    place-items: center;
+    height: 100px;
+    overflow-y: auto;
+    margin-bottom: 40px;
+  }
 
-    .time {
-        display: flex;
-        font-size: 1rem;
-        border: 1px solid #e9e9e9;
-        color: #000000;
-        border-radius: 20px;
-        width: 300px;
-        font-weight: 400;
-        align-items: center;
-        font-family: "Noto Sans", sans-serif;
-        margin-bottom: 10px;
-        height: 40px;
-        justify-content: center;
-    }
+  .time {
+    display: flex;
+    font-size: 1rem;
+    border: 1px solid #e9e9e9;
+    color: #000000;
+    border-radius: 20px;
+    width: 300px;
+    font-weight: 400;
+    align-items: center;
+    font-family: "Noto Sans", sans-serif;
+    margin-bottom: 10px;
+    height: 40px;
+    justify-content: center;
+  }
 
+  .time__confirmation {
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 10vw;
+    letter-spacing: 0.3px;
+    font-family: "Raleway", sans-serif;
+  }
 
-    .time__confirmation {
-      font-weight: 600;
-      margin-bottom: 10px;
-      padding-left: 10vw;
-      letter-spacing: .3px;
-      font-family: "Raleway", sans-serif;
-    }
-    
-    .date__confirmation {
-      padding-left: 10vw;
-      font-family: "Raleway", sans-serif;
-      font-weight: 600;
-    
-    }
+  .date__confirmation {
+    padding-left: 10vw;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+  }
 
-    .appointment__form-date-btn {
-      background-color: #663399;
-      background-color: #663399;
-      color: #fff;
-      width: 220px;
-      display: flex;
-      margin: 27px auto 60px;
-      font-size: .9rem;
-      height: 40px;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      border: none;
-      border-radius: 18px;
+  .appointment__form-date-btn {
+    background-color: #663399;
+    background-color: #663399;
+    color: #fff;
+    width: 220px;
+    display: flex;
+    margin: 27px auto 60px;
+    font-size: 0.9rem;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    border-radius: 18px;
+  }
 
-    }
+  /* End Appointment Date -selection  */
 
-/* End Appointment Date -selection  */
+  /* Payment page */
+  .payment {
+    border: 1px solid #6f6f6f;
+    width: 89%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
 
-/* Payment page */
-.payment {
-  border: 1px solid #6f6f6f;
-  width : 89%;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  
-}
+  .payment__content {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .payment__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "Open Sans", sans-serif;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+    padding: 7px 15px;
+  }
 
-.payment__content {
-  width: 90%;
-  margin: 0 auto;
-}
-.payment__title {
-  font-weight: 700;
-  font-size: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
-  border-bottom: 1px solid gray;
-  margin-bottom: 10px;
-  padding: 7px 15px;
-}
+  .payment__sub {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .payment__minimum {
+    font-weight: 600;
+    margin: 14px 0;
+    font-family: "Open Sans", sans-serif;
+    line-height: 19px;
+    font-size: 14px;
+  }
 
-.payment__sub {
-  margin-bottom: 15px;
-  font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  .payment__details {
+    background-color: #28a745;
+    border: none;
+    width: 250px;
+    margin: 0 auto;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    inline-size: 75%;
+    width: 291px;
+    border-radius: 4px;
+  }
+  .please__note-detail {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
 
-}
-.payment__minimum { 
-  font-weight: 600;
-  margin: 14px 0;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 19px;
-  font-size: 14px;
+  .please__note-detail li {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  }
 
+  .payment__bank-account {
+    margin-bottom: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
 
-}
+  .please__note ul li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin-bottom: 9px;
+  }
 
-.payment__details {
-  background-color:#28a745;
-  border: none;
-  width: 250px;
-  margin: 0 auto;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  padding: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  inline-size: 75%;
-  width: 291px;
-  border-radius: 4px;
-  
-}
-.please__note-detail {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  /* Payment */
 
-}
+  /* Booking form */
 
-.please__note-detail li {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  .review {
+    font-family: "PT Sans", sans-serif;
+  }
+  .review__heading {
+    margin: 20px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-left: 6vw;
+    /* font-family: "PT Sans", sans-serif; */
+    text-transform: uppercase;
+    color: #222831;
+  }
 
-}
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 6vw;
+    font-weight: 600;
+    color: #7f8486;
+    font-family: "PT Sans", sans-serif;
+    margin-top: 15px;
+    font-size: 14px;
+  }
 
-.payment__bank-account {
-  margin-bottom: 30px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-}
+  .table-body {
+    font-family: "PT Sans", sans-serif;
+    margin-bottom: 20px;
+    /* border: 1px solid #6f6f6f; */
+  }
 
-.please__note ul li {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  margin-bottom: 9px;
-}
+  .table-row {
+    display: flex;
+    padding: 0px 6vw;
+    justify-content: space-between;
+    color: #0d1619;
+    margin: 4px;
+  }
 
-/* Payment */
+  .contact {
+    position: relative;
+    font-family: "PT Sans", sans-serif;
+  }
 
-/* Booking form */
+  .contact-header {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 6vw;
+    margin-bottom: 16px;
+    color: #222831;
+  }
+  .contact__group {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-.review {
-  font-family: "PT Sans", sans-serif;
-}
-.review__heading {
-  margin: 20px 0;
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding-left: 6vw;
-  /* font-family: "PT Sans", sans-serif; */
-  text-transform: uppercase;
-  color: #222831;
+  .contact__group label {
+    margin-bottom: 4px;
+    font-weight: 400;
+    padding-left: 6vw;
+    margin: 5px;
+    color: #2f3133; /* #212529 */
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+  }
 
+  .contact__group input {
+    width: 85%;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 6vw;
+    border: 1px solid #ced4da;
+    margin-bottom: 8px;
+    font-size: 14px;
+    padding-left: 15px;
+    transition: 0.5s;
+  }
 
-}
+  .contact__group textarea {
+    width: 82%;
+    border-radius: 5px;
+    border: 1px solid #333;
+    margin-left: 6vw;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: inherit;
+  }
 
-.header-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 6vw;
-  font-weight: 600;
-  color: #7f8486;
-  font-family: "PT Sans", sans-serif;
-  margin-top: 15px;
-  font-size: 14px;
+  .contact__bookbtn {
+    background-color: #663399;
+    color: #fff;
+    height: 35px;
+    border-radius: 20px;
+    position: relative;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    justify-content: center;
+    height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+  }
 
-}
+  .form__group {
+    display: flex;
+    flex-direction: column;
+  }
 
-.table-body {
-  font-family: "PT Sans", sans-serif;
-  margin-bottom: 20px;
-  /* border: 1px solid #6f6f6f; */
-}
-
-.table-row {
-  display: flex;
-  padding: 0px 6vw;
-  justify-content: space-between;
-  color: #0d1619;
-  margin: 4px;
-}
-
-
-
-
-.contact {
-  position: relative;
-  font-family: "PT Sans", sans-serif;
-}
-
-.contact-header {
-  font-size: 16px;
-  font-weight: 600;
-  padding-left: 6vw;
-  margin-bottom: 16px;
-  color: #222831;
-}
-.contact__group {
-  position: relative;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact__group label {
-  margin-bottom: 4px;
-  font-weight: 400;
-  padding-left: 6vw;
-  margin: 5px;
-  color: #2f3133; /* #212529 */
-  font-size: 14px;
-  font-family: inherit;
-  font-weight: 500;
-}
-
-.contact__group input {
-  width: 85%;
-  height: 35px;
-  border-radius: 5px;
-  margin-left: 6vw;
-  border: 1px solid #ced4da;
-  margin-bottom: 8px;
-  font-size: 14px;
-  padding-left: 15px;
-  transition: .5s;
-  
-}
-
-
-
-
-.contact__group textarea {
-  width: 82%;
-  border-radius: 5px;
-  border: 1px solid #333;
-  margin-left: 6vw;
-  font-size: 14px;
-  border: 1px solid #ced4da;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-family: inherit;
-
-}
-
-.contact__bookbtn {
-  background-color: #663399;
-  color: #fff;
-  height: 35px;
-  border-radius: 20px;
-  position: relative;
-  margin: 40px auto;
-  display: flex;
-  align-items: center;
-  width: 150px;
-  justify-content: center;
-  height: 40px;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-
-}
-
-
-
-.form__group {
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* End Booking form */
+  /* End Booking form */
 }

@@ -30,12 +30,12 @@ function fakeFetch(date, { signal }) {
 }
 
 const CustomPickersDay = styled(PickersDay)(({ isHighlighted, day }) => ({
-  "&.Mui-selected": {
-    backgroundColor: "#d98af1",
-  },
-  "&.css-r0kd0v-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover" : {
-    backgroundColor: "purple"
-  },
+  // "&.Mui-selected": {
+  //   backgroundColor: "#d98af1",
+  // },
+  // "&.css-r0kd0v-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover" : {
+  //   backgroundColor: "purple"
+  // },
   position: 'relative', // Needed for pseudo-element positioning
   // Styles for the circle
   '::after': day.isAfter(new Date()) ? { // Only apply highlight if date is in the future
@@ -70,7 +70,7 @@ export default function AppointmentDate() {
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState(null);
-  const {globalData,updateGlobalData} = useContext(GlobalContext)
+  const {updateGlobalData} = useContext(GlobalContext)
   const CustomActionBar = () => null;
 
 

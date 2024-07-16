@@ -13,10 +13,54 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import "./../assets/home.jpg"
+import "./../assets/home.jpg";
 
 // data-aos="fade-up"
 function Hero() {
+  const [isClicked, setClick] = React.useState(false);
+  const [isComponentA, setIsComponentA] = useState(true);
+
+  const handleClick = () => {
+    setClick(!click);
+  };
+
+
+  const handleButtonClick = () => {
+    setIsComponentA((prevState) => !prevState); // Toggle the state
+  };
+
+
+  const acrylic = () => {
+    return (
+      <div
+        className="services__container services__container-big">
+        <img src={pedicureImg} alt="" srcSet="" />
+        <div className="services__title">Pedicure</div>
+        <div className="services__sub">2 Services</div>
+      </div>
+    );
+  };
+
+  const pedicure = () => {
+    return (
+      <div className="services__container services__container-big">
+        <img src={designImg} alt="" srcSet="" />
+        <div className="services__title">Designs</div>
+        <div className="services__sub">4 Services</div>
+      </div>
+    );
+  };
+
+  const design = () => {
+    return (
+      <div className="services__container services__container-big">
+        <img src={homeImg} alt="" srcSet="" />
+        <div className="services__title">Buff & Shine</div>
+        <div className="services__sub">2 Services</div>
+      </div>
+    );
+  };
+
   return (
     <>
       <section className="hero">
@@ -26,51 +70,47 @@ function Hero() {
           </div>
           <div className="hero__welcome-img">
             <img
-              src="home.jpg"
+              // src="home.jpg"
+              src="https://www.dialahairsalon.co.za/wp-content/uploads/2018/11/Acrylic-nails.jpg"
               // src="https://img.freepik.com/free-photo/close-up-manicurist-using-nail-polish_23-2149171334.jpg?t=st=1718398137~exp=1718401737~hmac=2a43c5c14a6323ccaea21217b00fb468f5e7781e161da618dbfae1a07786bf56&w=740"
             />
           </div>
           <Link to="book">
-            <button className="hero__bookbtn">BOOK AN APPOINTMENT</button>
+            <button
+              className="hero__bookbtn"
+              onClick={handleClick}
+              style={{ backgroundColor: isClicked ? "#000" : "none" }}
+            >
+              BOOK AN APPOINTMENT
+            </button>
           </Link>
         </div>
       </section>
 
       <main className="main">
         <section className="services">
-          <h2>Services</h2>
+          {/* <h2>Services</h2> */}
+          <hr />
+          <div className="services-menu">
+            <div className="services-menu-items" onClick={handleButtonClick}>Acrylic</div>
+            <div className="services-menu-items" onClick={handleButtonClick}>Pedicure</div>
+            <div className="services-menu-items" onClick={handleButtonClick}>Soaking</div>
+          </div>
+          <hr />
           <div className="services">
             <div
               className="services__container services__container-big"
               data-aos="fade-right"
             >
               <img src={acrylicImg} alt="" srcSet="" />
+              <div className="services-description">
+                A pedicure is a beauty treatment for the feet and toenails,
+                involving soaking, exfoliating, and moisturizing. It includes
+                trimming and shaping the nails, often with nail polish
+                application.
+              </div>
               <div className="services__title">Acrylic</div>
               <div className="services__sub">4 Services</div>
-            </div>
-            <div
-              className="services__container services__container-small"
-              data-aos="fade-left"
-            >
-              <img src={pedicureImg} alt="" srcSet="" />
-              <div className="services__title">Pedicure</div>
-              <div className="services__sub">2 Services</div>
-            </div>
-            <div
-              className="services__container services__container-big"
-              data-aos="fade-right"
-            >
-              <img src={designImg} alt="" srcSet="" />
-              <div className="services__title">Designs</div>
-              <div className="services__sub">4 Services</div>
-            </div>
-            <div
-              className="services__container services__container-small"
-              data-aos="fade-left"
-            >
-              <img src={homeImg} alt="" srcSet="" />
-              <div className="services__title">Buff & Shine</div>
-              <div className="services__sub">2 Services</div>
             </div>
             <div className="services__container">
               <Link to="menu">
