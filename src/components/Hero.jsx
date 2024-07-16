@@ -89,14 +89,12 @@ function Hero() {
 
       <main className="main">
         <section className="services">
-          {/* <h2>Services</h2> */}
-          <hr />
+          <h2>Services</h2>
           <div className="services-menu">
             <div className="services-menu-items" onClick={handleButtonClick}>Acrylic</div>
             <div className="services-menu-items" onClick={handleButtonClick}>Pedicure</div>
             <div className="services-menu-items" onClick={handleButtonClick}>Soaking</div>
           </div>
-          <hr />
           <div className="services">
             <div
               className="services__container services__container-big"
