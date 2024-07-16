@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import homeImg from "../assets/services/krbhome.jpg";
 import designImg from "../assets/services/design.jpg";
 import pedicureImg from "../assets/services/krbhome.jpg";
@@ -18,47 +18,78 @@ import "./../assets/home.jpg";
 // data-aos="fade-up"
 function Hero() {
   const [isClicked, setClick] = useState(false);
-  const [isComponent, setIsComponent] = useState(true);
+  const [selectedService, setSelectedService] = useState("acrylic");
 
   const handleClick = () => {
     setClick(!click);
   };
 
-
-  const handleButtonClick = () => {
-    setIsComponent((prevState) => !prevState); // Toggle the state
+  const handleServiceClick = (service) => {
+    setSelectedService(service);
   };
 
-
-  const acrylic = () => {
-    return (
-      <div
-        className="services__container services__container-big">
-        <img src={pedicureImg} alt="" srcSet="" />
-        <div className="services__title">Pedicure</div>
-        <div className="services__sub">2 Services</div>
-      </div>
-    );
-  };
-
-  const pedicure = () => {
-    return (
-      <div className="services__container services__container-big">
-        <img src={designImg} alt="" srcSet="" />
-        <div className="services__title">Designs</div>
-        <div className="services__sub">4 Services</div>
-      </div>
-    );
-  };
-
-  const design = () => {
-    return (
-      <div className="services__container services__container-big">
-        <img src={homeImg} alt="" srcSet="" />
-        <div className="services__title">Buff & Shine</div>
-        <div className="services__sub">2 Services</div>
-      </div>
-    );
+  const renderService = (service) => {
+    switch (selectedService) {
+      case "pedicure":
+        return (
+          <div className="services__container services__container-big">
+            <img src={pedicureImg} alt="" srcSet="" />
+            <div className="services-description">
+              A pedicure is a beauty treatment for the feet and toenails,
+              involving soaking, exfoliating, and moisturizing. It includes
+              trimming and shaping the nails, often with nail polish
+              application.
+            </div>
+            <div className="services__title">Pedicure</div>
+            <div className="services__sub">2 Services</div>
+          </div>
+        );
+      case "design":
+        return (
+          <div className="services__container services__container-big">
+            <img src={designImg} alt="" />
+            <div className="services-description">
+              Elevate your look with stunning nail art designs that showcase
+              your unique style. Our expert artists create vibrant, intricate
+              patterns tailored just for you. Make a bold statement with
+              beautifully crafted, eye-catching nails.
+            </div>
+            <div className="services__title">Designs</div>
+            <div className="services__sub">4 Services</div>
+          </div>
+        );
+      case "soaking":
+        return (
+          <div className="services__container services__container-big">
+            <img src={acrylicImg} alt="" srcSet="" />
+            <div className="services-description">
+              Soaking nails involves immersing them in warm, soapy water to
+              soften cuticles and prepare them for grooming. This step cleanses
+              and hydrates the nails, making trimming and shaping easier. It
+              also enhances relaxation and overall nail health.
+            </div>
+            <div className="services__title">Buff & Shine</div>
+            <div className="services__sub">2 Services</div>
+          </div>
+        );
+      case "acrylic":
+        return (
+          <div
+            className="services__container services__container-big"
+            data-aos="fade-right"
+          >
+            <img src={acrylicImg} alt="" srcSet="" />
+            <div className="services-description">
+              A pedicure is a beauty treatment for the feet and toenails,
+              involving soaking, exfoliating, and moisturizing. It includes
+              trimming and shaping the nails, often with nail polish
+              application.
+            </div>
+            <div className="services__title">Acrylic</div>
+            <div className="services__sub">4 Services</div>
+          </div>
+        );
+    }
   };
 
   return (
@@ -91,25 +122,27 @@ function Hero() {
         <section className="services">
           <h2>Services</h2>
           <div className="services-menu">
-            <div className="services-menu-items" onClick={handleButtonClick}>Acrylic</div>
-            <div className="services-menu-items" onClick={handleButtonClick}>Pedicure</div>
-            <div className="services-menu-items" onClick={handleButtonClick}>Soaking</div>
+            <div
+              className="services-menu-items"
+              onClick={() => handleServiceClick("design")}
+            >
+              Design
+            </div>
+            <div
+              className="services-menu-items"
+              onClick={() => handleServiceClick("pedicure")}
+            >
+              Pedicure
+            </div>
+            <div
+              className="services-menu-items"
+              onClick={() => handleServiceClick("soaking")}
+            >
+              Soaking
+            </div>
           </div>
           <div className="services">
-            <div
-              className="services__container services__container-big"
-              data-aos="fade-right"
-            >
-              <img src={acrylicImg} alt="" srcSet="" />
-              <div className="services-description">
-                A pedicure is a beauty treatment for the feet and toenails,
-                involving soaking, exfoliating, and moisturizing. It includes
-                trimming and shaping the nails, often with nail polish
-                application.
-              </div>
-              <div className="services__title">Acrylic</div>
-              <div className="services__sub">4 Services</div>
-            </div>
+            {renderService()}
             <div className="services__container">
               <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>

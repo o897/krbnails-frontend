@@ -100,13 +100,13 @@ const BookingForm = () => {
             ))}
             <div className="table-row">
               <div className="nail-tech">
-                With <strong>Karabo Tlhopane</strong> @ 12:30pm
+                With <strong>Karabo Tlhopane</strong> @ {`${appointmentTime}`}
               </div>
             </div>
 
             <div className="table-row">
               <div>Total</div>
-              <div>R120</div>
+              <div>{`R${formData.total}`}</div>
             </div>
             <div className="custom-hr "></div>
           </div>

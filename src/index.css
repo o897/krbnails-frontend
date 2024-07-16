@@ -50,13 +50,11 @@
 
   h2 {
     text-align: center;
-    font-family: "Raleway", sans-serif;
+    font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+    font-weight: 500;
     font-size: 2.8rem;
     margin-bottom: 20px;
-    line-height: normal;
   }
 
   body {
@@ -88,12 +86,17 @@
     align-items: center;
   }
 
+  /* .header__logo img {
+    height: 10px;
+  } */
+
   .header__log-title {
-    padding-left: 10px;
+    padding-left: 18px;
     font-size: 1.3rem;
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-    font-weight: 700;
+    font-weight: 600;
     font-family: "Raleway", sans-serif;
+    color: #181717;
+
   }
 
   /* End Logo */
@@ -149,7 +152,7 @@
   .header__logo {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding-top: 5px;
   }
 
   /* End Navar */
@@ -194,8 +197,8 @@
     opacity: 0.68;
     position: relative;
     width: 92%;
-    top: 0.9vh;
-    height: 90vh;
+    top: 1vh;
+    height: 88vh;
     right: 6vw;
     bottom: 6vw;
     left: 4vw;
@@ -245,8 +248,8 @@
     gap: 13px;
     padding-bottom: 10px;
     text-decoration: underline;
-    font-size: 1.6rem;
-    /* margin-top: 20px; */
+    font-size: 1.8rem;
+    font-family: "Playfair Display", serif;
   }
 
  

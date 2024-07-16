@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
+import navbarImg from "./../assets/navbar.png"
 const Navbar = () => {
   const [show, setShow] = useState(false);
 
@@ -19,10 +19,9 @@ const Navbar = () => {
   return (
     <>
       <div className="header__logo">
-        <p className="header__log-title">KRBNails</p>
+        <p className="header__log-title">Tlamis Nail Tech</p>
+        {/* <img src={navbarImg} alt="" /> */}
         <Link to='book'>
-          {/* <FontAwesomeIcon icon={faBars} /> */}
-
           <button>BOOK</button> 
         </Link>
       </div>

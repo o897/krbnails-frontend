@@ -87,35 +87,35 @@ export const services = [
         duration: 40
     },
     {
-       title : 'Gel Overlay (Add - On Service)',
+       title : 'Gel Overlay',
        price : 180
        
     },
     {
-        title : 'Buff & Shine (Add - On Service)',
+        title : 'Buff & Shine',
         price : 110
 
      },
      {
-        title : 'Foot Treatment (Add - On Service)',
+        title : 'Foot Treatment',
         price : 110
      },
      {
-        title : 'Soak Off (Add - On Service)',
+        title : 'Soak Off',
         price : 80
      }
 ]
 
 export const worktimes = [{
-        time : '10:00'
+        time : '10:00 am'
     },
     {
-        time : '12:00'
+        time : '12:00 pm'
     },
     {
-        time : '14:00'
+        time : '14:00 pm'
     },
     {
-        time : '16:00'
+        time : '16:00 pm'
     }
 ]

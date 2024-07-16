@@ -19,6 +19,7 @@ const BookService = () => {
     total: 0,
     numServices: 0,
     checkedState: new Array(services.length).fill(false),
+    nails : 0
   });
 
   const [nails, setNails] = useState(0);
@@ -72,15 +73,32 @@ const BookService = () => {
   const minusNails = (e) => {
     e.preventDefault();
     setNails(nails != 0 ? nails - 1 : 0);
+    setFormData((prevFormData) => (
+      {
+        ...prevFormData, 
+        total : prevFormData.nails != 0 ? prevFormData.total - 5 : 0,
+        nails : prevFormData.nails != 0 ? prevFormData.nails - 1 : 0
+      }
+    ))
+    console.log("nails",formData.nails);
+
   };
 
   const addNails = (e) => {
     e.preventDefault();
     setNails(nails + 1);
+    setFormData((prevFormData) => (
+      {
+        ...prevFormData, 
+        total : prevFormData.total != 50 ? prevFormData.total + 5 : 50,
+        nails : prevFormData.nails != 10 ? prevFormData.nails + 1 : 10
+      }
+    ))
+    console.log("nails",formData.nails);
+
   };
 
   useEffect(() => {
-    console.log(services);
     updateGlobalData({services : service})
     updateGlobalData({formData})
   }, [formData,service]);
@@ -113,7 +131,7 @@ const BookService = () => {
                         <FontAwesomeIcon icon={faMinus} />
                       </span>
                     </button>
-                    <div className="num_nails">{nails}</div>
+                    <div className="num_nails">{formData.nails}</div>
                     <button onClick={addNails}>
                       <span className="nail-btn">
                         <FontAwesomeIcon icon={faPlus} />
