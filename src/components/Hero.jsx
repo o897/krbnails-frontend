@@ -18,7 +18,7 @@ import "./../assets/home.jpg";
 // data-aos="fade-up"
 function Hero() {
   const [isClicked, setClick] = useState(false);
-  const [isComponentA, setIsComponentA] = useState(true);
+  const [isComponent, setIsComponent] = useState(true);
 
   const handleClick = () => {
     setClick(!click);
@@ -26,7 +26,7 @@ function Hero() {
 
 
   const handleButtonClick = () => {
-    setIsComponentA((prevState) => !prevState); // Toggle the state
+    setIsComponent((prevState) => !prevState); // Toggle the state
   };
 
 

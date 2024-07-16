@@ -128,7 +128,6 @@ const BookService = () => {
                   <div key={index}>
                     <div className="appointment__service-select" key={title}>
                       <div className="appointment__service">              
-                        <img src="https://www.dialahairsalon.co.za/wp-content/uploads/2018/11/Acrylic-nails.jpg" alt=""/>
                         <div className="appointment__service-title">
                           {title}
                         </div>
