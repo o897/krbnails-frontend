@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import homeImg from "../assets/services/krbhome.jpg";
 import designImg from "../assets/services/design.jpg";
 import pedicureImg from "../assets/services/krbhome.jpg";
@@ -17,7 +17,7 @@ import "./../assets/home.jpg";
 
 // data-aos="fade-up"
 function Hero() {
-  const [isClicked, setClick] = React.useState(false);
+  const [isClicked, setClick] = RuseState(false);
   const [isComponentA, setIsComponentA] = useState(true);
 
   const handleClick = () => {
