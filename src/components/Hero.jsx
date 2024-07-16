@@ -17,7 +17,7 @@ import "./../assets/home.jpg";
 
 // data-aos="fade-up"
 function Hero() {
-  const [isClicked, setClick] = RuseState(false);
+  const [isClicked, setClick] = useState(false);
   const [isComponentA, setIsComponentA] = useState(true);
 
   const handleClick = () => {
