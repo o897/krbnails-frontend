@@ -595,7 +595,7 @@
   .appointment__services {
     overflow: auto;
     scroll-behavior: smooth;
-    height: 60vh;
+    height: 70vh;
     padding-right: 6vw;
   }
 

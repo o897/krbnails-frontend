@@ -122,7 +122,6 @@ const BookService = () => {
                   </div>
                 </div>
               </div>
-
               <CustomScroll>
                 {services.map(({ title, price }, index) => (
                   <div key={index}>
