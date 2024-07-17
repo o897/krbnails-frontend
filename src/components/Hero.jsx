@@ -20,10 +20,6 @@ function Hero() {
   const [isClicked, setClick] = useState(false);
   const [selectedService, setSelectedService] = useState("acrylic");
 
-  const handleClick = () => {
-    setClick(!click);
-  };
-
   const handleServiceClick = (service) => {
     setSelectedService(service);
   };
@@ -97,20 +93,18 @@ function Hero() {
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
-            Elevate Your Look, One Nail at a Time
+            Elevate Your Look, One Nail at a Time.
           </div>
-          <div className="hero__welcome-img">
+          <div className="hero__welcome-img" data-aos="zoom-in">
             <img
-              // src="home.jpg"
-              src="https://www.dialahairsalon.co.za/wp-content/uploads/2018/11/Acrylic-nails.jpg"
+              src="home.jpg"
+              // src="https://www.dialahairsalon.co.za/wp-content/uploads/2018/11/Acrylic-nails.jpg"
               // src="https://img.freepik.com/free-photo/close-up-manicurist-using-nail-polish_23-2149171334.jpg?t=st=1718398137~exp=1718401737~hmac=2a43c5c14a6323ccaea21217b00fb468f5e7781e161da618dbfae1a07786bf56&w=740"
             />
           </div>
           <Link to="book">
             <button
               className="hero__bookbtn"
-              onClick={handleClick}
-              style={{ backgroundColor: isClicked ? "#000" : "none" }}
             >
               BOOK AN APPOINTMENT
             </button>

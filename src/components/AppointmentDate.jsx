@@ -16,7 +16,6 @@ import moment from "moment";
 function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
-      const daysInMonth = date.daysInMonth();
       const daysToHighlight = [2, 3, 5];
 
       resolve({ daysToHighlight });
@@ -30,21 +29,16 @@ function fakeFetch(date, { signal }) {
 }
 
 const CustomPickersDay = styled(PickersDay)(({ isHighlighted, day }) => ({
-  // "&.Mui-selected": {
-  //   backgroundColor: "#d98af1",
-  // },
-  // "&.css-r0kd0v-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover" : {
-  //   backgroundColor: "purple"
-  // },
-  position: 'relative', // Needed for pseudo-element positioning
+  
+  position: 'relative', 
   // Styles for the circle
-  '::after': day.isAfter(new Date()) ? { // Only apply highlight if date is in the future
+  '::after': day.isSame(new Date(), 'day') || day.isAfter(new Date(), 'day') ? {
     content: '""',
     position: 'absolute',
     bottom: 6,
     left: '52%',
     transform: 'translateX(-50%)',
-    width: 13, // Adjust for circle size
+    width: 13,
     height: 2.5,
     backgroundColor: isHighlighted ? 'red' : 'green',
   } : null,
@@ -59,7 +53,7 @@ function ServerDay(props) {
       {...other}
       day={day}
       outsideCurrentMonth={outsideCurrentMonth}
-      isHighlighted={isHighlighted}
+      data-isHighlighted={isHighlighted}
     />
   );
 }
@@ -94,7 +88,6 @@ export default function AppointmentDate() {
   };
 
   useEffect(() => {
-    // console.log(globalData);
     updateGlobalData({ appointmentTime : appointmentTime })
     updateGlobalData({ appointmentDate :moment(appointmentDate).format('DD-MMMM-YYYY')})
 
@@ -111,7 +104,6 @@ export default function AppointmentDate() {
     setAppointmentDate(null);
     fetchHighlightedDays(date);
   };
-  // updateGlobalData(globalData.appointmentDate =  moment(appointmentDate).format('DD-MMMM-YYYY'))
 
   return (
     <>

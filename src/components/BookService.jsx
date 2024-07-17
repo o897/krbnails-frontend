@@ -22,7 +22,6 @@ const BookService = () => {
     nails : 0
   });
 
-  const [nails, setNails] = useState(0);
   const [checkedState, setCheckedState] = useState(
     new Array(services.length).fill(false)
   );
@@ -72,7 +71,6 @@ const BookService = () => {
 
   const minusNails = (e) => {
     e.preventDefault();
-    setNails(nails != 0 ? nails - 1 : 0);
     setFormData((prevFormData) => (
       {
         ...prevFormData, 
@@ -86,7 +84,6 @@ const BookService = () => {
 
   const addNails = (e) => {
     e.preventDefault();
-    setNails(nails + 1);
     setFormData((prevFormData) => (
       {
         ...prevFormData, 
@@ -169,7 +166,7 @@ const BookService = () => {
               </CustomScroll>
             </div>
           </div>
-          <div className="appointment__button">
+          {formData.total !== 0 && <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
                 R{formData.total ? formData.total : 0}
@@ -178,7 +175,7 @@ const BookService = () => {
                 {formData.totalService} Services - 1h 15min
               </div>
             </div>
-            <div className="appointment__button-continue">
+           <div className="appointment__button-continue">
               <button>
                 <Link
                   to="/date"
@@ -189,7 +186,7 @@ const BookService = () => {
                 </Link>
               </button>
             </div>
-          </div>
+          </div>}
         </form>
     </>
   );

@@ -53,7 +53,7 @@ const BookingForm = () => {
   };
 
   const { appointmentDate, appointmentTime, formData, services } = globalData;
-  console.log("service in gd",globalData);
+  console.log("service in gd", globalData);
   return (
     <>
       <div className="bookform__header">
@@ -90,14 +90,15 @@ const BookingForm = () => {
           </div>
           <div className="custom-hr "></div>
           <div className="table-body">
-            {services.map((service, index) => (
-              <div key={index}>
-                <div className="table-row">
-                  <div>{service.service}</div>
-                  <div>{service.price}</div>
+            {services &&
+              services.map((service, index) => (
+                <div key={index}>
+                  <div className="table-row">
+                    <div>{service.service}</div>
+                    <div>{service.price}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
             <div className="table-row">
               <div className="nail-tech">
                 With <strong>Karabo Tlhopane</strong> @ {`${appointmentTime}`}
@@ -106,7 +107,7 @@ const BookingForm = () => {
 
             <div className="table-row">
               <div>Total</div>
-              <div>{`R${formData.total}`}</div>
+              <div>{`R${formData?.total}`}</div>
             </div>
             <div className="custom-hr "></div>
           </div>
@@ -132,7 +133,9 @@ const BookingForm = () => {
             <label htmlFor="">Include a message (optional)</label>
             <textarea name="message" cols="30" rows="4"></textarea>
           </div>
-          <button className="contact__bookbtn">Book</button>
+          <button className="contact__bookbtn">
+            <Link to="/confirmation">Book</Link>
+          </button>
         </div>
       </form>
     </>
