@@ -41,17 +41,12 @@ const AppointmentDate = () => {
     e.preventDefault();
   };
 
-  // const handleTimeClick = (e, time) => {
-  //   e.preventDefault();
-  // handle backgroundcolor
-  //   setBold(!bold);
-  //   setAppointmentTime(time);
-  // };
-
-
   useEffect(() => {
-    updateGlobalData({appointmentDate : moment(appointmentDate).format("dddd, DD-MMMM-YYYY")});
-    updateGlobalData({ appointmentTime : appointmentTime});
+    updateGlobalData(
+      {appointmentDate : moment(appointmentDate).format("dddd, DD-MMMM-YYYY")},
+      { appointmentTime : appointmentTime}
+    );
+    // updateGlobalData({ appointmentTime : appointmentTime});
   },[appointmentDate,appointmentTime])
 
   return (

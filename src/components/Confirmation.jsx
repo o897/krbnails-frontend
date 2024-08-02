@@ -16,7 +16,7 @@ function Confirmation() {
         </span>
 
         <span><strong>PayShap ID : </strong> +27824066527@CAPITEC</span>
-        
+        <span>Send your proof of payment to 824065421</span>
         <img className="confirmation-img" src={confirm} alt="" />
 
         <button className="button-confirm">

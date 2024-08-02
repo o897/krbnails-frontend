@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef,useContext } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,14 +10,12 @@ import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { StaticDatePicker } from "@mui/x-date-pickers";
 import GlobalContext from "../GlobalContext";
-import moment from "moment";
-
+import dayjs from "dayjs";
 
 function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
-      const daysToHighlight = [2, 3, 5];
-
+      const daysToHighlight = ["2024-08-01", "2024-09-02", "2024-08-04"];
       resolve({ daysToHighlight });
     }, 500);
 
@@ -29,31 +27,33 @@ function fakeFetch(date, { signal }) {
 }
 
 const CustomPickersDay = styled(PickersDay)(({ isHighlighted, day }) => ({
-  
-  position: 'relative', 
+  position: "relative",
   // Styles for the circle
-  '::after': day.isSame(new Date(), 'day') || day.isAfter(new Date(), 'day') ? {
-    content: '""',
-    position: 'absolute',
-    bottom: 6,
-    left: '52%',
-    transform: 'translateX(-50%)',
-    width: 13,
-    height: 2.5,
-    backgroundColor: isHighlighted ? 'red' : 'green',
-  } : null,
+  "::after":
+    day.isSame(new Date(), "day") || day.isAfter(new Date(), "day")
+      ? {
+          content: '""',
+          position: "absolute",
+          bottom: 6,
+          left: "52%",
+          transform: "translateX(-50%)",
+          width: 13,
+          height: 2.5,
+          backgroundColor: isHighlighted ? "red" : "green",
+        }
+      : null,
 }));
 
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
-  const isHighlighted = highlightedDays.includes(day.date());
+  const isHighlighted = highlightedDays.some(highlightedDays => day.isSame(dayjs(highlightedDays),'day'));
 
   return (
     <CustomPickersDay
       {...other}
       day={day}
       outsideCurrentMonth={outsideCurrentMonth}
-      data-isHighlighted={isHighlighted}
+      isHighlighted={isHighlighted}
     />
   );
 }
@@ -64,9 +64,8 @@ export default function AppointmentDate() {
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState(null);
-  const {updateGlobalData} = useContext(GlobalContext)
+  const { updateGlobalData } = useContext(GlobalContext);
   const CustomActionBar = () => null;
-
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
@@ -88,11 +87,13 @@ export default function AppointmentDate() {
   };
 
   useEffect(() => {
-    updateGlobalData({ appointmentTime : appointmentTime })
-    updateGlobalData({ appointmentDate :moment(appointmentDate).format('DD-MMMM-YYYY')})
+    updateGlobalData({
+      appointmentDate: dayjs(appointmentDate).format("DD-MMMM-YYYY"),
+      appointmentTime: appointmentTime 
+    });
 
     return () => requestAbortController.current?.abort();
-  }, [appointmentTime,appointmentDate]);
+  }, [appointmentTime, appointmentDate]);
 
   const handleMonthChange = (date) => {
     if (requestAbortController.current) {
@@ -100,7 +101,7 @@ export default function AppointmentDate() {
     }
 
     setIsLoading(true);
-    setHighlightedDays([]);
+    // setHighlightedDays([]);
     setAppointmentDate(null);
     fetchHighlightedDays(date);
   };
@@ -142,8 +143,12 @@ export default function AppointmentDate() {
           <div
             className="time"
             key={index}
-            onClick={() => {setAppointmentTime(time);}}
-            style={{ backgroundColor: appointmentTime === time ? "#ce86f7" : "white"}}
+            onClick={() => {
+              setAppointmentTime(time);
+            }}
+            style={{
+              backgroundColor: appointmentTime === time ? "#ce86f7" : "white",
+            }}
           >
             {time}
           </div>

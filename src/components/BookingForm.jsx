@@ -1,25 +1,24 @@
 import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 import emailjs from "@emailjs/browser";
-import { services } from "../data";
 
 const BookingForm = () => {
-  const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [date, setDate] = useState("");
   const [message, setMessage] = useState();
   const { globalData } = useContext(GlobalContext);
+  const { appointmentDate, appointmentTime, formData } = globalData;
+  const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm("your service id", "template id", form.current, {
-        publicKey: "your public key",
+      .sendForm("service_mwogtyl", "template_7ze51ma", form.current, {
+        publicKey: "Fc6zj-MOba4tQJCtp",
       })
       .then(
         () => {
@@ -30,30 +29,24 @@ const BookingForm = () => {
         }
       );
 
-    const form = useRef();
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("email", "pele1@gmail.com");
+    formData.append("date", appointmentDate);
+    formData.append("time", appointmentTime);
 
-    // const formData = new FormData();
-    // formData.append("name", "Orapeleng");
-    // formData.append("phone", "0724514512");
-    // formData.append("email", "pele1@gmail.com");
-    // formData.append("message", "message");
-    // formData.append("date", "given Date");
-    // formData.append("time", "");
-
-    // try {
-    //   const response = fetch("/localhost:3000/upload", {
-    //     method: "POST",
-    //     body: formData,
-    //   });
-    // } catch (error) {
-    //   console.log(error);
-    //   // set err message
-    //   setMessage("Error");
-    // }
+    try {
+      const response = fetch("http://localhost:3000/book", {
+        method: "POST",
+        body: formData,
+      });
+    } catch (error) {
+      console.log(error);
+      setMessage("Error");
+    }
   };
 
-  const { appointmentDate, appointmentTime, formData, services } = globalData;
-  console.log("service in gd", globalData);
   return (
     <>
       <div className="bookform__header">
@@ -82,7 +75,6 @@ const BookingForm = () => {
           <div>{appointmentTime}</div>
         </div>
         <div className="custom-hr "></div>
-
         <div className="table">
           <div className="header-row">
             <div>ITEMS</div>
@@ -90,8 +82,8 @@ const BookingForm = () => {
           </div>
           <div className="custom-hr "></div>
           <div className="table-body">
-            {services &&
-              services.map((service, index) => (
+            {formData?.appointmentTitle &&
+              formData.appointmentTitle.map((service, index) => (
                 <div key={index}>
                   <div className="table-row">
                     <div>{service.service}</div>
@@ -104,37 +96,49 @@ const BookingForm = () => {
                 With <strong>Karabo Tlhopane</strong> @ {`${appointmentTime}`}
               </div>
             </div>
-
             <div className="table-row">
               <div>Total</div>
-              <div>{`R${formData?.total}`}</div>
+              <div>{`${("R", formData?.total ?? "")}`}</div>
             </div>
             <div className="custom-hr "></div>
           </div>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} method="post">
+      <form ref={form} onSubmit={handleSubmit} method="post">
         <div className="contact">
           <div className="contact-header">Contact info</div>
           <div className="contact__group">
             <label htmlFor="">Fullname</label>
-            <input type="text" name="username" />
+            <input
+              type="text"
+              name="from_username"
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className="contact__group">
             <label htmlFor="">Cell phone</label>
-            <input type="text" name="phone" />
+            <input
+              type="text"
+              name="phone"
+              onChange={(e) => setPhone(e.target.value)}
+            />
           </div>
           <div className="contact__group">
             <label htmlFor="">Email</label>
-            <input type="email" name="email" onChange={(e) => e.target.value} />
+            <input
+              type="from_email"
+              name="from_email"
+              onChange={(e) => e.target.value}
+            />
           </div>
           <div className="contact__group">
             <label htmlFor="">Include a message (optional)</label>
             <textarea name="message" cols="30" rows="4"></textarea>
           </div>
-          <button className="contact__bookbtn">
-            <Link to="/confirmation">Book</Link>
+          <button className="contact__bookbtn" type="submit">
+            {/* <Link to="/confirmation">Book</Link> */}
+            Book
           </button>
         </div>
       </form>
