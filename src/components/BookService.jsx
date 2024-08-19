@@ -167,7 +167,7 @@ const BookService = () => {
               </div>
             </div>
             <div className="appointment__button-continue">
-              {/* <button> */}
+              <button> 
                 <Link
                   to="/date"
                   state={{ formData }}
@@ -175,7 +175,7 @@ const BookService = () => {
                 >
                   Continue
                 </Link>
-              {/* </button> */}
+               </button> 
             </div>
           </div>
         )}
