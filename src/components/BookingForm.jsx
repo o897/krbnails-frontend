@@ -137,8 +137,8 @@ const BookingForm = () => {
             <textarea name="message" cols="30" rows="4"></textarea>
           </div>
           <button className="contact__bookbtn" type="submit">
-            {/* <Link to="/confirmation">Book</Link> */}
-            Book
+            <Link to="/confirmation">Book</Link>
+            {/* Book */}
           </button>
         </div>
       </form>
