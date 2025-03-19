@@ -114,7 +114,8 @@ const BookingForm = () => {
               type="text"
               name="from_username"
               onChange={(e) => setName(e.target.value)}
-            />
+              required
+              />
           </div>
           <div className="contact__group">
             <label htmlFor="">Cell phone</label>
@@ -122,6 +123,7 @@ const BookingForm = () => {
               type="text"
               name="phone"
               onChange={(e) => setPhone(e.target.value)}
+              required
             />
           </div>
           <div className="contact__group">
@@ -130,6 +132,7 @@ const BookingForm = () => {
               type="from_email"
               name="from_email"
               onChange={(e) => e.target.value}
+              required
             />
           </div>
           <div className="contact__group">
