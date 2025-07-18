@@ -19,11 +19,8 @@ const Navbar = () => {
   return (
     <>
       <div className="header__logo">
-        <p className="header__log-title">Tlamis Nail Tech</p>
-        {/* <img src={navbarImg} alt="" /> */}
-        <Link to='book'>
-          <button>BOOK</button> 
-        </Link>
+        <img src={navbarImg} alt="" />
+        <FontAwesomeIcon icon={faBars} />
       </div>
 
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>

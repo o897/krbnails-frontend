@@ -85,11 +85,14 @@
   .header__logo {
     display: flex;
     align-items: center;
+    padding-right : 6vw;
   }
 
-  /* .header__logo img {
-    height: 10px;
-  } */
+
+  .header__logo img {
+    height: 40px;
+    margin-left: 6vw;
+  }
 
   .header__log-title {
     padding-left: 18px;
@@ -185,6 +188,7 @@
   .hero {
     position: relative;
     z-index: 1;
+    background-color: 0,0%,100%;
   }
 
   .hero__welcome {
@@ -605,6 +609,10 @@
     padding-right: 6vw;
   }
 
+  .appointment__service-description {
+    color: #6f6f6f;
+    margin: 4px 0;
+  }
   .appointment__service-duration {
     color: gray;
   }
@@ -625,7 +633,7 @@
   }
 
   .appointment__button button {
-    background-color: #663399;
+    background-color: #c41ecb;
     color: #fff;
     border-radius: 8px;
     width: 113px;

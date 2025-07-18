@@ -16,7 +16,6 @@ const BookService = () => {
   const { globalData, updateGlobalData } = useContext(GlobalContext);
 
   // replace form data with global data
-  const [service, setService] = useState([]);
   const [formData, setFormData] = useState({
     appointmentTitle: [],
     appointmentDuration: "",
@@ -46,13 +45,13 @@ const BookService = () => {
         ...prevFormData.appointmentTitle,
         event.target.checked
           ? {
-              ...prevFormData.appointmentTitle,
-              service: services[position].title,
-              price: services[position].price,
-            }
+            ...prevFormData.appointmentTitle,
+            service: services[position].title,
+            price: services[position].price,
+          }
           : prevFormData.appointmentTitle.filter(
-              (title) => title !== services[position].title
-            ),
+            (title) => title !== services[position].title
+          ),
       ],
       numServices: updatedCheckedState.reduce((sum, currentState) => {
         if (currentState === true) {
@@ -105,7 +104,7 @@ const BookService = () => {
       </div>
       <form>
         <div className="appointment">
-          <div className="appointment__head-title">Select Service</div>
+          <div className="appointment__head-title">All Service</div>
           <div className="appointment__services">
             <div className="appointment__service-select">
               <div className="appointment__service">
@@ -137,6 +136,7 @@ const BookService = () => {
                   <div className="appointment__service-select" key={title}>
                     <div className="appointment__service">
                       <div className="appointment__service-title">{title}</div>
+                      <div className="appointment__service-description">Begins with a warm foot soak, includes all regular maintenance and finished with choice of regular polish.</div>
                       <div className="appointment__service-duration">
                         1h - 1h:15min
                       </div>
@@ -160,22 +160,24 @@ const BookService = () => {
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-                R{formData.total ? formData.total : 0}
+                {formData.totalService} Services
               </div>
               <div className="appointment__button-services">
-                {formData.totalService} Services - 1h 15min
+
+                R{formData.total ? formData.total : 0}  - 1h 15min
+
               </div>
             </div>
             <div className="appointment__button-continue">
-              <button> 
+              <button>
                 <Link
                   to="/date"
                   state={{ formData }}
                   style={{ color: "white" }}
                 >
-                  Continue
+                  Next
                 </Link>
-               </button> 
+              </button>
             </div>
           </div>
         )}

@@ -130,11 +130,12 @@ const BookingForm = () => {
             <label htmlFor="">Email</label>
             <input
               type="from_email"
-              name="from_email"
+              name="email"
               onChange={(e) => e.target.value}
               required
             />
           </div>
+          <input type="hidden" value={formData.total} />
           <div className="contact__group">
             <label htmlFor="">Include a message (optional)</label>
             <textarea name="message" cols="30" rows="4"></textarea>
