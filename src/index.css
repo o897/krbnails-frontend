@@ -575,9 +575,19 @@
   .appointment__service {
     display: flex;
     flex-direction: column;
-    width: 92%;
+    /* width: 92%; */
     position: relative;
     z-index: 1;
+
+  }
+
+  .appointment__services-img {
+    border-radius: 8px;
+  }
+
+  .appointment__service-bot {
+    display: flex;
+    justify-content: space-between;
   }
 
   .appointment__service img {
@@ -591,15 +601,18 @@
     border-bottom: 1px solid #e7e6e7;
     align-items: center;
     width: 100%;
+    justify-content: space-between;
   }
 
   .appointment__service-title {
     font-weight: 400;
     letter-spacing: .03rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Playfair Display", serif;
+    
     margin-bottom: 5px;
     margin-top: 5px;
-    font-size: 1.01rem;
+    font-size: 1.21rem;
+    font-weight: 500;
   }
 
   .appointment__services {

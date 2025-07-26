@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import GlobalContext from "../GlobalContext";
+import designImg from "../assets/services/design.jpg";
+
 
 const BookService = () => {
   const { globalData, updateGlobalData } = useContext(GlobalContext);
@@ -136,20 +138,25 @@ const BookService = () => {
                   <div className="appointment__service-select" key={title}>
                     <div className="appointment__service">
                       <div className="appointment__service-title">{title}</div>
+                      <div>
+                        <img className="appointment__services-img" src={designImg} alt="" srcset="" /></div>
                       <div className="appointment__service-description">Begins with a warm foot soak, includes all regular maintenance and finished with choice of regular polish.</div>
                       <div className="appointment__service-duration">
                         1h - 1h:15min
                       </div>
-                      <div className="appointment__service-title">R{price}</div>
+                      <div className="appointment__service-bot">
+                          <div className="appointment__service-title">R{price}</div>
+                          <div><button>Select</button></div>
+                      </div>
                     </div>
-                    <div>
+                    {/* <div>
                       <Checkbox
                         {...label}
                         value={price}
                         checked={checkedState[index]}
                         onChange={() => handleOnChange(event, index)}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}

@@ -24,7 +24,7 @@ const Navbar = () => {
       </div>
 
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
-        <div className="header__menu">
+        <div className="header__menu">  
           <Link to="/" onClick={() => toggleWidth()}>
             Home
           </Link>
