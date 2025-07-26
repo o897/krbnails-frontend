@@ -405,7 +405,7 @@
     font-family: "PT Sans", sans-serif;
     padding: 15px 0;
     color: #fff;
-    background-color: #663399;
+    background-color: #000000;
     display: flex;
     align-items: center;
     margin-bottom: 23px;
@@ -583,6 +583,7 @@
 
   .appointment__services-img {
     border-radius: 8px;
+    margin: 4px 0;
   }
 
   .appointment__service-bot {
@@ -607,12 +608,9 @@
   .appointment__service-title {
     font-weight: 400;
     letter-spacing: .03rem;
-    font-family: "Playfair Display", serif;
-    
-    margin-bottom: 5px;
-    margin-top: 5px;
+    font-family:sans-serif;
+    padding: 5px 0;
     font-size: 1.21rem;
-    font-weight: 500;
   }
 
   .appointment__services {
