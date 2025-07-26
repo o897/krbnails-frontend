@@ -578,6 +578,8 @@
     /* width: 92%; */
     position: relative;
     z-index: 1;
+    padding: 5px 2px 3px 4px;
+    border-radius: 8px;
 
   }
 
@@ -589,6 +591,17 @@
   .appointment__service-bot {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  
+  .appointment__service-button {
+    font-weight: 700;
+    color: #fff;
+    background-color: #d9b6dd;
+    border-radius: 8px;
+    width: 80px;
+    height: 30px;
+    border: none;
   }
 
   .appointment__service img {
@@ -599,10 +612,12 @@
   .appointment__service-select {
     display: flex;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e7e6e7;
+    border: 1px solid #e7e6e7;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     justify-content: space-between;
+    margin-bottom: 7px;
+   
   }
 
   .appointment__service-title {
@@ -610,7 +625,7 @@
     letter-spacing: .03rem;
     font-family:sans-serif;
     padding: 5px 0;
-    font-size: 1.21rem;
+    font-size: 1.01rem;
   }
 
   .appointment__services {
@@ -621,7 +636,7 @@
   }
 
   .appointment__service-description {
-    color: #6f6f6f;
+    color: #aaa8a8;
     margin: 4px 0;
   }
   .appointment__service-duration {

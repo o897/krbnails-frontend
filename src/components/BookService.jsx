@@ -108,7 +108,7 @@ const BookService = () => {
         <div className="appointment">
           <div className="appointment__head-title">All Service</div>
           <div className="appointment__services">
-            <div className="appointment__service-select">
+            <div className="appointment__service-select" style={{border: "none"}}>
               <div className="appointment__service">
                 <div className="appointment__service-title">Drawings</div>
                 <div className="appointment__service-duration">
@@ -135,28 +135,31 @@ const BookService = () => {
             <CustomScroll>
               {services.map(({ title, price }, index) => (
                 <div key={index}>
-                  <div className="appointment__service-select" key={title}>
+                  <div className="appointment__service-select" key={title} style={{
+                    backgroundColor: checkedState[index] ? "#ac92bc" : "transparent",
+                    borderRadius: "4px",
+                    padding: "2px"
+                  }}>
                     <div className="appointment__service">
-                      <div className="appointment__service-title">{title}</div>
                       <div>
                         <img className="appointment__services-img" src={designImg} alt="" srcset="" /></div>
+                        <div className="appointment__service-title">{title}</div>
+
                       <div className="appointment__service-description">Begins with a warm foot soak, includes all regular maintenance and finished with choice of regular polish.</div>
-                      <div className="appointment__service-duration">
-                        1h - 1h:15min
-                      </div>
+                      
                       <div className="appointment__service-bot">
-                          <div className="appointment__service-title">R{price}</div>
-                          <div><button>Select</button></div>
+                        <div className="appointment__service-title">R{price} | 40min</div>
+                        <div><button className="appointment__service-button" value={price} onClick={checkedState[index]} onChange={() => handleOnChange(index)}>Select</button></div>
                       </div>
                     </div>
-                    {/* <div>
-                      <Checkbox
+                    <div>
+                      {/* <Checkbox
                         {...label}
                         value={price}
                         checked={checkedState[index]}
                         onChange={() => handleOnChange(event, index)}
-                      />
-                    </div> */}
+                      /> */}
+                    </div>
                   </div>
                 </div>
               ))}
