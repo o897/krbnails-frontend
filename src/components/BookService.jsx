@@ -70,6 +70,22 @@ const BookService = () => {
     }));
   };
 
+  const handleSelect = () => {
+    e.preventDefault();
+
+     const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setFormData((prevFormData) => {
+      
+    })
+
+
+    console.log("hi");
+
+  }
+
   const minusNails = (e) => {
     e.preventDefault();
     setFormData((prevFormData) => ({
@@ -93,6 +109,8 @@ const BookService = () => {
   useEffect(() => {
     updateGlobalData({ formData });
     console.log(globalData);
+    console.log(formData);
+    
   }, [formData]);
   return (
     <>
@@ -142,14 +160,15 @@ const BookService = () => {
                   }}>
                     <div className="appointment__service">
                       <div>
-                        <img className="appointment__services-img" src={designImg} alt="" srcset="" /></div>
+                        <img className="appointment__services-img" src={designImg} alt=""/></div>
                         <div className="appointment__service-title">{title}</div>
 
                       <div className="appointment__service-description">Begins with a warm foot soak, includes all regular maintenance and finished with choice of regular polish.</div>
                       
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">R{price} | 40min</div>
-                        <div><button className="appointment__service-button" value={price} onClick={checkedState[index]} onChange={() => handleOnChange(index)}>Select</button></div>
+                        {/* I want to update the checked state's */}
+                        <div><button className="appointment__service-button" value={price} onClick={(e) => {e.preventDefault(); console.log("clicked")}}>Select</button></div>
                       </div>
                     </div>
                     <div>
