@@ -70,7 +70,7 @@ const BookService = () => {
     }));
   };
 
-  const handleSelect = () => {
+  const handleSelect = (e,position) => {
     e.preventDefault();
 
      const updatedCheckedState = checkedState.map((item, index) =>
@@ -125,6 +125,7 @@ const BookService = () => {
       <form>
         <div className="appointment">
           <div className="appointment__head-title">All Service</div>
+          <p style={{color:"red"}}>Still in development [for now only the number of nails button work]</p>
           <div className="appointment__services">
             <div className="appointment__service-select" style={{border: "none"}}>
               <div className="appointment__service">
