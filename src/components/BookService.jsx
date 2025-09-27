@@ -81,9 +81,6 @@ const BookService = () => {
       
     })
 
-
-    console.log("hi");
-
   }
 
   const minusNails = (e) => {

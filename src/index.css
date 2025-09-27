@@ -213,11 +213,10 @@
 
   /* landing page*/
   .hero__bookbtn {
-    z-index: 2;
-    width: 245px;
+     width: 245px;
     height: 55px;
     position: absolute;
-    background-color: initial;
+    background-color: #ffd4d4;
     top: 57vh;
     border: 2px solid black;
     margin: auto;
@@ -225,10 +224,13 @@
     right: 10vw;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
     margin-top: 15px;
+    border-radius: 18px;
   }
+  
+  
 
   .appointment__bookbtn {
   }
