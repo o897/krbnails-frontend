@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -46,6 +46,11 @@ const BookingForm = () => {
       setMessage("Error");
     }
   };
+
+  useEffect(() => {
+    console.log(globalData);
+    
+  },[])
 
   return (
     <>

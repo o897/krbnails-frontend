@@ -15,6 +15,7 @@ import designImg from "../assets/services/design.jpg";
 
 
 const BookService = () => {
+  // Onchange means if anything changes 
   const { globalData, updateGlobalData } = useContext(GlobalContext);
 
   // replace form data with global data
@@ -31,10 +32,43 @@ const BookService = () => {
     new Array(services.length).fill(false)
   );
 
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  // const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   // if checked add them to the array if check is false filter them out
-  const handleOnChange = (event, position) => {
+  // const handleOnChange = (event, position) => {
+  //   const updatedCheckedState = checkedState.map((item, index) =>
+  //     index === position ? !item : item
+  //   );
+
+  //   // WE'LL MAKE THEM SELET INSTEAD OF CHECKBOXES
+  //   setCheckedState(updatedCheckedState);
+
+  //   setFormData((prevFormData) => {
+
+  //     let updatedServices = [
+  //       ...prevFormData.appointmentTitle, {
+  //         title: services[position].title,
+  //         price: services[position].price,
+  //       }
+  //     ];
+
+  //     return {
+  //       ...prevFormData,
+  //       numServices: formData.checkedState.filter(Boolean).length,
+  //       total: updatedCheckedState.reduce((sum, currentState, index) => {
+  //         if (currentState === true) {
+  //           return sum + services[index].price;
+  //         }
+  //         return sum;
+  //       }, 0),
+  //     }
+  //   });
+  // };
+
+  const handleSelect = (e, position) => {
+    e.preventDefault();
+
+    // update the checked states after selecting a card
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
     );
@@ -44,8 +78,7 @@ const BookService = () => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       appointmentTitle: [
-        ...prevFormData.appointmentTitle,
-        event.target.checked
+        ...prevFormData.appointmentTitle, updatedCheckedState[position]
           ? {
             ...prevFormData.appointmentTitle,
             service: services[position].title,
@@ -55,59 +88,32 @@ const BookService = () => {
             (title) => title !== services[position].title
           ),
       ],
-      numServices: updatedCheckedState.reduce((sum, currentState) => {
-        if (currentState === true) {
-          return sum + 1;
-        }
-        return sum;
-      }, 0),
       total: updatedCheckedState.reduce((sum, currentState, index) => {
         if (currentState === true) {
           return sum + services[index].price;
         }
         return sum;
       }, 0),
-    }));
-  };
+      numServices: updatedCheckedState.filter(Boolean).length,
+    }))
 
-  const handleSelect = (e,position) => {
-    e.preventDefault();
-
-     const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-
-    setFormData((prevFormData) => {
-      
-    })
 
   }
 
-  const minusNails = (e) => {
-    e.preventDefault();
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      total: prevFormData.nails != 0 ? prevFormData.total - 5 : 0,
-      nails: prevFormData.nails != 0 ? prevFormData.nails - 1 : 0,
-    }));
-    console.log("nails", formData.nails);
-  };
-
-  const addNails = (e) => {
+  const updateNails = (e) => {
     e.preventDefault();
     setFormData((prevFormData) => ({
       ...prevFormData,
       total: prevFormData.total != 50 ? prevFormData.total + 5 : 50,
       nails: prevFormData.nails != 10 ? prevFormData.nails + 1 : 10,
     }));
-    console.log("nails", formData.nails);
   };
 
   useEffect(() => {
     updateGlobalData({ formData });
-    console.log(globalData);
+    // console.log(globalData);
     console.log(formData);
-    
+
   }, [formData]);
   return (
     <>
@@ -121,10 +127,10 @@ const BookService = () => {
       </div>
       <form>
         <div className="appointment">
-          <div className="appointment__head-title">All Service</div>
-          <p style={{color:"red"}}>Still in development [for now only the number of nails button work]</p>
+          <div className="appointment__head-title">All Services</div>
+          <p style={{ color: "red" }}>Still in development [for now only the number of nails button work]</p>
           <div className="appointment__services">
-            <div className="appointment__service-select" style={{border: "none"}}>
+            <div className="appointment__service-select" style={{ border: "none" }}>
               <div className="appointment__service">
                 <div className="appointment__service-title">Drawings</div>
                 <div className="appointment__service-duration">
@@ -134,13 +140,13 @@ const BookService = () => {
               </div>
               <div>
                 <div className="nail">
-                  <button onClick={minusNails}>
+                  <button onClick={updateNails}>
                     <span className="nail-btn">
                       <FontAwesomeIcon icon={faMinus} />
                     </span>
                   </button>
                   <div className="num_nails">{formData.nails}</div>
-                  <button onClick={addNails}>
+                  <button onClick={updateNails}>
                     <span className="nail-btn">
                       <FontAwesomeIcon icon={faPlus} />
                     </span>
@@ -152,21 +158,21 @@ const BookService = () => {
               {services.map(({ title, price }, index) => (
                 <div key={index}>
                   <div className="appointment__service-select" key={title} style={{
-                    backgroundColor: checkedState[index] ? "#ac92bc" : "transparent",
+                    backgroundColor: checkedState[index] ? "#ac92bc" : "transparent", //update background if selected
+                    color: checkedState[index] ? "#fff" : "#000",
                     borderRadius: "4px",
                     padding: "2px"
                   }}>
                     <div className="appointment__service">
                       <div>
-                        <img className="appointment__services-img" src={designImg} alt=""/></div>
-                        <div className="appointment__service-title">{title}</div>
+                        <img className="appointment__services-img" src={designImg} alt="" /></div>
+                      <div className="appointment__service-title">{title}</div>
 
                       <div className="appointment__service-description">Begins with a warm foot soak, includes all regular maintenance and finished with choice of regular polish.</div>
-                      
+
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">R{price} | 40min</div>
-                        {/* I want to update the checked state's */}
-                        <div><button className="appointment__service-button" value={price} onClick={(e) => {e.preventDefault(); console.log("clicked")}}>Select</button></div>
+                        <div><button className="appointment__service-button" value={price} onClick={(e) => { handleSelect(e, index) }}>Select</button></div>
                       </div>
                     </div>
                     <div>
@@ -174,7 +180,7 @@ const BookService = () => {
                         {...label}
                         value={price}
                         checked={checkedState[index]}
-                        onChange={() => handleOnChange(event, index)}
+                        onChange={() => handleOnChange(event, index)} 
                       /> */}
                     </div>
                   </div>
@@ -187,7 +193,7 @@ const BookService = () => {
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-                {formData.totalService} Services
+                {formData.numServices ? formData.numServices : ""} Services
               </div>
               <div className="appointment__button-services">
 
