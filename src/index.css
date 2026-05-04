@@ -633,7 +633,7 @@
   .appointment__services {
     overflow: auto;
     scroll-behavior: smooth;
-    height: 65vh;
+    height: 72vh;
     padding-right: 6vw;
   }
 
