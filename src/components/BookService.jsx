@@ -115,7 +115,7 @@ const BookService = () => {
             </div>
 
             {/* Services list */}
-            <CustomScroll>
+          <div className="appointment__services-scroll">
               {services.map(({ title, price }, index) => (
                 <div key={index}>
                   <div
@@ -157,7 +157,8 @@ const BookService = () => {
                   </div>
                 </div>
               ))}
-            </CustomScroll>
+
+            </div>
           </div>
         </div>
 
