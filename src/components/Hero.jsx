@@ -93,7 +93,10 @@ function Hero() {
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
-            Elevate Your Look, One Nail at a Time.
+            One Nail at a Time.
+          </div>
+          <div className="hero__welcome-sub">
+              Elevate Your Look
           </div>
           <div className="hero__welcome-img" data-aos="zoom-in">
             <img
