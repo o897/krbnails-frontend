@@ -23,7 +23,7 @@
 
 .header_menu {
   font-size: 1.6em;
-  
+
 
 }
 
@@ -34,25 +34,31 @@
   margin: 0 6vw;
 
 }
+
 .hero {
   position: relative;
-  height : 100vh;
+  height: 100vh;
 }
 
 /* HERO */
 .hero__welcome-title {
 
-    width: 50%;
-    font-family: "Playfair Display", serif;
-    position: absolute;
-    left: 25%;
-    top: 30%;
-    z-index: 50;
-    font-size: 4rem;
-    text-align: center;
-    font-weight: 600;
-    color: #0d1619;
-  }
+  width: 50%;
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  z-index: 50;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 600;
+  color: #0d1619;
+}
+
+.hero__bookbtn:hover {
+  background-color: #111111;
+  color: #fff;
+}
 
 .hero__bookbtn {
   position: absolute;
@@ -62,16 +68,18 @@
   z-index: 50;
   font-family: "Montserrat", sans-serif;
   height: 50px;
-  border-radius: 8px;
-  border: none;
   width: 260px;
+  background-color: inherit;
+  border: 2px solid #1f1e1e;
+  color: #000000;
 }
 
 
 .hero__welcome-img img {
   width: 100%;
   height: 100vh;
-  object-fit:cover;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
 
@@ -174,7 +182,7 @@
   .header__logo {
     display: flex;
     align-items: center;
-    padding-right : 6vw;
+    padding-right: 6vw;
   }
 
 
@@ -277,7 +285,7 @@
   .hero {
     position: relative;
     z-index: 1;
-    background-color: 0,0%,100%;
+    background-color: 0, 0%, 100%;
   }
 
   .hero__welcome {
@@ -318,11 +326,10 @@
     margin-top: 15px;
     border-radius: 18px;
   }
-  
-  
 
-  .appointment__bookbtn {
-  }
+
+
+  .appointment__bookbtn {}
 
   .hero__bookbtn :hover {
     background-color: #fff;
@@ -465,8 +472,7 @@
     top: 60px;
   }
 
-  .socials__title {
-  }
+  .socials__title {}
 
   .socials_link-btn {
     background-color: initial;
@@ -500,14 +506,17 @@
     display: flex;
     align-items: center;
     margin-bottom: 23px;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
+    /* Safari */
     position: sticky;
     /* top: 0; */
     height: 45px;
   }
+
   .angle-icon {
     margin: 0 25px;
   }
+
   /* end heading at the top */
 
   /* book */
@@ -534,9 +543,12 @@
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
-    padding: 10px 20px; /* Adjust as needed */
-    background-color: initial; /* Adjust as needed */
-    color: white; /* Adjust as needed */
+    padding: 10px 20px;
+    /* Adjust as needed */
+    background-color: initial;
+    /* Adjust as needed */
+    color: white;
+    /* Adjust as needed */
     border: 1px solid #6f6f6f;
     cursor: pointer;
     height: 40px;
@@ -552,6 +564,7 @@
     font-size: 3.6rem;
     text-align: center;
   }
+
   .gallery {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -684,7 +697,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .appointment__service-button {
     font-weight: 700;
     color: #fff;
@@ -708,13 +721,13 @@
     /* width: 100%; */
     justify-content: space-between;
     margin-bottom: 7px;
-   
+
   }
 
   .appointment__service-title {
     font-weight: 400;
     letter-spacing: .03rem;
-    font-family:sans-serif;
+    font-family: sans-serif;
     padding: 5px 0;
     font-size: 1.01rem;
   }
@@ -730,6 +743,7 @@
     color: #aaa8a8;
     margin: 4px 0;
   }
+
   .appointment__service-duration {
     color: gray;
   }
@@ -768,6 +782,7 @@
     font-size: 1.2rem;
     letter-spacing: .1rem;
   }
+
   .appointment__button-services {
     color: gray;
     font-family: "Noto Sans", sans-serif;
@@ -793,6 +808,7 @@
     color: #6f6f6f;
     margin-bottom: 20px;
   }
+
   .menu__container {
     background-color: #fcf8fe;
     width: 90%;
@@ -840,6 +856,7 @@
   .appointment__form-date {
     margin: 0 6vw;
   }
+
   .date {
     display: flex;
     justify-content: center;
@@ -921,6 +938,7 @@
     width: 90%;
     margin: 0 auto;
   }
+
   .payment__title {
     font-weight: 700;
     font-size: 1.5rem;
@@ -935,6 +953,7 @@
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
   }
+
   .payment__minimum {
     font-weight: 600;
     margin: 14px 0;
@@ -961,6 +980,7 @@
     width: 291px;
     border-radius: 4px;
   }
+
   .please__note-detail {
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
@@ -990,6 +1010,7 @@
   .review {
     font-family: "PT Sans", sans-serif;
   }
+
   .review__heading {
     margin: 20px 0;
     font-size: 1.4rem;
@@ -1037,6 +1058,7 @@
     margin-bottom: 16px;
     color: #222831;
   }
+
   .contact__group {
     position: relative;
     margin: auto;
@@ -1049,7 +1071,8 @@
     font-weight: 400;
     padding-left: 6vw;
     margin: 5px;
-    color: #2f3133; /* #212529 */
+    color: #2f3133;
+    /* #212529 */
     font-size: 14px;
     font-family: inherit;
     font-weight: 500;
@@ -1105,29 +1128,30 @@
 
   /* Confirmation */
 
-    .confirmation {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin: 0 8vw 5vw;
-    }
+  .confirmation {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 8vw 5vw;
+  }
 
-    .confirmation-img {
-      width: 330px;
-    }
+  .confirmation-img {
+    width: 330px;
+  }
 
-    .button-confirm {
-      background-color: #95D0A9;
-      color: #FDFDFD;
-      height: 51px;
-      width: 187px;
-      border: none;
-      font-size: 2rem;
-      font-weight: 600;
+  .button-confirm {
+    background-color: #95D0A9;
+    color: #FDFDFD;
+    height: 51px;
+    width: 187px;
+    border: none;
+    font-size: 2rem;
+    font-weight: 600;
 
 
-    }
+  }
+
   /* End Confirmation */
 }
