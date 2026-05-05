@@ -99,10 +99,10 @@ function Hero() {
                 trimming and shaping the nails, often with nail polish
                 application.
               </div>
-            </div>
-            <div className="services-types">
-              <div className="services__title">Acrylic</div>
-              <div className="services__sub">4 Services</div>
+              <div className="services-types">
+                <div className="services__title">Acrylic</div>
+                <div className="services__sub">4 Services</div>
+              </div>
             </div>
           </div>
         );
@@ -179,7 +179,7 @@ function Hero() {
         </section> */}
         <section>
           <div className="book">
-            <div className="book__heading">Nail Your Look, Every Day!</div>
+            <h2>Nail Your Look, Every Day!</h2>
             <button className="book__btn">
               <Link to="book">BOOK AN APPOINTMENT</Link>
             </button>
@@ -187,22 +187,26 @@ function Hero() {
         </section>
         <section className="gallery">
           <div className="gallery__heading">Follow our journey</div>
-          <div className="gallery__container">
-            <img src={images[1].source} alt="" />
-            <img src={images[2].source} alt="" />
+          <div className="gallery_wrapper">
+            <div className="gallery__container">
+              <img src={images[1].source} alt="" />
+              <img src={images[2].source} alt="" />
+            </div>
+            <div className="gallery__container">
+              <img src={images[3].source} alt="" />
+              <img src={images[4].source} alt="" />
+            </div>
+            <div className="gallery__container">
+              <img src={images[5].source} alt="" />
+              <img src={images[6].source} alt="" />
+            </div>
+            <div className="gallery__container">
+              <img src={images[7].source} alt="" />
+              <img src={images[0].source} alt="" />
+            </div>
           </div>
-          <div className="gallery__container">
-            <img src={images[3].source} alt="" />
-            <img src={images[4].source} alt="" />
-          </div>
-          <div className="gallery__container">
-            <img src={images[5].source} alt="" />
-            <img src={images[6].source} alt="" />
-          </div>
-          <div className="gallery__container">
-            <img src={images[7].source} alt="" />
-            <img src={images[0].source} alt="" />
-          </div>
+
+
         </section>
         <section className="reviews">
           <div className="review__title">They're Talking</div>

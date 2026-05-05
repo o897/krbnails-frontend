@@ -21,7 +21,6 @@
 body {
   font-family: "Noto Sans", sans-serif;
   overflow-x: hidden;
-  background-color: #fff;
 }
 
 a {
@@ -31,6 +30,16 @@ a {
 
 li {
   list-style: none;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #0d1619;
 }
 
 /* =========================
@@ -94,18 +103,13 @@ li {
 }
 
 .hero__welcome-sub {
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    z-index: 50;
-    transform: translate(-50%, -50%);
-    top: 22vh;
-  
-
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  z-index: 50;
+  transform: translate(-50%, -50%);
+  top: 22vh;
 }
-
-
-
 
 .hero__bookbtn {
   position: absolute;
@@ -141,8 +145,12 @@ li {
   font-size: 1.4rem;
   text-decoration: underline;
   font-family: "Playfair Display", serif;
+  margin: 30px 0 40px;
 }
 
+.services-menu-items {
+  cursor: pointer;
+}
 
 .services__container-big img {
   width: 22rem;
@@ -155,10 +163,13 @@ li {
   margin: 10px 0;
 }
 
- .services-types {
-    display: flex;
-    gap: 20px;
-  }
+
+.services-types {
+  display: flex;
+  gap: 20px;
+}
+
+
 
 /* =========================
    SOCIAL
@@ -189,6 +200,22 @@ li {
 }
 
 /* =========================
+   GALLERY
+========================= */
+
+.gallery__container img {
+  height: 200px;
+  width: 200px;
+}
+
+.gallery_wrapper {
+  display: flex;
+}
+
+
+
+
+/* =========================
    TABLET
 ========================= */
 @media (min-width: 768px) {
@@ -208,7 +235,7 @@ li {
    DESKTOP
 ========================= */
 @media (min-width: 1024px) {
-  
+
   .header img {
     height: 100px;
     width: 100px;
@@ -235,8 +262,7 @@ li {
     margin: 0 6vw;
   }
 
-  .services__container  {
-
+  .services__container {
     display: flex;
     gap: 50px;
   }
@@ -249,10 +275,41 @@ li {
 
   .services-info {
     display: flex;
-    flex-direction: column
-  };
+    flex-direction: column;
+  }
 
- 
+  /* =========================
+   BOOK
+========================= */
+
+  .book {
+    background-color: #e3c7e4;
+    height: 300px;
+    align-items: center;
+    position: relative;
+  }
+
+  .book h2 {
+    top: 30px;
+    position: relative;
+    text-align: center;
+    margin: 50px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+  }
+
+  .book__btn {
+    position: relative;
+    left: 50%;
+    height: 60px;
+    width: 300px;
+    transform: translate(-50%, 50%);
+  }
+
+
+
+
 
 }
 
@@ -309,18 +366,6 @@ li {
     letter-spacing: 2px;
     font-size: 1rem;
     font-family: 'Raleway';
-  }
-
-
-
-  h2 {
-    text-align: center;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: #0d1619;
   }
 
   body {
