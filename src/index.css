@@ -2,6 +2,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
+
+.wrapper {
+  margin: 0 6vw;
+  display: flex;
+  flex-direction: column;
+
+}
+.header__logo {
+  display: flex;
+  justify-content: space-between;
+
+}
+.hero {
+  position: relative;
+  height : 70vh;
+}
+
+.book__heading {
+
+}
+
+
+.header__logo img {
+  height: 100px;
+  width: 100px;
+}
 @media only screen and (max-width: 480px) {
   :root {
     /* overflow-x: hidden; */

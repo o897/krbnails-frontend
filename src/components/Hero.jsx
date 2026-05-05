@@ -89,7 +89,7 @@ function Hero() {
   };
 
   return (
-    <>
+    <div className="wrapper">
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
@@ -249,7 +249,7 @@ function Hero() {
           </div>
         </section>
       </footer>
-    </>
+    </div>
   );
 }
 

@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       <div className="header__logo">
-        <img src={navbarImg} alt="" />
+        <img className="" src={navbarImg} alt="" />
         <FontAwesomeIcon icon={faBars} />
       </div>
 
