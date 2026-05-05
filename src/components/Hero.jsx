@@ -93,7 +93,7 @@ function Hero() {
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
-            One Nail at a Time.
+            Where beauty meets your fingertips.
           </div>
           <div className="hero__welcome-sub">
               Elevate Your Look

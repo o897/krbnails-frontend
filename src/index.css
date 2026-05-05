@@ -86,12 +86,24 @@ li {
   left: 50%;
   top: 20%;
   transform: translate(-50%, -50%);
-  /* font-family: "Playfair Display", serif; */
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   text-align: center;
   color: #0d1619;
   z-index: 50;
 }
+
+.hero__welcome-sub {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    z-index: 50;
+    transform: translate(-50%, -50%);
+    top: 22vh;
+  
+
+}
+
 
 
 
@@ -204,7 +216,7 @@ li {
 
   .hero__welcome-title {
     width: 50%;
-    top: 30%;
+    top: 35%;
     font-size: 4rem;
   }
 
@@ -442,7 +454,7 @@ li {
     height: 55px !important;
     position: absolute;
     background-color: #ffd4d4;
-    top: 70vh;
+    top: 62vh;
     border: 2px solid black;
     right: 10vw;
     font-family: "Montserrat", sans-serif;
