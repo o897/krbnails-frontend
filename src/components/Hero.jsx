@@ -186,8 +186,8 @@ function Hero() {
           </div>
         </section>
         <section className="gallery">
-          <div className="gallery__heading">Follow our journey</div>
-          <div className="gallery_wrapper">
+          <h2 className="gallery__heading">Follow our journey</h2>
+          <div className="gallery_wrapper col">
             <div className="gallery__container">
               <img src={images[1].source} alt="" />
               <img src={images[2].source} alt="" />
@@ -205,35 +205,45 @@ function Hero() {
               <img src={images[0].source} alt="" />
             </div>
           </div>
-
-
         </section>
+
         <section className="reviews">
-          <div className="review__title">They're Talking</div>
-          <div className="review__container" data-aos="fade-left">
-            <div className="review__container-review">
-              Positive vibes all the way. Hygienic, long-lasting gel manicure,
-              and a friendly staff. Found my new favorite spot – definitely
-              coming back!
+          <h2 className="review__title">They're Talking</h2>
+          <div className="row col">
+            <div className="review__container" data-aos="fade-left">
+              <div className="review__container-review">
+                Positive vibes all the way. Hygienic, long-lasting gel manicure,
+                and a friendly staff. Found my new favorite spot – definitely
+                coming back!
+              </div>
+              <div className="review__container-name">- Rearabilwe</div>
             </div>
-            <div className="review__container-name">- Rearabilwe</div>
-          </div>
-          <div className="review__container" data-aos="fade-down">
-            <div className="review__container-review">
-              Had an amazing nail art session. Creative team, clean space, and a
-              relaxing vibe. Definitely exceeded my expectations. Highly
-              recommend!
+            <div className="review__container" data-aos="fade-down">
+              <div className="review__container-review">
+                Had an amazing nail art session. Creative team, clean space, and a
+                relaxing vibe. Definitely exceeded my expectations. Highly
+                recommend!
+              </div>
+              <div className="review__container-name">Kearabilwe</div>
             </div>
-            <div className="review__container-name">Kearabilwe</div>
-          </div>
-          <div className="review__container" data-aos="fade-down">
-            <div className="review__container-review">
-              Absolutely loved my experience. Flawless manicure, friendly staff,
-              and a welcoming atmosphere. Can't wait to go back for more
-              pampering.
+            <div className="review__container" data-aos="fade-down">
+              <div className="review__container-review">
+                Absolutely loved my experience. Flawless manicure, friendly staff,
+                and a welcoming atmosphere. Can't wait to go back for more
+                pampering.
+              </div>
+              <div className="review__container-name">Tshepang</div>
             </div>
-            <div className="review__container-name">Tshepang</div>
+             <div className="review__container" data-aos="fade-down">
+              <div className="review__container-review">
+                Absolutely loved my experience. Flawless manicure, friendly staff,
+                and a welcoming atmosphere. Can't wait to go back for more
+                pampering.
+              </div>
+              <div className="review__container-name">Karabo</div>
+            </div>
           </div>
+
         </section>
       </main>
 
