@@ -269,7 +269,7 @@ li {
     text-align: center;
     overflow: hidden;
     letter-spacing: -2.5px;
-    width: 72%;
+    width: 80%;
     position: absolute;
     left: 50%;
     top: 45%;
@@ -277,7 +277,7 @@ li {
   }
 
   .hero__welcome-sub {
-    left: 25%;
+    left: 50%;
     top: 21vh;
     text-align: center;
     position: absolute;
