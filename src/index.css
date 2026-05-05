@@ -23,27 +23,24 @@
   height : 100vh;
 }
 
+/* HERO */
 .hero__welcome-title {
 
-    transform: translate(50%, -50%);
+   width: 50%;
+    font-family: "Playfair Display", serif;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 25%;
+    top: 30%;
     z-index: 50;
-}
-
-
-.header__logo img {
-  height: 100px;
-  width: 100px;
-}
-
+    font-size: 4rem;
+    text-align: center;
+  }
 
 .hero__bookbtn {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(60%,50%);
+  transform: translate(-50%, -50%);
   z-index: 50;
   font-family: "Montserrat", sans-serif;
   height: 50px;
@@ -58,6 +55,21 @@
   height: 100vh;
   object-fit:cover;
 }
+
+
+/* END HERO */
+.header__logo img {
+  height: 100px;
+  width: 100px;
+}
+
+
+
+
+.header__logo .icon {
+  font-size: 2rem;
+}
+
 
 
 @media only screen and (max-width: 480px) {

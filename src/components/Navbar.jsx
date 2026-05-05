@@ -20,7 +20,7 @@ const Navbar = () => {
     <>
       <div className="header__logo">
         <img className="" src={navbarImg} alt="" />
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} className="icon"/>
       </div>
 
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
