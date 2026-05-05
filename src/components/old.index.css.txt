@@ -1,45 +1,30 @@
-/* =========================
-   FONTS
-========================= */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
-/* =========================
-   RESET / BASE
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-:root {
-  --darkAccent-hsl: 240, 2.6%, 22.5%;
-}
-
-body {
-  font-family: "Noto Sans", sans-serif;
-  overflow-x: hidden;
-  background-color: #fff;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-li {
-  list-style: none;
-}
-
-/* =========================
-   LAYOUT
-========================= */
 .wrapper {
   margin: 0 6vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+}
+
+.header_menu {
+  display: flex;
+  gap: 30px;
+}
+
+.header_menu li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.header_menu {
+  font-size: 1.6em;
+
+
 }
 
 .header {
@@ -47,50 +32,32 @@ li {
   justify-content: space-between;
   align-items: center;
   margin: 0 6vw;
+
 }
 
-.header img {
-  height: 40px;
-}
-
-.header__logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header__logo button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* =========================
-   HERO
-========================= */
 .hero {
   position: relative;
   height: 100vh;
 }
 
-.hero__welcome-img img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.9;
+/* HERO */
+.hero__welcome-title {
+
+  width: 50%;
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  z-index: 50;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 600;
+  color: #0d1619;
 }
 
-.hero__welcome-title {
-  position: absolute;
-  width: 72%;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  text-align: center;
-  color: #0d1619;
-  z-index: 50;
+.hero__bookbtn:hover {
+  background-color: #111111;
+  color: #fff;
 }
 
 .hero__bookbtn {
@@ -98,123 +65,41 @@ li {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 240px;
-  height: 50px;
-  border: 2px solid #000;
-  background: transparent;
+  z-index: 50;
   font-family: "Montserrat", sans-serif;
+  height: 50px;
+  width: 260px;
+  background-color: inherit;
+  border: 2px solid #1f1e1e;
+  color: #000000;
+  letter-spacing: 1px;
   font-weight: 600;
 }
 
-.hero__bookbtn:hover {
-  background-color: #111;
-  color: #fff;
+
+.hero__welcome-img img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
-/* =========================
-   SERVICES
-========================= */
-.services {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+/* END HERO */
+.header img {
+  height: 100px;
+  width: 100px;
 }
 
-.services-menu {
-  display: flex;
-  gap: 18px;
-  font-size: 1.4rem;
-  text-decoration: underline;
-  font-family: "Playfair Display", serif;
+
+
+
+.header__logo .icon {
+  font-size: 2rem;
+  display: none;
 }
 
-.services__container-big img {
-  width: 22rem;
-  height: 14rem;
-  border-radius: 10px;
-}
 
-.services-description {
-  width: 22rem;
-  margin: 10px 0;
-}
-
-/* =========================
-   SOCIAL
-========================= */
-.socials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 300px;
-  color: #fff;
-}
-
-.socials__title {
-  font-size: 3rem;
-  font-family: "Playfair Display", serif;
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer__container {
-  display: flex;
-  gap: 20px;
-}
-
-.footer__details {
-  font-size: 0.9rem;
-}
-
-/* =========================
-   TABLET
-========================= */
-@media (min-width: 768px) {
-
-  .hero__welcome-title {
-    font-size: 3.5rem;
-  }
-
-  .services__container-big img {
-    width: 26rem;
-    height: 16rem;
-  }
-
-}
-
-/* =========================
-   DESKTOP
-========================= */
-@media (min-width: 1024px) {
-
-  .header img {
-    height: 100px;
-    width: 100px;
-  }
-
-  .header_menu {
-    display: flex;
-    gap: 30px;
-    font-size: 1.6em;
-  }
-
-  .hero__welcome-title {
-    width: 50%;
-    top: 30%;
-    font-size: 4rem;
-  }
-
-  .hero__bookbtn {
-    width: 260px;
-  }
-
-  .wrapper {
-    margin: 0 6vw;
-  }
-
-}
 
 @media only screen and (max-width: 480px) {
   :root {
@@ -427,21 +312,26 @@ li {
 
   /* landing page*/
   .hero__bookbtn {
-    width: 245px !important;
-    height: 55px !important;
+    width: 245px;
+    height: 55px;
     position: absolute;
     background-color: #ffd4d4;
-    top: 70vh;
+    top: 57vh;
     border: 2px solid black;
+    margin: auto;
+    left: 10vw;
     right: 10vw;
     font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 600;
+    font-style: normal;
     margin-top: 15px;
     border-radius: 18px;
   }
 
 
 
+  .appointment__bookbtn {}
 
   .hero__bookbtn :hover {
     background-color: #fff;
@@ -1142,10 +1032,6 @@ li {
     font-family: "PT Sans", sans-serif;
     margin-top: 15px;
     font-size: 14px;
-  }
-
-  .header_menu {
-    display: none;
   }
 
   .table-body {
