@@ -11,7 +11,23 @@
 
 }
 
-.header__logo {
+.header_menu {
+  display: flex;
+  gap: 30px;
+}
+
+.header_menu li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.header_menu {
+  font-size: 1.6em;
+  
+
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +42,7 @@
 /* HERO */
 .hero__welcome-title {
 
-   width: 50%;
+    width: 50%;
     font-family: "Playfair Display", serif;
     position: absolute;
     left: 25%;
@@ -34,6 +50,8 @@
     z-index: 50;
     font-size: 4rem;
     text-align: center;
+    font-weight: 600;
+    color: #0d1619;
   }
 
 .hero__bookbtn {
@@ -58,7 +76,7 @@
 
 
 /* END HERO */
-.header__logo img {
+.header img {
   height: 100px;
   width: 100px;
 }
@@ -68,6 +86,7 @@
 
 .header__logo .icon {
   font-size: 2rem;
+  display: none;
 }
 
 

@@ -18,9 +18,18 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="header__logo">
+      <div className="header">
+
         <img className="" src={navbarImg} alt="" />
-        <FontAwesomeIcon icon={faBars} className="icon"/>
+         {/* <FontAwesomeIcon icon={faBars} className="icon"/> */}
+
+        <div className="header_menu">
+            
+              <div className="header_menu-items">Login</div>
+              <div className="header_menu-items">Sevices</div>
+              <div className="header_menu-items">Contact</div>
+            
+        </div>
       </div>
 
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
