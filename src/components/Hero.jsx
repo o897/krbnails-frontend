@@ -31,6 +31,7 @@ function Hero() {
           <div className="services__container services__container-big">
             <img src={pedicureImg} alt="" srcSet="" />
             <div className="services-info">
+              <h2 className="service-title">Pedicure</h2>
               <div className="services-description">
                 A pedicure is a beauty treatment for the feet and toenails,
                 involving soaking, exfoliating, and moisturizing. It includes
@@ -41,6 +42,9 @@ function Hero() {
                 <div className="services__title">Pedicure |</div>
                 <div className="services__sub">2 Services</div>
               </div>
+               <Link to="menu">
+                <button className="services__container-btn">LEARN MORE</button>
+              </Link>
 
             </div>
 
@@ -51,6 +55,8 @@ function Hero() {
           <div className="services__container services__container-big">
             <img src={designImg} alt="" />
             <div className="services-info">
+              <h2 className="service-title">Pedicure</h2>
+
               <div className="services-description">
                 Elevate your look with stunning nail art designs that showcase
                 your unique style. Our expert artists create vibrant, intricate
@@ -61,6 +67,9 @@ function Hero() {
                 <div className="services__title">Designs</div>
                 <div className="services__sub">4 Services</div>
               </div>
+               <Link to="menu">
+                <button className="services__container-btn">LEARN MORE</button>
+              </Link>
             </div>
 
           </div>
@@ -70,6 +79,8 @@ function Hero() {
           <div className="services__container services__container-big">
             <img src={acrylicImg} alt="" srcSet="" />
             <div className="services-info">
+              <h2 className="service-title">Pedicure</h2>
+
               <div className="services-description">
                 Soaking nails involves immersing them in warm, soapy water to
                 soften cuticles and prepare them for grooming. This step cleanses
@@ -81,6 +92,9 @@ function Hero() {
                 <div className="services__title">Buff & Shine</div>
                 <div className="services__sub">2 Services</div>
               </div>
+               <Link to="menu">
+                <button className="services__container-btn">LEARN MORE</button>
+              </Link>
             </div>
 
           </div>
@@ -93,6 +107,7 @@ function Hero() {
           >
             <img src={acrylicImg} alt="" srcSet="" />
             <div className="services-info">
+              <h2 className="service-title">Pedicure</h2>
               <div className="services-description">
                 A pedicure is a beauty treatment for the feet and toenails,
                 involving soaking, exfoliating, and moisturizing. It includes
@@ -103,6 +118,11 @@ function Hero() {
                 <div className="services__title">Acrylic</div>
                 <div className="services__sub">4 Services</div>
               </div>
+               <div className="services__container">
+              <Link to="menu">
+                <button className="services__container-btn dsktp">LEARN MORE</button>
+              </Link>
+            </div>
             </div>
           </div>
         );
@@ -114,7 +134,7 @@ function Hero() {
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
-            Where beauty meets your fingertips.
+            Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
           </div>
           <div className="hero__welcome-sub">
             Elevate Your Look
@@ -130,7 +150,7 @@ function Hero() {
             <button
               className="hero__bookbtn"
             >
-              BOOK AN APPOINTMENT
+             <span className="wht">BOOK A</span>N APPOINTMENT
             </button>
           </Link>
         </div>
@@ -163,7 +183,7 @@ function Hero() {
             {renderService()}
             <div className="services__container">
               <Link to="menu">
-                <button className="services__container-btn">LEARN MORE</button>
+                <button className="services__container-btn mobl">LEARN MORE</button>
               </Link>
             </div>
           </div>

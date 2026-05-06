@@ -23,28 +23,28 @@
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -75,6 +75,10 @@ h2 {
 /* =========================
    LAYOUT
 ========================= */
+.wht {
+  color: #fff;
+}
+
 .wrapper {
   margin: 0 6vw;
   display: flex;
@@ -149,6 +153,8 @@ h2 {
   z-index: 50;
   transform: translate(-50%, -50%);
   top: 22vh;
+  letter-spacing: 2px;
+
 }
 
 .hero__bookbtn {
@@ -162,6 +168,8 @@ h2 {
   background: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .hero__bookbtn:hover {
@@ -279,6 +287,9 @@ h2 {
    DESKTOP
 ========================= */
 @media (min-width: 1024px) {
+  .hero {
+    background-color: #a999b9;
+  }
 
   .header img {
     height: 100px;
@@ -289,6 +300,10 @@ h2 {
     display: flex;
     gap: 30px;
     font-size: 1.6em;
+  }
+
+  .hero__welcome {
+    display: flex;
   }
 
   .hero__welcome-title {
@@ -309,17 +324,50 @@ h2 {
   .services__container {
     display: flex;
     gap: 50px;
+    align-items: center;
   }
 
   .services__container-big img {
-    height: 500px;
-    width: 600px;
+    object-fit: cover;
+    height: 400px;
+    width: 700px;
     border-radius: 0;
+  }
+
+  .services-description {
+    text-align: center;
+    font-family: 'Montserrat';
+    line-height: 21px;
+    letter-spacing: 1px;
   }
 
   .services-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .services-types {
+    display: flex;
+    justify-content: center;
+  }
+
+  .services__container-btn.dsktp {
+    letter-spacing: 2px;
+    width: 170px;
+    height: 40px;
+    background-color: inherit;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+
+  .services__container-btn:hover {
+    background-color: #db76d3;
+  }
+
+  .mobl {
+    display: none;
   }
 
   /* =========================
@@ -353,6 +401,8 @@ h2 {
     height: 60px;
     width: 300px;
     transform: translate(-50%, 50%);
+    letter-spacing: 2px;
+    cursor: pointer;
   }
 
 
@@ -377,9 +427,10 @@ h2 {
    REVIEWS
 ========================= */
 
-.reviews {
-  margin: 40px;
-}
+  .reviews {
+    margin: 40px;
+  }
+
   .reviews_section {
     margin: 40px;
     display: flex;
@@ -400,12 +451,21 @@ h2 {
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     line-height: 25px;
+    padding: 10px;
+    letter-spacing: 1px;
+
+
   }
 
- 
+
 }
 
 
+footer {
+  background-color: #d37ac7;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
 
 @media only screen and (max-width: 480px) {
   :root {
@@ -450,15 +510,16 @@ h2 {
   }
 
   .hero__welcome-sub {
+    width: max-content;
     left: 50%;
     top: 21vh;
     text-align: center;
     position: absolute;
-    font-weight: 600;
+    font-weight: 500;
     z-index: 200;
-    color: #fff;
+    color: #721e9196;
     letter-spacing: 2px;
-    font-size: 1rem;
+    font-size: 1.24rem;
     font-family: 'Raleway';
   }
 
@@ -663,10 +724,10 @@ h2 {
     margin: 0 auto;
   }
 
+
   .services-description {
-    font-family: "Poppins", sans-serif;
-    width: 22rem;
-    margin: 14px 0vw;
+    text-align: left;
+    padding: 12px;
   }
 
   .services__container-small img {
@@ -707,6 +768,17 @@ h2 {
   .services__container-btn:hover {
     background-color: gray;
     color: #fff;
+  }
+
+  .services__container-btn.dsktp {
+    display: none;
+  }
+
+  .services-types {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    padding-left: 10px;
   }
 
   .nail {
