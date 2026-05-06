@@ -185,9 +185,10 @@ function Hero() {
             </button>
           </div>
         </section>
+
         <section className="gallery">
           <h2 className="gallery__heading">Follow our journey</h2>
-          <div className="gallery_wrapper col">
+          <div className="gallery_wrapper">
             <div className="gallery__container">
               <img src={images[1].source} alt="" />
               <img src={images[2].source} alt="" />
@@ -209,7 +210,7 @@ function Hero() {
 
         <section className="reviews">
           <h2 className="review__title">They're Talking</h2>
-          <div className="row col">
+          <div className="reviews_section">
             <div className="review__container" data-aos="fade-left">
               <div className="review__container-review">
                 Positive vibes all the way. Hygienic, long-lasting gel manicure,

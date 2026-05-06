@@ -214,9 +214,13 @@ h2 {
    GALLERY
 ========================= */
 
-.gallery__container img {
+/* .gallery__container img {
   height: 200px;
-  width: 200px;
+  width: 100px;
+} */
+
+.gallery__container {
+  display: flex;
 }
 
 .gallery_wrapper {
@@ -294,16 +298,17 @@ h2 {
 ========================= */
 
   .book {
-    background-color: #e3c7e4;
-    height: 300px;
-    align-items: center;
-    position: relative;
-    margin: 60px;
+        background-color: #e3c7e4;
+        height: 500px;
+        position: relative;
+        margin: 60px;
+        justify-items: baseline;
+        padding: 50px;
+    
   }
 
   .book h2 {
     font-weight: 700;
-    top: 30px;
     position: relative;
     text-align: center;
     color: #959595;
@@ -330,8 +335,23 @@ h2 {
     font-weight: 600;
   }
 
+  .gallery__container img {
+    height: 360px;
+    width: 260px;
+  }
 
-  .reviews {
+  .gallery_wrapper {
+    overflow-x: scroll;
+  }
+
+    /* =========================
+   REVIEWS
+========================= */
+
+  .reviews_section {
+    margin: 40px;
+    display: flex;
+    gap: 30px;
     margin: 40px;
   }
 
@@ -825,9 +845,9 @@ h2 {
   /* End Gallery */
 
   /* Reviews */
-  .reviews {
+  .reviews_section {
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
     background-color: #c3c3c3;
     align-items: center;
     margin-bottom: 20px;
