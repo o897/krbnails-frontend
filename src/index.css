@@ -8,14 +8,43 @@
 /* =========================
    RESET / BASE
 ========================= */
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+
 :root {
   --darkAccent-hsl: 240, 2.6%, 22.5%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -298,13 +327,13 @@ h2 {
 ========================= */
 
   .book {
-        background-color: #e3c7e4;
-        height: 500px;
-        position: relative;
-        margin: 60px;
-        justify-items: baseline;
-        padding: 50px;
-    
+    background-color: #e3c7e4;
+    height: 500px;
+    position: relative;
+    margin: 60px;
+    justify-items: baseline;
+    padding: 50px;
+
   }
 
   .book h2 {
@@ -344,25 +373,39 @@ h2 {
     overflow-x: scroll;
   }
 
-    /* =========================
+  /* =========================
    REVIEWS
 ========================= */
 
+.reviews {
+  margin: 40px;
+}
   .reviews_section {
     margin: 40px;
     display: flex;
     gap: 30px;
     margin: 40px;
+    justify-content: center;
   }
 
   .review__container {
-    border: 1px solid;
+    border: none;
     background-color: #a999b9;
     height: 300px;
-    width: 300px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    line-height: 25px;
   }
 
+ 
 }
+
+
 
 @media only screen and (max-width: 480px) {
   :root {
