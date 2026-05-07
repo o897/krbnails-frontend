@@ -523,6 +523,11 @@ footer {
     font-family: 'Raleway';
   }
 
+  .hero__welcome img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
   body {
     padding: 0;
     margin: 0;
@@ -875,10 +880,8 @@ footer {
     align-items: center;
     margin-bottom: 23px;
     position: -webkit-sticky;
-    /* Safari */
     position: sticky;
-    /* top: 0; */
-    height: 45px;
+    height: 75px;
   }
 
   .angle-icon {
@@ -891,7 +894,7 @@ footer {
   .book {
     margin-top: 30px;
     position: relative;
-    height: 500px;
+    height: 430px;
     background-color: hsla(var(--darkAccent-hsl), 1);
   }
 
@@ -918,18 +921,20 @@ footer {
   .book__btn {
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 63%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
-    /* Adjust as needed */
     background-color: initial;
-    /* Adjust as needed */
     color: white;
-    /* Adjust as needed */
     border: 1px solid #6f6f6f;
     cursor: pointer;
-    height: 40px;
-    width: 240px;
+    height: 50px;
+    width: 260px;
+  }
+
+  .book__btn:hover {
+    background-color: #646060;
+    color: #fff;
   }
 
   /* End book */
@@ -1076,13 +1081,22 @@ footer {
   }
 
   .appointment__service-button {
+    letter-spacing: 1px;
     font-weight: 700;
     color: #fff;
-    background-color: #800d8d;
-    border-radius: 8px;
-    width: 80px;
-    height: 30px;
+    background-color: #7a757c;
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+    font-family: 'Noto Sans';
     border: none;
+    font-weight: 700;
+  }
+
+  .rmv {
+    text-decoration: line-through;
+    font-weight: 500;
+    
   }
 
   .appointment__service img {
@@ -1095,18 +1109,19 @@ footer {
     padding-bottom: 10px;
     border: 1px solid #e7e6e7;
     align-items: center;
-    /* width: 100%; */
     justify-content: space-between;
     margin-bottom: 7px;
+    margin-bottom: 25px;
+    border-radius: 12px;
 
   }
 
   .appointment__service-title {
     font-weight: 400;
     letter-spacing: .03rem;
-    font-family: sans-serif;
+    font-family: 'Raleway';
     padding: 5px 0;
-    font-size: 1.01rem;
+    font-size: 1.3rem;
   }
 
   .appointment__services {
@@ -1117,422 +1132,428 @@ footer {
   }
 
   .appointment__service-description {
-    color: #aaa8a8;
-    margin: 4px 0;
+    letter-spacing: 1px;
+    color: #000000;
+    margin: 10px 0;
+    font-family: 'Noto Sans';
   }
+
 
   .appointment__service-duration {
     color: gray;
+    font-family: 'Noto Sans';
+    letter-spacing: 1px;
   }
 
-  .appointment__button {
-    display: flex;
 
-    border-top: 1px solid #e7e6e7;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    padding: 17px;
-    z-index: 2;
-    background-color: #fff;
-    padding-bottom: 10px;
-    font-family: "Roboto", sans-serif;
-  }
+.appointment__button {
+  display: flex;
+  border-top: 1px solid #e7e6e7;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 17px;
+  z-index: 2;
+  background-color: #fff;
+  padding-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+}
 
-  .appointment__button button {
-    background-color: #c41ecb;
-    color: #fff;
-    border-radius: 8px;
-    width: 113px;
-    height: 48px;
-    font-family: "Noto Sans", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: none;
-    margin-right: 8vw;
-  }
+.appointment__button button {
+  background-color: #161616;
+  border-radius: 8px;
+  width: 113px;
+  height: 48px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  letter-spacing: 1px;
+}
 
-  .appointment__button-price {
+.appointment__button-price {
 
-    font-weight: 500;
-    font-size: 1.2rem;
-    letter-spacing: .1rem;
-  }
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+}
 
-  .appointment__button-services {
-    color: gray;
-    font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-  }
+.appointment__button-services {
+  color: gray;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 2px;
+}
 
-  /* Choose services /End */
+/* Choose services /End */
 
-  /* / Menu */
+/* / Menu */
 
-  .menu {
-    margin-left: 6vw;
-  }
+.menu {
+  margin-left: 6vw;
+}
 
-  .menu__heading {
-    font-size: 2rem;
-    margin-bottom: 5px;
-  }
+.menu__heading {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
 
-  .menu__subheading {
-    color: #6f6f6f;
-    margin-bottom: 20px;
-  }
+.menu__subheading {
+  color: #6f6f6f;
+  margin-bottom: 20px;
+}
 
-  .menu__container {
-    background-color: #fcf8fe;
-    width: 90%;
-    margin-bottom: 30px;
-  }
+.menu__container {
+  background-color: #fcf8fe;
+  width: 90%;
+  margin-bottom: 30px;
+}
 
-  .menu__pricelist-row {
-    display: flex;
-    justify-content: space-between;
-    height: 20px;
-    align-items: center;
-    font-family: "Raleway", sans-serif;
-    font-size: 0.8rem;
-  }
+.menu__pricelist-row {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+}
 
-  .menu__title {
-    text-align: left;
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    border: none;
-    width: 300px;
-    height: 40px;
-    background-color: #ac92bc;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    color: #fff;
-  }
+.menu__title {
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border: none;
+  width: 300px;
+  height: 40px;
+  background-color: #ac92bc;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #fff;
+}
 
-  .menu__bg-pink {
-    background-color: #c3c3c3;
-  }
+.menu__bg-pink {
+  background-color: #c3c3c3;
+}
 
-  .menu__pricelist li {
-    font-family: "Open Sans", sans-serif;
-  }
+.menu__pricelist li {
+  font-family: "Open Sans", sans-serif;
+}
 
-  /* End Menu */
+/* End Menu */
 
-  /* Appointment Date -selection */
-  .appointment__form-date {
-    margin: 0 6vw;
-  }
+/* Appointment Date -selection */
+.appointment__form-date {
+  margin: 0 6vw;
+}
 
-  .date {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    margin-top: 80px;
-  }
+.date {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
 
-  .date input {
-    width: 200px;
-    padding: 5px auto;
-  }
+.date input {
+  width: 200px;
+  padding: 5px auto;
+}
 
-  .times {
-    display: grid;
-    place-items: center;
-    height: 100px;
-    overflow-y: auto;
-    margin-bottom: 40px;
-  }
+.times {
+  display: grid;
+  place-items: center;
+  height: 100px;
+  overflow-y: auto;
+  margin-bottom: 40px;
+}
 
-  .time {
-    display: flex;
-    font-size: 1rem;
-    border: 1px solid #e9e9e9;
-    color: #000000;
-    border-radius: 20px;
-    width: 300px;
-    font-weight: 400;
-    align-items: center;
-    font-family: "Noto Sans", sans-serif;
-    margin-bottom: 10px;
-    height: 40px;
-    justify-content: center;
-  }
+.time {
+  display: flex;
+  font-size: 1rem;
+  border: 1px solid #e9e9e9;
+  color: #000000;
+  border-radius: 20px;
+  width: 300px;
+  font-weight: 400;
+  align-items: center;
+  font-family: "Noto Sans", sans-serif;
+  margin-bottom: 10px;
+  height: 40px;
+  justify-content: center;
+}
 
-  .time__confirmation {
-    font-weight: 600;
-    margin-bottom: 10px;
-    padding-left: 10vw;
-    letter-spacing: 0.3px;
-    font-family: "Raleway", sans-serif;
-  }
+.time__confirmation {
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-left: 10vw;
+  letter-spacing: 0.3px;
+  font-family: "Raleway", sans-serif;
+}
 
-  .date__confirmation {
-    padding-left: 10vw;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-  }
+.date__confirmation {
+  padding-left: 10vw;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
 
-  .appointment__form-date-btn {
-    background-color: #663399;
-    background-color: #663399;
-    color: #fff;
-    width: 220px;
-    display: flex;
-    margin: 27px auto 60px;
-    font-size: 0.9rem;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border: none;
-    border-radius: 18px;
-  }
+.appointment__form-date-btn {
+  background-color: #663399;
+  background-color: #663399;
+  color: #fff;
+  width: 220px;
+  display: flex;
+  margin: 27px auto 60px;
+  font-size: 0.9rem;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  border-radius: 18px;
+}
 
-  /* End Appointment Date -selection  */
+/* End Appointment Date -selection  */
 
-  /* Payment page */
-  .payment {
-    border: 1px solid #6f6f6f;
-    width: 89%;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
+/* Payment page */
+.payment {
+  border: 1px solid #6f6f6f;
+  width: 89%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
 
-  .payment__content {
-    width: 90%;
-    margin: 0 auto;
-  }
+.payment__content {
+  width: 90%;
+  margin: 0 auto;
+}
 
-  .payment__title {
-    font-weight: 700;
-    font-size: 1.5rem;
-    font-family: "Open Sans", sans-serif;
-    border-bottom: 1px solid gray;
-    margin-bottom: 10px;
-    padding: 7px 15px;
-  }
+.payment__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+  padding: 7px 15px;
+}
 
-  .payment__sub {
-    margin-bottom: 15px;
-    font-size: 14px;
-    font-family: "Open Sans", sans-serif;
-  }
+.payment__sub {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
 
-  .payment__minimum {
-    font-weight: 600;
-    margin: 14px 0;
-    font-family: "Open Sans", sans-serif;
-    line-height: 19px;
-    font-size: 14px;
-  }
+.payment__minimum {
+  font-weight: 600;
+  margin: 14px 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 19px;
+  font-size: 14px;
+}
 
-  .payment__details {
-    background-color: #28a745;
-    border: none;
-    width: 250px;
-    margin: 0 auto;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    padding: 10px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    inline-size: 75%;
-    width: 291px;
-    border-radius: 4px;
-  }
+.payment__details {
+  background-color: #28a745;
+  border: none;
+  width: 250px;
+  margin: 0 auto;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  inline-size: 75%;
+  width: 291px;
+  border-radius: 4px;
+}
 
-  .please__note-detail {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-  }
+.please__note-detail {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
 
-  .please__note-detail li {
-    margin: 0;
-    font-family: "Open Sans", sans-serif;
-  }
+.please__note-detail li {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
 
-  .payment__bank-account {
-    margin-bottom: 30px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-  }
+.payment__bank-account {
+  margin-bottom: 30px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
 
-  .please__note ul li {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    margin-bottom: 9px;
-  }
+.please__note ul li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 9px;
+}
 
-  /* Payment */
+/* Payment */
 
-  /* Booking form */
+/* Booking form */
 
-  .review {
-    font-family: "PT Sans", sans-serif;
-  }
+.review {
+  font-family: "PT Sans", sans-serif;
+}
 
-  .review__heading {
-    margin: 20px 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding-left: 6vw;
-    /* font-family: "PT Sans", sans-serif; */
-    text-transform: uppercase;
-    color: #222831;
-  }
+.review__heading {
+  margin: 20px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-left: 6vw;
+  /* font-family: "PT Sans", sans-serif; */
+  text-transform: uppercase;
+  color: #222831;
+}
 
-  .header-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 6vw;
-    font-weight: 600;
-    color: #7f8486;
-    font-family: "PT Sans", sans-serif;
-    margin-top: 15px;
-    font-size: 14px;
-  }
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 6vw;
+  font-weight: 600;
+  color: #7f8486;
+  font-family: "PT Sans", sans-serif;
+  margin-top: 15px;
+  font-size: 14px;
+}
 
-  .header_menu {
-    display: none;
-  }
+.header_menu {
+  display: none;
+}
 
-  .table-body {
-    font-family: "PT Sans", sans-serif;
-    margin-bottom: 20px;
-    /* border: 1px solid #6f6f6f; */
-  }
+.table-body {
+  font-family: "PT Sans", sans-serif;
+  margin-bottom: 20px;
+  /* border: 1px solid #6f6f6f; */
+}
 
-  .table-row {
-    display: flex;
-    padding: 0px 6vw;
-    justify-content: space-between;
-    color: #0d1619;
-    margin: 4px;
-  }
+.table-row {
+  display: flex;
+  padding: 0px 6vw;
+  justify-content: space-between;
+  color: #0d1619;
+  margin: 4px;
+}
 
-  .contact {
-    position: relative;
-    font-family: "PT Sans", sans-serif;
-  }
+.contact {
+  position: relative;
+  font-family: "PT Sans", sans-serif;
+}
 
-  .contact-header {
-    font-size: 16px;
-    font-weight: 600;
-    padding-left: 6vw;
-    margin-bottom: 16px;
-    color: #222831;
-  }
+.contact-header {
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 6vw;
+  margin-bottom: 16px;
+  color: #222831;
+}
 
-  .contact__group {
-    position: relative;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-  }
+.contact__group {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
 
-  .contact__group label {
-    margin-bottom: 4px;
-    font-weight: 400;
-    padding-left: 6vw;
-    margin: 5px;
-    color: #2f3133;
-    /* #212529 */
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: 500;
-  }
+.contact__group label {
+  margin-bottom: 4px;
+  font-weight: 400;
+  padding-left: 6vw;
+  margin: 5px;
+  color: #2f3133;
+  /* #212529 */
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+}
 
-  .contact__group input {
-    width: 85%;
-    height: 35px;
-    border-radius: 5px;
-    margin-left: 6vw;
-    border: 1px solid #ced4da;
-    margin-bottom: 8px;
-    font-size: 14px;
-    padding-left: 15px;
-    transition: 0.5s;
-  }
+.contact__group input {
+  width: 85%;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 6vw;
+  border: 1px solid #ced4da;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 15px;
+  transition: 0.5s;
+}
 
-  .contact__group textarea {
-    width: 82%;
-    border-radius: 5px;
-    border: 1px solid #333;
-    margin-left: 6vw;
-    font-size: 14px;
-    border: 1px solid #ced4da;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-family: inherit;
-  }
+.contact__group textarea {
+  width: 82%;
+  border-radius: 5px;
+  border: 1px solid #333;
+  margin-left: 6vw;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-family: inherit;
+}
 
-  .contact__bookbtn {
-    background-color: #663399;
-    color: #fff;
-    height: 35px;
-    border-radius: 20px;
-    position: relative;
-    margin: 40px auto;
-    display: flex;
-    align-items: center;
-    width: 150px;
-    justify-content: center;
-    height: 40px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-  }
+.contact__bookbtn {
+  background-color: #663399;
+  color: #fff;
+  height: 35px;
+  border-radius: 20px;
+  position: relative;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: center;
+  height: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
 
-  .form__group {
-    display: flex;
-    flex-direction: column;
-  }
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
 
-  /* End Booking form */
+/* End Booking form */
 
-  /* Confirmation */
+/* Confirmation */
 
-  .confirmation {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin: 0 8vw 5vw;
-  }
+.confirmation {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 0 8vw 5vw;
+}
 
-  .confirmation-img {
-    width: 330px;
-  }
+.confirmation-img {
+  width: 330px;
+}
 
-  .button-confirm {
-    background-color: #95D0A9;
-    color: #FDFDFD;
-    height: 51px;
-    width: 187px;
-    border: none;
-    font-size: 2rem;
-    font-weight: 600;
+.button-confirm {
+  background-color: #95D0A9;
+  color: #FDFDFD;
+  height: 51px;
+  width: 187px;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
 
 
-  }
+}
 
-  /* End Confirmation */
+/* End Confirmation */
 }

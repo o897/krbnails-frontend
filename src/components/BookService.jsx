@@ -148,7 +148,7 @@ const BookService = () => {
                             className="appointment__service-button"
                             onClick={(e) => handleSelect(e, index)}
                           >
-                            {checkedState[index] ? "Deselect" : "Select"}
+                            {checkedState[index] ? <span className="rmv">Remove</span>: "Select"}
                           </button>
                         </div>
                       </div>
@@ -166,7 +166,7 @@ const BookService = () => {
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-                {formData.numServices} Services
+               {formData.numServices} {formData.numServices > 1 ? "Services" : "Service"} 
               </div>
               <div className="appointment__button-services">
                 R{formData.total} - 1h 15min
