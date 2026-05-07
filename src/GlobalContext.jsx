@@ -1,10 +1,18 @@
 import { createContext,useState } from "react";
-
 const GlobalContext = createContext()
 
 export const GlobalProvider = ({children}) => {
-    const [globalData,setGlobalData] = useState({})
 
+    const [globalData,setGlobalData] = useState({})
+    const [formData, setFormData] = useState({
+    appointmentTitle: [],
+    appointmentDuration: "",
+    total: 0,
+    numServices: 0,
+    nails: 0,
+  });
+
+  
     // func adds data to our parent
     const updateGlobalData = (newData) => {
         // update properties if theres new data

@@ -1083,7 +1083,7 @@ footer {
     background-color: #7a757c;
     border-radius: 10px;
     width: 100px;
-    height: 35px;
+    height: 45px;
     font-family: 'Noto Sans';
     border: none;
     font-weight: 700;
@@ -1123,13 +1123,13 @@ footer {
   .appointment__services {
     overflow: auto;
     scroll-behavior: smooth;
-    height: 72vh;
+    height: 65vh;
     padding-right: 6vw;
   }
 
   .appointment__service-description {
     letter-spacing: 1px;
-    color: #000000;
+    color: #3b3131;
     margin: 10px 0;
     font-family: 'Noto Sans';
   }
@@ -1148,11 +1148,10 @@ footer {
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    bottom: 0;
     padding: 17px;
-    z-index: 2;
-    background-color: #fff;
-    padding-bottom: 10px;
+    bottom: 0;
+    font-weight: 600;
+    border-radius: 20px;
     font-family: "Roboto", sans-serif;
   }
 

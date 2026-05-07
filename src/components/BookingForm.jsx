@@ -87,8 +87,8 @@ const BookingForm = () => {
           </div>
           <div className="custom-hr "></div>
           <div className="table-body">
-            {formData?.appointmentTitle &&
-              formData.appointmentTitle.map((service, index) => (
+            {globalData?.appointmentTitle &&
+              globalData.appointmentTitle.map((service, index) => (
                 <div key={index}>
                   <div className="table-row">
                     <div>{service.service}</div>
@@ -103,7 +103,7 @@ const BookingForm = () => {
             </div>
             <div className="table-row">
               <div>Total</div>
-              <div>{`${("R", formData?.total ?? "")}`}</div>
+              <div>{`${("R", globalData?.total ?? "")}`}</div>
             </div>
             <div className="custom-hr "></div>
           </div>
@@ -140,14 +140,13 @@ const BookingForm = () => {
               required
             />
           </div>
-          <input type="hidden" value={formData.total} />
+          <input type="hidden" value={globalData?.total} />
           <div className="contact__group">
             <label htmlFor="">Include a message (optional)</label>
             <textarea name="message" cols="30" rows="4"></textarea>
           </div>
           <button className="contact__bookbtn" type="submit">
             <Link to="/confirmation">Book</Link>
-            {/* Book */}
           </button>
         </div>
       </form>

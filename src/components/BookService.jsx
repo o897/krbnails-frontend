@@ -72,8 +72,8 @@ const BookService = () => {
   };
 
   useEffect(() => {
-    updateGlobalData({ formData });
-  }, [formData]);
+  updateGlobalData({ ...formData });
+}, [formData]);
 
   return (
     <>
@@ -166,7 +166,7 @@ const BookService = () => {
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-               {formData.numServices} {formData.numServices > 1 ? "Services" : "Service"} 
+               {formData.numServices} {formData.nails ||formData.numServices > 1 ? "Services" : "Service"} 
               </div>
               <div className="appointment__button-services">
                 R{formData.total} - 1h - 15min

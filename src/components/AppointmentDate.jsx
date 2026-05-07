@@ -15,38 +15,54 @@ import dayjs from "dayjs";
 function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
-      const daysToHighlight = ["2024-08-01", "2024-09-02", "2024-08-04"];
+      const daysToHighlight = [
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-04",
+      ];
+
       resolve({ daysToHighlight });
     }, 500);
 
-    signal.onabort = () => {
+    signal.addEventListener("abort", () => {
       clearTimeout(timeout);
       reject(new DOMException("aborted", "AbortError"));
-    };
+    });
   });
 }
 
-const CustomPickersDay = styled(PickersDay)(({ isHighlighted, day }) => ({
+const CustomPickersDay = styled(PickersDay, {
+  shouldForwardProp: (prop) => prop !== "isHighlighted",
+})(({ isHighlighted, day }) => ({
   position: "relative",
-  // Styles for the circle
-  "::after":
-    day.isSame(new Date(), "day") || day.isAfter(new Date(), "day")
+
+  "&::after":
+    day.isSame(dayjs(), "day") || day.isAfter(dayjs(), "day")
       ? {
           content: '""',
           position: "absolute",
           bottom: 6,
-          left: "52%",
+          left: "50%",
           transform: "translateX(-50%)",
           width: 13,
           height: 2.5,
+          borderRadius: 10,
           backgroundColor: isHighlighted ? "red" : "green",
         }
-      : null,
+      : {},
 }));
 
 function ServerDay(props) {
-  const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
-  const isHighlighted = highlightedDays.some(highlightedDays => day.isSame(dayjs(highlightedDays),'day'));
+  const {
+    highlightedDays = [],
+    day,
+    outsideCurrentMonth,
+    ...other
+  } = props;
+
+  const isHighlighted = highlightedDays.some((highlightedDay) =>
+    day.isSame(dayjs(highlightedDay), "day")
+  );
 
   return (
     <CustomPickersDay
@@ -60,15 +76,20 @@ function ServerDay(props) {
 
 export default function AppointmentDate() {
   const requestAbortController = useRef(null);
+
   const [isLoading, setIsLoading] = useState(false);
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState(null);
+
   const { updateGlobalData } = useContext(GlobalContext);
+
   const CustomActionBar = () => null;
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
+
+    requestAbortController.current = controller;
 
     fakeFetch(date, {
       signal: controller.signal,
@@ -79,30 +100,38 @@ export default function AppointmentDate() {
       })
       .catch((error) => {
         if (error.name !== "AbortError") {
-          throw error;
+          console.error(error);
         }
       });
-
-    requestAbortController.current = controller;
   };
 
   useEffect(() => {
-    updateGlobalData({
-      appointmentDate: dayjs(appointmentDate).format("DD-MMMM-YYYY"),
-      appointmentTime: appointmentTime 
-    });
+    fetchHighlightedDays(dayjs());
 
-    return () => requestAbortController.current?.abort();
-  }, [appointmentTime, appointmentDate]);
+    return () => {
+      requestAbortController.current?.abort();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!appointmentDate || !appointmentTime) return;
+
+    updateGlobalData({
+      appointmentDate: appointmentDate.format("DD-MMMM-YYYY"),
+      appointmentTime,
+    });
+  }, [
+    appointmentDate,
+    appointmentTime,
+    updateGlobalData,
+  ]);
 
   const handleMonthChange = (date) => {
-    if (requestAbortController.current) {
-      requestAbortController.current.abort();
-    }
+    requestAbortController.current?.abort();
 
     setIsLoading(true);
-    // setHighlightedDays([]);
     setAppointmentDate(null);
+
     fetchHighlightedDays(date);
   };
 
@@ -111,11 +140,16 @@ export default function AppointmentDate() {
       <div className="bookform__header">
         <Link to="/book" style={{ color: "white" }}>
           <span>
-            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
+            <FontAwesomeIcon
+              className="angle-icon"
+              icon={faAngleLeft}
+            />
           </span>
         </Link>
-        Select Date and time
+
+        Select Service Time
       </div>
+
       <div className="appointment__form-date">
         <div className="date">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -123,42 +157,52 @@ export default function AppointmentDate() {
               label="Select Date"
               loading={isLoading}
               value={appointmentDate}
-              onChange={(newValue) => setAppointmentDate(newValue)}
-              disablePast={true}
+              disablePast
+              onChange={(newValue) =>
+                setAppointmentDate(newValue)
+              }
               onMonthChange={handleMonthChange}
               renderLoading={() => <DayCalendarSkeleton />}
               slots={{
-                day: (params) => (
-                  <ServerDay {...params} highlightedDays={highlightedDays} />
-                ),
+                day: ServerDay,
                 actionBar: CustomActionBar,
                 toolbar: CustomActionBar,
+              }}
+              slotProps={{
+                day: {
+                  highlightedDays,
+                },
               }}
             />
           </LocalizationProvider>
         </div>
       </div>
+
       <div className="times">
         {worktimes.map(({ time }, index) => (
           <div
             className="time"
             key={index}
-            onClick={() => {
-              setAppointmentTime(time);
-            }}
+            onClick={() => setAppointmentTime(time)}
             style={{
-              backgroundColor: appointmentTime === time ? "#ce86f7" : "white",
+              backgroundColor:
+                appointmentTime === time
+                  ? "#ce86f7"
+                  : "white",
             }}
           >
             {time}
           </div>
         ))}
       </div>
+
       {appointmentDate && appointmentTime && (
         <button className="appointment__form-date-btn">
-          <Link to="/details">{`${appointmentDate.format(
-            "DD-MMMM-YYYY"
-          )} @ ${appointmentTime}`}</Link>
+          <Link to="/details">
+            {`${appointmentDate.format(
+              "DD-MMMM-YYYY"
+            )} @ ${appointmentTime}`}
+          </Link>
         </button>
       )}
     </>
