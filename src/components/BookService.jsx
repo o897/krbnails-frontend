@@ -83,7 +83,7 @@ const BookService = () => {
             <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
           </span>
         </Link>
-        1 / 3 Select one or more services
+        1 / 3 {" "} Select one or more services
       </div>
 
       <form>
@@ -169,7 +169,7 @@ const BookService = () => {
                {formData.numServices} {formData.numServices > 1 ? "Services" : "Service"} 
               </div>
               <div className="appointment__button-services">
-                R{formData.total} - 1h 15min
+                R{formData.total} - 1h - 15min
               </div>
             </div>
             <div className="appointment__button-continue">
