@@ -88,7 +88,6 @@ const BookService = () => {
 
       <form>
         <div className="appointment">
-          <div className="appointment__head-title">All Services</div>
           <div className="appointment__services">
 
             {/* Nail drawings section */}
