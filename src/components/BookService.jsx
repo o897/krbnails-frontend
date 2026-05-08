@@ -11,7 +11,7 @@ const BookService = () => {
 
   const [formData, setFormData] = useState({
     appointmentTitle: [],
-    appointmentDuration: "",
+    appointmentDuration: 0,
     total: 0,
     numServices: 0,
     nails: 0,
@@ -21,6 +21,20 @@ const BookService = () => {
     new Array(services.length).fill(false)
   );
 
+  const formatDuration = (minutes) => {
+  const hrs = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+
+  if (hrs && mins) {
+    return `${hrs}h ${mins}min`;
+  }
+
+  if (hrs) {
+    return `${hrs}h`;
+  }
+
+  return `${mins}min`;
+};
   const handleSelect = (e, position) => {
     e.preventDefault();
 
@@ -30,27 +44,38 @@ const BookService = () => {
 
     setCheckedState(updatedCheckedState);
 
-    setFormData((prev) => ({
-      ...prev,
-      appointmentTitle: updatedCheckedState[position]
-        ? [
-            ...prev.appointmentTitle,
-            {
-              service: services[position].title,
-              price: services[position].price,
-            },
-          ]
-        : prev.appointmentTitle.filter(
-            (item) => item.service !== services[position].title
-          ),
-      total: updatedCheckedState.reduce((sum, currentState, index) => {
-        if (currentState === true) {
-          return sum + services[index].price;
-        }
-        return sum;
-      }, 0),
-      numServices: updatedCheckedState.filter(Boolean).length,
-    }));
+   setFormData((prev) => ({
+  ...prev,
+
+  appointmentTitle: updatedCheckedState[position]
+    ? [
+        ...prev.appointmentTitle,
+        {
+          service: services[position].title,
+          price: services[position].price,
+          duration: services[position].duration,
+        },
+      ]
+    : prev.appointmentTitle.filter(
+        (item) => item.service !== services[position].title
+      ),
+
+  total:
+    updatedCheckedState.reduce((sum, currentState, index) => {
+      return currentState
+        ? sum + services[index].price
+        : sum;
+    }, 0) + prev.nails * 5,
+
+  appointmentDuration:
+    updatedCheckedState.reduce((sum, currentState, index) => {
+      return currentState
+        ? sum + services[index].duration
+        : sum;
+    }, 0),
+
+  numServices: updatedCheckedState.filter(Boolean).length,
+}));
   };
 
   const addNail = (e) => {
@@ -166,9 +191,10 @@ const BookService = () => {
             <div className="appointment__button-total">
               <div className="appointment__button-price">
                {formData.numServices} {formData.nails ||formData.numServices > 1 ? "Services" : "Service"} 
+               
               </div>
               <div className="appointment__button-services">
-                R{formData.total} - 1h - 15min
+                R{formData.total} - {formatDuration(formData.appointmentDuration)}
               </div>
             </div>
             <div className="appointment__button-continue">

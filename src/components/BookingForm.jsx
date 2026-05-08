@@ -16,9 +16,10 @@ const BookingForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // send email to user after booking
     emailjs
       .sendForm("service_mwogtyl", "template_7ze51ma", form.current, {
-        publicKey: "Fc6zj-MOba4tQJCtp",
+        publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
       })
       .then(
         () => {

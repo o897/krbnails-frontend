@@ -76,36 +76,37 @@ export const images = [
 ]
 
 export const services = [
-    {
-        title : 'Pedicure', 
-        price : 110,
-        duration: 30
-    },
-    {
-        title : 'Acrylic',
-        price : 300,
-        duration: 40
-    },
-    {
-       title : 'Gel Overlay',
-       price : 180
-       
-    },
-    {
-        title : 'Buff & Shine',
-        price : 110
-
-     },
-     {
-        title : 'Foot Treatment',
-        price : 110
-     },
-     {
-        title : 'Soak Off',
-        price : 80
-     }
-]
-
+  {
+    title: "Pedicure",
+    price: 110,
+    duration: 30,
+  },
+  {
+    title: "Acrylic",
+    price: 300,
+    duration: 40,
+  },
+  {
+    title: "Gel Overlay",
+    price: 180,
+    duration: 35,
+  },
+  {
+    title: "Buff & Shine",
+    price: 110,
+    duration: 20,
+  },
+  {
+    title: "Foot Treatment",
+    price: 110,
+    duration: 25,
+  },
+  {
+    title: "Soak Off",
+    price: 80,
+    duration: 15,
+  },
+];
 export const worktimes = [{
         time : '10:00 am'
     },
