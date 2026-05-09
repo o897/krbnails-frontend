@@ -9,6 +9,7 @@ import Confirmation from "./components/Confirmation";
 function App() {
   return (
     <GlobalProvider>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/book" element={<BookService />} />
@@ -17,6 +18,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/confirmation" element={<Confirmation/>} />
         </Routes>
+      </HashRouter>
     </GlobalProvider>
   );
 }
