@@ -67,7 +67,6 @@ h2 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 2.8rem;
-  margin-bottom: 20px;
   color: #0d1619;
 }
 
@@ -80,7 +79,7 @@ h2 {
 }
 
 .wrapper {
-  margin: 0 6vw;
+  /* margin: 0 6vw; */
   display: flex;
   flex-direction: column;
 }
@@ -523,11 +522,6 @@ footer {
     font-family: 'Raleway';
   }
 
-  .hero__welcome img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-
   body {
     padding: 0;
     margin: 0;
@@ -941,6 +935,11 @@ footer {
     font-family: "Playfair Display", serif;
     font-size: 3.6rem;
     text-align: center;
+  }
+
+  .gallery_wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   .gallery {

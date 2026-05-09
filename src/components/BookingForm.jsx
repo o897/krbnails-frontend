@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
@@ -13,12 +13,15 @@ const BookingForm = () => {
   const { appointmentDate, appointmentTime, formData } = globalData;
   const form = useRef();
 
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // send email to user after booking
     emailjs
-      .sendForm("service_mwogtyl", "template_7ze51ma", form.current, {
+      .sendForm(REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID, form.current, {
         publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
       })
       .then(
@@ -50,8 +53,8 @@ const BookingForm = () => {
 
   useEffect(() => {
     console.log(globalData);
-    
-  },[])
+
+  }, [])
 
   return (
     <>
@@ -121,7 +124,7 @@ const BookingForm = () => {
               name="from_username"
               onChange={(e) => setName(e.target.value)}
               required
-              />
+            />
           </div>
           <div className="contact__group">
             <label htmlFor="">Cell phone</label>
