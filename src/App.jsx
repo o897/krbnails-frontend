@@ -1,6 +1,5 @@
 import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import BookService from "./components/BookService";
+import { HashRouter, Routes, Route } from "react-router-dom";import BookService from "./components/BookService";
 import AppointmentDate from "./components/AppointmentDate";
 import Menu from "./components/Menu";
 import BookingForm from "./components/BookingForm";
@@ -10,7 +9,6 @@ import Confirmation from "./components/Confirmation";
 function App() {
   return (
     <GlobalProvider>
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/book" element={<BookService />} />
@@ -18,9 +16,7 @@ function App() {
           <Route path="/details" element={<BookingForm />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/confirmation" element={<Confirmation/>} />
-
         </Routes>
-      </BrowserRouter>
     </GlobalProvider>
   );
 }
