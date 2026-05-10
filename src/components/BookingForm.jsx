@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 import emailjs from "@emailjs/browser";
+import { services } from "../data";
 
 const BookingForm = () => {
   const [name, setName] = useState("");
@@ -11,11 +12,15 @@ const BookingForm = () => {
   const [message, setMessage] = useState();
   const { globalData } = useContext(GlobalContext);
   const { appointmentDate, appointmentTime, formData } = globalData;
-  const form = useRef();
 
 
   const navigate = useNavigate();
 
+
+  const handleConfirmation = () => {
+    navigate("/confirmation")
+  }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -33,21 +38,33 @@ const BookingForm = () => {
         }
       );
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("email", "pele1@gmail.com");
-    formData.append("date", appointmentDate);
-    formData.append("time", appointmentTime);
+    const bookingData = {
+      name,
+      email,
+      phone,
+      date : appointmentDate,
+      time : appointmentTime,
+      services : globalData?.appointmentTitle,
+      total : globalData?.total,
+    }
 
     try {
       const response = fetch("http://localhost:3000/book", {
         method: "POST",
-        body: formData,
+        headers : {"Content-Type" : "application/json"},
+        body: JSON.stringify(bookingData),
       });
+
+      const data = response.json();
+
+      if (response.ok) {
+        navigate("/confirmation")
+      } else {
+        setMessage(data.message || "Booking failed, please try again.")
+      }
+
     } catch (error) {
-      console.log(error);
-      setMessage("Error");
+      setMessage("Something went wrong, : ", error);
     }
   };
 
@@ -114,7 +131,7 @@ const BookingForm = () => {
         </div>
       </div>
 
-      <form ref={form} onSubmit={handleSubmit} method="post">
+      <form onSubmit={handleSubmit} method="post">
         <div className="contact">
           <div className="contact-header">Contact info</div>
           <div className="contact__group">
@@ -149,8 +166,8 @@ const BookingForm = () => {
             <label htmlFor="">Include a message (optional)</label>
             <textarea name="message" cols="30" rows="4"></textarea>
           </div>
-          <button className="contact__bookbtn" type="submit">
-            <Link to="/confirmation">Book</Link>
+          <button className="contact__bookbtn" onClick={handleConfirmation} type="submit">
+            Book
           </button>
         </div>
       </form>

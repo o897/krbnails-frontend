@@ -16,9 +16,9 @@ function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       const daysToHighlight = [
-        "2026-05-01",
-        "2026-05-02",
-        "2026-05-04",
+        "2026-05-12",
+        "2026-05-13",
+        "2026-05-20",
       ];
 
       resolve({ daysToHighlight });
