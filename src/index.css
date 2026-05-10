@@ -133,7 +133,7 @@ h2 {
 }
 
 .hero__welcome-img img {
-   width: 100%;
+  width: 100%;
   opacity: .68;
   display: flex;
   object-fit: cover;
@@ -251,7 +251,7 @@ h2 {
 .footer__container {
   display: flex;
   gap: 20px;
-  
+
 }
 
 .footer__details {
@@ -528,7 +528,7 @@ footer {
     color: #721e9196;
     letter-spacing: 1px;
     font-size: 0.84rem;
-    font-family: 'Raleway',serif;
+    font-family: 'Raleway', serif;
   }
 
   body {
@@ -969,11 +969,13 @@ footer {
   /* End Gallery */
 
   /* Reviews */
+
   .reviews_section {
     display: flex;
     flex-direction: column;
     background-color: #c3c3c3;
     align-items: center;
+    background-image: url("reviews.gif");
   }
 
   .review__title {
@@ -1029,7 +1031,7 @@ footer {
     color: gray;
     font-size: 21px;
     padding-top: 10px;
-   
+
   }
 
   .footer__timetable {

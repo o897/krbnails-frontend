@@ -229,8 +229,9 @@ function Hero() {
         </section>
 
         <section className="reviews">
-          <h2 className="review__title">They're Talking</h2>
           <div className="reviews_section">
+            <h2 className="review__title">They're Talking</h2>
+
             <div className="review__container" data-aos="fade-left">
               <div className="review__container-review">
                 Positive vibes all the way. Hygienic, long-lasting gel manicure,
