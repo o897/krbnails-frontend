@@ -526,9 +526,9 @@ footer {
     font-weight: 500;
     z-index: 200;
     color: #721e9196;
-    letter-spacing: 2px;
-    font-size: 1.24rem;
-    font-family: 'Raleway';
+    letter-spacing: 1px;
+    font-size: 0.84rem;
+    font-family: 'Raleway',serif;
   }
 
   body {
