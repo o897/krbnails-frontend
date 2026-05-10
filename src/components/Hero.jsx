@@ -55,7 +55,7 @@ function Hero() {
           <div className="services__container services__container-big">
             <img src={designImg} alt="" />
             <div className="services-info">
-              <h2 className="service-title">Pedicure</h2>
+              <h2 className="service-title">Designs</h2>
 
               <div className="services-description">
                 Elevate your look with stunning nail art designs that showcase
@@ -79,7 +79,7 @@ function Hero() {
           <div className="services__container services__container-big">
             <img src={acrylicImg} alt="" srcSet="" />
             <div className="services-info">
-              <h2 className="service-title">Pedicure</h2>
+              <h2 className="service-title">Acrylic</h2>
 
               <div className="services-description">
                 Soaking nails involves immersing them in warm, soapy water to
@@ -107,7 +107,7 @@ function Hero() {
           >
             <img src={acrylicImg} alt="" srcSet="" />
             <div className="services-info">
-              <h2 className="service-title">Pedicure</h2>
+              <h2 className="service-title">Buff & Shine</h2>
               <div className="services-description">
                 A pedicure is a beauty treatment for the feet and toenails,
                 involving soaking, exfoliating, and moisturizing. It includes
@@ -134,10 +134,11 @@ function Hero() {
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
+            
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
           </div>
           <div className="hero__welcome-sub">
-            Elevate Your Look
+            BEAUTY IN DETAIL
           </div>
           <div className="hero__welcome-img">
             <img

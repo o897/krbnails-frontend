@@ -132,6 +132,14 @@ h2 {
   opacity: 0.9;
 }
 
+.hero__welcome-img img {
+   width: 100%;
+  opacity: .68;
+  display: flex;
+  object-fit: cover;
+  height: 100vh;
+}
+
 .hero__welcome-title {
   position: absolute;
   width: 72%;
@@ -498,7 +506,7 @@ footer {
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 0.95em;
-    top: 47vh;
+    top: 41vh;
     z-index: 2;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
@@ -512,7 +520,7 @@ footer {
   .hero__welcome-sub {
     width: max-content;
     left: 50%;
-    top: 31vh;
+    top: 22vh;
     text-align: center;
     position: absolute;
     font-weight: 500;
