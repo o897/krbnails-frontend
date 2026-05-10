@@ -17,7 +17,14 @@ export const GlobalProvider = ({children}) => {
         // update properties if theres new data
         setGlobalData((prevData) => ({...prevData, ...newData}))
     }
-    
+
+    useEffect(() => {
+        const savedData = localStorage.getItem("globalData");
+        if(savedData) setGlobalData(JSON.parse(savedData));
+    })
+
+
+
     return (
         <GlobalContext.Provider value={{ globalData,updateGlobalData }}>
             {children}
