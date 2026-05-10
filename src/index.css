@@ -191,13 +191,16 @@ h2 {
   gap: 18px;
   font-size: 1.4rem;
   text-decoration: underline;
-  font-family: "Playfair Display", serif;
-  margin: 30px 0 40px;
+  font-family: "Raleway", sans-serif;
+  margin: 6px 0 10px;
 }
 
 .services-menu-items {
   cursor: pointer;
+  color: #6f6f6fb0;
+  font-weight: 600;
 }
+
 
 .services__container-big img {
   width: 22rem;
@@ -240,6 +243,7 @@ h2 {
 .footer__container {
   display: flex;
   gap: 20px;
+  
 }
 
 .footer__details {
@@ -461,9 +465,7 @@ h2 {
 
 
 footer {
-  background-color: #d37ac7;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  background-color: #501949;
 }
 
 @media only screen and (max-width: 480px) {
@@ -704,11 +706,10 @@ footer {
   .services-menu {
     display: flex;
     gap: 18px;
-    padding-bottom: 10px;
     text-decoration: underline;
     font-size: 1.4rem;
     color: #262627;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", sans-serif;
   }
 
   .services__container {
@@ -762,6 +763,7 @@ footer {
     font-weight: 500;
     border: 2px solid #333;
     font-weight: 500;
+    display: none;
   }
 
   .services__container-btn:hover {
@@ -965,7 +967,6 @@ footer {
     flex-direction: column;
     background-color: #c3c3c3;
     align-items: center;
-    margin-bottom: 20px;
   }
 
   .review__title {
@@ -1002,8 +1003,8 @@ footer {
 
   .footer__container {
     display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 50px;
+    margin-bottom: 10px;
   }
 
   .footer__title {
@@ -1021,6 +1022,12 @@ footer {
     color: gray;
     font-size: 21px;
     padding-top: 10px;
+   
+  }
+
+  .footer__timetable {
+    display: flex;
+    flex-direction: column;
   }
 
   .footer__details {

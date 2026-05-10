@@ -272,11 +272,11 @@ function Hero() {
         <section className="footer">
           <div className="footer__visit-tile">Visit Us</div>
           <div className="footer__container">
-            <div className="footer__title">LOCATION</div>
+            <div className="footer__title">Location</div>
             <div className="footer__details">263 Odinburg Gardens</div>
           </div>
           <div className="footer__container">
-            <div className="footer__title">PHONE</div>
+            <div className="footer__title">Phone</div>
             <div className="footer__details">+27 680327197</div>
           </div>
           <div className="footer__container">
@@ -290,20 +290,20 @@ function Hero() {
             </div>
           </div>
 
-          <div className="footer__container footer__socials">
+          <div className="row footer__socials">
             <li>
-              <FontAwesomeIcon icon={faYoutube} />
+              <FontAwesomeIcon icon={faYoutube} color="#fff"/>
             </li>
             <li>
-              <FontAwesomeIcon icon={faTiktok} />
+              <FontAwesomeIcon icon={faTiktok}  color="#fff" />
             </li>
             <li>
               <a href="https://www.instagram.com/tlamis_nail_gallery/">
-                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon icon={faInstagram}  color="#fff"/>
               </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faWhatsapp} />
+              <FontAwesomeIcon icon={faWhatsapp}  color="#fff"/>
             </li>
           </div>
         </section>
