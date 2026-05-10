@@ -125,7 +125,7 @@ h2 {
   height: 100vh;
 }
 
-.hero__welcome-img video {
+.hero__welcome-img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
@@ -498,7 +498,7 @@ footer {
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 0.95em;
-    top: 30vh;
+    top: 47vh;
     z-index: 2;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
@@ -506,14 +506,13 @@ footer {
     letter-spacing: -2.5px;
     width: 80%;
     left: 50%;
-    top: 45%;
     transform: translate(-50%, -50%);
   }
 
   .hero__welcome-sub {
     width: max-content;
     left: 50%;
-    top: 21vh;
+    top: 31vh;
     text-align: center;
     position: absolute;
     font-weight: 500;
