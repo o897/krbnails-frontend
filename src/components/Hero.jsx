@@ -42,7 +42,7 @@ function Hero() {
                 <div className="services__title">Pedicure |</div>
                 <div className="services__sub">2 Services</div>
               </div>
-               <Link to="menu">
+              <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>
               </Link>
 
@@ -67,7 +67,7 @@ function Hero() {
                 <div className="services__title">Designs</div>
                 <div className="services__sub">4 Services</div>
               </div>
-               <Link to="menu">
+              <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>
               </Link>
             </div>
@@ -92,7 +92,7 @@ function Hero() {
                 <div className="services__title">Buff & Shine</div>
                 <div className="services__sub">2 Services</div>
               </div>
-               <Link to="menu">
+              <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>
               </Link>
             </div>
@@ -118,11 +118,11 @@ function Hero() {
                 <div className="services__title">Acrylic</div>
                 <div className="services__sub">4 Services</div>
               </div>
-               <div className="services__container">
-              <Link to="menu">
-                <button className="services__container-btn dsktp">LEARN MORE</button>
-              </Link>
-            </div>
+              <div className="services__container">
+                <Link to="menu">
+                  <button className="services__container-btn dsktp">LEARN MORE</button>
+                </Link>
+              </div>
             </div>
           </div>
         );
@@ -139,18 +139,17 @@ function Hero() {
           <div className="hero__welcome-sub">
             Elevate Your Look
           </div>
-          <div className="hero__welcome-img" data-aos="zoom-in">
+          <div className="hero__welcome-img">
             <img
-              src="home.jpg"
-            // src="https://www.dialahairsalon.co.za/wp-content/uploads/2018/11/Acrylic-nails.jpg"
-            // src="https://img.freepik.com/free-photo/close-up-manicurist-using-nail-polish_23-2149171334.jpg?t=st=1718398137~exp=1718401737~hmac=2a43c5c14a6323ccaea21217b00fb468f5e7781e161da618dbfae1a07786bf56&w=740"
+              src="nailvid.gif"
             />
+            
           </div>
           <Link to="book">
             <button
               className="hero__bookbtn"
             >
-             <span className="wht">BOOK A</span>N APPOINTMENT
+              <span className="wht">BOOK A</span>N APPOINTMENT
             </button>
           </Link>
         </div>
@@ -255,7 +254,7 @@ function Hero() {
               </div>
               <div className="review__container-name">Tshepang</div>
             </div>
-             <div className="review__container" data-aos="fade-down">
+            <div className="review__container" data-aos="fade-down">
               <div className="review__container-review">
                 Absolutely loved my experience. Flawless manicure, friendly staff,
                 and a welcoming atmosphere. Can't wait to go back for more
@@ -292,18 +291,18 @@ function Hero() {
 
           <div className="row footer__socials">
             <li>
-              <FontAwesomeIcon icon={faYoutube} color="#fff"/>
+              <FontAwesomeIcon icon={faYoutube} color="#fff" />
             </li>
             <li>
-              <FontAwesomeIcon icon={faTiktok}  color="#fff" />
+              <FontAwesomeIcon icon={faTiktok} color="#fff" />
             </li>
             <li>
               <a href="https://www.instagram.com/tlamis_nail_gallery/">
-                <FontAwesomeIcon icon={faInstagram}  color="#fff"/>
+                <FontAwesomeIcon icon={faInstagram} color="#fff" />
               </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faWhatsapp}  color="#fff"/>
+              <FontAwesomeIcon icon={faWhatsapp} color="#fff" />
             </li>
           </div>
         </section>
