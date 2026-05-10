@@ -517,6 +517,15 @@ footer {
     transform: translate(-50%, -50%);
   }
 
+  .nav-open-icon {
+    right: 0;
+    position: absolute;
+    top: 4vh;
+    margin-right: 50px;
+    font-size: 30px;
+    
+  }
+
   .hero__welcome-sub {
     width: max-content;
     left: 50%;
@@ -684,7 +693,7 @@ footer {
     height: 55px !important;
     position: absolute;
     background-color: #ffd4d4;
-    top: 62vh;
+    top: 65vh;
     border: 2px solid black;
     right: 10vw;
     font-family: "Montserrat", sans-serif;
@@ -1502,11 +1511,9 @@ footer {
   }
 
   .contact__group textarea {
-    width: 82%;
+    width: 85%;
     border-radius: 5px;
-    border: 1px solid #333;
     margin-left: 6vw;
-    font-size: 14px;
     border: 1px solid #ced4da;
     padding: 10px 15px;
     font-size: 14px;

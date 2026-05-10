@@ -11,6 +11,7 @@ import {
   faYoutube,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./../assets/home.jpg";
@@ -132,9 +133,11 @@ function Hero() {
   return (
     <div className="wrapper">
       <section className="hero">
-        <div className="hero__welcome">
+
+        <div className="hero__welcome">            
+          <FontAwesomeIcon className="nav-open-icon" icon={faGripLines}/>
           <div className="hero__welcome-title">
-            
+
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
           </div>
           <div className="hero__welcome-sub">

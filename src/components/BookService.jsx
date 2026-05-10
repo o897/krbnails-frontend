@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faMinus, faPlus,faGripLines } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 import designImg from "../assets/services/design.jpg";
 
