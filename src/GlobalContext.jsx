@@ -1,32 +1,32 @@
-import { createContext,useEffect,useState } from "react";
+import { createContext, useEffect, useState } from "react";
 const GlobalContext = createContext()
 
-export const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({ children }) => {
 
-    const [globalData,setGlobalData] = useState({})
+    const [globalData, setGlobalData] = useState(() => {
+        const savedData = localStorage.getItem("globalData");
+        return savedData ? JSON.parse(savedData) : {};
+    })
 
-  
-   
+
 
     useEffect(() => {
         localStorage.setItem("globalData", JSON.stringify(globalData))
     }, [globalData])
 
-     // func adds data to our parent
+    // func adds data to our parent
     const updateGlobalData = (newData) => {
         // update properties if theres new data
-        setGlobalData((prevData) => ({...prevData, ...newData}))
+        setGlobalData((prevData) => ({ ...prevData, ...newData }))
     }
 
-    useEffect(() => {
-        const savedData = localStorage.getItem("globalData");
-        if(savedData) setGlobalData(JSON.parse(savedData));
-    })
+
+
 
 
 
     return (
-        <GlobalContext.Provider value={{ globalData,updateGlobalData }}>
+        <GlobalContext.Provider value={{ globalData, updateGlobalData }}>
             {children}
         </GlobalContext.Provider>
     )
