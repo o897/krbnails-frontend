@@ -164,12 +164,12 @@ const BookService = () => {
 
                       <div className="appointment__service-title">{title}</div>
 
-                      {/* DESCRIPTION */}
+                  
                       <div className="appointment__service-description">
                         {description}
                       </div>
 
-                      {/* OPTIONS */}
+                     
                       <div className="appointment-options">
                         {option?.map((item, optIndex) => (
                           <div className="appoitment-option" key={optIndex}>
@@ -179,7 +179,7 @@ const BookService = () => {
                         ))}
                       </div>
 
-                      {/* BOTTOM */}
+                    
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">
                           R{price} | {duration}min
@@ -207,7 +207,7 @@ const BookService = () => {
           </div>
         </div>
 
-        {/* Continue button — only shows when something is selected */}
+        {/* Continue button, only shows when something is selected */}
         {formData.total !== 0 && (
           <div className="appointment__button">
             <div className="appointment__button-total">

@@ -275,8 +275,17 @@ h2 {
   display: flex;
 }
 
+/* appointment sevices page */
+.appoitment-option {
+  display: flex;
+  margin: 10px;
+  gap: 14px;
+}
 
+.appointment-options {
+  border-top: 1px solid #474646;
 
+}
 
 /* =========================
    TABLET
@@ -557,7 +566,7 @@ h2 {
     font-weight: 600;
     border: 1px solid;
     overflow: scroll;
-    
+
   }
 
   .appointment-selected-options ul>li {
@@ -612,9 +621,84 @@ h2 {
     position: -webkit-sticky;
     height: 105px;
     padding-left: 100px;
+    gap: 20px;
 
 
   }
+
+  /* Appointment Date -selection */
+  .appointment__form-date {
+    margin: 0 6vw;
+  }
+
+  .date {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 80px;
+  }
+
+  .date input {
+    width: 200px;
+    padding: 5px auto;
+  }
+
+  .times {
+    display: grid;
+    place-items: center;
+    height: 100px;
+    overflow-y: auto;
+    margin-bottom: 40px;
+  }
+
+  .time {
+    display: flex;
+    font-size: 1rem;
+    border: 1px solid #e9e9e9;
+    color: #000000;
+    border-radius: 20px;
+    width: 300px;
+    font-weight: 400;
+    align-items: center;
+    font-family: "Noto Sans", sans-serif;
+    margin-bottom: 10px;
+    height: 40px;
+    justify-content: center;
+  }
+
+  .time__confirmation {
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 10vw;
+    letter-spacing: 0.3px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .date__confirmation {
+    padding-left: 10vw;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+  }
+
+  .appointment__form-date-btn {
+    background-color: #663399;
+    background-color: #663399;
+    color: #fff;
+    width: 220px;
+    display: flex;
+    margin: 27px auto 60px;
+    font-size: 0.9rem;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    border-radius: 18px;
+  }
+
+  /* End Appointment Date -selection  */
+
+
 
   /* =========================
    BOOK
@@ -675,6 +759,9 @@ h2 {
 
   .reviews {
     margin: 40px;
+    font-family: 'Noto Sans';
+    letter-spacing: 8px;
+  
   }
 
   .reviews_section {
@@ -702,6 +789,174 @@ h2 {
   }
 
 
+  /* end review container */
+
+
+  /* Booking form */
+
+  .review {
+    font-family: "PT Sans", sans-serif;
+    margin: 0 30vw;
+
+  }
+
+  .review__heading {
+    margin: 20px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-left: 6vw;
+    /* font-family: "PT Sans", sans-serif; */
+    text-transform: uppercase;
+    color: #222831;
+  }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 6vw;
+    font-weight: 600;
+    color: #7f8486;
+    font-family: "PT Sans", sans-serif;
+    margin-top: 15px;
+    font-size: 14px;
+    width: 113%;
+
+  }
+
+  .header_menu {
+    display: none;
+  }
+
+  .table-body {
+    font-family: "PT Sans", sans-serif;
+    margin-bottom: 20px;
+    /* border: 1px solid #6f6f6f; */
+
+  }
+
+  .table-row {
+    display: flex;
+    padding: 0px 6vw;
+    justify-content: space-between;
+    color: #0d1619;
+    margin: 4px;
+    width: 113%;
+  }
+
+  .contact {
+    position: relative;
+    font-family: "PT Sans", sans-serif;
+    margin: 0 30vw;
+
+  }
+
+  .contact_group-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .contact_group-row input {
+    width: 100%;
+  }
+
+  .contact-header {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 6vw;
+    margin-bottom: 16px;
+    color: #222831;
+  }
+
+  .contact__group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__group label {
+    margin-bottom: 4px;
+    font-weight: 400;
+    padding-left: 6vw;
+    margin: 5px;
+    color: #2f3133;
+    /* #212529 */
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+  }
+
+  .contact__group input {
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 6vw;
+    border: 1px solid #ced4da;
+    margin-bottom: 8px;
+    font-size: 14px;
+    padding-left: 15px;
+    transition: 0.5s;
+  }
+
+  .contact__group textarea {
+    width: 85%;
+    border-radius: 5px;
+    margin-left: 6vw;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .contact__bookbtn {
+    background-color: #663399;
+    color: #fff;
+    height: 55px;
+    width: 320px;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: 20px;
+    left: 110px;
+    letter-spacing: 1px;
+
+  }
+
+  .form__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* End Booking form */
+
+  /* Confirmation */
+
+  .confirmation {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 8vw 5vw;
+  }
+
+  .confirmation-img {
+    width: 330px;
+  }
+
+  .button-confirm {
+    background-color: #95D0A9;
+    color: #FDFDFD;
+    height: 51px;
+    width: 187px;
+    border: none;
+    font-size: 2rem;
+    font-weight: 600;
+
+
+  }
+
+  /* End Confirmation */
 }
 
 
@@ -1349,7 +1604,14 @@ footer {
   .appointment-selected-options {
     display: none;
   }
-  
+
+  .appointment-selected-options ul>li {
+    color: #979797;
+    margin: 10px 0;
+
+  }
+
+
   .rmv {
     font-weight: 500;
 
@@ -1362,16 +1624,12 @@ footer {
   }
 
   .appointment__service-select {
-    padding: 30px;
-    width: 50%;
     display: flex;
     padding: 10px;
     border: 1px solid #e7e6e7;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
     border-radius: 12px;
-    gap: 200px;
+    justify-content: space-between;
   }
 
   .appointment__service-title {
@@ -1394,9 +1652,11 @@ footer {
     color: #3b3131;
     margin: 10px 0;
     font-family: 'Noto Sans';
-    overflow: hidden;
-    white-space: nowrap;
+    overflow-wrap: break-word;
+    white-space: normal;
+    word-wrap: break-word;
     text-overflow: ellipsis;
+    padding: 5px;
   }
 
 
@@ -1765,7 +2025,7 @@ footer {
   }
 
   .contact__bookbtn {
-    background-color: #663399;
+    background-color: #66339954;
     color: #fff;
     height: 35px;
     border-radius: 20px;
@@ -1780,6 +2040,10 @@ footer {
     cursor: pointer;
     border: none;
   }
+
+ .contact__bookbtn:hover {
+  background-color: #262627 !important;
+}
 
   .form__group {
     display: flex;

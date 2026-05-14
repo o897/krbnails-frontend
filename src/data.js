@@ -81,7 +81,7 @@ export const services = [
     price: 110,
     duration: 30,
     img : pedicureImg,
-    description: "A pedicure is a cosmetic and therapeutic treatment for the feet and toenails that involves cleaning, trimming, shaping the nails, removing dead skin, and moisturizing the feet. It is often finished with nail polish application and a relaxing foot massage to improve the appearance, comfort, and health of the feet.",
+    description: "A pedicure is a cosmetic and therapeutic treatment for the feet and toenails that involves cleaning, trimming, shaping the nails, removing dead skin, and moisturizing the feet.",
     option: [
       "Feet are soaked in warm water to soften the skin and create a relaxing, refreshing feeling before the treatment begins.",
       "Toenails are trimmed and shaped neatly to improve both appearance and comfort.",

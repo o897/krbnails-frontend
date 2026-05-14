@@ -135,7 +135,7 @@ const BookingForm = () => {
           </div>
         </div>
       </div>
-
+    
       <form onSubmit={handleSubmit} method="post">
         <div className="contact">
           <div className="contact-header">Contact info</div>
@@ -148,7 +148,8 @@ const BookingForm = () => {
               required
             />
           </div>
-          <div className="contact__group">
+          <div className="contact_group-row">
+            <div className="contact__group">
             <label htmlFor="">Cell phone</label>
             <input
               type="text"
@@ -166,6 +167,8 @@ const BookingForm = () => {
               required
             />
           </div>
+          </div>
+         
           <input type="hidden" value={globalData?.total} />
           <div className="contact__group">
             <label htmlFor="">Include a message (optional)</label>
