@@ -251,7 +251,7 @@ function Hero() {
                 relaxing vibe. Definitely exceeded my expectations. Highly
                 recommend!
               </div>
-              <div className="review__container-name">Kearabilwe</div>
+              <div className="review__container-name">- Kearabilwe</div>
             </div>
             <div className="review__container" data-aos="fade-down">
               <div className="review__container-review">
@@ -259,7 +259,7 @@ function Hero() {
                 and a welcoming atmosphere. Can't wait to go back for more
                 pampering.
               </div>
-              <div className="review__container-name">Tshepang</div>
+              <div className="review__container-name">- Tshepang</div>
             </div>
             <div className="review__container" data-aos="fade-down">
               <div className="review__container-review">
@@ -267,7 +267,7 @@ function Hero() {
                 and a welcoming atmosphere. Can't wait to go back for more
                 pampering.
               </div>
-              <div className="review__container-name">Karabo</div>
+              <div className="review__container-name">- Karabo</div>
             </div>
           </div>
 

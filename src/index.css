@@ -1063,6 +1063,7 @@ footer {
     transform: translate(-50%, -50%);
   }
 
+
   .nav-open-icon {
     right: 0;
     position: absolute;
@@ -1093,6 +1094,10 @@ footer {
   }
 
   /* Navbar socials*/
+  .header {
+    display: none;
+  }
+  
   .header__nav-socials {
     display: flex;
     padding-left: 10vw;
@@ -2011,6 +2016,8 @@ footer {
     margin-top: 15px;
     font-size: 14px;
   }
+
+ 
 
   .header_menu {
     display: none;
