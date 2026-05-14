@@ -339,6 +339,7 @@ h2 {
   }
 
   /* header */
+
   
   .header img {
     height: 100px;
@@ -1097,7 +1098,7 @@ footer {
   .header {
     display: none;
   }
-  
+
   .header__nav-socials {
     display: flex;
     padding-left: 10vw;
