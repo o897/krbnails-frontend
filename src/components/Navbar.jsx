@@ -35,7 +35,10 @@ const Navbar = () => {
           <div className="header_menu-items">Login</div>
           <div className="header_menu-items">Sevices</div>
           <div className="header_menu-items">Contact</div>
-          <FontAwesomeIcon icon={faWhatsapp} color="#fff" />
+          <FontAwesomeIcon icon={faWhatsapp} />
+          <FontAwesomeIcon icon={faInstagram} />
+          <FontAwesomeIcon icon={faTiktok} />
+
           <Link to="book">
             <button>BOOK NOW</button>
           </Link>
