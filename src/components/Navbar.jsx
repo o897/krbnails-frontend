@@ -1,10 +1,15 @@
+
+
 import {
   faInstagram,
   faTiktok,
   faYoutube,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -23,20 +28,24 @@ const Navbar = () => {
       <div className="header">
 
         <img className="" src={navbarImg} alt="" />
-         {/* <FontAwesomeIcon icon={faBars} className="icon"/> */}
+        {/* <FontAwesomeIcon icon={faBars} className="icon"/> */}
 
         <div className="header_menu">
-            
-              <div className="header_menu-items">Login</div>
-              <div className="header_menu-items">Sevices</div>
-              <div className="header_menu-items">Contact</div>
-              <button>BOOK NOW</button>
-            
+
+          <div className="header_menu-items">Login</div>
+          <div className="header_menu-items">Sevices</div>
+          <div className="header_menu-items">Contact</div>
+          <FontAwesomeIcon icon={faWhatsapp} color="#fff" />
+          <Link to="book">
+            <button>BOOK NOW</button>
+          </Link>
+
+
         </div>
       </div>
 
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
-        <div className="header__menu">  
+        <div className="header__menu">
           <Link to="/" onClick={() => toggleWidth()}>
             Home
           </Link>
@@ -67,10 +76,10 @@ const Navbar = () => {
         </div>
 
         <div className="header__nav-bookbtn">
-        <Link to='book'>
-          <button>BOOK NOW</button>
-        </Link>
-          
+          <Link to='book'>
+            <button>BOOK NOW</button>
+          </Link>
+
         </div>
 
       </div>

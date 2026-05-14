@@ -352,7 +352,8 @@ h2 {
   }
 
   .header_menu-items {
-    font-size: .9em;
+    font-size: .75em;
+    cursor: pointer;
   }
 
   .header_menu button {
@@ -651,6 +652,11 @@ h2 {
     color: #646060;
   }
 
+  /* reviews */
+  .gallery {
+      margin: 50px;
+  }
+  /* end reviews */
   /* End appointment services */
   .mobl {
     display: none;
@@ -807,6 +813,9 @@ h2 {
     margin: 40px;
     font-family: 'Noto Sans';
     letter-spacing: 8px;
+    background-image: url("reviews.gif");
+    padding: 40px 0;
+
 
   }
 
