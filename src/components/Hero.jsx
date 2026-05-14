@@ -41,8 +41,7 @@ function Hero() {
                 application.
               </div>
               <div className="services-types">
-                <div className="services__title">Pedicure |</div>
-                <div className="services__sub">2 Services</div>
+                <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment | Moisturise & Finish</div>
               </div>
               <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>
@@ -66,9 +65,9 @@ function Hero() {
                 beautifully crafted, eye-catching nails.
               </div>
               <div className="services-types">
-                <div className="services__title">Designs</div>
-                <div className="services__sub">4 Services</div>
-              </div>
+                <div className="services__sub">
+                  Shape & Prep | Base Coat Application | Nail Art & Design | Top Coat Finish
+                </div>              </div>
               <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>
               </Link>
@@ -91,9 +90,9 @@ function Hero() {
               </div>
 
               <div className="services-types">
-                <div className="services__title">Soaking</div>
-                <div className="services__sub">2 Services</div>
-              </div>
+                <div className="services__sub">
+                  Warm Soak | Cuticle Softening | Relaxing Prep | Hydration Boost
+                </div>              </div>
               <Link to="menu">
                 <button className="services__container-btn">LEARN MORE</button>
               </Link>
@@ -117,7 +116,6 @@ function Hero() {
                 application.
               </div>
               <div className="services-types">
-                <div className="services__title">Acrylic</div>
                 <div className="services__sub">4 Services</div>
               </div>
               <div className="services__container">

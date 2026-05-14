@@ -98,6 +98,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Raleway", sans-serif;
+
 }
 
 .header img {
@@ -350,7 +352,6 @@ h2 {
     display: flex;
     gap: 30px;
     font-size: 1.6em;
-    font-family: "Noto Sans", sans-serif;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
@@ -363,7 +364,6 @@ h2 {
   }
 
   .header_menu button {
-   
     width: 150px;
     height: 50px;
     border: 2px solid #000;
@@ -372,6 +372,13 @@ h2 {
     font-weight: 600;
     letter-spacing: 2px;
     cursor: pointer;
+    border: 2px solid #000;
+  }
+
+  .header_menu button:hover {
+    background-color: #000;
+    color: #fff;
+    transition: ease-in .4s;
   }
 
 
@@ -803,7 +810,7 @@ h2 {
 ========================= */
 
   .gallery h2 {
-    font-weight: 600;
+    letter-spacing: 2px;
   }
 
   .gallery__container img {
@@ -884,6 +891,7 @@ h2 {
     width: 113%;
 
   }
+
 
 
   .table-body {
@@ -1258,8 +1266,10 @@ footer {
 
 
 
-  .hero__bookbtn :hover {
+  .hero__bookbtn:hover {
     background-color: #fff;
+    transition: ease-in .4s;
+
   }
 
   /* End Welcome page */
@@ -1319,8 +1329,6 @@ footer {
     font-size: 0.8rem;
     color: #6f6f6f;
     font-style: normal;
-    margin-top: 0.4rem;
-    margin-bottom: 0.625rem;
   }
 
   .services__container-btn {
@@ -1695,6 +1703,7 @@ footer {
     align-items: center;
     border-radius: 12px;
     justify-content: space-between;
+    margin: 10px 0;
   }
 
   .appointment__service-title {
