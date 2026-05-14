@@ -556,6 +556,7 @@ h2 {
     padding: 17px;
     font-weight: 600;
     border: 1px solid;
+    overflow: scroll;
     
   }
 
@@ -1345,6 +1346,10 @@ footer {
     font-weight: 700;
   }
 
+  .appointment-selected-options {
+    display: none;
+  }
+  
   .rmv {
     font-weight: 500;
 
