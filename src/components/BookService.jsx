@@ -162,19 +162,30 @@ const BookService = () => {
                       <div className="appointment__service-description">
                         Begins with a warm foot soak, includes all regular
                         maintenance and finished with choice of regular polish.
-                        <span className="">
-                          1. Consultation / Preparation
-                          Check the client’s feet and nails for any issues.
-                          Prepare tools, sanitize hands, and disinfect the foot bath.
-                          2. Remove Old Nail Polish
-                          Take off any existing polish using nail polish remover.
-                          3. Trim and Shape Nails
-                          Cut toenails straight across.
-                          File and shape the edges smoothly.
-                          2. Soak the Feet
-                          Place feet in warm water, often with soap, salts, or oils.
-                          Softens skin and relaxes the client.
-                        </span>
+                        <div className="appointment-options">
+                          <div className="appoitment-option">
+                            <input type="checkbox" />
+                            <span> Check the client’s feet and nails for any issues.
+                              Prepare tools, sanitize hands, and disinfect the foot bath.</span>
+                          </div>
+                          <div className="appoitment-option">
+                            <input type="checkbox" />
+                            <span>Take off any existing polish using nail polish remover.</span>
+                          </div>
+                          <div className="appoitment-option">
+                            <input type="checkbox" />
+                            <span>Take off any existing polish using nail polish remover.</span>
+                          </div>
+                          <div className="appoitment-option">
+                            <input type="checkbox" />
+                            <span>Take off any existing polish using nail polish remover.</span>
+                          </div>
+                          <div className="appoitment-option">
+                            <input type="checkbox" />
+                            <span> Place feet in warm water, often with soap, salts, or oils.
+                              Softens skin and relaxes the client.</span>
+                          </div>
+                        </div>
                       </div>
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">
