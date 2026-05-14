@@ -288,6 +288,11 @@ h2 {
 
 }
 
+.reviews {
+  background-image: url("reviews.gif");
+  padding: 40px 0;
+}
+
 /* =========================
    TABLET
 ========================= */
@@ -817,10 +822,7 @@ h2 {
     margin: 40px;
     font-family: 'Noto Sans';
     letter-spacing: 8px;
-    background-image: url("reviews.gif");
-    padding: 40px 0;
-
-
+    
   }
 
   .reviews_section {
