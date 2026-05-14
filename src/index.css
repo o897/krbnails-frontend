@@ -656,6 +656,10 @@ h2 {
   .gallery {
       margin: 50px;
   }
+  
+  .gallery__heading {
+    padding: 40px;
+  }
   /* end reviews */
   /* End appointment services */
   .mobl {
