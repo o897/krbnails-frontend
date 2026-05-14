@@ -298,19 +298,10 @@ h2 {
    DESKTOP
 ========================= */
 @media (min-width: 1024px) {
+
+  /* hero */
   .hero {
     background-color: #a999b9;
-  }
-
-  .header img {
-    height: 100px;
-    width: 100px;
-  }
-
-  .header_menu {
-    display: flex;
-    gap: 30px;
-    font-size: 1.6em;
   }
 
   .hero__welcome {
@@ -328,10 +319,25 @@ h2 {
     width: 260px;
   }
 
+  /* header */
+  .header img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .header_menu {
+    display: flex;
+    gap: 30px;
+    font-size: 1.6em;
+  }
+
+
+
   .wrapper {
     margin: 0 6vw;
   }
 
+  /* services */
   .services__container {
     display: flex;
     gap: 50px;
@@ -377,8 +383,167 @@ h2 {
     background-color: #db76d3;
   }
 
+.appointment {
+    padding-left: 6vw;
+    margin-top: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .appointment__head-title {
+    font-weight: 500;
+    font-size: 1.7em;
+    color: #0d1619;
+    font-style: normal;
+    margin-bottom: 30px;
+    letter-spacing: 0.1px;
+  }
+
+  .appointment__service {
+    display: flex;
+    flex-direction: column;
+    /* width: 92%; */
+    position: relative;
+    z-index: 1;
+    padding: 0 2px 3px;
+    border-radius: 8px;
+
+  }
+
+  .appointment__services-img {
+    border-radius: 8px;
+    margin: 4px 0;
+  }
+
+  .appointment__service-bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .appointment__service-button {
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #7a757c;
+    border-radius: 10px;
+    width: 100px;
+    height: 45px;
+    font-family: 'Noto Sans';
+    border: none;
+    font-weight: 700;
+  }
+
+  .rmv {
+    font-weight: 500;
+
+  }
+
+  .appointment__service img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .appointment__service-select {
+    display: flex;
+    padding-bottom: 10px;
+    border: 1px solid #e7e6e7;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+
+  }
+
+  .appointment__service-title {
+    font-weight: 400;
+    letter-spacing: .03rem;
+    font-family: 'Raleway';
+    padding: 5px 0;
+    font-size: 1.3rem;
+  }
+
+  .appointment__services {
+    overflow: auto;
+    scroll-behavior: smooth;
+    height: 65vh;
+    padding-right: 6vw;
+  }
+
+  .appointment__service-description {
+    letter-spacing: 1px;
+    color: #3b3131;
+    margin: 10px 0;
+    font-family: 'Noto Sans';
+  }
+
+
+  .appointment__service-duration {
+    color: gray;
+    font-family: 'Noto Sans';
+    letter-spacing: 1px;
+  }
+
+
+  .appointment__button {
+    display: flex;
+    border-top: 1px solid #e7e6e7;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 17px;
+    bottom: 0;
+    font-weight: 600;
+    border-radius: 20px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .appointment__button button {
+    background-color: #161616;
+    border-radius: 8px;
+    width: 113px;
+    height: 48px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    letter-spacing: 1px;
+  }
+
+  .appointment__button-price {
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+  }
+
+  .appointment__button-services {
+    color: gray;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 2px;
+  }
+
   .mobl {
     display: none;
+  }
+
+  .bookform__header {
+    font-size: 2.1rem;
+    color: #fff;
+    background-color: #000000;
+    font-family: 'Raleway';
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: -webkit-sticky;
+    height: 105px;
+    padding-left: 100px;
+
+
   }
 
   /* =========================
@@ -523,7 +688,7 @@ footer {
     top: 4vh;
     margin-right: 50px;
     font-size: 30px;
-    
+
   }
 
   .hero__welcome-sub {
