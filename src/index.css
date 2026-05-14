@@ -473,6 +473,10 @@ h2 {
     padding-right: 6vw;
   }
 
+  .appointment__service img {
+    object-fit: cover;
+  }
+
   .appointment__service-description {
     letter-spacing: 1px;
     color: #3b3131;
@@ -542,6 +546,21 @@ h2 {
     display: flex;
     gap: 20px;
     align-items: center;
+  }
+
+  .appointment-selected-options {
+    position: absolute;
+    width: 90%;
+    right: 40px;
+    top: 9vh;
+    padding: 17px;
+    font-weight: 600;
+    border: 1px solid;
+    
+  }
+
+  .appointment-selected-options ul>li {
+    color: #979797;
   }
 
   .nail {
@@ -1334,6 +1353,7 @@ footer {
   .appointment__service img {
     width: 100%;
     height: 200px;
+    object-fit: cover;
   }
 
   .appointment__service-select {

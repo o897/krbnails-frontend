@@ -8,6 +8,7 @@ import designImg from "../assets/services/design.jpg";
 
 const BookService = () => {
   const { updateGlobalData } = useContext(GlobalContext);
+  const [open, setOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     appointmentTitle: [],
@@ -15,6 +16,7 @@ const BookService = () => {
     total: 0,
     numServices: 0,
     nails: 0,
+    options: []
   });
 
   const [checkedState, setCheckedState] = useState(
@@ -139,7 +141,7 @@ const BookService = () => {
 
             {/* Services list */}
             <div className="appointment__services-scroll">
-              {services.map(({ title, price }, index) => (
+              {services.map(({ title, price, duration, description, option, img }, index) => (
                 <div key={index}>
                   <div
                     className="appointment__service-select"
@@ -151,60 +153,56 @@ const BookService = () => {
                     }}
                   >
                     <div className="appointment__service">
+
                       <div>
                         <img
                           className="appointment__services-img"
-                          src={designImg}
+                          src={img}
                           alt={title}
                         />
                       </div>
+
                       <div className="appointment__service-title">{title}</div>
+
+                      {/* DESCRIPTION */}
                       <div className="appointment__service-description">
-                        Begins with a warm foot soak, includes all regular
-                        maintenance and finished with choice of regular polish.
-                        <div className="appointment-options">
-                          <div className="appoitment-option">
-                            <input type="checkbox" />
-                            <span> Check the client’s feet and nails for any issues.
-                              Prepare tools, sanitize hands, and disinfect the foot bath.</span>
-                          </div>
-                          <div className="appoitment-option">
-                            <input type="checkbox" />
-                            <span>Take off any existing polish using nail polish remover.</span>
-                          </div>
-                          <div className="appoitment-option">
-                            <input type="checkbox" />
-                            <span>Take off any existing polish using nail polish remover.</span>
-                          </div>
-                          <div className="appoitment-option">
-                            <input type="checkbox" />
-                            <span>Take off any existing polish using nail polish remover.</span>
-                          </div>
-                          <div className="appoitment-option">
-                            <input type="checkbox" />
-                            <span> Place feet in warm water, often with soap, salts, or oils.
-                              Softens skin and relaxes the client.</span>
-                          </div>
-                        </div>
+                        {description}
                       </div>
+
+                      {/* OPTIONS */}
+                      <div className="appointment-options">
+                        {option?.map((item, optIndex) => (
+                          <div className="appoitment-option" key={optIndex}>
+                            <input type="checkbox" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* BOTTOM */}
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">
-                          R{price} | 40min
+                          R{price} | {duration}min
                         </div>
+
                         <div>
                           <button
                             className="appointment__service-button"
                             onClick={(e) => handleSelect(e, index)}
                           >
-                            {checkedState[index] ? <span className="rmv">Remove</span> : "Select"}
+                            {checkedState[index] ? (
+                              <span className="rmv">Remove</span>
+                            ) : (
+                              "Select"
+                            )}
                           </button>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
         </div>
@@ -221,14 +219,27 @@ const BookService = () => {
                 R{formData.total} - {formatDuration(formData.appointmentDuration)}
               </div>
             </div>
-            <div className="appointment__button-continue">
-              <button>
-                <Link to="/date" state={{ formData }} style={{ color: "white" }}>
-                  Next
-                </Link>
-              </button>
+            <div>
+              <div className="appointment__button-continue">
+                <button>
+                  <Link to="/date" state={{ formData }} style={{ color: "white" }}>
+                    Next
+                  </Link>
+                </button>
+              </div>
+              <div className="appointment-selected-options">
+                <ul>
+                  <li> Selected option</li>
+                  <li> Selected option</li>
+                  <li> Selected option</li>
+                  <li> Selected option</li>
+                  <li> Selected option</li>
+                </ul>
+              </div>
             </div>
+
           </div>
+
         )}
       </form>
     </>
