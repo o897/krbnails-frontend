@@ -9,6 +9,8 @@ import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import navbarImg from "./../assets/navbar.png"
+
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
 

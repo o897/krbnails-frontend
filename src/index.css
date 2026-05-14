@@ -313,6 +313,10 @@ h2 {
     background-color: #a999b9;
   }
 
+  .nav-open-icon {
+    display: none;
+  }
+
   .hero__welcome {
     display: flex;
   }
@@ -507,7 +511,7 @@ h2 {
     justify-content: space-between;
     position: absolute;
     width: 40%;
-    right: 40px;
+    right: 109px;
     top: 20vh;
     padding: 17px;
     font-weight: 600;
@@ -559,18 +563,25 @@ h2 {
 
   .appointment-selected-options {
     position: absolute;
-    width: 90%;
-    right: 40px;
+    width: 100%;
+    right: 0px;
     top: 9vh;
     padding: 17px;
     font-weight: 600;
-    border: 1px solid;
+    border: 1px solid #ccccccaf;
     overflow: scroll;
+    border-radius: 12px;
+    max-height: 300px;
 
   }
 
   .appointment-selected-options ul>li {
     color: #979797;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    list-style: square;
+    margin-left: 10px;
+    font-family: "Noto Sans", sans-serif;
   }
 
   .nail {
@@ -761,7 +772,7 @@ h2 {
     margin: 40px;
     font-family: 'Noto Sans';
     letter-spacing: 8px;
-  
+
   }
 
   .reviews_section {
@@ -823,9 +834,6 @@ h2 {
 
   }
 
-  .header_menu {
-    display: none;
-  }
 
   .table-body {
     font-family: "PT Sans", sans-serif;
@@ -907,10 +915,10 @@ h2 {
   }
 
   .contact__bookbtn {
-    background-color: #663399;
+    background-color: #161616;
     color: #fff;
     height: 55px;
-    width: 320px;
+    width: 300px;
     justify-content: center;
     font-size: 1rem;
     cursor: pointer;
@@ -1607,7 +1615,7 @@ footer {
 
   .appointment-selected-options ul>li {
     color: #979797;
-    margin: 10px 0;
+
 
   }
 
@@ -1678,6 +1686,7 @@ footer {
     font-weight: 600;
     border-radius: 20px;
     font-family: "Roboto", sans-serif;
+
   }
 
   .appointment__button button {
@@ -2041,9 +2050,9 @@ footer {
     border: none;
   }
 
- .contact__bookbtn:hover {
-  background-color: #262627 !important;
-}
+  .contact__bookbtn:hover {
+    background-color: #262627 !important;
+  }
 
   .form__group {
     display: flex;

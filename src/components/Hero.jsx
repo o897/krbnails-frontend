@@ -4,6 +4,7 @@ import designImg from "../assets/services/design.jpg";
 import pedicureImg from "../assets/services/krbhome.jpg";
 import acrylicImg from "../assets/services/acrylic.jpg";
 import { images } from "../data";
+import Navbar from "../components/Navbar"
 
 import {
   faInstagram,
@@ -90,7 +91,7 @@ function Hero() {
               </div>
 
               <div className="services-types">
-                <div className="services__title">Buff & Shine</div>
+                <div className="services__title">Acrylic</div>
                 <div className="services__sub">2 Services</div>
               </div>
               <Link to="menu">
@@ -132,6 +133,7 @@ function Hero() {
 
   return (
     <div className="wrapper">
+      <Navbar/>
       <section className="hero">
 
         <div className="hero__welcome">            

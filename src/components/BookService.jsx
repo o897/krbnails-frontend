@@ -37,6 +37,16 @@ const BookService = () => {
 
     return `${mins}min`;
   };
+
+  const handleOptionsSelect = (option) => {
+    setFormData((prev) => ({
+      ...prev,
+      options: prev.options.includes(option)
+        ? prev.options.filter((item) => item !== option)
+        : [...prev.options, option],
+    }))
+  }
+
   const handleSelect = (e, position) => {
     e.preventDefault();
 
@@ -61,7 +71,6 @@ const BookService = () => {
         : prev.appointmentTitle.filter(
           (item) => item.service !== services[position].title
         ),
-
       total:
         updatedCheckedState.reduce((sum, currentState, index) => {
           return currentState
@@ -100,6 +109,7 @@ const BookService = () => {
 
   useEffect(() => {
     updateGlobalData({ ...formData });
+    console.log(formData)
   }, [formData]);
 
   return (
@@ -164,22 +174,22 @@ const BookService = () => {
 
                       <div className="appointment__service-title">{title}</div>
 
-                  
+
                       <div className="appointment__service-description">
                         {description}
                       </div>
 
-                     
+
                       <div className="appointment-options">
-                        {option?.map((item, optIndex) => (
-                          <div className="appoitment-option" key={optIndex}>
-                            <input type="checkbox" />
+                        {option?.map((item, index) => (
+                          <div className="appoitment-option" key={index}>
+                            <input type="checkbox" onChange={() => handleOptionsSelect(item)} />
                             <span>{item}</span>
                           </div>
                         ))}
                       </div>
 
-                    
+
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">
                           R{price} | {duration}min
@@ -227,15 +237,20 @@ const BookService = () => {
                   </Link>
                 </button>
               </div>
-              <div className="appointment-selected-options">
-                <ul>
-                  <li> Selected option</li>
-                  <li> Selected option</li>
-                  <li> Selected option</li>
-                  <li> Selected option</li>
-                  <li> Selected option</li>
-                </ul>
-              </div>
+              {
+                formData.options.length > 0 &&
+                <div className="appointment-selected-options">
+                  <ul>
+                    {
+                      formData.options.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))
+                    }
+
+                  </ul>
+                </div>
+              }
+
             </div>
 
           </div>
