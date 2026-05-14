@@ -30,6 +30,7 @@ const Navbar = () => {
               <div className="header_menu-items">Login</div>
               <div className="header_menu-items">Sevices</div>
               <div className="header_menu-items">Contact</div>
+              <button>BOOK NOW</button>
             
         </div>
       </div>

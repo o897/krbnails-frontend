@@ -81,7 +81,7 @@ function Hero() {
           <div className="services__container services__container-big">
             <img src={acrylicImg} alt="" srcSet="" />
             <div className="services-info">
-              <h2 className="service-title">Acrylic</h2>
+              <h2 className="service-title">Soaking</h2>
 
               <div className="services-description">
                 Soaking nails involves immersing them in warm, soapy water to
@@ -91,7 +91,7 @@ function Hero() {
               </div>
 
               <div className="services-types">
-                <div className="services__title">Acrylic</div>
+                <div className="services__title">Soaking</div>
                 <div className="services__sub">2 Services</div>
               </div>
               <Link to="menu">
@@ -133,11 +133,11 @@ function Hero() {
 
   return (
     <div className="wrapper">
-      <Navbar/>
+      <Navbar />
       <section className="hero">
 
-        <div className="hero__welcome">            
-          <FontAwesomeIcon className="nav-open-icon" icon={faGripLines}/>
+        <div className="hero__welcome">
+          <FontAwesomeIcon className="nav-open-icon" icon={faGripLines} />
           <div className="hero__welcome-title">
 
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
@@ -149,7 +149,7 @@ function Hero() {
             <img
               src="nailvid.gif"
             />
-            
+
           </div>
           <Link to="book">
             <button
@@ -234,8 +234,8 @@ function Hero() {
         </section>
 
         <section className="reviews">
+          <h2 className="review__title">They're Talking</h2>
           <div className="reviews_section">
-            <h2 className="review__title">They're Talking</h2>
 
             <div className="review__container" data-aos="fade-left">
               <div className="review__container-review">
