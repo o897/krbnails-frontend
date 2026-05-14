@@ -383,7 +383,7 @@ h2 {
     background-color: #db76d3;
   }
 
-.appointment {
+  .appointment {
     padding-left: 6vw;
     margin-top: 15px;
     font-family: "Roboto", sans-serif;
@@ -404,7 +404,7 @@ h2 {
     /* width: 92%; */
     position: relative;
     z-index: 1;
-    padding: 0 2px 3px;
+    padding: 10px;
     border-radius: 8px;
 
   }
@@ -431,6 +431,7 @@ h2 {
     font-family: 'Noto Sans';
     border: none;
     font-weight: 700;
+    cursor: pointer;
   }
 
   .rmv {
@@ -452,6 +453,8 @@ h2 {
     margin-bottom: 7px;
     margin-bottom: 25px;
     border-radius: 12px;
+    width: 50%;
+    padding: 15px;
 
   }
 
@@ -527,6 +530,38 @@ h2 {
     letter-spacing: 2px;
   }
 
+  .nail {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 48px;
+    width: 119px;
+    background-color: #ac92bc;
+    border-radius: 16px;
+    justify-content: center;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  .nail button {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nail .nail-btn {
+    width: 1em;
+    height: 1em;
+    color: #646060;
+  }
+
+  /* End appointment services */
   .mobl {
     display: none;
   }
@@ -629,8 +664,6 @@ h2 {
     line-height: 25px;
     padding: 10px;
     letter-spacing: 1px;
-
-
   }
 
 
@@ -1289,15 +1322,16 @@ footer {
   }
 
   .appointment__service-select {
+    padding: 30px;
+    width: 50%;
     display: flex;
-    padding-bottom: 10px;
+    padding: 10px;
     border: 1px solid #e7e6e7;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 7px;
     margin-bottom: 25px;
     border-radius: 12px;
-
+    gap: 200px;
   }
 
   .appointment__service-title {
@@ -1320,6 +1354,9 @@ footer {
     color: #3b3131;
     margin: 10px 0;
     font-family: 'Noto Sans';
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
 
@@ -1353,6 +1390,7 @@ footer {
     font-weight: 600;
     border: none;
     letter-spacing: 1px;
+    cursor: pointer;
   }
 
   .appointment__button-price {
@@ -1372,6 +1410,7 @@ footer {
     letter-spacing: 2px;
   }
 
+  /* End appointment services */
   /* Choose services /End */
 
   /* / Menu */

@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faMinus, faPlus,faGripLines } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faMinus, faPlus, faGripLines } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 import designImg from "../assets/services/design.jpg";
 
@@ -22,19 +22,19 @@ const BookService = () => {
   );
 
   const formatDuration = (minutes) => {
-  const hrs = Math.floor(minutes / 60);
-  const mins = minutes % 60;
+    const hrs = Math.floor(minutes / 60);
+    const mins = minutes % 60;
 
-  if (hrs && mins) {
-    return `${hrs}h ${mins}min`;
-  }
+    if (hrs && mins) {
+      return `${hrs}h ${mins}min`;
+    }
 
-  if (hrs) {
-    return `${hrs}h`;
-  }
+    if (hrs) {
+      return `${hrs}h`;
+    }
 
-  return `${mins}min`;
-};
+    return `${mins}min`;
+  };
   const handleSelect = (e, position) => {
     e.preventDefault();
 
@@ -44,38 +44,38 @@ const BookService = () => {
 
     setCheckedState(updatedCheckedState);
 
-   setFormData((prev) => ({
-  ...prev,
+    setFormData((prev) => ({
+      ...prev,
 
-  appointmentTitle: updatedCheckedState[position]
-    ? [
-        ...prev.appointmentTitle,
-        {
-          service: services[position].title,
-          price: services[position].price,
-          duration: services[position].duration,
-        },
-      ]
-    : prev.appointmentTitle.filter(
-        (item) => item.service !== services[position].title
-      ),
+      appointmentTitle: updatedCheckedState[position]
+        ? [
+          ...prev.appointmentTitle,
+          {
+            service: services[position].title,
+            price: services[position].price,
+            duration: services[position].duration,
+          },
+        ]
+        : prev.appointmentTitle.filter(
+          (item) => item.service !== services[position].title
+        ),
 
-  total:
-    updatedCheckedState.reduce((sum, currentState, index) => {
-      return currentState
-        ? sum + services[index].price
-        : sum;
-    }, 0) + prev.nails * 5,
+      total:
+        updatedCheckedState.reduce((sum, currentState, index) => {
+          return currentState
+            ? sum + services[index].price
+            : sum;
+        }, 0) + prev.nails * 5,
 
-  appointmentDuration:
-    updatedCheckedState.reduce((sum, currentState, index) => {
-      return currentState
-        ? sum + services[index].duration
-        : sum;
-    }, 0),
+      appointmentDuration:
+        updatedCheckedState.reduce((sum, currentState, index) => {
+          return currentState
+            ? sum + services[index].duration
+            : sum;
+        }, 0),
 
-  numServices: updatedCheckedState.filter(Boolean).length,
-}));
+      numServices: updatedCheckedState.filter(Boolean).length,
+    }));
   };
 
   const addNail = (e) => {
@@ -97,8 +97,8 @@ const BookService = () => {
   };
 
   useEffect(() => {
-  updateGlobalData({ ...formData });
-}, [formData]);
+    updateGlobalData({ ...formData });
+  }, [formData]);
 
   return (
     <>
@@ -116,7 +116,7 @@ const BookService = () => {
           <div className="appointment__services">
 
             {/* Nail drawings section */}
-            <div className="appointment__service-select" style={{ border: "none" }}>
+            <div className="appointment__service-select">
               <div className="appointment__service">
                 <div className="appointment__service-title">Drawings</div>
                 <div className="appointment__service-duration">number of nails</div>
@@ -138,7 +138,7 @@ const BookService = () => {
             </div>
 
             {/* Services list */}
-          <div className="appointment__services-scroll">
+            <div className="appointment__services-scroll">
               {services.map(({ title, price }, index) => (
                 <div key={index}>
                   <div
@@ -162,6 +162,19 @@ const BookService = () => {
                       <div className="appointment__service-description">
                         Begins with a warm foot soak, includes all regular
                         maintenance and finished with choice of regular polish.
+                        <span className="">
+                          1. Consultation / Preparation
+                          Check the client’s feet and nails for any issues.
+                          Prepare tools, sanitize hands, and disinfect the foot bath.
+                          2. Remove Old Nail Polish
+                          Take off any existing polish using nail polish remover.
+                          3. Trim and Shape Nails
+                          Cut toenails straight across.
+                          File and shape the edges smoothly.
+                          2. Soak the Feet
+                          Place feet in warm water, often with soap, salts, or oils.
+                          Softens skin and relaxes the client.
+                        </span>
                       </div>
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">
@@ -172,7 +185,7 @@ const BookService = () => {
                             className="appointment__service-button"
                             onClick={(e) => handleSelect(e, index)}
                           >
-                            {checkedState[index] ? <span className="rmv">Remove</span>: "Select"}
+                            {checkedState[index] ? <span className="rmv">Remove</span> : "Select"}
                           </button>
                         </div>
                       </div>
@@ -190,8 +203,8 @@ const BookService = () => {
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-               {formData.numServices} {formData.nails ||formData.numServices > 1 ? "Services" : "Service"} 
-               
+                {formData.numServices} {formData.nails || formData.numServices > 1 ? "Services" : "Service"}
+
               </div>
               <div className="appointment__button-services">
                 R{formData.total} - {formatDuration(formData.appointmentDuration)}
