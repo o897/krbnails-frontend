@@ -1449,7 +1449,7 @@ footer {
     font-size: 1.1rem;
     color: #fff;
     background-color: #000000;
-    font-family: 'Raleway"';
+    font-family: 'Raleway';
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -1905,8 +1905,7 @@ footer {
   }
 
   .appointment__form-date-btn {
-    background-color: #663399;
-    background-color: #663399;
+    background-color: #1b1b1b;
     color: #fff;
     width: 220px;
     display: flex;
@@ -2105,7 +2104,8 @@ footer {
   }
 
   .contact__bookbtn {
-    background-color: #66339954;
+    letter-spacing: 1px;
+    background-color: #050505e3;
     color: #fff;
     height: 35px;
     border-radius: 20px;
@@ -2113,9 +2113,9 @@ footer {
     margin: 40px auto;
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 190px;
     justify-content: center;
-    height: 40px;
+    height: 44px;
     font-size: 1rem;
     cursor: pointer;
     border: none;
