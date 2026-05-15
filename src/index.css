@@ -291,8 +291,8 @@ h2 {
 }
 
 .reviews {
-  background-image: url("reviews.gif");
-  padding: 40px 0;
+  /* background-image: url("reviews.gif"); */
+  background-color: #c3c3c3;
 }
 
 /* =========================
@@ -832,6 +832,8 @@ h2 {
     letter-spacing: 8px;
     
   }
+
+
 
   .reviews_section {
     margin: 40px;
@@ -1545,7 +1547,7 @@ footer {
     flex-direction: column;
     background-color: #c3c3c3;
     align-items: center;
-    background-image: url("reviews.gif");
+    /* background-image: url("reviews.gif"); */
   }
 
   .review__title {
