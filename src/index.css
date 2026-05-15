@@ -293,6 +293,7 @@ h2 {
 .reviews {
   /* background-image: url("reviews.gif"); */
   background-color: #c3c3c3;
+  padding: 40px;
 }
 
 /* =========================
@@ -342,7 +343,7 @@ h2 {
 
   /* header */
 
-  
+
   .header img {
     height: 100px;
     width: 100px;
@@ -387,7 +388,7 @@ h2 {
   }
 
   /* services */
- 
+
   .services {
     margin-top: 40px;
   }
@@ -667,12 +668,13 @@ h2 {
 
   /* reviews */
   .gallery {
-      margin: 50px;
+    margin: 50px;
   }
-  
+
   .gallery__heading {
     padding: 40px;
   }
+
   /* end reviews */
   /* End appointment services */
   .mobl {
@@ -830,7 +832,7 @@ h2 {
     margin: 40px;
     font-family: 'Noto Sans';
     letter-spacing: 8px;
-    
+
   }
 
 
@@ -1561,8 +1563,7 @@ footer {
     text-align: center;
     font-size: 1.5em;
     font-weight: 400;
-    margin-bottom: 3vh;
-    margin-top: 20px;
+    padding: 15px;
     line-height: 1.7rem;
     width: 330px;
   }
@@ -1570,16 +1571,16 @@ footer {
   .review__container-name {
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    margin-bottom: 20px;
   }
 
   /* End Reviews */
   /* Footer */
   .footer__visit-tile {
+    font-weight: 600;
     font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
-    padding-left: 6vw;
-    margin-bottom: 20px;
+    color: #fff;
+    padding: 16px 51px
   }
 
   .footer__container {
@@ -2029,7 +2030,7 @@ footer {
     font-size: 14px;
   }
 
- 
+
 
   .header_menu {
     display: none;
