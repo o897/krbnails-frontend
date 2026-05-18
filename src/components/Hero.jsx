@@ -5,6 +5,10 @@ import pedicureImg from "../assets/services/krbhome.jpg";
 import acrylicImg from "../assets/services/acrylic.jpg";
 import { images } from "../data";
 import Navbar from "../components/Navbar"
+import { IoIosArrowDropleft } from "react-icons/io";
+import { FaGripLines } from "react-icons/fa6";
+
+
 
 import {
   faInstagram,
@@ -12,7 +16,6 @@ import {
   faYoutube,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CiCircleChevLeft } from "react-icons/ci";
 
@@ -138,7 +141,7 @@ function Hero() {
       <section className="hero">
 
         <div className="hero__welcome">
-          <FontAwesomeIcon className="nav-open-icon" icon={faGripLines} />
+          <FaGripLines className="nav-open-icon"/>
           <div className="hero__welcome-title">
 
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.

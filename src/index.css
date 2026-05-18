@@ -1629,6 +1629,9 @@ footer {
   /* End Gallery */
 
   /* Reviews */
+  .reviews {
+    margin: 0 4vw;
+  }
 
   .reviews_section {
     display: flex;
