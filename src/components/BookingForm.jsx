@@ -71,6 +71,28 @@ const BookingForm = () => {
     } catch (error) {
       setMessage(`Something went wrong: ${error.message}`);
     }
+
+    try {
+      const response = await fetch("https://locahost:3000/book/date",{
+        method : "PUT",
+        headers: { "Content-Type": "application/json" },
+        body : JSON.stringify(bookingData)
+      })
+
+      const data = await response.json();
+
+      if(response.ok) {
+        console.log("date booked")
+      } else {
+        console.log("failed to update dates")
+
+      }
+
+
+    } catch (error) {
+      
+    }
+
   };
 
   useEffect(() => {

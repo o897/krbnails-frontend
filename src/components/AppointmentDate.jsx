@@ -13,32 +13,10 @@ import GlobalContext from "../GlobalContext";
 import dayjs from "dayjs";
 
 
-function fetchDates(date, {signal}) {
-
-}
 
 async function fetchAppointments(date, { signal }) {
-  const month = date.format("YYYY-MM");
-  const res = await fetch(`/api/appointments?month=${month}`, { signal });
 
-  if (!res.ok) throw new Error("Failed to fetch appointments");
-
-  const appointments = await res.json();
-
-  // Convert UTC dates to SAST (UTC+2) before extracting the day
-  const daysToHighlight = appointments.map((appt) =>
-    dayjs(appt.date).add(2, "hour").format("YYYY-MM-DD")
-  );
-
-  // Days where ALL time slots are booked
-  const fullyBookedDays = daysToHighlight.filter(
-    (d) => daysToHighlight.filter((x) => x === d).length >= worktimes.length
-  );
-
-  return { daysToHighlight, fullyBookedDays };
 }
-
-// 
 
 function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {

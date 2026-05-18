@@ -5,7 +5,6 @@ import pedicureImg from "../assets/services/krbhome.jpg";
 import acrylicImg from "../assets/services/acrylic.jpg";
 import { images } from "../data";
 import Navbar from "../components/Navbar"
-
 import {
   faInstagram,
   faTiktok,
@@ -16,6 +15,7 @@ import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./../assets/home.jpg";
+import Footer from "./Footer";
 
 // data-aos="fade-up"
 function Hero() {
@@ -272,46 +272,7 @@ function Hero() {
         </section>
       </main>
 
-      <footer>
-        <section className="footer">
-          <div className="footer__visit-tile">Visit Us</div>
-          <div className="footer__container">
-            <div className="footer__title">Location</div>
-            <div className="footer__details">263 Odinburg Gardens</div>
-          </div>
-          <div className="footer__container">
-            <div className="footer__title">Phone</div>
-            <div className="footer__details">+27 680327197</div>
-          </div>
-          <div className="footer__container">
-            <div className="footer__title">Timetable</div>
-            <div className="footer__timetable">
-              <div className="footer__details">Sunday: Closed</div>
-              <div className="footer__details">
-                Monday - Friday : 10am - 18pm
-              </div>
-              <div className="footer__details">Saturday : 10am - 18pm</div>
-            </div>
-          </div>
-
-          <div className="row footer__socials">
-            <li>
-              <FontAwesomeIcon icon={faYoutube} color="#fff" />
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faTiktok} color="#fff" />
-            </li>
-            <li>
-              <a href="https://www.instagram.com/tlamis_nail_gallery/">
-                <FontAwesomeIcon icon={faInstagram} color="#fff" />
-              </a>
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faWhatsapp} color="#fff" />
-            </li>
-          </div>
-        </section>
-      </footer>
+     <Footer/>
     </div>
   );
 }
