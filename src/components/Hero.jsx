@@ -5,6 +5,7 @@ import pedicureImg from "../assets/services/krbhome.jpg";
 import acrylicImg from "../assets/services/acrylic.jpg";
 import { images } from "../data";
 import Navbar from "../components/Navbar"
+
 import {
   faInstagram,
   faTiktok,
@@ -13,6 +14,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CiCircleChevLeft } from "react-icons/ci";
+
 import { Link } from "react-router-dom";
 import "./../assets/home.jpg";
 import Footer from "./Footer";
