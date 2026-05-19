@@ -51,10 +51,10 @@ const BookingForm = () => {
     //   );
 
 
-
+// http://localhost:3000/appointment/book",
 
     try {
-      const response = await fetch("http://localhost:3000/appointment/book", {
+      const response = await fetch("https://imguploader.fun/appointment/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),
