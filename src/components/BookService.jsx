@@ -180,14 +180,14 @@ const BookService = () => {
                       </div>
 
 
-                      <div className="appointment-options">
+                      {/* <div className="appointment-options">
                         {option?.map((item, index) => (
                           <div className="appoitment-option" key={index}>
                             <input type="checkbox" onChange={() => handleOptionsSelect(item)} />
                             <span>{item}</span>
                           </div>
                         ))}
-                      </div>
+                      </div> */}
 
 
                       <div className="appointment__service-bot">

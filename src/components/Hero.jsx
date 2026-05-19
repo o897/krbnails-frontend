@@ -43,7 +43,7 @@ const handleNext = () => {
                 application.
               </div>
               <div className="services-types">
-                <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment | Moisturise & Finish</div>
+                <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment </div>
               </div>
               <Link to="menu">
                 <button className="services__container-btn dsktp">LEARN MORE</button>
@@ -69,7 +69,8 @@ const handleNext = () => {
               <div className="services-types">
                 <div className="services__sub">
                   Shape & Prep | Base Coat Application | Nail Art & Design | Top Coat Finish
-                </div>              </div>
+                </div>
+                </div>
               <Link to="menu">
                 <button className="services__container-btn dsktp">LEARN MORE</button>
               </Link>

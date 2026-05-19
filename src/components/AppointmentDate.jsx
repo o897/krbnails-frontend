@@ -12,30 +12,24 @@ import { StaticDatePicker } from "@mui/x-date-pickers";
 import GlobalContext from "../GlobalContext";
 import dayjs from "dayjs";
 
-
-
 async function fetchAppointments(date, { signal }) {
+  const response = await fetch("http://localhost:3000/bookings", { signal });
 
-}
+  if (!response.ok) {
+    throw new Error("Failed to fetch appointments");
+  }
 
-function fakeFetch(date, { signal }) {
-  return new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => {
-      const daysToHighlight = [
-        "2026-05-14",
-        "2026-05-25",
-        "2026-05-23",
-      ];
+  const data = await response.json();
 
-      resolve({ daysToHighlight });
-    }, 500);
-
-    signal.addEventListener("abort", () => {
-      clearTimeout(timeout);
-      reject(new DOMException("aborted", "AbortError"));
-    });
+ const daysToHighlight = data
+  .filter((booking) => booking.time.length === 4)
+  .map((booking) => {
+    return dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD");
   });
+  
+  return { daysToHighlight };  // return always goes last
 }
+
 
 const CustomPickersDay = styled(PickersDay, {
   shouldForwardProp: (prop) => prop !== "isHighlighted",
@@ -45,16 +39,16 @@ const CustomPickersDay = styled(PickersDay, {
   "&::after":
     day.isSame(dayjs(), "day") || day.isAfter(dayjs(), "day")
       ? {
-          content: '""',
-          position: "absolute",
-          bottom: 6,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: 13,
-          height: 2.5,
-          borderRadius: 10,
-          backgroundColor: isHighlighted ? "red" : "green",
-        }
+        content: '""',
+        position: "absolute",
+        bottom: 6,
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: 13,
+        height: 2.5,
+        borderRadius: 10,
+        backgroundColor: isHighlighted ? "red" : "green",
+      }
       : {},
 }));
 
@@ -97,7 +91,7 @@ export default function AppointmentDate() {
 
     requestAbortController.current = controller;
 
-    fakeFetch(date, {
+    fetchAppointments(date, {
       signal: controller.signal,
     })
       .then(({ daysToHighlight }) => {
