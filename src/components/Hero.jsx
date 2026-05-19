@@ -6,7 +6,6 @@ import acrylicImg from "../assets/services/acrylic.jpg";
 import { images } from "../data";
 import Navbar from "../components/Navbar"
 import { IoIosArrowDropleft } from "react-icons/io";
-import { FaGripLines } from "react-icons/fa6";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./../assets/home.jpg";
@@ -139,7 +138,6 @@ const handleNext = () => {
       <section className="hero">
 
         <div className="hero__welcome">
-          <FaGripLines className="nav-open-icon" />
           <div className="hero__welcome-title">
 
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.

@@ -1424,6 +1424,10 @@ footer {
     font-family: "Raleway", sans-serif;
   }
 
+  .service-title {
+    font-size: 3rem;
+  }
+
   .services__container {}
 
   .services__container-big img {
