@@ -7,6 +7,7 @@ import { images } from "../data";
 import Navbar from "../components/Navbar"
 import { IoIosArrowDropleft } from "react-icons/io";
 import { FaGripLines } from "react-icons/fa6";
+import { BsArrowLeftShort } from "react-icons/bs";
 
 
 
@@ -166,8 +167,10 @@ function Hero() {
       </section>
 
       <main className="main">
+
         <section className="services">
           <h2>Services</h2>
+          <BsArrowLeftShort className="icon-arrow"/>
           <div className="services-menu">
             <div
               className="services-menu-items"
@@ -197,15 +200,6 @@ function Hero() {
             </div>
           </div>
         </section>
-        {/* <section className="socials">
-          <div className="socials__title">TLAMIS</div>
-          <div className="social__sub-title">Nail. Creative. Art</div>
-
-          <div className="socials__followus">Follow us on instagram</div>
-          <button className="socials_link-btn">
-            <FontAwesomeIcon icon={faInstagram} /> @tlamis_nail_gallery
-          </button>
-        </section> */}
         <section>
           <div className="book">
             <h2>Nail Your Look, Every Day!</h2>

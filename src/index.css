@@ -118,7 +118,13 @@ h2 {
   cursor: pointer;
 }
 
-
+.icon-arrow {
+  position: absolute;
+  font-size: 44px;
+  right: 13px;
+  transform: translate(10px, 200px);
+animation: pull-pulse 3s ease-in-out infinite;
+}
 
 /* =========================
    HERO
@@ -1140,6 +1146,12 @@ footer {
       margin-bottom: 15px;
     }
   }
+
+ @keyframes pull-pulse {
+  0%, 100% { transform: translate(10px, 200px); opacity: 1; }
+  40%       { transform: translate(-14px, 200px); opacity: 0.5; }
+  60%       { transform: translate(10px, 200px); opacity: 1; }
+}
 
   .custom-hr {
     border-bottom: 1px solid #e7e6e7;
