@@ -21,13 +21,13 @@ async function fetchAppointments(date, { signal }) {
 
   const data = await response.json();
 
- const daysToHighlight = data
-  .filter((booking) => booking.time.length === 4)
-  .map((booking) => {
-    return dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD");
-  });
-  
-  return { daysToHighlight };  // return always goes last
+  const daysToHighlight = data
+    .filter((booking) => booking.time.length === 4)
+    .map((booking) => {
+      return dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD");
+    });
+
+  return { daysToHighlight, bookings: data }; // return raw data too
 }
 
 
@@ -79,12 +79,18 @@ export default function AppointmentDate() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [highlightedDays, setHighlightedDays] = useState([]);
+  const [bookings, setBookings] = useState([]); // store all bookings
   const [appointmentDate, setAppointmentDate] = useState(null);
   const [appointmentTime, setAppointmentTime] = useState(null);
 
   const { updateGlobalData } = useContext(GlobalContext);
 
   const CustomActionBar = () => null;
+
+  // only runs when user clicks a date
+  const bookedTimes = appointmentDate
+    ? (bookings.find((b) => b.date === appointmentDate.format("DD-MMM-YYYY"))?.time || [])
+    : [];
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
@@ -94,8 +100,9 @@ export default function AppointmentDate() {
     fetchAppointments(date, {
       signal: controller.signal,
     })
-      .then(({ daysToHighlight }) => {
+      .then(({ daysToHighlight, bookings }) => {
         setHighlightedDays(daysToHighlight);
+        setBookings(bookings); // store bookings
         setIsLoading(false);
       })
       .catch((error) => {
@@ -179,21 +186,27 @@ export default function AppointmentDate() {
       </div>
 
       <div className="times">
-        {worktimes.map(({ time }, index) => (
-          <div
-            className="time"
-            key={index}
-            onClick={() => setAppointmentTime(time)}
-            style={{
-              backgroundColor:
-                appointmentTime === time
+        {worktimes.map(({ time }, index) => {
+          const isBooked = bookedTimes.includes(time);
+          return (
+            <div
+              className="time"
+              key={index}
+              onClick={() => !isBooked && setAppointmentTime(time)}
+              style={{
+                backgroundColor: isBooked
+                  ? "#e0e0e0"
+                  : appointmentTime === time
                   ? "#ce86f7"
                   : "white",
-            }}
-          >
-            {time}
-          </div>
-        ))}
+                cursor: isBooked ? "not-allowed" : "pointer",
+                opacity: isBooked ? 0.5 : 1,
+              }}
+            >
+              {time}
+            </div>
+          );
+        })}
       </div>
 
       {appointmentDate && appointmentTime && (
