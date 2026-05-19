@@ -201,6 +201,7 @@ animation: pull-pulse 3s ease-in-out infinite;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px 0;
 }
 
 .services-menu {
@@ -849,6 +850,15 @@ footer p {
     transform: translate(-50%, 50%);
     letter-spacing: 2px;
     cursor: pointer;
+    border: .5px solid;
+    background-color: inherit;
+  }
+
+  .book__btn:hover {
+    border: .5px solid #474646;
+    background-color: #000;
+    color: #fff;
+    transition: ease-in .4s;
   }
 
 

@@ -123,7 +123,7 @@ function Hero() {
                 application.
               </div>
               <div className="services-types">
-                <div className="services__sub">4 Services</div>
+                <div className="services__sub"> Buff | Shine</div>
               </div>
               <div className="services__container">
                 <Link to="menu">
@@ -169,7 +169,7 @@ function Hero() {
       <main className="main">
 
         <section className="services">
-          <h2>Services</h2>
+          {/* <h2>Services</h2> */}
           <BsArrowLeftShort className="icon-arrow"/>
           <div className="services-menu">
             <div
