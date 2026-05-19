@@ -18,6 +18,16 @@ function Hero() {
   const [selectedService, setSelectedService] = useState("acrylic");
   const services = ["acrylic", "design", "pedicure", "soaking"];
 
+  const handlePrev = () => {
+  const i = services.indexOf(selectedService);
+  setSelectedService(services[i - 1] || services[services.length - 1]);
+};
+
+const handleNext = () => {
+  const i = services.indexOf(selectedService);
+  setSelectedService(services[i + 1] || services[0]);
+};
+
   const renderService = (service) => {
     switch (selectedService) {
       case "pedicure":
@@ -36,7 +46,7 @@ function Hero() {
                 <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment | Moisturise & Finish</div>
               </div>
               <Link to="menu">
-                <button className="services__container-btn">LEARN MORE</button>
+                <button className="services__container-btn dsktp">LEARN MORE</button>
               </Link>
 
             </div>
@@ -61,7 +71,7 @@ function Hero() {
                   Shape & Prep | Base Coat Application | Nail Art & Design | Top Coat Finish
                 </div>              </div>
               <Link to="menu">
-                <button className="services__container-btn">LEARN MORE</button>
+                <button className="services__container-btn dsktp">LEARN MORE</button>
               </Link>
             </div>
 
@@ -83,10 +93,10 @@ function Hero() {
 
               <div className="services-types">
                 <div className="services__sub">
-                  Warm Soak | Cuticle Softening | Relaxing Prep | Hydration Boost
+                  Warm Soak | Cuticle Softening | Relaxing Prep
                 </div>              </div>
               <Link to="menu">
-                <button className="services__container-btn">LEARN MORE</button>
+                <button className="services__container-btn dsktp">LEARN MORE</button>
               </Link>
             </div>
 
@@ -121,19 +131,6 @@ function Hero() {
     }
   };
 
-  const handlePrev = () => {
-    setSelectedService((prev) => {
-      const i = services.indexOf(prev);
-      return services[(i - 1 + services.length) % services.length];
-    });
-  };
-
-  const handleNext = () => {
-    setSelectedService((prev) => {
-      const i = services.indexOf(prev);
-      return services[(i + 1) % services.length];
-    });
-  };
 
   return (
     <div className="wrapper">
@@ -168,7 +165,7 @@ function Hero() {
       <main className="main">
 
         <section className="services">
-          
+
           <div className="services">
             {renderService()}
             <div className="services__container">
