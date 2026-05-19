@@ -68,7 +68,7 @@ const handleNext = () => {
               </div>
               <div className="services-types">
                 <div className="services__sub">
-                  Shape & Prep | Base Coat Application | Nail Art & Design | Top Coat Finish
+                  Shape & Prep | Base Coat Application | Nail Art & Design 
                 </div>
                 </div>
               <Link to="menu">
