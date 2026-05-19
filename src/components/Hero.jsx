@@ -7,19 +7,7 @@ import { images } from "../data";
 import Navbar from "../components/Navbar"
 import { IoIosArrowDropleft } from "react-icons/io";
 import { FaGripLines } from "react-icons/fa6";
-import { BsArrowLeftShort } from "react-icons/bs";
-
-
-
-import {
-  faInstagram,
-  faTiktok,
-  faYoutube,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CiCircleChevLeft } from "react-icons/ci";
-
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./../assets/home.jpg";
 import Footer from "./Footer";
@@ -28,10 +16,7 @@ import Footer from "./Footer";
 function Hero() {
   const [isClicked, setClick] = useState(false);
   const [selectedService, setSelectedService] = useState("acrylic");
-
-  const handleServiceClick = (service) => {
-    setSelectedService(service);
-  };
+  const services = ["acrylic", "design", "pedicure", "soaking"];
 
   const renderService = (service) => {
     switch (selectedService) {
@@ -136,13 +121,27 @@ function Hero() {
     }
   };
 
+  const handlePrev = () => {
+    setSelectedService((prev) => {
+      const i = services.indexOf(prev);
+      return services[(i - 1 + services.length) % services.length];
+    });
+  };
+
+  const handleNext = () => {
+    setSelectedService((prev) => {
+      const i = services.indexOf(prev);
+      return services[(i + 1) % services.length];
+    });
+  };
+
   return (
     <div className="wrapper">
       <Navbar />
       <section className="hero">
 
         <div className="hero__welcome">
-          <FaGripLines className="nav-open-icon"/>
+          <FaGripLines className="nav-open-icon" />
           <div className="hero__welcome-title">
 
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
@@ -169,28 +168,7 @@ function Hero() {
       <main className="main">
 
         <section className="services">
-          {/* <h2>Services</h2> */}
-          <BsArrowLeftShort className="icon-arrow"/>
-          <div className="services-menu">
-            <div
-              className="services-menu-items"
-              onClick={() => handleServiceClick("design")}
-            >
-              Design
-            </div>
-            <div
-              className="services-menu-items"
-              onClick={() => handleServiceClick("pedicure")}
-            >
-              Pedicure
-            </div>
-            <div
-              className="services-menu-items"
-              onClick={() => handleServiceClick("soaking")}
-            >
-              Soaking
-            </div>
-          </div>
+          
           <div className="services">
             {renderService()}
             <div className="services__container">
@@ -198,6 +176,10 @@ function Hero() {
                 <button className="services__container-btn mobl">LEARN MORE</button>
               </Link>
             </div>
+          </div>
+          <div className="slides-arrows">
+            <FaAngleLeft className="footer-icon" onClick={handlePrev} />
+            <FaAngleRight className="footer-icon" onClick={handleNext} />
           </div>
         </section>
         <section>
@@ -272,7 +254,7 @@ function Hero() {
         </section>
       </main>
 
-     <Footer/>
+      <Footer />
     </div>
   );
 }

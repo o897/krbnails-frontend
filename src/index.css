@@ -118,6 +118,11 @@ h2 {
   cursor: pointer;
 }
 
+.slides-arrows {
+  display: flex;
+  gap: 30px;
+}
+
 .icon-arrow {
   position: absolute;
   font-size: 44px;
@@ -197,7 +202,6 @@ animation: pull-pulse 3s ease-in-out infinite;
    SERVICES
 ========================= */
 .services {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -463,6 +467,7 @@ footer p {
     font-family: 'Montserrat';
     line-height: 21px;
     letter-spacing: 1px;
+    width: 500px;
   }
 
   .services-menu {
@@ -1388,10 +1393,10 @@ footer {
 
   /* Services */
   .services {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px 0;
   }
 
   .services-menu {
@@ -1404,7 +1409,6 @@ footer {
   }
 
   .services__container {
-    margin-bottom: 20px;
   }
 
   .services__container-big img {
@@ -1417,10 +1421,9 @@ footer {
 
 
   .services-description {
-    text-align: left;
-    padding: 12px;
+    padding: 0px 0px 0 20px;
   }
-
+ 
   .services__container-small img {
     height: 11rem;
     width: 12rem;
@@ -1441,6 +1444,7 @@ footer {
     font-size: 0.8rem;
     color: #6f6f6f;
     font-style: normal;
+    padding-left: 10px;
   }
 
   .services__container-btn {
@@ -1664,9 +1668,9 @@ footer {
   }
 
   .review__title {
-    font-size: 2.4rem;
-    text-align: center;
-    margin-top: 20px;
+        font-size: 2.4rem;
+        text-align: center;
+        margin-bottom: 20px;
   }
 
   .review__container-review {
