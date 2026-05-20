@@ -28,7 +28,6 @@ const Navbar = () => {
       <div className="header">
 
         <img className="" src={navbarImg} alt="" />
-        {/* <FontAwesomeIcon icon={faBars} className="icon"/> */}
 
         <div className="header_menu">
           <div className="header_menu-items">Sevices</div>
