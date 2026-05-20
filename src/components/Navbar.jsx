@@ -31,8 +31,6 @@ const Navbar = () => {
         {/* <FontAwesomeIcon icon={faBars} className="icon"/> */}
 
         <div className="header_menu">
-
-          <div className="header_menu-items">Login</div>
           <div className="header_menu-items">Sevices</div>
           <div className="header_menu-items">Contact</div>
           <FontAwesomeIcon icon={faWhatsapp} />

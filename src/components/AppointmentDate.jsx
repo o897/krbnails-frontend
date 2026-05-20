@@ -11,7 +11,6 @@ import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { StaticDatePicker } from "@mui/x-date-pickers";
 import GlobalContext from "../GlobalContext";
 import dayjs from "dayjs";
-// http://localhost:3000/bookings",
 async function fetchAppointments(date, { signal }) {
   const response = await fetch("https://imguploader.fun/bookings", { signal });
 
@@ -27,7 +26,7 @@ async function fetchAppointments(date, { signal }) {
       return dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD");
     });
 
-  return { daysToHighlight, bookings: data }; // return raw data too
+  return { daysToHighlight, bookings: data }; 
 }
 
 
