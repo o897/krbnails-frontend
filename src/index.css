@@ -329,10 +329,10 @@ footer p {
 
 
 .footer-icon {
-  border-radius: 50%;
+  border-radius: 14px;
   padding: 10px;
   border: .8px solid #c9a97a;
-  font-size: 4.7rem;
+  font-size: 2.7rem;
   color: black;
   cursor: pointer;
 }
