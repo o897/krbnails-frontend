@@ -194,7 +194,7 @@ h2 {
   transform: translate(-50%, -50%);
   width: 240px;
   height: 50px;
-  border: 2px solid #000;
+  border: 0.1px solid #ffffff;
   background: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
