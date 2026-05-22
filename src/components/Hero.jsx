@@ -45,7 +45,7 @@ const handleNext = () => {
                 <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment </div>
               </div>
               <Link to="menu">
-                <button className="services__container-btn dsktp">LEARN MORE</button>
+                {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
               </Link>
 
             </div>
@@ -71,7 +71,7 @@ const handleNext = () => {
                 </div>
                 </div>
               <Link to="menu">
-                <button className="services__container-btn dsktp">LEARN MORE</button>
+                {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
               </Link>
             </div>
 
@@ -96,7 +96,7 @@ const handleNext = () => {
                   Warm Soak | Cuticle Softening | Relaxing Prep
                 </div>              </div>
               <Link to="menu">
-                <button className="services__container-btn dsktp">LEARN MORE</button>
+                {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
               </Link>
             </div>
 
@@ -122,7 +122,7 @@ const handleNext = () => {
               </div>
               <div className="services__container">
                 <Link to="menu">
-                  <button className="services__container-btn dsktp">LEARN MORE</button>
+                  {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
                 </Link>
               </div>
             </div>
@@ -169,7 +169,7 @@ const handleNext = () => {
             {renderService()}
             <div className="services__container">
               <Link to="menu">
-                <button className="services__container-btn mobl">LEARN MORE</button>
+                {/* <button className="services__container-btn mobl">LEARN MORE</button> */}
               </Link>
             </div>
           </div>
