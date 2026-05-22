@@ -1404,10 +1404,8 @@ footer {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     margin-top: 15px;
-    border-radius: 18px;
+    border-radius: 12px;
   }
-
-
 
 
   .hero__bookbtn:hover {
