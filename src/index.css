@@ -148,6 +148,7 @@ h2 {
   height: 100vh;
   object-fit: cover;
   opacity: 0.9;
+  background-color: #deacff;
 }
 
 .hero__welcome-img img {
@@ -159,16 +160,20 @@ h2 {
 }
 
 .hero__welcome-title {
+  color: #bf23da;
   position: absolute;
-  width: 72%;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 0.95em;
+  top: 41vh;
+  z-index: 2;
   font-family: "Playfair Display", serif;
-  font-size: 3rem;
+  font-optical-sizing: auto;
   text-align: center;
-  color: #0d1619;
-  z-index: 50;
+  letter-spacing: -2.5px;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero__welcome-sub {
@@ -1392,7 +1397,7 @@ footer {
     width: 245px !important;
     height: 55px !important;
     position: absolute;
-    background-color: #ffd4d4;
+    background-color: #ae00a1;
     top: 60vh;
     border: 2px solid black;
     right: 10vw;

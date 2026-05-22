@@ -146,9 +146,9 @@ const handleNext = () => {
             BEAUTY IN DETAIL
           </div>
           <div className="hero__welcome-img">
-            <img
+            {/* <img
               src="nailvid.gif"
-            />
+            /> */}
 
           </div>
           <Link to="book">
