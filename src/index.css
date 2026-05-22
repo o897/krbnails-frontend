@@ -119,8 +119,12 @@ h2 {
 }
 
 .slides-arrows {
+  transform: translateX(118px);
   display: flex;
-  gap: 30px;
+  gap: 25px;
+  position: relative;
+  right: 0;
+  font-size: 1rem;
 }
 
 .icon-arrow {
@@ -318,14 +322,14 @@ footer p {
   font-family: "Montserrat", sans-serif;
 }
 
+
 .footer-icon {
-  border-radius: 10px;
+  border-radius: 50%;
   padding: 10px;
   border: .8px solid #c9a97a;
-  font-size: 2.7rem;
+  font-size: 4.7rem;
   color: black;
   cursor: pointer;
-
 }
 
 .footer-bottom {
@@ -394,7 +398,7 @@ footer p {
   }
 
   /* header */
-  
+
 
   .header img {
     height: 100px;
@@ -618,7 +622,9 @@ footer p {
     top: 20vh;
     padding: 17px;
     font-weight: 600;
-    border-radius: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
     font-family: "Roboto", sans-serif;
     background-color: #30005544;
   }
@@ -1844,8 +1850,11 @@ footer {
     padding: 17px;
     bottom: 0;
     font-weight: 600;
-    border-radius: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     font-family: "Roboto", sans-serif;
+    background-color: #6c15758a;
+
 
   }
 
@@ -1871,7 +1880,8 @@ footer {
   }
 
   .appointment__button-services {
-    color: gray;
+    font-size: .97em;
+    color: #ffffff;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -2299,6 +2309,17 @@ footer {
   .footer_header.bt {
     border: none;
   }
+
+  .footer-icon {
+
+    border-radius: 14px;
+    padding: 10px;
+    border: .8px solid #c9a97a;
+    font-size: 2.5rem;
+    color: black;
+    cursor: pointer;
+  }
+
 
 
 }
