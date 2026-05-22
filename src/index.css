@@ -1578,18 +1578,21 @@ footer {
   /* heading at the top */
   .bookform__header {
     font-size: 1.1rem;
-    color: #fff;
-    background-color: #000000;
+    color: #1b1b1b;
+    background-color: #e7e7e7;
     font-family: 'Raleway';
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     position: -webkit-sticky;
     height: 75px;
+    font-weight: 500;
+    letter-spacing: .5px;
   }
 
   .angle-icon {
     margin: 0 25px;
+    color: #000;
   }
 
   /* end heading at the top */
@@ -1968,7 +1971,7 @@ footer {
     font-size: 1rem;
     border: 1px solid #e9e9e9;
     color: #000000;
-    border-radius: 20px;
+    border-radius: 11px;
     width: 300px;
     font-weight: 400;
     align-items: center;
@@ -2255,6 +2258,8 @@ footer {
     border-radius: 20px;
     margin: 4vw;
     padding: 10px;
+    background-color: #fff;
+    border: 1px solid #b9b9b9;
   }
 
   .footer-bottom {
@@ -2281,6 +2286,7 @@ footer {
 
   .footer-title {
     padding: 5px 0;
+    color: #000;
   }
 
   .footer_header {
