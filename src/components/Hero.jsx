@@ -145,9 +145,9 @@ const handleNext = () => {
             TLAMI'S NAIL GALLERY
           </div>
           <div className="hero__welcome-img">
-            {/* <img
-              src="nailvid.gif"
-            /> */}
+            <img
+              src="home.jpg"
+            />
 
           </div>
           <Link to="book">
