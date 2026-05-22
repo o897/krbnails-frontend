@@ -136,14 +136,13 @@ const handleNext = () => {
     <div className="wrapper">
       <Navbar />
       <section className="hero">
-
         <div className="hero__welcome">
           <div className="hero__welcome-title">
 
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
           </div>
           <div className="hero__welcome-sub">
-            BEAUTY IN DETAIL
+            TLAMI'S NAIL GALLERY
           </div>
           <div className="hero__welcome-img">
             {/* <img
