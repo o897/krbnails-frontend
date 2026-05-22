@@ -76,7 +76,7 @@ function ServerDay(props) {
 export default function AppointmentDate() {
   const requestAbortController = useRef(null);
 
-  const [isLoading, setIsLoading] = useState(false);
+const [isLoading, setIsLoading] = useState(true); 
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [bookings, setBookings] = useState([]); // store all bookings
   const [appointmentDate, setAppointmentDate] = useState(null);
@@ -91,25 +91,24 @@ export default function AppointmentDate() {
     ? (bookings.find((b) => b.date === appointmentDate.format("DD-MMM-YYYY"))?.time || [])
     : [];
 
-  const fetchHighlightedDays = (date) => {
-    const controller = new AbortController();
+ const fetchHighlightedDays = (date) => {
+  const controller = new AbortController();
+  requestAbortController.current = controller;
+  setIsLoading(true); 
 
-    requestAbortController.current = controller;
-
-    fetchAppointments(date, {
-      signal: controller.signal,
+  fetchAppointments(date, { signal: controller.signal })
+    .then(({ daysToHighlight, bookings }) => {
+      setHighlightedDays(daysToHighlight);
+      setBookings(bookings);
+      setIsLoading(false);
     })
-      .then(({ daysToHighlight, bookings }) => {
-        setHighlightedDays(daysToHighlight);
-        setBookings(bookings); // store bookings
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        if (error.name !== "AbortError") {
-          console.error(error);
-        }
-      });
-  };
+    .catch((error) => {
+      if (error.name !== "AbortError") {
+        console.error(error);
+        setIsLoading(false); 
+      }
+    });
+};
 
   useEffect(() => {
     fetchHighlightedDays(dayjs());
@@ -163,6 +162,7 @@ export default function AppointmentDate() {
               label="Select Date"
               loading={isLoading}
               value={appointmentDate}
+              shouldDisableDate={() => isLoading}
               disablePast
               onChange={(newValue) =>
                 setAppointmentDate(newValue)
