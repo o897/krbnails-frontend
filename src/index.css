@@ -1434,6 +1434,10 @@ footer {
     font-size: 3rem;
   }
 
+  .slides-arrows {
+    gap: 14px;
+  }
+
   .services__container {}
 
   .services__container-big img {
