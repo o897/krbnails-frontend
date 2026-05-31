@@ -185,7 +185,6 @@ const [isLoading, setIsLoading] = useState(true);
       </div>
 
       <div className="times">
-        <div>Available time slots :</div>
         {worktimes.map(({ time }, index) => {
           const isBooked = bookedTimes.includes(time);
           return (

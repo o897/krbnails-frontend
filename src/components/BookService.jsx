@@ -233,7 +233,7 @@ const BookService = () => {
               <div className="appointment__button-continue">
                 <button>
                   <Link to="/date" state={{ formData }} style={{ color: "white" }}>
-                    Next
+                    Continue
                   </Link>
                 </button>
               </div>
