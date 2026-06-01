@@ -119,12 +119,34 @@ h2 {
 }
 
 .slides-arrows {
-  transform: translateX(118px);
   display: flex;
-  gap: 25px;
-  position: relative;
-  right: 0;
-  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.carousel-dot {
+  height: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #ccc;
+  transition: width 0.4s cubic-bezier(.4, 0, .2, 1), background 0.4s ease;
+}
+
+.carousel-dot.inactive {
+  width: 8px;
+}
+
+.carousel-dot.active {
+  width: 28px;
+  background: #ac92bc;
 }
 
 .icon-arrow {
@@ -660,7 +682,7 @@ footer p {
     font-weight: 500;
     font-style: normal;
     letter-spacing: 2px;
-    color : #fff;
+    color: #fff;
   }
 
   .appointment-options {

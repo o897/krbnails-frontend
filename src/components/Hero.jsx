@@ -18,16 +18,16 @@ function Hero() {
   const services = ["acrylic", "design", "pedicure", "soaking"];
 
   const handlePrev = () => {
-  const i = services.indexOf(selectedService);
-  setSelectedService(services[i - 1] || services[services.length - 1]);
-};
+    const i = services.indexOf(selectedService);
+    setSelectedService(services[i - 1] || services[services.length - 1]);
+  };
 
-const handleNext = () => {
-  const i = services.indexOf(selectedService);
-  setSelectedService(services[i + 1] || services[0]);
-};
+  const handleNext = () => {
+    const i = services.indexOf(selectedService);
+    setSelectedService(services[i + 1] || services[0]);
+  };
 
-  const renderService = (service) => {
+  const renderService = () => {
     switch (selectedService) {
       case "pedicure":
         return (
@@ -42,14 +42,10 @@ const handleNext = () => {
                 application.
               </div>
               <div className="services-types">
-                <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment </div>
+                <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment</div>
               </div>
-              <Link to="menu">
-                {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
-              </Link>
-
+              <Link to="menu"></Link>
             </div>
-
           </div>
         );
       case "design":
@@ -58,7 +54,6 @@ const handleNext = () => {
             <img src={designImg} alt="" />
             <div className="services-info">
               <h2 className="service-title">Designs</h2>
-
               <div className="services-description">
                 Elevate your look with stunning nail art designs that showcase
                 your unique style. Our expert artists create vibrant, intricate
@@ -67,14 +62,11 @@ const handleNext = () => {
               </div>
               <div className="services-types">
                 <div className="services__sub">
-                  Shape & Prep | Base Coat Application | Nail Art & Design 
+                  Shape & Prep | Base Coat Application | Nail Art & Design
                 </div>
-                </div>
-              <Link to="menu">
-                {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
-              </Link>
+              </div>
+              <Link to="menu"></Link>
             </div>
-
           </div>
         );
       case "soaking":
@@ -83,23 +75,19 @@ const handleNext = () => {
             <img src={acrylicImg} alt="" srcSet="" />
             <div className="services-info">
               <h2 className="service-title">Soaking</h2>
-
               <div className="services-description">
                 Soaking nails involves immersing them in warm, soapy water to
                 soften cuticles and prepare them for grooming. This step cleanses
                 and hydrates the nails, making trimming and shaping easier. It
                 also enhances relaxation and overall nail health.
               </div>
-
               <div className="services-types">
                 <div className="services__sub">
                   Warm Soak | Cuticle Softening | Relaxing Prep
-                </div>              </div>
-              <Link to="menu">
-                {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
-              </Link>
+                </div>
+              </div>
+              <Link to="menu"></Link>
             </div>
-
           </div>
         );
       case "acrylic":
@@ -118,12 +106,10 @@ const handleNext = () => {
                 application.
               </div>
               <div className="services-types">
-                <div className="services__sub"> Buff | Shine</div>
+                <div className="services__sub">Buff | Shine</div>
               </div>
               <div className="services__container">
-                <Link to="menu">
-                  {/* <button className="services__container-btn dsktp">LEARN MORE</button> */}
-                </Link>
+                <Link to="menu"></Link>
               </div>
             </div>
           </div>
@@ -131,29 +117,22 @@ const handleNext = () => {
     }
   };
 
-
   return (
     <div className="wrapper">
       <Navbar />
       <section className="hero">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
-
             Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
           </div>
           <div className="hero__welcome-sub">
             TLAMI'S NAIL GALLERY
           </div>
           <div className="hero__welcome-img">
-            <img
-              src="home.jpg"
-            />
-
+            <img src="home.jpg" />
           </div>
           <Link to="book">
-            <button
-              className="hero__bookbtn"
-            >
+            <button className="hero__bookbtn">
               <span className="wht">BOOK A</span>N APPOINTMENT
             </button>
           </Link>
@@ -163,20 +142,31 @@ const handleNext = () => {
       <main className="main">
 
         <section className="services">
-
           <div className="services">
             {renderService()}
             <div className="services__container">
-              <Link to="menu">
-                {/* <button className="services__container-btn mobl">LEARN MORE</button> */}
-              </Link>
+              <Link to="menu"></Link>
             </div>
           </div>
+
+          {/* Arrows + bubble dots */}
           <div className="slides-arrows">
             <FaAngleLeft className="footer-icon" onClick={handlePrev} />
+
+            <div className="carousel-dots">
+              {services.map((service, i) => (
+                <div
+                  key={i}
+                  className={`carousel-dot ${service === selectedService ? "active" : "inactive"}`}
+                  onClick={() => setSelectedService(service)}
+                />
+              ))}
+            </div>
+
             <FaAngleRight className="footer-icon" onClick={handleNext} />
           </div>
         </section>
+
         <section>
           <div className="book">
             <h2>Nail Your Look, Every Day!</h2>
@@ -211,7 +201,6 @@ const handleNext = () => {
         <section className="reviews">
           <h2 className="review__title">They're Talking</h2>
           <div className="reviews_section">
-
             <div className="review__container" data-aos="fade-left">
               <div className="review__container-review">
                 Positive vibes all the way. Hygienic, long-lasting gel manicure,
@@ -245,11 +234,35 @@ const handleNext = () => {
               <div className="review__container-name">- Karabo</div>
             </div>
           </div>
-
         </section>
       </main>
 
       <Footer />
+
+      {/* Bubble dot styles */}
+      <style>{`
+        .slides-arrows {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          margin-top: 12px;
+        }
+        .carousel-dots {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+        }
+        .carousel-dot {
+          height: 8px;
+          border-radius: 4px;
+          cursor: pointer;
+          background: #ccc;
+          transition: width 0.4s cubic-bezier(.4, 0, .2, 1), background 0.4s ease;
+        }
+        .carousel-dot.inactive { width: 8px; }
+        .carousel-dot.active   { width: 28px; background: #ac92bc; }
+      `}</style>
     </div>
   );
 }
