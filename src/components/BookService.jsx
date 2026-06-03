@@ -128,6 +128,9 @@ const BookService = () => {
           <div className="appointment__services">
 
             {/* Nail drawings section */}
+            <div>
+              
+            </div>
             <div className="appointment__service-select">
               <div className="appointment__service">
                 <div className="appointment__service-title">Drawings</div>

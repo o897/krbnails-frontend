@@ -78,7 +78,7 @@ export const images = [
 export const services = [
   {
     title: "Pedicure",
-    price: 110,
+    price: 120,
     duration: 30,
     img : pedicureImg,
     description: "A pedicure is a cosmetic and therapeutic treatment for the feet and toenails that involves cleaning, trimming, shaping the nails, removing dead skin, and moisturizing the feet.",
@@ -134,7 +134,7 @@ export const services = [
   },
   {
     title: "Foot Treatment",
-    price: 110,
+    price: 170,
     duration: 25,
     img : feedb6Img,
     description: "A foot treatment focuses on improving the condition and comfort of the feet by softening, exfoliating, and moisturizing dry or rough skin.",
@@ -147,7 +147,7 @@ export const services = [
     ]
   },
   {
-    title: "Soak Off",
+    title: "Rubber base Gel",
     price: 80,
     duration: 15,
     img : feedb8Img,
