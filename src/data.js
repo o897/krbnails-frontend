@@ -78,87 +78,117 @@ export const images = [
 export const services = [
   {
     title: "Pedicure",
-    price: 120,
+    price: 150,
     duration: 30,
-    img : pedicureImg,
-    description: "A pedicure is a cosmetic and therapeutic treatment for the feet and toenails that involves cleaning, trimming, shaping the nails, removing dead skin, and moisturizing the feet.",
-    option: [
-      "Feet are soaked in warm water to soften the skin and create a relaxing, refreshing feeling before the treatment begins.",
-      "Toenails are trimmed and shaped neatly to improve both appearance and comfort.",
-      "Dead skin, rough heels, and cuticles are gently cleaned and removed to leave the feet looking smoother and healthier.",
-      "A scrub and moisturizing massage are applied to help the skin feel soft, relaxed, and rejuvenated.",
-      "The treatment is completed with a polish or gel application, leaving the toenails looking clean, polished, and beautiful."
-    ]
+    img: feedb1Img,
+    description:
+      "Pedicure service available with Acrylic, Rubber Base Gel, or Polygel application.",
+    options: {
+      Plain: 150,
+      DesignExtra: 20
+    }
   },
+
   {
-    title: "Acrylic",
-    price: 300,
+    title: "Acrylic Nail Service",
+    price: 230,
     duration: 40,
-    img : feedb1Img,
-    description: "Acrylic nails are a nail enhancement treatment where a liquid and powder mixture is applied to create strong, durable, and shaped artificial nails. They are ideal for adding length and style to natural nails.",
-    option: [
-      "Natural nails are cleaned, shaped, and lightly buffed to prepare the surface.",
-      "Nail tips are applied or forms are placed to create the desired length.",
-      "Acrylic liquid and powder are mixed and applied to build the nail structure.",
-      "The nails are shaped and refined once the acrylic has set.",
-      "The final look is polished or painted for a clean, finished appearance."
-    ]
+    img: feedb1Img,
+    description:
+      "Strong and durable nail enhancements that add length and style to natural nails.",
+    options: {
+      Short: 230,
+      Medium: 270,
+      Long: 300,
+      XLong: 350
+    }
   },
+
   {
-    title: "Gel Overlay",
-    price: 180,
-    duration: 35,
-    img : feedb3Img,
-    description: "A gel overlay is a treatment where gel is applied over natural nails to strengthen them while maintaining a natural look. It adds shine, durability, and protection without adding length.",
-    option: [
-      "Natural nails are cleaned and lightly buffed to prepare the surface.",
-      "A base gel is applied to protect and support the natural nail.",
-      "Gel layers are applied and cured under a UV or LED lamp.",
-      "The nails are shaped and refined for a smooth finish.",
-      "A top coat is applied for shine and long-lasting protection."
-    ]
+    title: "Polygel",
+    price: 250,
+    duration: 40,
+    img: feedb2Img,
+    description:
+      "Lightweight yet durable nail enhancement that combines the benefits of acrylic and gel.",
+    options: {
+      Short: 250,
+      Medium: 270,
+      Long: 350,
+      OverlayShortToLong: {
+        min: 230,
+        max: 300
+      }
+    }
   },
+
+  {
+    title: "Rubber Base Gel",
+    price: 230,
+    duration: 35,
+    img: feedb3Img,
+    description:
+      "A strengthening gel overlay that protects natural nails while maintaining a natural look.",
+    options: {
+      GelOverlay: 230,
+      Short: 250,
+      Medium: 270
+    }
+  },
+
   {
     title: "Buff & Shine",
-    price: 110,
+    price: 120,
     duration: 20,
-    img : feedb4Img,
-    description: "Buff & Shine is a simple nail treatment focused on improving the natural appearance of the nails by smoothing the surface and adding a healthy shine without polish.",
-    option: [
-      "Nails are cleaned and trimmed if necessary.",
-      "The nail surface is gently buffed to remove ridges and uneven texture.",
-      "A polishing buffer is used to enhance natural shine.",
-      "Cuticles are lightly cared for to improve nail appearance.",
-      "A nourishing oil or cream is applied to finish the treatment."
-    ]
+    img: feedb4Img,
+    description:
+      "A natural nail treatment that smooths and polishes the nail surface for a healthy shine.",
+    options: {
+      Plain: 120,
+      RemovalOfOldSet: 20,
+      DesignPerFinger: 5
+    }
   },
+
+  {
+    title: "Nail Art",
+    price: null,
+    duration: 15,
+    img: feedb8Img,
+    description:
+      "Additional nail art and decorative enhancements.",
+    options: {
+      "3DArt": 15,
+      Chrome: 20,
+      Drawings: 10,
+      Glitter: 10
+    }
+  },
+
+  {
+    title: "Refill",
+    price: 200,
+    duration: 30,
+    img: feedb8Img,
+    description:
+      "Maintenance service for existing nail enhancements.",
+    options: {
+      SameColour: 200,
+      ColourChange: 210,
+      NailRepairPerNail: 20
+    }
+  },
+
   {
     title: "Foot Treatment",
     price: 170,
     duration: 25,
-    img : feedb6Img,
-    description: "A foot treatment focuses on improving the condition and comfort of the feet by softening, exfoliating, and moisturizing dry or rough skin.",
-    option: [
-      "Feet are soaked in warm water to soften the skin.",
-      "Dead skin and rough areas are exfoliated and smoothed.",
-      "Calluses are gently treated to reduce hardness and discomfort.",
-      "A moisturizing massage is applied to hydrate and relax the feet.",
-      "Feet are left soft, smooth, and refreshed."
-    ]
-  },
-  {
-    title: "Rubber base Gel",
-    price: 80,
-    duration: 15,
-    img : feedb8Img,
-    description: "A soak off is a safe removal process for gel, acrylic, or nail enhancements without damaging the natural nails.",
-    option: [
-      "The top layer of the product is gently filed to allow better removal.",
-      "Nails are soaked in a professional solution to break down product layers.",
-      "Remaining product is carefully removed from the nail surface.",
-      "Nails are cleaned and shaped after removal.",
-      "A nourishing treatment is applied to restore moisture and strength."
-    ]
+    img: feedb6Img,
+    description:
+      "A treatment focused on softening, exfoliating, and moisturizing the feet.",
+    options: {
+      Standard: 170
+    }
   }
 ];
 
