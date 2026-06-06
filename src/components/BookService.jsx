@@ -117,7 +117,7 @@ const BookService = () => {
       <div className="bookform__header">
         <Link to="/" style={{ color: "white" }}>
           <span>
-            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
+            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} /> Back
           </span>
         </Link>
         1 / 3 {" "} Select one or more services
