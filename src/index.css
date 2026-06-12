@@ -1762,6 +1762,21 @@ footer {
     font-family: "Roboto", sans-serif;
   }
 
+  .app-serv-offd {
+    overflow-x: scroll;
+    margin-bottom: 10px;
+  }
+
+  .serv_offered {
+    border: 1px solid;
+    border-radius: 5px;
+    display: grid;
+    width: fit-content;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 5px;
+  }
+
   .appointment__head-title {
     font-weight: 500;
     font-size: 1.7em;

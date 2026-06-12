@@ -117,22 +117,30 @@ const BookService = () => {
       <div className="bookform__header">
         <Link to="/" style={{ color: "white" }}>
           <span>
-            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} /> 
+            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
           </span>
         </Link>
         1 / 3 {" "} Select one or more services
       </div>
 
       <form>
+        
+        
         <div className="appointment">
+          <div className="row app-serv-offd">
+          {services.map(({ title }) => 
+            <div key={title} className="serv_offered ">{title}</div>
+          )}
+        </div>
           <div className="appointment__services">
 
             {/* Nail drawings section */}
-            <div>
-              
-            </div>
+
             <div className="appointment__service-select">
+
+
               <div className="appointment__service">
+
                 <div className="appointment__service-title">Drawings</div>
                 <div className="appointment__service-duration">number of nails</div>
                 <div className="appointment__service-title">R5 per nail</div>
