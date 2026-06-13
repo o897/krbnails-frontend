@@ -82,7 +82,7 @@ export const services = [
     duration: 30,
     img: feedb1Img,
     description:
-      "Pedicure service available with Acrylic, Rubber Base Gel, or Polygel application.",
+      "Refresh and pamper your feet with professional nail care, shaping, and a clean polished finish.",
     options: {
       Plain: 150,
       DesignExtra: 20
@@ -95,7 +95,7 @@ export const services = [
     duration: 40,
     img: feedb1Img,
     description:
-      "Strong and durable nail enhancements that add length and style to natural nails.",
+      "Beautiful, durable nail extensions designed to enhance length, style, and confidence.",
     options: {
       Short: 230,
       Medium: 270,
@@ -110,7 +110,7 @@ export const services = [
     duration: 40,
     img: feedb2Img,
     description:
-      "Lightweight yet durable nail enhancement that combines the benefits of acrylic and gel.",
+      "A lightweight and long-lasting nail enhancement that delivers strength with a natural-looking finish.",
     options: {
       Short: 250,
       Medium: 270,
@@ -128,7 +128,7 @@ export const services = [
     duration: 35,
     img: feedb3Img,
     description:
-      "A strengthening gel overlay that protects natural nails while maintaining a natural look.",
+      "A strengthening nail treatment that helps protect natural nails while providing a smooth, elegant look.",
     options: {
       GelOverlay: 230,
       Short: 250,
@@ -142,7 +142,7 @@ export const services = [
     duration: 20,
     img: feedb4Img,
     description:
-      "A natural nail treatment that smooths and polishes the nail surface for a healthy shine.",
+      "A quick nail care service that leaves natural nails smooth, healthy-looking, and beautifully polished.",
     options: {
       Plain: 120,
       RemovalOfOldSet: 20,
@@ -156,7 +156,7 @@ export const services = [
     duration: 15,
     img: feedb8Img,
     description:
-      "Additional nail art and decorative enhancements.",
+      "Express your personality with creative nail designs, patterns, and decorative finishes.",
     options: {
       "3DArt": 15,
       Chrome: 20,
@@ -171,7 +171,7 @@ export const services = [
     duration: 30,
     img: feedb8Img,
     description:
-      "Maintenance service for existing nail enhancements.",
+      "Maintain the beauty of your existing nail set with professional touch-ups and restoration.",
     options: {
       SameColour: 200,
       ColourChange: 210,
@@ -185,7 +185,7 @@ export const services = [
     duration: 25,
     img: feedb6Img,
     description:
-      "A treatment focused on softening, exfoliating, and moisturizing the feet.",
+      "Revitalize tired feet with a relaxing treatment that softens skin and promotes overall foot care.",
     options: {
       Standard: 170
     }
