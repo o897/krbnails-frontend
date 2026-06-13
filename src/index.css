@@ -1757,7 +1757,7 @@ footer {
   /* End Booking form */
   /* Choose service - appointment */
   .appointment {
-    padding-left: 6vw;
+    margin: 0 6vw;
     margin-top: 15px;
     font-family: "Roboto", sans-serif;
   }
@@ -1768,7 +1768,7 @@ footer {
   }
 
   .serv_offered {
-    border: 1px solid;
+    border: 1px solid ;
     border-radius: 5px;
     display: grid;
     width: fit-content;
@@ -1865,7 +1865,6 @@ footer {
     overflow: auto;
     scroll-behavior: smooth;
     height: 65vh;
-    padding-right: 6vw;
   }
 
   .appointment__service-description {
