@@ -127,11 +127,11 @@ const BookService = () => {
         
         
         <div className="appointment">
-          <div className="row app-serv-offd">
+          {/* <div className="row app-serv-offd">
           {services.map(({ title }) => 
             <div key={title} className="serv_offered ">{title}</div>
           )}
-        </div>
+        </div> */}
           <div className="appointment__services">
 
             {/* Nail drawings section */}
