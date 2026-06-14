@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faMinus, faPlus, faGripLines } from "@fortawesome/free-solid-svg-icons";
+import { faCircleArrowLeft, faMinus, faPlus, faGripLines } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 import designImg from "../assets/services/design.jpg";
 
@@ -117,21 +117,25 @@ const BookService = () => {
       <div className="bookform__header">
         <Link to="/" style={{ color: "white" }}>
           <span>
-            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
+            <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} />
           </span>
         </Link>
-        1 / 3 {" "} Select one or more services
+        <div className="col">
+          <span className="sm-txt">Step 1 of 3</span>
+          <span className="st-txt">Select services</span>
+        </div>
+
       </div>
 
       <form>
-        
-        
+
+
         <div className="appointment">
-          {/* <div className="row app-serv-offd">
-          {services.map(({ title }) => 
-            <div key={title} className="serv_offered ">{title}</div>
-          )}
-        </div> */}
+          <div className="row app-serv-offd">
+            {services.map(({ title }) =>
+              <div key={title} className="serv_offered ">{title}</div>
+            )}
+          </div>
           <div className="appointment__services">
 
             {/* Nail drawings section */}

@@ -71,6 +71,15 @@ h2 {
   font-size: 4rem;
   color: #0d1619;
 }
+.sm-txt {
+  font-size: .8rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 
 
 /* =========================
