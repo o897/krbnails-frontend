@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useContext } from "react";
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { styled } from "@mui/system";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -142,18 +142,17 @@ const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-      <div className="bookform__header">
-        <Link to="/book" style={{ color: "white" }}>
-          <span>
-            <FontAwesomeIcon
-              className="angle-icon"
-              icon={faAngleLeft}
-            />
-          </span>
-        </Link>
-
-        Select Service Time
-      </div>
+        <div className="bookform__header">
+             <Link to="/" style={{ color: "white" }}>
+               <span>
+                 <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} />
+               </span>
+             </Link>
+             <div className="col">
+               <span className="sm-txt">Step 2 of 3</span>
+               <span className="st-txt">Select time</span>
+             </div>
+           </div>
 
       <div className="appointment__form-date">
         <div className="date">

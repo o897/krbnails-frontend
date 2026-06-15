@@ -13,66 +13,66 @@ import feedb8Img from "./assets/reviews/feedb8.jpg";
 
 
 export const images = [
-    {
-       name : "Home",
-       source: homeImg,
-       alt: "landing image",
-    },
-    {
-        name : "Design",
-        source : designImg,
-        alt : "Design Image",
-    },
-    {
-        name : "Pedicure",
-        source : pedicureImg,
-        alt : "Pedicure Image",
-    },
-    {
-        name : "acrylic",
-        source : acrylicImg,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb1",
-        source : feedb1Img,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb2",
-        source : feedb2Img,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb3",
-        source : feedb3Img,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb4",
-        source : feedb4Img,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb5",
-        source : feedb5Img,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb6",
-        source : feedb6Img,
-        alt : "Acrylic Image",
-    },
-    {
-        name : "feedb7",
-        source : feedb7Img,
-        alt : "Acrylic Image",
-    },,
-    {
-        name : "feedb8",
-        source : feedb8Img,
-        alt : "Acrylic Image",
-    } 
+  {
+    name: "Home",
+    source: homeImg,
+    alt: "landing image",
+  },
+  {
+    name: "Design",
+    source: designImg,
+    alt: "Design Image",
+  },
+  {
+    name: "Pedicure",
+    source: pedicureImg,
+    alt: "Pedicure Image",
+  },
+  {
+    name: "acrylic",
+    source: acrylicImg,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb1",
+    source: feedb1Img,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb2",
+    source: feedb2Img,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb3",
+    source: feedb3Img,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb4",
+    source: feedb4Img,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb5",
+    source: feedb5Img,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb6",
+    source: feedb6Img,
+    alt: "Acrylic Image",
+  },
+  {
+    name: "feedb7",
+    source: feedb7Img,
+    alt: "Acrylic Image",
+  }, ,
+  {
+    name: "feedb8",
+    source: feedb8Img,
+    alt: "Acrylic Image",
+  }
 ]
 
 export const services = [
@@ -83,57 +83,50 @@ export const services = [
     img: feedb1Img,
     description:
       "Refresh and pamper your feet with professional nail care, shaping, and a clean polished finish.",
-    options: {
-      Plain: 150,
-      DesignExtra: 20
-    }
+    options: [
+      { name: "Plain", price: 150 },
+      { name: "DesignExtra", price: 20 }
+    ]
   },
 
   {
     title: "Acrylic Nail Service",
-    price: 230,
     duration: 40,
     img: feedb1Img,
     description:
       "Beautiful, durable nail extensions designed to enhance length, style, and confidence.",
-    options: {
-      Short: 230,
-      Medium: 270,
-      Long: 300,
-      XLong: 350
-    }
+    options: [
+      { name: "Short", price: 230 },
+      { name: "Medium", price: 270 },
+      { name: "Long", price: 300 },
+      { name: "XLong", price: 350 }
+    ]
   },
 
   {
     title: "Polygel",
-    price: 250,
     duration: 40,
     img: feedb2Img,
     description:
       "A lightweight and long-lasting nail enhancement that delivers strength with a natural-looking finish.",
-    options: {
-      Short: 250,
-      Medium: 270,
-      Long: 350,
-      OverlayShortToLong: {
-        min: 230,
-        max: 300
-      }
-    }
+    options: [
+      { name: "Short", price: 250 },
+      { name: "Medium", price: 270 },
+      { name: "Long", price: 350 }
+    ]
   },
 
   {
     title: "Rubber Base Gel",
-    price: 230,
     duration: 35,
     img: feedb3Img,
     description:
       "A strengthening nail treatment that helps protect natural nails while providing a smooth, elegant look.",
-    options: {
-      GelOverlay: 230,
-      Short: 250,
-      Medium: 270
-    }
+    options: [
+      { name: "GelOverlay", price: 230 },
+      { name: "Short", price: 250 },
+      { name: "Medium", price: 270 }
+    ]
   },
 
   {
@@ -143,11 +136,11 @@ export const services = [
     img: feedb4Img,
     description:
       "A quick nail care service that leaves natural nails smooth, healthy-looking, and beautifully polished.",
-    options: {
-      Plain: 120,
-      RemovalOfOldSet: 20,
-      DesignPerFinger: 5
-    }
+    options: [
+      { name: "Plain", price: 120 },
+      { name: "RemovalOfOldSet", price: 20 },
+      { name: "DesignPerFinger", price: 5 }
+    ]
   },
 
   {
@@ -157,12 +150,12 @@ export const services = [
     img: feedb8Img,
     description:
       "Express your personality with creative nail designs, patterns, and decorative finishes.",
-    options: {
-      "3DArt": 15,
-      Chrome: 20,
-      Drawings: 10,
-      Glitter: 10
-    }
+    options: [
+      { name: "3D Art", price: 15 },
+      { name: "Chrome", price: 20 },
+      { name: "Drawings", price: 10 },
+      { name: "Glitter", price: 10 }
+    ]
   },
 
   {
@@ -172,11 +165,11 @@ export const services = [
     img: feedb8Img,
     description:
       "Maintain the beauty of your existing nail set with professional touch-ups and restoration.",
-    options: {
-      SameColour: 200,
-      ColourChange: 210,
-      NailRepairPerNail: 20
-    }
+    options: [
+      { name: "SameColour", price: 200 },
+      { name: "ColourChange", price: 210 },
+      // { name: "NailRepair", price: 20 } 
+    ]
   },
 
   {
@@ -186,24 +179,24 @@ export const services = [
     img: feedb6Img,
     description:
       "Revitalize tired feet with a relaxing treatment that softens skin and promotes overall foot care.",
-    options: {
-      Standard: 170
-    }
+    options: [
+      { name: "Standard", price: 170 }
+    ]
   }
 ];
 
 export const worktimes = [{
-        time : '10:00 am'
-    },
-    {
-        time : '12:00 pm'
-    },
-    {
-        time : '14:00 pm'
-    },
-    {
-        time : '16:00 pm'
-    }
+  time: '10:00 am'
+},
+{
+  time: '12:00 pm'
+},
+{
+  time: '14:00 pm'
+},
+{
+  time: '16:00 pm'
+}
 ]
 
 // night

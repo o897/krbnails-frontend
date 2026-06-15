@@ -71,6 +71,7 @@ h2 {
   font-size: 4rem;
   color: #0d1619;
 }
+
 .sm-txt {
   font-size: .8rem;
 }
@@ -321,10 +322,19 @@ h2 {
 }
 
 /* appointment sevices page */
+
 .appoitment-option {
+  /* at the top */
   display: flex;
   margin: 10px;
   gap: 14px;
+}
+
+.app-options {
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 3px 8px;
+  margin: 10px 0;
 }
 
 .appointment-options {
@@ -1777,7 +1787,7 @@ footer {
   }
 
   .serv_offered {
-    border: 1px solid ;
+    border: 1px solid;
     border-radius: 5px;
     display: grid;
     width: fit-content;
@@ -1871,9 +1881,10 @@ footer {
   }
 
   .appointment__services {
-    overflow: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     height: 65vh;
+    overflow-y: auto;
   }
 
   .appointment__service-description {

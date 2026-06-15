@@ -124,7 +124,6 @@ const BookService = () => {
           <span className="sm-txt">Step 1 of 3</span>
           <span className="st-txt">Select services</span>
         </div>
-
       </div>
 
       <form>
@@ -166,7 +165,7 @@ const BookService = () => {
 
             {/* Services list */}
             <div className="appointment__services-scroll">
-              {services.map(({ title, price, duration, description, option, img }, index) => (
+              {services.map(({ title, price, duration, description, options, img }, index) => (
                 <div key={index}>
                   <div
                     className="appointment__service-select"
@@ -192,6 +191,19 @@ const BookService = () => {
 
                       <div className="appointment__service-description">
                         {description}
+                      </div>
+                      <hr />
+                      <div className="col">
+                        <span className="sm-txt">Choose an option</span>
+                        <div className="row">
+                          
+                            { options?.map((option) => (
+                              <div key={option.name} className="app-options">
+                                {option.name}
+                              </div>
+                            ))}
+                          
+                        </div>
                       </div>
 
 
