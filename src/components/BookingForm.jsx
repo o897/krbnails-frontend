@@ -103,13 +103,16 @@ const BookingForm = () => {
   return (
     <>
       <div className="bookform__header">
-        <Link to="/date" style={{ color: "white" }}>
-          <span>
-            <FontAwesomeIcon className="angle-icon" icon={faAngleLeft} />
-          </span>
-        </Link>
-        <div>3 / 3 Enter your details</div>
-      </div>
+             <Link to="/" style={{ color: "white" }}>
+               <span>
+                 <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} />
+               </span>
+             </Link>
+             <div className="col">
+               <span className="sm-txt">Step 3 of 3</span>
+               <span className="st-txt">Enter details</span>
+             </div>
+           </div>
       <div className="review">
         <div className="review__heading">Review your Booking</div>
         <div className="custom-hr "></div>

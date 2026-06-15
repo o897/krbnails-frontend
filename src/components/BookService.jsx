@@ -194,8 +194,8 @@ const BookService = () => {
                       </div>
                       <hr />
                       <div className="col">
-                        <span className="sm-txt">Choose an option</span>
-                        <div className="row">
+                        <span className="sm-txt app_choose-op">Choose an option</span>
+                        <div className="app_options">
                           
                             { options?.map((option) => (
                               <div key={option.name} className="app-options">

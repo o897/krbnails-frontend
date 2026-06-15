@@ -399,6 +399,16 @@ footer p {
 
 .footer-icon {}
 
+.app_choose-op {
+  padding: 5px;
+}
+
+.app_options {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+}
+
 /* =========================
    TABLET
 ========================= */
@@ -1846,14 +1856,11 @@ footer {
 
   .appointment-selected-options ul>li {
     color: #979797;
-
-
   }
 
 
   .rmv {
     font-weight: 500;
-
   }
 
   .appointment__service img {
