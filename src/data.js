@@ -79,6 +79,7 @@ export const services = [
   {
     title: "Pedicure",
     price: 150,
+    price : 0,
     duration: 30,
     img: feedb1Img,
     description:
@@ -92,6 +93,7 @@ export const services = [
   {
     title: "Acrylic Nail Service",
     duration: 40,
+    price : 0,
     img: feedb1Img,
     description:
       "Beautiful, durable nail extensions designed to enhance length, style, and confidence.",
@@ -106,6 +108,7 @@ export const services = [
   {
     title: "Polygel",
     duration: 40,
+    price : 0,
     img: feedb2Img,
     description:
       "A lightweight and long-lasting nail enhancement that delivers strength with a natural-looking finish.",
@@ -119,6 +122,7 @@ export const services = [
   {
     title: "Rubber Base Gel",
     duration: 35,
+    price : 0,
     img: feedb3Img,
     description:
       "A strengthening nail treatment that helps protect natural nails while providing a smooth, elegant look.",
@@ -145,7 +149,7 @@ export const services = [
 
   {
     title: "Nail Art",
-    price: null,
+    price: 0,
     duration: 15,
     img: feedb8Img,
     description:

@@ -117,7 +117,7 @@ const BookService = () => {
       <div className="bookform__header">
         <Link to="/" style={{ color: "white" }}>
           <span>
-            <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} />
+            <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} style={{ color: "#fff" }}/>
           </span>
         </Link>
         <div className="col">

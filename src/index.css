@@ -333,8 +333,8 @@ h2 {
 .app-options {
   border: 1px solid;
   border-radius: 16px;
-  padding: 3px 8px;
-  margin: 10px 0;
+  padding: 3px 6px;
+
 }
 
 .appointment-options {
@@ -407,6 +407,8 @@ footer p {
   flex-wrap: wrap;
   display: flex;
   gap: 10px;
+  margin-left: 3px;
+  margin-bottom: 10px;
 }
 
 /* =========================
