@@ -2,13 +2,12 @@ import { useContext, useState, useEffect } from "react";
 import { services } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowLeft, faMinus, faPlus, faGripLines } from "@fortawesome/free-solid-svg-icons";
+import { PiArrowCircleLeftThin } from "react-icons/pi";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
-import designImg from "../assets/services/design.jpg";
 
 const BookService = () => {
   const { updateGlobalData } = useContext(GlobalContext);
-  const [open, setOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     appointmentTitle: [],
@@ -23,29 +22,44 @@ const BookService = () => {
     new Array(services.length).fill(false)
   );
 
+  // starts with fixed prices, 0 for option-based services
+  const [optionPrices, setOptionPrices] = useState(
+    services.map((s) => s.price ?? 0)
+  );
+
+  // tracks which option is selected per service
+  const [selectedOptions, setSelectedOptions] = useState(
+    new Array(services.length).fill(null)
+  );
+
   const formatDuration = (minutes) => {
     const hrs = Math.floor(minutes / 60);
     const mins = minutes % 60;
-
-    if (hrs && mins) {
-      return `${hrs}h ${mins}min`;
-    }
-
-    if (hrs) {
-      return `${hrs}h`;
-    }
-
+    if (hrs && mins) return `${hrs}h ${mins}min`;
+    if (hrs) return `${hrs}h`;
     return `${mins}min`;
   };
 
-  const handleOptionsSelect = (option) => {
+  const handleOptionSelect = (index, option) => {
+    const updatedOptionPrices = optionPrices.map((price, i) =>
+      i === index ? option.price : price
+    );
+
+    // array of te selected options
+    const updatedSelectedOptions = selectedOptions.map((opt, i) =>
+      i === index ? option.name : opt
+    );
+
+    setOptionPrices(updatedOptionPrices);
+    setSelectedOptions(updatedSelectedOptions);
+
     setFormData((prev) => ({
       ...prev,
-      options: prev.options.includes(option)
-        ? prev.options.filter((item) => item !== option)
-        : [...prev.options, option],
-    }))
-  }
+      total: checkedState.reduce((sum, isChecked, i) => {
+        return isChecked ? sum + updatedOptionPrices[i] : sum;
+      }, 0) + prev.nails * 10,
+    }));
+  };
 
   const handleSelect = (e, position) => {
     e.preventDefault();
@@ -58,33 +72,24 @@ const BookService = () => {
 
     setFormData((prev) => ({
       ...prev,
-
       appointmentTitle: updatedCheckedState[position]
         ? [
-          ...prev.appointmentTitle,
-          {
-            service: services[position].title,
-            price: services[position].price,
-            duration: services[position].duration,
-          },
-        ]
+            ...prev.appointmentTitle,
+            {
+              service: services[position].title,
+              price: optionPrices[position],
+              duration: services[position].duration,
+            },
+          ]
         : prev.appointmentTitle.filter(
-          (item) => item.service !== services[position].title
-        ),
-      total:
-        updatedCheckedState.reduce((sum, currentState, index) => {
-          return currentState
-            ? sum + services[index].price
-            : sum;
-        }, 0) + prev.nails * 5,
-
-      appointmentDuration:
-        updatedCheckedState.reduce((sum, currentState, index) => {
-          return currentState
-            ? sum + services[index].duration
-            : sum;
-        }, 0),
-
+            (item) => item.service !== services[position].title
+          ),
+      total: updatedCheckedState.reduce((sum, isChecked, index) => {
+        return isChecked ? sum + optionPrices[index] : sum;
+      }, 0) + prev.nails * 10,
+      appointmentDuration: updatedCheckedState.reduce((sum, isChecked, index) => {
+        return isChecked ? sum + services[index].duration : sum;
+      }, 0),
       numServices: updatedCheckedState.filter(Boolean).length,
     }));
   };
@@ -94,7 +99,7 @@ const BookService = () => {
     setFormData((prev) => ({
       ...prev,
       nails: prev.nails < 10 ? prev.nails + 1 : 10,
-      total: prev.nails < 10 ? prev.total + 5 : prev.total,
+      total: prev.nails < 10 ? prev.total + 10 : prev.total,
     }));
   };
 
@@ -103,22 +108,20 @@ const BookService = () => {
     setFormData((prev) => ({
       ...prev,
       nails: prev.nails > 0 ? prev.nails - 1 : 0,
-      total: prev.nails > 0 ? prev.total - 5 : prev.total,
+      total: prev.nails > 0 ? prev.total - 10 : prev.total,
     }));
   };
 
   useEffect(() => {
     updateGlobalData({ ...formData });
-    console.log(formData)
+    console.log(formData);
   }, [formData]);
 
   return (
     <>
       <div className="bookform__header">
         <Link to="/" style={{ color: "white" }}>
-          <span>
-            <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} style={{ color: "#fff" }}/>
-          </span>
+          <PiArrowCircleLeftThin className="angle-icon" />
         </Link>
         <div className="col">
           <span className="sm-txt">Step 1 of 3</span>
@@ -127,45 +130,35 @@ const BookService = () => {
       </div>
 
       <form>
-
-
         <div className="appointment">
           <div className="row app-serv-offd">
-            {services.map(({ title }) =>
-              <div key={title} className="serv_offered ">{title}</div>
-            )}
+            {services.map(({ title }) => (
+              <div key={title} className="serv_offered">{title}</div>
+            ))}
           </div>
+
           <div className="appointment__services">
-
-            {/* Nail drawings section */}
-
+            {/* Nail drawings stepper */}
             <div className="appointment__service-select">
-
-
               <div className="appointment__service">
-
                 <div className="appointment__service-title">Drawings</div>
                 <div className="appointment__service-duration">number of nails</div>
-                <div className="appointment__service-title">R5 per nail</div>
+                <div className="appointment__service-title">R10 per nail</div>
               </div>
               <div className="nail">
                 <button onClick={removeNail}>
-                  <span className="nail-btn">
-                    <FontAwesomeIcon icon={faMinus} />
-                  </span>
+                  <span className="nail-btn"><FontAwesomeIcon icon={faMinus} /></span>
                 </button>
                 <div className="num_nails">{formData.nails}</div>
                 <button onClick={addNail}>
-                  <span className="nail-btn">
-                    <FontAwesomeIcon icon={faPlus} />
-                  </span>
+                  <span className="nail-btn"><FontAwesomeIcon icon={faPlus} /></span>
                 </button>
               </div>
             </div>
 
             {/* Services list */}
             <div className="appointment__services-scroll">
-              {services.map(({ title, price, duration, description, options, img }, index) => (
+              {services.map(({ title, duration, description, options, img, nb }, index) => (
                 <div key={index}>
                   <div
                     className="appointment__service-select"
@@ -177,65 +170,50 @@ const BookService = () => {
                     }}
                   >
                     <div className="appointment__service">
-
-                      <div>
-                        <img
-                          className="appointment__services-img"
-                          src={img}
-                          alt={title}
-                        />
-                      </div>
+                      <img className="appointment__services-img" src={img} alt={title} />
 
                       <div className="appointment__service-title">{title}</div>
+                      <div className="appointment__service-description">{description}</div>
 
+                      {/* NB note */}
+                      {nb && <div className="appointment__service-nb">{nb}</div>}
 
-                      <div className="appointment__service-description">
-                        {description}
-                      </div>
-                      <hr />
-                      <div className="col">
-                        <span className="sm-txt app_choose-op">Choose an option</span>
-                        <div className="app_options">
-                          
-                            { options?.map((option) => (
-                              <div key={option.name} className="app-options">
-                                {option.name}
-                              </div>
-                            ))}
-                          
-                        </div>
-                      </div>
-
-
-                      {/* <div className="appointment-options">
-                        {option?.map((item, index) => (
-                          <div className="appoitment-option" key={index}>
-                            <input type="checkbox" onChange={() => handleOptionsSelect(item)} />
-                            <span>{item}</span>
+                      {/* Options */}
+                      {options && (
+                        <>
+                          <hr />
+                          <div className="col">
+                            <span className="sm-txt app_choose-op">Choose an option:</span>
+                            <div className="app_options">
+                              {options.map((option) => (
+                                <div
+                                  key={option.name}
+                                  className={`app-options ${selectedOptions[index] === option.name ? "app-options--selected" : ""}`}
+                                  onClick={() => handleOptionSelect(index, option)}
+                                >
+                                  {option.name}
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        ))}
-                      </div> */}
-
+                        </>
+                      )}
 
                       <div className="appointment__service-bot">
                         <div className="appointment__service-title">
-                          R{price} | {duration}min
+                          R{optionPrices[index]} | {duration}min
                         </div>
-
-                        <div>
-                          <button
-                            className="appointment__service-button"
-                            onClick={(e) => handleSelect(e, index)}
-                          >
-                            {checkedState[index] ? (
-                              <span className="rmv">Remove</span>
-                            ) : (
-                              "Select"
-                            )}
-                          </button>
-                        </div>
+                        <button
+                          className="appointment__service-button"
+                          onClick={(e) => handleSelect(e, index)}
+                        >
+                          {checkedState[index] ? (
+                            <span className="rmv">Remove</span>
+                          ) : (
+                            "Select"
+                          )}
+                        </button>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -244,44 +222,25 @@ const BookService = () => {
           </div>
         </div>
 
-        {/* Continue button, only shows when something is selected */}
+        {/* Continue button */}
         {formData.total !== 0 && (
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-                {formData.numServices} {formData.nails || formData.numServices > 1 ? "Services" : "Service"}
-
+                {formData.numServices} {formData.numServices > 1 || formData.nails ? "Services" : "Service"}
               </div>
               <div className="appointment__button-services">
                 R{formData.total} - {formatDuration(formData.appointmentDuration)}
               </div>
             </div>
-            <div>
-              <div className="appointment__button-continue">
-                <button>
-                  <Link to="/date" state={{ formData }} style={{ color: "white" }}>
-                    Continue
-                  </Link>
-                </button>
-              </div>
-              {
-                formData.options.length > 0 &&
-                <div className="appointment-selected-options">
-                  <ul>
-                    {
-                      formData.options.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))
-                    }
-
-                  </ul>
-                </div>
-              }
-
+            <div className="appointment__button-continue">
+              <button>
+                <Link to="/date" state={{ formData }} style={{ color: "white" }}>
+                  Continue
+                </Link>
+              </button>
             </div>
-
           </div>
-
         )}
       </form>
     </>

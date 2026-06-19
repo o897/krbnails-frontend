@@ -79,21 +79,16 @@ export const services = [
   {
     title: "Pedicure",
     price: 150,
-    price : 0,
     duration: 30,
     img: feedb1Img,
     description:
       "Refresh and pamper your feet with professional nail care, shaping, and a clean polished finish.",
-    options: [
-      { name: "Plain", price: 150 },
-      { name: "DesignExtra", price: 20 }
-    ]
+    nb: "R20 will be charged for any design. "
   },
 
   {
     title: "Acrylic Nail Service",
     duration: 40,
-    price : 0,
     img: feedb1Img,
     description:
       "Beautiful, durable nail extensions designed to enhance length, style, and confidence.",
@@ -108,21 +103,21 @@ export const services = [
   {
     title: "Polygel",
     duration: 40,
-    price : 0,
     img: feedb2Img,
     description:
       "A lightweight and long-lasting nail enhancement that delivers strength with a natural-looking finish.",
     options: [
       { name: "Short", price: 250 },
       { name: "Medium", price: 270 },
-      { name: "Long", price: 350 }
+      { name: "Long", price: 300 },
+      { name: "Xtra-long", price: 350 },
+
     ]
   },
 
   {
     title: "Rubber Base Gel",
     duration: 35,
-    price : 0,
     img: feedb3Img,
     description:
       "A strengthening nail treatment that helps protect natural nails while providing a smooth, elegant look.",
@@ -140,16 +135,11 @@ export const services = [
     img: feedb4Img,
     description:
       "A quick nail care service that leaves natural nails smooth, healthy-looking, and beautifully polished.",
-    options: [
-      { name: "Plain", price: 120 },
-      { name: "RemovalOfOldSet", price: 20 },
-      { name: "DesignPerFinger", price: 5 }
-    ]
+    nb: "Removal of old set will be R20"
   },
 
   {
     title: "Nail Art",
-    price: 0,
     duration: 15,
     img: feedb8Img,
     description:
@@ -164,15 +154,14 @@ export const services = [
 
   {
     title: "Refill",
-    price: 200,
     duration: 30,
     img: feedb8Img,
     description:
       "Maintain the beauty of your existing nail set with professional touch-ups and restoration.",
     options: [
-      { name: "SameColour", price: 200 },
-      { name: "ColourChange", price: 210 },
-      // { name: "NailRepair", price: 20 } 
+      { name: "Same colour", price: 200 },
+      { name: "Colour Change", price: 210 },
+      { name: "Nail repair", price: 20 }
     ]
   },
 
@@ -183,9 +172,6 @@ export const services = [
     img: feedb6Img,
     description:
       "Revitalize tired feet with a relaxing treatment that softens skin and promotes overall foot care.",
-    options: [
-      { name: "Standard", price: 170 }
-    ]
   }
 ];
 

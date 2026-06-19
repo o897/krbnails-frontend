@@ -331,11 +331,12 @@ h2 {
 }
 
 .app-options {
-  border: 1px solid;
+  border: 1px solid #dfcece;
   border-radius: 16px;
   padding: 3px 6px;
-
+  cursor: pointer;
 }
+
 
 .appointment-options {
   border-top: 1px solid #474646;
@@ -1661,7 +1662,8 @@ footer {
 
   .angle-icon {
     margin: 0 25px;
-    color: #000;
+    color: #afaeae;
+    font-size: 2.3rem;
   }
 
   /* end heading at the top */
@@ -1799,7 +1801,7 @@ footer {
   }
 
   .serv_offered {
-    border: 1px solid;
+    border: 1px solid #dfcece;
     border-radius: 5px;
     display: grid;
     width: fit-content;
@@ -1860,6 +1862,10 @@ footer {
     color: #979797;
   }
 
+ .app-options--selected {
+  background-color: #ac92bc;
+  color: #fff;
+}
 
   .rmv {
     font-weight: 500;
