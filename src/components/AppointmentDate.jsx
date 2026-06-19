@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef, useContext } from "react";
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { PiArrowCircleLeftThin } from "react-icons/pi";
+
 import { styled } from "@mui/system";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -26,7 +26,7 @@ async function fetchAppointments(date, { signal }) {
       return dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD");
     });
 
-  return { daysToHighlight, bookings: data }; 
+  return { daysToHighlight, bookings: data };
 }
 
 
@@ -76,7 +76,7 @@ function ServerDay(props) {
 export default function AppointmentDate() {
   const requestAbortController = useRef(null);
 
-const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
   const [highlightedDays, setHighlightedDays] = useState([]);
   const [bookings, setBookings] = useState([]); // store all bookings
   const [appointmentDate, setAppointmentDate] = useState(null);
@@ -91,24 +91,24 @@ const [isLoading, setIsLoading] = useState(true);
     ? (bookings.find((b) => b.date === appointmentDate.format("DD-MMM-YYYY"))?.time || [])
     : [];
 
- const fetchHighlightedDays = (date) => {
-  const controller = new AbortController();
-  requestAbortController.current = controller;
-  setIsLoading(true); 
+  const fetchHighlightedDays = (date) => {
+    const controller = new AbortController();
+    requestAbortController.current = controller;
+    setIsLoading(true);
 
-  fetchAppointments(date, { signal: controller.signal })
-    .then(({ daysToHighlight, bookings }) => {
-      setHighlightedDays(daysToHighlight);
-      setBookings(bookings);
-      setIsLoading(false);
-    })
-    .catch((error) => {
-      if (error.name !== "AbortError") {
-        console.error(error);
-        setIsLoading(false); 
-      }
-    });
-};
+    fetchAppointments(date, { signal: controller.signal })
+      .then(({ daysToHighlight, bookings }) => {
+        setHighlightedDays(daysToHighlight);
+        setBookings(bookings);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error.name !== "AbortError") {
+          console.error(error);
+          setIsLoading(false);
+        }
+      });
+  };
 
   useEffect(() => {
     fetchHighlightedDays(dayjs());
@@ -142,17 +142,17 @@ const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-        <div className="bookform__header">
-             <Link to="/" style={{ color: "white" }}>
-               <span>
-                 <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} />
-               </span>
-             </Link>
-             <div className="col">
-               <span className="sm-txt">Step 2 of 3</span>
-               <span className="st-txt">Select time</span>
-             </div>
-           </div>
+      <div className="bookform__header">
+        <Link to="/" style={{ color: "white" }}>
+        
+          <PiArrowCircleLeftThin className="angle-icon" />
+         
+        </Link>
+        <div className="col">
+          <span className="sm-txt">Step 2 of 3</span>
+          <span className="st-txt">Select date & time</span>
+        </div>
+      </div>
 
       <div className="appointment__form-date">
         <div className="date">
@@ -182,9 +182,16 @@ const [isLoading, setIsLoading] = useState(true);
           </LocalizationProvider>
         </div>
       </div>
-      <div className="av-txt">Available on Saturday, 20 Jun 2026 (SAST)</div>
+
+      {appointmentDate && (
+        <div className="av-txt">
+          Available on Saturday,  {`${appointmentDate.format(
+            "DD MMMM YYYY"
+          )}`} (SAST)
+        </div>
+      )}
       <div className="times">
-        
+
         {worktimes.map(({ time }, index) => {
           const isBooked = bookedTimes.includes(time);
           return (
@@ -196,8 +203,8 @@ const [isLoading, setIsLoading] = useState(true);
                 backgroundColor: isBooked
                   ? "#e0e0e0"
                   : appointmentTime === time
-                  ? "#ce86f7"
-                  : "white",
+                    ? "#ce86f7"
+                    : "white",
                 cursor: isBooked ? "not-allowed" : "pointer",
                 opacity: isBooked ? 0.5 : 1,
               }}
@@ -207,7 +214,7 @@ const [isLoading, setIsLoading] = useState(true);
           );
         })}
       </div>
-      
+
       {appointmentDate && appointmentTime && (
         <button className="appointment__form-date-btn">
           <Link to="/details">

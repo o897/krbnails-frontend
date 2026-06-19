@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { PiArrowCircleLeftThin } from "react-icons/pi";
 import GlobalContext from "../GlobalContext";
 import emailjs from "@emailjs/browser";
 import { services } from "../data";
@@ -97,16 +97,15 @@ const BookingForm = () => {
 
   useEffect(() => {
     console.log(globalData);
-
   }, [])
 
   return (
     <>
       <div className="bookform__header">
              <Link to="/" style={{ color: "white" }}>
-               <span>
-                 <FontAwesomeIcon className="angle-icon" icon={faCircleArrowLeft} />
-               </span>
+             
+          <PiArrowCircleLeftThin className="angle-icon" />
+              
              </Link>
              <div className="col">
                <span className="sm-txt">Step 3 of 3</span>
@@ -200,7 +199,7 @@ const BookingForm = () => {
             <textarea name="message" cols="30" rows="4"></textarea>
           </div>
           <button className="contact__bookbtn" type="submit">
-            Book
+            Complete Booking
           </button>
         </div>
       </form>

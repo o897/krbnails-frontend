@@ -74,6 +74,7 @@ h2 {
 
 .sm-txt {
   font-size: .8rem;
+  color: #929292;
 }
 
 .col {
@@ -588,7 +589,6 @@ footer p {
   .appointment__service {
     display: flex;
     flex-direction: column;
-    /* width: 92%; */
     position: relative;
     z-index: 1;
     padding: 10px;
@@ -817,9 +817,8 @@ footer p {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    position: -webkit-sticky;
     height: 105px;
-    padding-left: 100px;
+    margin-left: 100px;
     gap: 20px;
   }
 
@@ -853,7 +852,6 @@ footer p {
     font-size: 1rem;
     border: 1px solid #e9e9e9;
     color: #000000;
-    border-radius: 20px;
     width: 300px;
     font-weight: 400;
     align-items: center;
@@ -878,23 +876,19 @@ footer p {
   }
 
   .appointment__form-date-btn {
-    background-color: #663399;
-    background-color: #663399;
+    background-color: #1b1b1b;
     color: #fff;
-    width: 220px;
+    width: 300px;
     display: flex;
-    margin: 27px auto 60px;
+    margin: 27px auto;
     font-size: 0.9rem;
     height: 40px;
     justify-content: center;
     align-items: center;
-    position: relative;
     border: none;
-    border-radius: 18px;
   }
 
   /* End Appointment Date -selection  */
-
 
 
   /* =========================
@@ -1468,7 +1462,6 @@ footer {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     margin-top: 15px;
-    border-radius: 12px;
     color: #fff;
   }
 
@@ -1661,8 +1654,6 @@ footer {
     font-family: 'Raleway';
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    position: -webkit-sticky;
     height: 75px;
     font-weight: 500;
     letter-spacing: .5px;
@@ -1934,13 +1925,10 @@ footer {
     margin: 0 auto;
     padding: 17px;
     bottom: -32px;
-    border-radius: 28px;
     font-family: "Roboto", sans-serif;
     background-color: #6c15758a;
     left: 50%;
     transform: translate(-50%, -50%);
-
-
   }
 
   .appointment__button button {
@@ -2066,7 +2054,6 @@ footer {
     font-size: 1rem;
     border: 1px solid #e9e9e9;
     color: #000000;
-    border-radius: 11px;
     width: 300px;
     font-weight: 400;
     align-items: center;
@@ -2093,17 +2080,17 @@ footer {
   .appointment__form-date-btn {
     background-color: #1b1b1b;
     color: #fff;
-    width: 220px;
+    width: 300px;
     display: flex;
-    margin: 27px auto 60px;
+    margin: 27px auto;
     font-size: 0.9rem;
     height: 40px;
     justify-content: center;
     align-items: center;
-    position: relative;
     border: none;
-    border-radius: 18px;
+    font-family: 'Noto Sans', sans-serif;
   }
+
 
   /* End Appointment Date -selection  */
 
@@ -2294,7 +2281,6 @@ footer {
     background-color: #050505e3;
     color: #fff;
     height: 35px;
-    border-radius: 20px;
     position: relative;
     margin: 40px auto;
     display: flex;
