@@ -238,31 +238,6 @@ function Hero() {
       </main>
 
       <Footer />
-
-      {/* Bubble dot styles */}
-      <style>{`
-        .slides-arrows {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 16px;
-          margin-top: 12px;
-        }
-        .carousel-dots {
-          display: flex;
-          align-items: center;
-          gap: 7px;
-        }
-        .carousel-dot {
-          height: 8px;
-          border-radius: 4px;
-          cursor: pointer;
-          background: #ccc;
-          transition: width 0.4s cubic-bezier(.4, 0, .2, 1), background 0.4s ease;
-        }
-        .carousel-dot.inactive { width: 8px; }
-        .carousel-dot.active   { width: 28px; background: #ac92bc; }
-      `}</style>
     </div>
   );
 }

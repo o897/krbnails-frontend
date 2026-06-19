@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { HiOutlineBars2 } from "react-icons/hi2";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -27,7 +27,8 @@ const Navbar = () => {
     <>
       <div className="header">
 
-        <img className="" src={navbarImg} alt="" />
+        <img className="" src="krb_logo.png" alt="" />
+        <HiOutlineBars2 className="bars-icon"/>
 
         <div className="header_menu">
           <div className="header_menu-items">Sevices</div>
