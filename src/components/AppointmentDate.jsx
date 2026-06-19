@@ -182,8 +182,9 @@ const [isLoading, setIsLoading] = useState(true);
           </LocalizationProvider>
         </div>
       </div>
-
+      <div className="av-txt">Available on Saturday, 20 Jun 2026 (SAST)</div>
       <div className="times">
+        
         {worktimes.map(({ time }, index) => {
           const isBooked = bookedTimes.includes(time);
           return (

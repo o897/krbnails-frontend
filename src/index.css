@@ -138,6 +138,13 @@ h2 {
   margin-top: 12px;
 }
 
+.av-txt {
+  text-align: center;
+  font-family: 'Raleway';
+  position: relative;
+  bottom: 20px;
+}
+
 .carousel-dots {
   display: flex;
   align-items: center;
@@ -1847,7 +1854,7 @@ footer {
     width: 100px;
     height: 40px;
     font-family: 'Raleway';
- 
+
   }
 
   .appointment-selected-options {
@@ -1968,436 +1975,436 @@ footer {
   }
 
   /* End appointment services */
-    /* Choose services /End */
-
-    /* / Menu */
-
-    .menu {
-      margin-left: 6vw;
-    }
-
-    .menu__heading {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
-
-    .menu__subheading {
-      color: #6f6f6f;
-      margin-bottom: 20px;
-    }
-
-    .menu__container {
-      background-color: #fcf8fe;
-      width: 90%;
-      margin-bottom: 30px;
-    }
-
-    .menu__pricelist-row {
-      display: flex;
-      justify-content: space-between;
-      height: 20px;
-      align-items: center;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-    }
-
-    .menu__title {
-      text-align: left;
-      font-family: "Raleway", sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.1rem;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      border: none;
-      width: 300px;
-      height: 40px;
-      background-color: #ac92bc;
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-      color: #fff;
-    }
-
-    .menu__bg-pink {
-      background-color: #c3c3c3;
-    }
-
-    .menu__pricelist li {
-      font-family: "Open Sans", sans-serif;
-    }
-
-    /* End Menu */
-
-    /* Appointment Date -selection */
-    .appointment__form-date {
-      margin: 0 6vw;
-    }
-
-    .date {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 50px;
-      margin-top: 80px;
-    }
-
-    .date input {
-      width: 200px;
-      padding: 5px auto;
-    }
-
-    .times {
-      display: grid;
-      place-items: center;
-      height: 100px;
-      overflow-y: auto;
-      margin-bottom: 40px;
-    }
-
-    .time {
-      display: flex;
-      font-size: 1rem;
-      border: 1px solid #e9e9e9;
-      color: #000000;
-      border-radius: 11px;
-      width: 300px;
-      font-weight: 400;
-      align-items: center;
-      font-family: "Noto Sans", sans-serif;
-      margin-bottom: 10px;
-      height: 40px;
-      justify-content: center;
-    }
-
-    .time__confirmation {
-      font-weight: 600;
-      margin-bottom: 10px;
-      padding-left: 10vw;
-      letter-spacing: 0.3px;
-      font-family: "Raleway", sans-serif;
-    }
-
-    .date__confirmation {
-      padding-left: 10vw;
-      font-family: "Raleway", sans-serif;
-      font-weight: 600;
-    }
-
-    .appointment__form-date-btn {
-      background-color: #1b1b1b;
-      color: #fff;
-      width: 220px;
-      display: flex;
-      margin: 27px auto 60px;
-      font-size: 0.9rem;
-      height: 40px;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      border: none;
-      border-radius: 18px;
-    }
-
-    /* End Appointment Date -selection  */
-
-    /* Payment page */
-    .payment {
-      border: 1px solid #6f6f6f;
-      width: 89%;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
-
-    .payment__content {
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .payment__title {
-      font-weight: 700;
-      font-size: 1.5rem;
-      font-family: "Open Sans", sans-serif;
-      border-bottom: 1px solid gray;
-      margin-bottom: 10px;
-      padding: 7px 15px;
-    }
-
-    .payment__sub {
-      margin-bottom: 15px;
-      font-size: 14px;
-      font-family: "Open Sans", sans-serif;
-    }
-
-    .payment__minimum {
-      font-weight: 600;
-      margin: 14px 0;
-      font-family: "Open Sans", sans-serif;
-      line-height: 19px;
-      font-size: 14px;
-    }
-
-    .payment__details {
-      background-color: #28a745;
-      border: none;
-      width: 250px;
-      margin: 0 auto;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      padding: 10px;
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-      inline-size: 75%;
-      width: 291px;
-      border-radius: 4px;
-    }
-
-    .please__note-detail {
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-    }
-
-    .please__note-detail li {
-      margin: 0;
-      font-family: "Open Sans", sans-serif;
-    }
-
-    .payment__bank-account {
-      margin-bottom: 30px;
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-    }
-
-    .please__note ul li {
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-      margin-bottom: 9px;
-    }
-
-    /* Payment */
-
-    /* Booking form */
-
-    .review {
-      font-family: "PT Sans", sans-serif;
-    }
-
-    .review__heading {
-      margin: 20px 0;
-      font-size: 1.4rem;
-      font-weight: 600;
-      padding-left: 6vw;
-      /* font-family: "PT Sans", sans-serif; */
-      text-transform: uppercase;
-      color: #222831;
-    }
-
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 6vw;
-      font-weight: 600;
-      color: #7f8486;
-      font-family: "PT Sans", sans-serif;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-
-
-    .header_menu {
-      display: none;
-    }
-
-    .table-body {
-      font-family: "PT Sans", sans-serif;
-      margin-bottom: 20px;
-      /* border: 1px solid #6f6f6f; */
-    }
-
-    .table-row {
-      display: flex;
-      padding: 0px 6vw;
-      justify-content: space-between;
-      color: #0d1619;
-      margin: 4px;
-    }
-
-    .contact {
-      position: relative;
-      font-family: "PT Sans", sans-serif;
-    }
-
-    .contact-header {
-      font-size: 16px;
-      font-weight: 600;
-      padding-left: 6vw;
-      margin-bottom: 16px;
-      color: #222831;
-    }
-
-    .contact__group {
-      position: relative;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact__group label {
-      margin-bottom: 4px;
-      font-weight: 400;
-      padding-left: 6vw;
-      margin: 5px;
-      color: #2f3133;
-      /* #212529 */
-      font-size: 14px;
-      font-family: inherit;
-      font-weight: 500;
-    }
-
-    .contact__group input {
-      width: 85%;
-      height: 35px;
-      border-radius: 5px;
-      margin-left: 6vw;
-      border: 1px solid #ced4da;
-      margin-bottom: 8px;
-      font-size: 14px;
-      padding-left: 15px;
-      transition: 0.5s;
-    }
-
-    .contact__group textarea {
-      width: 85%;
-      border-radius: 5px;
-      margin-left: 6vw;
-      border: 1px solid #ced4da;
-      padding: 10px 15px;
-      font-size: 14px;
-      font-family: inherit;
-    }
-
-    .contact__bookbtn {
-      letter-spacing: 1px;
-      background-color: #050505e3;
-      color: #fff;
-      height: 35px;
-      border-radius: 20px;
-      position: relative;
-      margin: 40px auto;
-      display: flex;
-      align-items: center;
-      width: 190px;
-      justify-content: center;
-      height: 44px;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-    }
-
-    .contact__bookbtn:hover {
-      background-color: #262627 !important;
-    }
-
-    .form__group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* End Booking form */
-
-    /* Confirmation */
-
-    .confirmation {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin: 0 8vw 5vw;
-    }
-
-    .confirmation-img {
-      width: 330px;
-    }
-
-    .button-confirm {
-      background-color: #95D0A9;
-      color: #FDFDFD;
-      height: 51px;
-      width: 187px;
-      border: none;
-      font-size: 2rem;
-      font-weight: 600;
-
-
-    }
-
-    /* End Confirmation */
-
-    /* footer */
-
-    footer {
-      border-radius: 20px;
-      margin: 4vw;
-      padding: 10px;
-      background-color: #917498;
-      border: 1px solid #b9b9b9;
-    }
-
-    .footer-bottom {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      flex-direction: row-reverse;
-      justify-items: center;
-
-    }
-
-    .footer-brand-desc {
-      width: 61%;
-    }
-
-    .nail-footer {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .footer-top {
-      padding: 5px 0;
-    }
-
-    .footer-title {
-      padding: 5px 0;
-      color: #000;
-    }
-
-    .footer_header {
-      border-bottom: 1px solid;
-      padding-bottom: 5px;
-      gap: 1px;
-      padding: 15px 0;
-    }
-
-    .footer_header.bt {
-      border: none;
-    }
-
-    .footer-icon {
-
-      border-radius: 14px;
-      padding: 10px;
-      border: .8px solid #c9a97a;
-      font-size: 2.5rem;
-      color: black;
-      cursor: pointer;
-    }
-
+  /* Choose services /End */
+
+  /* / Menu */
+
+  .menu {
+    margin-left: 6vw;
+  }
+
+  .menu__heading {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  .menu__subheading {
+    color: #6f6f6f;
+    margin-bottom: 20px;
+  }
+
+  .menu__container {
+    background-color: #fcf8fe;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .menu__pricelist-row {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8rem;
+  }
+
+  .menu__title {
+    text-align: left;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border: none;
+    width: 300px;
+    height: 40px;
+    background-color: #ac92bc;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: #fff;
+  }
+
+  .menu__bg-pink {
+    background-color: #c3c3c3;
+  }
+
+  .menu__pricelist li {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  /* End Menu */
+
+  /* Appointment Date -selection */
+  .appointment__form-date {
+    margin: 0 6vw;
+  }
+
+  .date {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 80px;
+  }
+
+  .date input {
+    width: 200px;
+    padding: 5px auto;
+  }
+
+  .times {
+    display: grid;
+    place-items: center;
+    height: 100px;
+    overflow-y: auto;
+    margin-bottom: 40px;
+  }
+
+  .time {
+    display: flex;
+    font-size: 1rem;
+    border: 1px solid #e9e9e9;
+    color: #000000;
+    border-radius: 11px;
+    width: 300px;
+    font-weight: 400;
+    align-items: center;
+    font-family: "Noto Sans", sans-serif;
+    margin-bottom: 10px;
+    height: 40px;
+    justify-content: center;
+  }
+
+  .time__confirmation {
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 10vw;
+    letter-spacing: 0.3px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .date__confirmation {
+    padding-left: 10vw;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+  }
+
+  .appointment__form-date-btn {
+    background-color: #1b1b1b;
+    color: #fff;
+    width: 220px;
+    display: flex;
+    margin: 27px auto 60px;
+    font-size: 0.9rem;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    border-radius: 18px;
+  }
+
+  /* End Appointment Date -selection  */
+
+  /* Payment page */
+  .payment {
+    border: 1px solid #6f6f6f;
+    width: 89%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .payment__content {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .payment__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "Open Sans", sans-serif;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+    padding: 7px 15px;
+  }
+
+  .payment__sub {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .payment__minimum {
+    font-weight: 600;
+    margin: 14px 0;
+    font-family: "Open Sans", sans-serif;
+    line-height: 19px;
+    font-size: 14px;
+  }
+
+  .payment__details {
+    background-color: #28a745;
+    border: none;
+    width: 250px;
+    margin: 0 auto;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    inline-size: 75%;
+    width: 291px;
+    border-radius: 4px;
+  }
+
+  .please__note-detail {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
+
+  .please__note-detail li {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .payment__bank-account {
+    margin-bottom: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
+
+  .please__note ul li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin-bottom: 9px;
+  }
+
+  /* Payment */
+
+  /* Booking form */
+
+  .review {
+    font-family: "PT Sans", sans-serif;
+  }
+
+  .review__heading {
+    margin: 20px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-left: 6vw;
+    /* font-family: "PT Sans", sans-serif; */
+    text-transform: uppercase;
+    color: #222831;
+  }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 6vw;
+    font-weight: 600;
+    color: #7f8486;
+    font-family: "PT Sans", sans-serif;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+
+
+  .header_menu {
+    display: none;
+  }
+
+  .table-body {
+    font-family: "PT Sans", sans-serif;
+    margin-bottom: 20px;
+    /* border: 1px solid #6f6f6f; */
+  }
+
+  .table-row {
+    display: flex;
+    padding: 0px 6vw;
+    justify-content: space-between;
+    color: #0d1619;
+    margin: 4px;
+  }
+
+  .contact {
+    position: relative;
+    font-family: "PT Sans", sans-serif;
+  }
+
+  .contact-header {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 6vw;
+    margin-bottom: 16px;
+    color: #222831;
+  }
+
+  .contact__group {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__group label {
+    margin-bottom: 4px;
+    font-weight: 400;
+    padding-left: 6vw;
+    margin: 5px;
+    color: #2f3133;
+    /* #212529 */
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+  }
+
+  .contact__group input {
+    width: 85%;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 6vw;
+    border: 1px solid #ced4da;
+    margin-bottom: 8px;
+    font-size: 14px;
+    padding-left: 15px;
+    transition: 0.5s;
+  }
+
+  .contact__group textarea {
+    width: 85%;
+    border-radius: 5px;
+    margin-left: 6vw;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .contact__bookbtn {
+    letter-spacing: 1px;
+    background-color: #050505e3;
+    color: #fff;
+    height: 35px;
+    border-radius: 20px;
+    position: relative;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    width: 190px;
+    justify-content: center;
+    height: 44px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+  }
+
+  .contact__bookbtn:hover {
+    background-color: #262627 !important;
+  }
+
+  .form__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* End Booking form */
+
+  /* Confirmation */
+
+  .confirmation {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 8vw 5vw;
+  }
+
+  .confirmation-img {
+    width: 330px;
+  }
+
+  .button-confirm {
+    background-color: #95D0A9;
+    color: #FDFDFD;
+    height: 51px;
+    width: 187px;
+    border: none;
+    font-size: 2rem;
+    font-weight: 600;
 
 
   }
+
+  /* End Confirmation */
+
+  /* footer */
+
+  footer {
+    border-radius: 20px;
+    margin: 4vw;
+    padding: 10px;
+    background-color: #917498;
+    border: 1px solid #b9b9b9;
+  }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    flex-direction: row-reverse;
+    justify-items: center;
+
+  }
+
+  .footer-brand-desc {
+    width: 61%;
+  }
+
+  .nail-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-top {
+    padding: 5px 0;
+  }
+
+  .footer-title {
+    padding: 5px 0;
+    color: #000;
+  }
+
+  .footer_header {
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    gap: 1px;
+    padding: 15px 0;
+  }
+
+  .footer_header.bt {
+    border: none;
+  }
+
+  .footer-icon {
+
+    border-radius: 14px;
+    padding: 10px;
+    border: .8px solid #c9a97a;
+    font-size: 2.5rem;
+    color: black;
+    cursor: pointer;
+  }
+
+
+
+}
