@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PiArrowCircleLeftThin } from "react-icons/pi";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-import { faMinus, faPlus,faArrowRight, } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faArrowRight, } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 
 const BookService = () => {
@@ -177,10 +177,8 @@ const BookService = () => {
                       <div className="appointment__service-title">{title}</div>
                       <div className="appointment__service-description">{description}</div>
 
-                      {/* NB note */}
-                      {nb && <div className="appointment__service-nb">{nb}</div>}
+                      {/* {nb && <div className="appointment__service-nb">{nb}</div>} */}
 
-                      {/* Options */}
                       {options && (
                         <>
                           <hr />
@@ -205,16 +203,18 @@ const BookService = () => {
                         <div className="appointment__service-title">
                           R{optionPrices[index]} | {duration}min
                         </div>
-                        <button
-                          className="appointment__service-button"
-                          onClick={(e) => handleSelect(e, index)}
-                        >
-                          {checkedState[index] ? (
-                            <span className="rmv">Remove</span>
-                          ) : (
-                            "Select"
-                          )}
-                        </button>
+                        {(!options || selectedOptions[index]) && (
+                          <button
+                            className="appointment__service-button"
+                            onClick={(e) => handleSelect(e, index)}
+                          >
+                            {checkedState[index] ? (
+                              <span className="rmv">Remove</span>
+                            ) : (
+                              "Select"
+                            )}
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -240,7 +240,7 @@ const BookService = () => {
                 <Link to="/date" state={{ formData }} style={{ color: "white" }}>
                   Continue <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
-                
+
               </button>
             </div>
           </div>

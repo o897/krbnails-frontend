@@ -598,6 +598,7 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0
   }
 
   .appointment__service-button {
@@ -1848,7 +1849,7 @@ footer {
     background-color: #7a757c;
     border-radius: 10px;
     width: 100px;
-    height: 45px;
+    height: 40px;
     font-family: 'Noto Sans';
     border: none;
     font-weight: 700;
