@@ -1,20 +1,14 @@
-
-
 import {
   faInstagram,
   faTiktok,
   faYoutube,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HiOutlineBars2 } from "react-icons/hi2";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import navbarImg from "./../assets/navbar.png"
-
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -26,63 +20,43 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
+        <img src="krb_logo.png" alt="logo" />
 
-        <img className="" src="krb_logo.png" alt="" />
-        <HiOutlineBars2 className="bars-icon"/>
+        {/* this was missing onClick */}
+        <HiOutlineBars2 className="bars-icon" onClick={toggleWidth} />
 
         <div className="header_menu">
-          <div className="header_menu-items">Sevices</div>
+          <div className="header_menu-items">Services</div>
           <div className="header_menu-items">Contact</div>
           <FontAwesomeIcon icon={faWhatsapp} />
           <FontAwesomeIcon icon={faInstagram} />
           <FontAwesomeIcon icon={faTiktok} />
-
           <Link to="book">
             <button>BOOK NOW</button>
           </Link>
-
-
         </div>
       </div>
 
+      {/* mobile menu */}
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
         <div className="header__menu">
-          <Link to="/" onClick={() => toggleWidth()}>
-            Home
-          </Link>
-          <Link to="/about">
-            About
-          </Link>
-          <Link to="/services" onClick={() => toggleWidth()}>
-            Services
-          </Link>
-          <Link to="/gallery">
-            Gallery
-          </Link>
-          <Link to="/services" onClick={() => toggleWidth()}>
-            Contact
-          </Link>
+          <Link to="/" onClick={toggleWidth}>Home</Link>
+          <Link to="/services" onClick={toggleWidth}>Services</Link>
+          <Link to="/gallery" onClick={toggleWidth}>Gallery</Link>
+          <Link to="/contact" onClick={toggleWidth}>Contact</Link>
         </div>
 
         <div className="header__nav-socials">
-          <li>
-            <FontAwesomeIcon icon={faYoutube} />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faTiktok} />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faInstagram} />
-          </li>
+          <li><FontAwesomeIcon icon={faYoutube} /></li>
+          <li><FontAwesomeIcon icon={faTiktok} /></li>
+          <li><FontAwesomeIcon icon={faInstagram} /></li>
         </div>
 
         <div className="header__nav-bookbtn">
-          <Link to='book'>
+          <Link to="book" onClick={toggleWidth}>
             <button>BOOK NOW</button>
           </Link>
-
         </div>
-
       </div>
     </>
   );
