@@ -177,6 +177,7 @@ const BookService = () => {
                       <div className="appointment__service-title">{title}</div>
                       <div className="appointment__service-description">{description}</div>
 
+                      {/* NB note */}
                       {/* {nb && <div className="appointment__service-nb">{nb}</div>} */}
 
                       {options && (
