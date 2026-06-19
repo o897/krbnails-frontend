@@ -3,7 +3,9 @@ import { services } from "../data";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PiArrowCircleLeftThin } from "react-icons/pi";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+import { faMinus, faPlus,faArrowRight, } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../GlobalContext";
 
 const BookService = () => {
@@ -24,7 +26,7 @@ const BookService = () => {
 
   // starts with fixed prices, 0 for option-based services
   const [optionPrices, setOptionPrices] = useState(
-    services.map((s) => s.price ?? 0)
+    services.map((s) => s.price ?? 0) // if a service doesnt ave a price default its =
   );
 
   // tracks which option is selected per service
@@ -74,16 +76,16 @@ const BookService = () => {
       ...prev,
       appointmentTitle: updatedCheckedState[position]
         ? [
-            ...prev.appointmentTitle,
-            {
-              service: services[position].title,
-              price: optionPrices[position],
-              duration: services[position].duration,
-            },
-          ]
+          ...prev.appointmentTitle,
+          {
+            service: services[position].title,
+            price: optionPrices[position],
+            duration: services[position].duration,
+          },
+        ]
         : prev.appointmentTitle.filter(
-            (item) => item.service !== services[position].title
-          ),
+          (item) => item.service !== services[position].title
+        ),
       total: updatedCheckedState.reduce((sum, isChecked, index) => {
         return isChecked ? sum + optionPrices[index] : sum;
       }, 0) + prev.nails * 10,
@@ -227,17 +229,18 @@ const BookService = () => {
           <div className="appointment__button">
             <div className="appointment__button-total">
               <div className="appointment__button-price">
-                {formData.numServices} {formData.numServices > 1 || formData.nails ? "Services" : "Service"}
+                {formData.numServices} {formData.numServices > 1 || formData.nails ? "Services selected" : "Service selected"}
               </div>
               <div className="appointment__button-services">
-                R{formData.total} - {formatDuration(formData.appointmentDuration)}
+                R{formData.total}
               </div>
             </div>
             <div className="appointment__button-continue">
               <button>
                 <Link to="/date" state={{ formData }} style={{ color: "white" }}>
-                  Continue
+                  Continue <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
+                
               </button>
             </div>
           </div>

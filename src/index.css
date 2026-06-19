@@ -674,8 +674,8 @@ footer p {
 
   .appointment__button {
     display: flex;
-    border-top: 1px solid #e7e6e7;
     justify-content: space-between;
+    border: none;
     position: absolute;
     width: 40%;
     right: 109px;
@@ -1862,10 +1862,10 @@ footer {
     color: #979797;
   }
 
- .app-options--selected {
-  background-color: #ac92bc;
-  color: #fff;
-}
+  .app-options--selected {
+    background-color: #ac92bc;
+    color: #fff;
+  }
 
   .rmv {
     font-weight: 500;
@@ -1923,18 +1923,19 @@ footer {
 
 
   .appointment__button {
+    z-index: 30;
     display: flex;
-    border-top: 1px solid #e7e6e7;
     justify-content: space-between;
     position: fixed;
-    width: 100%;
+    width: 96%;
+    margin: 0 auto;
     padding: 17px;
-    bottom: 0;
-    font-weight: 600;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    bottom: -32px;
+    border-radius: 28px;
     font-family: "Roboto", sans-serif;
     background-color: #6c15758a;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 
   }
@@ -1954,20 +1955,20 @@ footer {
 
   .appointment__button-price {
 
+    color: #4d4d4d;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 1.2rem;
-    letter-spacing: .1rem;
+    font-size: .9rem;
+    margin: 5px 0;
   }
 
   .appointment__button-services {
-    font-size: .97em;
+    font-size: 16px;
     color: #ffffff;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    letter-spacing: 2px;
   }
 
   /* End appointment services */
