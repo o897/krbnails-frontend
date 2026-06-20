@@ -1462,7 +1462,7 @@ footer {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
-    opacity: .68;
+    opacity: .84;
     display: flex;
     object-fit: cover;
     height: 90vh;
