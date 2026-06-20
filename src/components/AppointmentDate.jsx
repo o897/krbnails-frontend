@@ -22,10 +22,8 @@ async function fetchAppointments(date, { signal }) {
   const data = await response.json();
 
   const daysToHighlight = data
-    .filter((booking) => booking.time.length === 4)
-    .map((booking) => {
-      return dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD");
-    });
+    .filter((booking) => Array.isArray(booking.time) && booking.time.length >= worktimes.length)
+    .map((booking) => dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD"));
 
   return { daysToHighlight, bookings: data };
 }
