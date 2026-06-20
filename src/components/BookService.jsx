@@ -167,7 +167,6 @@ const BookService = () => {
                     style={{
                       backgroundColor: checkedState[index] ? "#ac92bc" : "transparent",
                       color: checkedState[index] ? "#fff" : "#000",
-                      borderRadius: "4px",
                       padding: "2px",
                     }}
                   >
