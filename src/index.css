@@ -1558,13 +1558,12 @@ footer {
     width: 245px;
     height: 55px;
     position: absolute;
-    background-color: #2e2e2e;
-    top: 65vh;
-    border: .1px solid #333333;
+    /* background-color: #2e2e2e; */
+    top: 61vh;
+    border: .1px solid #000;
     right: 10vw;
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    color: #fff;
+    color: #000000;
   }
 
 

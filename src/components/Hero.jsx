@@ -129,7 +129,7 @@ function Hero() {
           </div>
           <Link to="book">
             <button className="hero__bookbtn">
-              <span className="wht">BOOK A</span>N APPOINTMENT
+              <span className="">BOOK A</span>N APPOINTMENT
             </button>
           </Link>
         </div>
