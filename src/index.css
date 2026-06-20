@@ -476,7 +476,7 @@ footer p {
   .header_menu {
     font-family: 'Raleway';
     align-items: center;
- 
+
     display: flex;
     gap: 20px;
     font-size: 1.5rem;
@@ -1320,6 +1320,11 @@ footer {
     display: flex;
     align-items: center;
     padding: 10px 6vw;
+  }
+
+  .header img {
+    height: 47px;
+    width: 100px;
   }
 
   .header__nav-socials {
