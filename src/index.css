@@ -115,9 +115,6 @@ h2 {
 
 }
 
-.header img {
-  height: 40px;
-}
 
 .header__logo {
   display: flex;
@@ -473,17 +470,16 @@ footer p {
 
   .header img {
     height: 100px;
-    width: 100px;
+    width: 150px;
   }
 
   .header_menu {
+    font-family: 'Raleway';
     align-items: center;
-    padding-top: 10vh;
-    /* padding-left: 10vw; */
-    /* transition: 0.5s; */
-    transition: all 1.5s ease-out;
+ 
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    font-size: 1.5rem;
 
   }
 
@@ -1323,7 +1319,7 @@ footer {
   .header {
     display: flex;
     align-items: center;
-    padding: 10px 6vw 0;
+    padding: 10px 6vw;
   }
 
   .header__nav-socials {
