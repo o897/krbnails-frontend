@@ -190,7 +190,6 @@ h2 {
   height: 100vh;
   object-fit: cover;
   opacity: 0.9;
-  background-color: #f1f1f1;
 }
 
 .hero__welcome-img img {
@@ -1542,7 +1541,7 @@ footer {
   .hero__welcome img {
     position: absolute;
     left: 50%;
-    top: 23px;
+    top: 5px;
     transform: translate(-50%, 0%);
     opacity: .84;
     display: flex;
@@ -1558,12 +1557,12 @@ footer {
     width: 245px;
     height: 55px;
     position: absolute;
-    /* background-color: #2e2e2e; */
+    background-color: #2e2e2e;
     top: 61vh;
     border: .1px solid #000;
     right: 10vw;
     font-family: "Montserrat", sans-serif;
-    color: #000000;
+    color: #f0eded;
   }
 
 
