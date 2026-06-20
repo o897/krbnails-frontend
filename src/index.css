@@ -114,9 +114,8 @@ h2 {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: normal;
   font-family: "Raleway", sans-serif;
-
 }
 
 
