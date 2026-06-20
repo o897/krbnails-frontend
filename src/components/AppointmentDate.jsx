@@ -2,7 +2,6 @@ import { useEffect, useState, useRef, useContext } from "react";
 import { worktimes } from "../data";
 import { Link } from "react-router-dom";
 import { PiArrowCircleLeftThin } from "react-icons/pi";
-
 import { styled } from "@mui/system";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -11,6 +10,8 @@ import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { StaticDatePicker } from "@mui/x-date-pickers";
 import GlobalContext from "../GlobalContext";
 import dayjs from "dayjs";
+
+
 async function fetchAppointments(date, { signal }) {
   const response = await fetch("https://imguploader.fun/bookings", { signal });
 
@@ -144,9 +145,9 @@ export default function AppointmentDate() {
     <>
       <div className="bookform__header">
         <Link to="/" style={{ color: "white" }}>
-        
+
           <PiArrowCircleLeftThin className="angle-icon" />
-         
+
         </Link>
         <div className="col">
           <span className="sm-txt">Step 2 of 3</span>
@@ -183,13 +184,12 @@ export default function AppointmentDate() {
         </div>
       </div>
 
-      {appointmentDate && (
-        <div className="av-txt">
-          Available on Saturday,  {`${appointmentDate.format(
-            "DD MMMM YYYY"
-          )}`} (SAST)
-        </div>
-      )}
+     {appointmentDate && (
+  <div className="av-txt">
+    Available on 
+    {appointmentDate.format(" dddd DD MMMM YYYY")} (SAST)
+  </div>
+)}
       <div className="times">
 
         {worktimes.map(({ time }, index) => {

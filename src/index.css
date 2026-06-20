@@ -202,7 +202,7 @@ h2 {
 }
 
 .hero__welcome-title {
-  color: #bf23da;
+  color: #000;
   position: absolute;
   font-size: 3.5rem;
   font-weight: 600;
@@ -477,12 +477,13 @@ footer p {
   }
 
   .header_menu {
-    display: flex;
-    gap: 30px;
-    font-size: 1.6em;
-    letter-spacing: 1px;
-    display: flex;
     align-items: center;
+    padding-top: 10vh;
+    /* padding-left: 10vw; */
+    /* transition: 0.5s; */
+    transition: all 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
 
   }
 
@@ -1273,7 +1274,7 @@ footer {
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 0.95em;
-    top: 47vh;
+    top: 43vh;
     z-index: 2;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
@@ -1318,6 +1319,7 @@ footer {
   .bars-icon {
     font-size: 2.5rem;
   }
+
   .header {
     display: flex;
     align-items: center;
@@ -1387,12 +1389,12 @@ footer {
     overflow-x: hidden;
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     transition: 120ms transform ease-in-out;
   }
 
   .header__menu {
-    padding-top: 25vh;
+    padding-top: 5vh;
     padding-left: 10vw;
     transition: 0.5s;
     transition: all 1.5s ease-out;
@@ -1474,8 +1476,8 @@ footer {
     width: 245px;
     height: 55px;
     position: absolute;
-    background-color: #ae00a1;
-    top: 70vh;
+    background-color: #2e2e2e;
+    top: 65vh;
     border: .1px solid #333333;
     right: 10vw;
     font-family: "Montserrat", sans-serif;
@@ -2225,6 +2227,7 @@ footer {
   .header_menu {
     display: none;
   }
+
 
   .table-body {
     font-family: "PT Sans", sans-serif;
