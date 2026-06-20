@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HiOutlineBars2 } from "react-icons/hi2";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -22,8 +22,10 @@ const Navbar = () => {
       <div className="header">
         <img src="krb_logo.png" alt="logo" />
 
-        {/* this was missing onClick */}
-        <HiOutlineBars2 className="bars-icon" onClick={toggleWidth} />
+        <div className="bars-wrap" onClick={toggleWidth}>
+          <HiOutlineBars2 className={`bars-icon ${show ? "icon-hide" : "icon-show"}`} />
+          <IoCloseOutline className={`close-icon ${show ? "icon-show" : "icon-hide"}`} />
+        </div>
 
         <div className="header_menu">
           <div className="header_menu-items">Services</div>

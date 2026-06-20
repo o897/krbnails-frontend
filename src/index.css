@@ -1310,6 +1310,33 @@ footer {
   }
 
   /* Navbar socials*/
+
+  .bars-wrap {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.bars-icon,
+.close-icon {
+  position: absolute;
+  inset: 0;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon-show {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.icon-hide {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+  pointer-events: none;
+}
+
   .bars-icon {
     font-size: 2.5rem;
   }
