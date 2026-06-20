@@ -415,6 +415,44 @@ footer p {
   margin-bottom: 10px;
 }
 
+/* policy */
+  .policy {
+  background: #f7f5fb;
+  border: 1px solid #e8e4f0;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 20px 0;
+}
+
+.policy__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.policy__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy__list li {
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+
+.policy__list li::before {
+  content: "•";
+  color: #7f77dd;
+  position: absolute;
+  left: 0;
+}
+/* end policy */
+
 /* =========================
    TABLET
 ========================= */

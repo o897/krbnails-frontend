@@ -218,6 +218,19 @@ function Hero() {
           </div>
         </section>
 
+        <section className="pol">
+          <div className="policy">
+            <p className="policy__title">Booking Policy</p>
+            <ul className="policy__list">
+              <li>Please arrive 20 minutes before your appointment.</li>
+              <li>A 50% deposit is required to reserve your booking.</li>
+              <li>Pay via Capitec — Acc: 0000 0000 000, Branch: 470010, Ref: Your name + date.</li>
+              <li>Payment must be made at least 10 minutes before your appointment, or the slot is released.</li>
+              <li>Submit proof of payment to +27 68 032 7197. We'll confirm your booking via email.</li>
+            </ul>
+          </div>
+        </section>
+
         <section className="reviews">
           <h2 className="review__title">They're Talking</h2>
           <div className="reviews_section">

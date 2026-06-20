@@ -30,6 +30,8 @@ const Navbar = () => {
         <div className="header_menu">
           <div className="header_menu-items">Services</div>
           <div className="header_menu-items">Contact</div>
+          <div className="header_menu-items">Address</div>
+
           <FontAwesomeIcon icon={faWhatsapp} />
           <FontAwesomeIcon icon={faInstagram} />
           <FontAwesomeIcon icon={faTiktok} />
@@ -42,10 +44,11 @@ const Navbar = () => {
       {/* mobile menu */}
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
         <div className="header__menu">
-          <Link to="/" onClick={toggleWidth}>Home</Link>
           <Link to="/services" onClick={toggleWidth}>Services</Link>
           <Link to="/gallery" onClick={toggleWidth}>Gallery</Link>
           <Link to="/contact" onClick={toggleWidth}>Contact</Link>
+          <Link to="/contact" onClick={toggleWidth}>Address</Link>
+
         </div>
 
         <div className="header__nav-socials">
