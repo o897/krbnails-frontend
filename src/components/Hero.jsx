@@ -197,6 +197,26 @@ function Hero() {
             </div>
           </div>
         </section>
+        <section className="address">
+          <h2 className="address-title">
+            Address
+          </h2>
+          <div className="map-section">
+            <div className="map-section__label">
+              262 Mamarugwana St, Odinburg Gardens
+            </div>
+            <iframe
+              title="Tlami's Nail Gallery Location"
+              src="https://maps.google.com/maps?q=262+Mamarugwana+St,+Odinburg+Gardens,+Mabopane,+0205&t=k&z=18&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </section>
 
         <section className="reviews">
           <h2 className="review__title">They're Talking</h2>
@@ -216,14 +236,6 @@ function Hero() {
                 recommend!
               </div>
               <div className="review__container-name">- Kearabilwe</div>
-            </div>
-            <div className="review__container" data-aos="fade-down">
-              <div className="review__container-review">
-                Absolutely loved my experience. Flawless manicure, friendly staff,
-                and a welcoming atmosphere. Can't wait to go back for more
-                pampering.
-              </div>
-              <div className="review__container-name">- Tshepang</div>
             </div>
             <div className="review__container" data-aos="fade-down">
               <div className="review__container-review">
