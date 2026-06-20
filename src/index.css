@@ -1330,11 +1330,11 @@ footer {
     padding-left: 10vw;
     position: absolute;
     bottom: 15vh;
-    gap: 10px;
+    gap: 32px;
   }
 
   .header__nav-socials li {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   /* End Navbar socials */
@@ -1402,7 +1402,7 @@ footer {
   }
 
   .header__menu a {
-    font-family: 'Noto Sans';
+    font-family: 'Raleway',sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -2279,6 +2279,20 @@ footer {
     font-size: 14px;
     padding-left: 15px;
     transition: 0.5s;
+    transition: border-color 0.15s ease;
+
+  }
+
+  .contact__group input:focus {
+    border-color: #ced4da;
+      box-shadow: none;
+        outline: none;
+  }
+
+  .contact__group textarea:focus {
+    border-color: #ced4da;
+      box-shadow: none;
+        outline: none;
   }
 
   .contact__group textarea {
