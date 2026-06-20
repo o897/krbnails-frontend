@@ -1361,11 +1361,7 @@ footer {
     font-family: 'Raleway', serif;
   }
 
-  body {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
+
 
   /* Navbar socials*/
 
@@ -1546,11 +1542,12 @@ footer {
   .hero__welcome img {
     position: absolute;
     left: 50%;
+    top: 23px;
     transform: translate(-50%, 0%);
     opacity: .84;
     display: flex;
     object-fit: cover;
-    height: 90vh;
+    height: 87vh;
     width: 90%;
   }
 
