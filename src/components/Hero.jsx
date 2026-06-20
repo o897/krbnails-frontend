@@ -220,7 +220,7 @@ function Hero() {
             <ul className="policy__list">
               <li>Please arrive 20 minutes before your appointment.</li>
               <li>A 50% deposit is required to reserve your booking.</li>
-              <li>Pay details Capitec — Acc: 187 590 8909, Branch: 470010, Ref: Your name.</li>
+              <li>Pay details Capitec — Acc: 187 590 8909, Branch: 470010, Ref: Name + contact numbers.</li>
               <li>Payment must be made at least 10 minutes before your appointment, or the slot is released.</li>
               <li>Submit proof of payment to +27 68 032 7197. We'll confirm your booking via email.</li>
             </ul>

@@ -17,6 +17,12 @@ const Navbar = () => {
     setShow(!show);
   };
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   return (
     <>
       <div className="header">
@@ -28,9 +34,26 @@ const Navbar = () => {
         </div>
 
         <div className="header_menu">
-          <a href="#services" className="header_menu-items">Services</a>
-          <a href="#contact" className="header_menu-items">Contact</a>
-          <a href="#address" className="header_menu-items">Address</a>
+          <div
+            className="header_menu-items"
+            onClick={() => scrollToSection("services")}
+          >
+            Services
+          </div>
+
+          <div
+            className="header_menu-items"
+            onClick={() => scrollToSection("gallery")}
+          >
+            Gallery
+          </div>
+
+          <div
+            className="header_menu-items"
+            onClick={() => scrollToSection("address")}
+          >
+            Address
+          </div>
 
           <a href="https://wa.me/c/27693205227"><FontAwesomeIcon icon={faWhatsapp} /></a>
           <a href="https://www.instagram.com/tlamis_nail_gallery/"><FontAwesomeIcon icon={faInstagram} /></a>
@@ -44,10 +67,11 @@ const Navbar = () => {
       {/* mobile menu */}
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
         <div className="header__menu">
-          <a href="#services" onClick={() => setShow(false)}>Services</a>
-          <a href="#gallery" onClick={() => setShow(false)}>Gallery</a>
-          <a href="#contact" onClick={() => setShow(false)}>Contact</a>
-          <a href="#address" onClick={() => setShow(false)}>Address</a>
+          <a onClick={() => scrollToSection("services")}>Services</a>
+          <a onClick={() => scrollToSection("gallery")}>Gallery</a>
+          <a onClick={() => scrollToSection("contact")}>Contact</a>
+          <a onClick={() => scrollToSection("address")}>Address</a>
+
         </div>
 
         <div className="header__nav-socials">

@@ -17,6 +17,10 @@
 }
 
 
+html {
+  scroll-behavior: smooth;
+
+}
 
 
 :root {
@@ -1399,7 +1403,7 @@ footer {
   .header {
     display: flex;
     align-items: center;
-    padding: 10px 6vw;
+    margin: 10px 6vw;
   }
 
   .header img {
@@ -1413,6 +1417,7 @@ footer {
     position: absolute;
     bottom: 15vh;
     gap: 32px;
+    font-size: 1.8rem;
   }
 
   .header__nav-socials li {
