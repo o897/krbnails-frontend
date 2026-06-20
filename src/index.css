@@ -275,7 +275,6 @@ h2 {
 .services__container-big img {
   width: 22rem;
   height: 14rem;
-  border-radius: 10px;
 }
 
 .services-description {
@@ -1522,7 +1521,6 @@ footer {
   .services__container {}
 
   .services__container-big img {
-    border-radius: 11px;
     height: 14rem;
     width: 22rem;
     display: flex;
