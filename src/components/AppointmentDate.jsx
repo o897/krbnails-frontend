@@ -21,9 +21,11 @@ async function fetchAppointments(date, { signal }) {
 
   const data = await response.json();
 
-  const daysToHighlight = data
-    .filter((booking) => Array.isArray(booking.time) && booking.time.length >= worktimes.length)
-    .map((booking) => dayjs(booking.date, "DD-MMM-YYYY").format("YYYY-MM-DD"));
+const daysToHighlight = data
+  .filter((booking) => booking.time.length === 4)
+  .map((booking) => {
+    return dayjs(booking.date, "DD-MMMM-YYYY").format("YYYY-MM-DD"); 
+  });
 
   return { daysToHighlight, bookings: data };
 }
@@ -86,9 +88,9 @@ export default function AppointmentDate() {
   const CustomActionBar = () => null;
 
   // only runs when user clicks a date
-  const bookedTimes = appointmentDate
-    ? (bookings.find((b) => b.date === appointmentDate.format("DD-MMM-YYYY"))?.time || [])
-    : [];
+const bookedTimes = appointmentDate
+  ? (bookings.find((b) => b.date === appointmentDate.format("DD-MMMM-YYYY"))?.time || []) 
+  : [];
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
