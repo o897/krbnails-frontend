@@ -44,7 +44,6 @@ function Hero() {
               <div className="services-types">
                 <div className="services__sub">Soak & Cleanse | Exfoliation | Nail Care & Cuticle Treatment</div>
               </div>
-              <Link to="menu"></Link>
             </div>
           </div>
         );
@@ -65,7 +64,6 @@ function Hero() {
                   Shape & Prep | Base Coat Application | Nail Art & Design
                 </div>
               </div>
-              <Link to="menu"></Link>
             </div>
           </div>
         );
@@ -86,7 +84,6 @@ function Hero() {
                   Warm Soak | Cuticle Softening | Relaxing Prep
                 </div>
               </div>
-              <Link to="menu"></Link>
             </div>
           </div>
         );
@@ -109,7 +106,6 @@ function Hero() {
                 <div className="services__sub">Buff | Shine</div>
               </div>
               <div className="services__container">
-                <Link to="menu"></Link>
               </div>
             </div>
           </div>
@@ -141,7 +137,7 @@ function Hero() {
 
       <main className="main">
 
-        <section className="services">
+        <section id="services" className="services">
           <div className="services">
             {renderService()}
             <div className="services__container">
@@ -176,7 +172,7 @@ function Hero() {
           </div>
         </section>
 
-        <section className="gallery">
+        <section id="gallery" className="gallery">
           <h2 className="gallery__heading">Follow our journey</h2>
           <div className="gallery_wrapper">
             <div className="gallery__container">
@@ -197,7 +193,7 @@ function Hero() {
             </div>
           </div>
         </section>
-        <section className="address">
+        <section className="address" id="address">
           <h2 className="address-title">
             Address
           </h2>
@@ -218,13 +214,13 @@ function Hero() {
           </div>
         </section>
 
-        <section className="pol">
+        <section id="policy" className="pol">
           <div className="policy">
             <p className="policy__title">Booking Policy</p>
             <ul className="policy__list">
               <li>Please arrive 20 minutes before your appointment.</li>
               <li>A 50% deposit is required to reserve your booking.</li>
-              <li>Pay via Capitec — Acc: 0000 0000 000, Branch: 470010, Ref: Your name + date.</li>
+              <li>Pay details Capitec — Acc: 187 590 8909, Branch: 470010, Ref: Your name.</li>
               <li>Payment must be made at least 10 minutes before your appointment, or the slot is released.</li>
               <li>Submit proof of payment to +27 68 032 7197. We'll confirm your booking via email.</li>
             </ul>

@@ -65,7 +65,7 @@ li {
 
 h2 {
   text-align: center;
-  font-family: 'Raleway', serif;
+  font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 4rem;
@@ -340,6 +340,10 @@ h2 {
   cursor: pointer;
 }
 
+.app-options--selected {
+  background-color: #242323;
+  color: #fff;
+}
 
 .appointment-options {
   border-top: 1px solid #474646;
@@ -416,7 +420,7 @@ footer p {
 }
 
 /* policy */
-  .policy {
+.policy {
   background: #f7f5fb;
   border: 1px solid #e8e4f0;
   border-radius: 10px;
@@ -451,6 +455,7 @@ footer p {
   position: absolute;
   left: 0;
 }
+
 /* end policy */
 
 /* =========================
@@ -502,6 +507,10 @@ footer p {
   /* header */
 
   .bars-icon {
+    display: none;
+  }
+
+  .bars-wrap {
     display: none;
   }
 
@@ -1007,10 +1016,7 @@ footer p {
     font-family: 'Noto Sans';
     letter-spacing: 8px;
     height: 550px;
-
   }
-
-
 
   .reviews_section {
     margin: 40px;
@@ -1166,6 +1172,17 @@ footer p {
     left: 110px;
     letter-spacing: 1px;
 
+  }
+
+  /* addree */
+  .address-title {
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: .6px;
+  }
+
+  .map-section__label {
+    display: none;
   }
 
   .form__group {
@@ -1350,30 +1367,30 @@ footer {
   /* Navbar socials*/
 
   .bars-wrap {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
 
-.bars-icon,
-.close-icon {
-  position: absolute;
-  inset: 0;
-  font-size: 1.8rem;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+  .bars-icon,
+  .close-icon {
+    position: absolute;
+    inset: 0;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
 
-.icon-show {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
+  .icon-show {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
 
-.icon-hide {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0.5);
-  pointer-events: none;
-}
+  .icon-hide {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+    pointer-events: none;
+  }
 
   .bars-icon {
     font-size: 2.5rem;
@@ -1453,7 +1470,7 @@ footer {
     overflow-x: hidden;
     position: absolute;
     width: 100%;
-    height: 50vh;
+    height: 55vh;
     transition: 120ms transform ease-in-out;
   }
 
@@ -1467,13 +1484,13 @@ footer {
   }
 
   .header__menu a {
-    font-family: 'Raleway',sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-size: 1.6rem;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #a999b9;
   }
@@ -1937,11 +1954,6 @@ footer {
     color: #979797;
   }
 
-  .app-options--selected {
-    background-color: #ac92bc;
-    color: #fff;
-  }
-
   .rmv {
     font-weight: 500;
   }
@@ -2350,14 +2362,14 @@ footer {
 
   .contact__group input:focus {
     border-color: #ced4da;
-      box-shadow: none;
-        outline: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .contact__group textarea:focus {
     border-color: #ced4da;
-      box-shadow: none;
-        outline: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .contact__group textarea {
@@ -2441,37 +2453,38 @@ footer {
   }
 
   .map-section {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
 
-.map-section iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
+  .map-section iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-.map-section__label {
-  position: absolute;
-  top: 12px;
-  right: 0px;
-  left: auto;
-  z-index: 5;
-  padding: 8px 14px;
-  background: rgba(26, 19, 32, 0.75);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  border-radius: 6px;
-  max-width: 190px;
-  text-align: right;
-  pointer-events: none;
-}
+  .map-section__label {
+    position: absolute;
+    top: 12px;
+    right: 0px;
+    left: auto;
+    z-index: 5;
+    padding: 8px 14px;
+    background: rgba(26, 19, 32, 0.75);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    border-radius: 6px;
+    max-width: 190px;
+    text-align: right;
+    pointer-events: none;
+  }
+
   /* end address section */
 
   /* footer */

@@ -8,7 +8,7 @@ import { FaYoutube } from "react-icons/fa";
 export default function Footer() {
     return (
         <>
-            <footer>
+            <footer id="contact">
                 <div className="nail-footer">
                     <div className="footer_header">
                         <div className="footer-top">

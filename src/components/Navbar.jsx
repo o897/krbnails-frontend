@@ -28,13 +28,13 @@ const Navbar = () => {
         </div>
 
         <div className="header_menu">
-          <div className="header_menu-items">Services</div>
-          <div className="header_menu-items">Contact</div>
-          <div className="header_menu-items">Address</div>
+          <a href="#services" className="header_menu-items">Services</a>
+          <a href="#contact" className="header_menu-items">Contact</a>
+          <a href="#address" className="header_menu-items">Address</a>
 
-          <FontAwesomeIcon icon={faWhatsapp} />
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faTiktok} />
+          <a href="https://wa.me/c/27693205227"><FontAwesomeIcon icon={faWhatsapp} /></a>
+          <a href="https://www.instagram.com/tlamis_nail_gallery/"><FontAwesomeIcon icon={faInstagram} /></a>
+          <a href="https://www.tiktok.com/@tlamis_nail_gallery03?_r=1&_t=ZS-963XVhhkLZd"><FontAwesomeIcon icon={faTiktok} /></a>
           <Link to="book">
             <button>BOOK NOW</button>
           </Link>
@@ -44,17 +44,16 @@ const Navbar = () => {
       {/* mobile menu */}
       <div className="header__nav" style={{ display: show ? "block" : "none" }}>
         <div className="header__menu">
-          <Link to="/services" onClick={toggleWidth}>Services</Link>
-          <Link to="/gallery" onClick={toggleWidth}>Gallery</Link>
-          <Link to="/contact" onClick={toggleWidth}>Contact</Link>
-          <Link to="/contact" onClick={toggleWidth}>Address</Link>
-
+          <a href="#services" onClick={() => setShow(false)}>Services</a>
+          <a href="#gallery" onClick={() => setShow(false)}>Gallery</a>
+          <a href="#contact" onClick={() => setShow(false)}>Contact</a>
+          <a href="#address" onClick={() => setShow(false)}>Address</a>
         </div>
 
         <div className="header__nav-socials">
-          <li><FontAwesomeIcon icon={faYoutube} /></li>
-          <li><FontAwesomeIcon icon={faTiktok} /></li>
-          <li><FontAwesomeIcon icon={faInstagram} /></li>
+          <a href="https://wa.me/c/27693205227"><FontAwesomeIcon icon={faWhatsapp} /></a>
+          <a href="https://www.instagram.com/tlamis_nail_gallery/"><FontAwesomeIcon icon={faInstagram} /></a>
+          <a href="https://www.tiktok.com/@tlamis_nail_gallery03?_r=1&_t=ZS-963XVhhkLZd"><FontAwesomeIcon icon={faTiktok} /></a>
         </div>
 
         <div className="header__nav-bookbtn">
