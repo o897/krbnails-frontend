@@ -1,10 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PiArrowCircleLeftThin } from "react-icons/pi";
 import GlobalContext from "../GlobalContext";
 import emailjs from "@emailjs/browser";
-import { services } from "../data";
 
 const BookingForm = () => {
   const [name, setName] = useState("");
@@ -12,15 +10,10 @@ const BookingForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const { globalData } = useContext(GlobalContext);
-  const { appointmentDate, appointmentTime, formData } = globalData;
+  const { appointmentDate, appointmentTime } = globalData;
 
-
+  const form = useRef();
   const navigate = useNavigate();
-
-
-  const handleConfirmation = async (e) => {
-    navigate("/confirmation")
-  }
 
   const bookingData = {
     name,
@@ -31,27 +24,23 @@ const BookingForm = () => {
     time: appointmentTime,
     services: globalData?.appointmentTitle,
     total: globalData?.total,
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // send email to user after booking
-    // emailjs
-    //   .sendForm(REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID, form.current, {
-    //     publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-    //   })
-    //   .then(
-    //     () => {
-    //       console.log("success!");
-    //     },
-    //     (error) => {
-    //       console.log("Failed...", error.text);
-    //     }
-    //   );
-
-
-// http://localhost:3000/appointment/book",
+    // send confirmation email to client
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        { publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY }
+      )
+      .then(
+        () => console.log("Email sent!"),
+        (error) => console.log("Email failed...", error.text)
+      );
 
     try {
       const response = await fetch("https://imguploader.fun/appointment/book", {
@@ -63,41 +52,15 @@ const BookingForm = () => {
       const data = await response.json();
 
       if (response.ok) {
-        navigate("/confirmation")
+        navigate("/confirmation");
       } else {
-        setMessage(data.message || "Booking failed, please try again.")
+        setMessage(data.message || "Booking failed, please try again.");
       }
-
     } catch (error) {
       setMessage(`Something went wrong: ${error.message}`);
     }
-
-    // try {
-    //   const response = await fetch("https://locahost:3000/book/date",{
-    //     method : "PUT",
-    //     headers: { "Content-Type": "application/json" },
-    //     body : JSON.stringify(bookingData)
-    //   })
-
-    //   const data = await response.json();
-
-    //   if(response.ok) {
-    //     console.log("date booked")
-    //   } else {
-    //     console.log("failed to update dates")
-
-    //   }
-
-
-    // } catch (error) {
-    //     console.loh(error)
-    // }
-
   };
 
-  useEffect(() => {
-    console.log(globalData);
-  }, [])
 
   return (
     <>
@@ -160,7 +123,8 @@ const BookingForm = () => {
         </div>
       </div>
     
-      <form onSubmit={handleSubmit} method="post">
+      <form ref={form} onSubmit={handleSubmit} method="post">
+
         <div className="contact">
           <div className="contact-header">Contact info</div>
           <div className="contact__group">

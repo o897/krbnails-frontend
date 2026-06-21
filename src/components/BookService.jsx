@@ -143,7 +143,7 @@ const BookService = () => {
             {/* Nail drawings stepper */}
             <div className="appointment__service-select">
               <div className="appointment__service">
-                <div className="appointment__service-title">Drawings</div>
+                <div className="appointment__service-title">Design</div>
                 <div className="appointment__service-duration">number of nails</div>
                 <div className="appointment__service-title">R10 per nail</div>
               </div>
