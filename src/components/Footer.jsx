@@ -66,12 +66,10 @@ export default function Footer() {
                         © {new Date().getFullYear()} Tlami's Nail Gallery · All rights reserved
                     </p>
                     <div className="footer-socials">
-
-                        <FaTiktok className="footer-icon" />
+                        <a href="https://www.tiktok.com/@tlamis_nail_gallery03?_r=1&_t=ZS-963XVhhkLZd"><FaTiktok className="footer-icon" /></a>
                         <FaYoutube className="footer-icon" />
-                        <FaWhatsapp className="footer-icon" />
-                        <FaInstagram className="footer-icon" />
-
+                        <a href="https://wa.me/c/27693205227"> <FaWhatsapp className="footer-icon" /> </a>
+                        <a href="https://www.instagram.com/tlamis_nail_gallery/">  <FaInstagram className="footer-icon" /> </a>
                     </div>
                 </div>
 

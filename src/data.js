@@ -83,7 +83,7 @@ export const services = [
     img: feedb1Img,
     description:
       "Refresh and pamper your feet with professional nail care, shaping, and a clean polished finish.",
-    nb: "R20 will be charged for any design. "
+    nb: "NB : R20 will be charged for any design. "
   },
 
   {
@@ -135,7 +135,7 @@ export const services = [
     img: feedb4Img,
     description:
       "A quick nail care service that leaves natural nails smooth, healthy-looking, and beautifully polished.",
-    nb: "Removal of old set will be R20"
+    nb: "NB : Removal of old set will be R20"
   },
 
   {
@@ -147,7 +147,6 @@ export const services = [
     options: [
       { name: "3D Art", price: 15 },
       { name: "Chrome", price: 20 },
-      { name: "Drawings", price: 10 },
       { name: "Glitter", price: 10 }
     ]
   },

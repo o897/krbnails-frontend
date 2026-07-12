@@ -1473,6 +1473,7 @@ footer {
     width: 100%;
     height: 55vh;
     transition: 120ms transform ease-in-out;
+
   }
 
   .header__menu {
@@ -1894,6 +1895,14 @@ footer {
     font-family: "Roboto", sans-serif;
   }
 
+  .appointment__service-nb {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 6px;
+    color: #FFF;
+    background-color: #f0c587;
+  }
+
   .app-serv-offd {
     overflow-x: scroll;
     margin-bottom: 10px;
@@ -2294,12 +2303,9 @@ footer {
     font-size: 14px;
   }
 
-
-
   .header_menu {
     display: none;
   }
-
 
   .table-body {
     font-family: "PT Sans", sans-serif;
@@ -2358,7 +2364,6 @@ footer {
     padding-left: 15px;
     transition: 0.5s;
     transition: border-color 0.15s ease;
-
   }
 
   .contact__group input:focus {
@@ -2408,11 +2413,9 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
   /* End Booking form */
 
   /* Confirmation */
-
   .confirmation {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
@@ -2434,14 +2437,11 @@ footer {
     border: none;
     font-size: 2rem;
     font-weight: 600;
-
-
   }
 
   /* End Confirmation */
 
   /* Adree section */
-
   .address {
     margin: 10px 6vw 15px;
   }

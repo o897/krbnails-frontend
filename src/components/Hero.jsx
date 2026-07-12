@@ -1,5 +1,5 @@
 import { useState } from "react";
-import homeImg from "../assets/services/krbhome.jpg";
+import homeImg from "../assets/services/krbhome.jpeg";
 import designImg from "../assets/services/design.jpg";
 import pedicureImg from "../assets/services/krbhome.jpg";
 import acrylicImg from "../assets/services/acrylic.jpg";
@@ -125,7 +125,7 @@ function Hero() {
             TLAMI'S NAIL GALLERY
           </div>
           <div className="hero__welcome-img">
-            <img src="home.jpg" />
+            <img src="krbhome.jpeg" />
           </div>
           <Link to="book">
             <button className="hero__bookbtn">
