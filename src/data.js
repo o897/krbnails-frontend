@@ -10,7 +10,11 @@ import feedb5Img from "./assets/reviews/feedb5.jpg";
 import feedb6Img from "./assets/reviews/feedb6.jpg";
 import feedb7Img from "./assets/reviews/feedb7.jpg";
 import feedb8Img from "./assets/reviews/feedb8.jpg";
-import bns from "./assets/services/bns.jpeg"
+import rubberbase from "./assets/services/rubberbase.jpeg"
+import bns from "./assets/services/bns.jpeg";
+import polygel from "./assets/services/polygel.jpeg";
+import pedicure from "./assets/services/pedicure.jpeg";
+import nailart from "./assets/services/nailart.jpg";
 
 export const images = [
   {
@@ -80,7 +84,7 @@ export const services = [
     title: "Pedicure",
     price: 150,
     duration: 30,
-    img: feedb1Img,
+    img: pedicure,
     description:
       "Refresh and pamper your feet with professional nail care, shaping, and a clean polished finish.",
     nb: "NB : R20 will be charged for any design. "
@@ -103,7 +107,7 @@ export const services = [
   {
     title: "Polygel",
     duration: 40,
-    img: feedb2Img,
+    img: polygel,
     description:
       "A lightweight and long-lasting nail enhancement that delivers strength with a natural-looking finish.",
     options: [
@@ -118,7 +122,7 @@ export const services = [
   {
     title: "Rubber Base Gel",
     duration: 35,
-    img: feedb3Img,
+    img: rubberbase,
     description:
       "A strengthening nail treatment that helps protect natural nails while providing a smooth, elegant look.",
     options: [
@@ -141,7 +145,7 @@ export const services = [
   {
     title: "Nail Art",
     duration: 15,
-    img: feedb8Img,
+    img: nailart,
     description:
       "Express your personality with creative nail designs, patterns, and decorative finishes.",
     options: [

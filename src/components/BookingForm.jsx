@@ -4,27 +4,68 @@ import { PiArrowCircleLeftThin } from "react-icons/pi";
 import GlobalContext from "../GlobalContext";
 import emailjs from "@emailjs/browser";
 
+const MAX_IMAGES = 3;
+
 const BookingForm = () => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [images, setImages] = useState([]); // { file, preview }[]
+  const [imageError, setImageError] = useState("");
   const { globalData } = useContext(GlobalContext);
   const { appointmentDate, appointmentTime } = globalData;
 
   const form = useRef();
   const navigate = useNavigate();
 
-  const bookingData = {
-    name,
-    email,
-    contact,
-    message,
-    date: appointmentDate,
-    time: appointmentTime,
-    services: globalData?.appointmentTitle,
-    total: globalData?.total,
+  const handleImageChange = (e) => {
+    const selected = Array.from(e.target.files || []);
+    if (!selected.length) return;
+
+    if (images.length + selected.length > MAX_IMAGES) {
+      setImageError(`You can attach up to ${MAX_IMAGES} images.`);
+      e.target.value = "";
+      return;
+    }
+
+    setImageError("");
+    const newImages = selected.map((file) => ({
+      file,
+      preview: URL.createObjectURL(file),
+    }));
+    setImages((prev) => [...prev, ...newImages]);
+    e.target.value = ""; // allow re-selecting same file later
   };
+
+  const removeImage = (index) => {
+    setImages((prev) => {
+      URL.revokeObjectURL(prev[index].preview);
+      return prev.filter((_, i) => i !== index);
+    });
+  };
+
+  // Clean up object URLs on unmount
+  useEffect(() => {
+    return () => {
+      images.forEach((img) => URL.revokeObjectURL(img.preview));
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Convert File objects to base64 so they can travel inside your JSON body
+  const filesToBase64 = (files) =>
+    Promise.all(
+      files.map(
+        (file) =>
+          new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+          })
+      )
+    );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +84,20 @@ const BookingForm = () => {
       );
 
     try {
+      const imageBase64 = await filesToBase64(images.map((img) => img.file));
+
+      const bookingData = {
+        name,
+        email,
+        contact,
+        message,
+        date: appointmentDate,
+        time: appointmentTime,
+        services: globalData?.appointmentTitle,
+        total: globalData?.total,
+        images: imageBase64,
+      };
+
       const response = await fetch("https://imguploader.fun/appointment/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -61,20 +116,17 @@ const BookingForm = () => {
     }
   };
 
-
   return (
     <>
       <div className="bookform__header">
-             <Link to="/" style={{ color: "white" }}>
-             
+        <Link to="/" style={{ color: "white" }}>
           <PiArrowCircleLeftThin className="angle-icon" />
-              
-             </Link>
-             <div className="col">
-               <span className="sm-txt">Step 3 of 3</span>
-               <span className="st-txt">Enter details</span>
-             </div>
-           </div>
+        </Link>
+        <div className="col">
+          <span className="sm-txt">Step 3 of 3</span>
+          <span className="st-txt">Enter details</span>
+        </div>
+      </div>
       <div className="review">
         <div className="review__heading">Review your Booking</div>
         <div className="custom-hr "></div>
@@ -122,9 +174,8 @@ const BookingForm = () => {
           </div>
         </div>
       </div>
-    
-      <form ref={form} onSubmit={handleSubmit} method="post">
 
+      <form ref={form} onSubmit={handleSubmit} method="post">
         <div className="contact">
           <div className="contact-header">Contact info</div>
           <div className="contact__group">
@@ -138,26 +189,88 @@ const BookingForm = () => {
           </div>
           <div className="contact_group-row">
             <div className="contact__group">
-            <label htmlFor="">Cell phone</label>
-            <input
-              type="text"
-              name="contact"
-              onChange={(e) => setContact(e.target.value)}
-              required
-            />
+              <label htmlFor="">Cell phone</label>
+              <input
+                type="text"
+                name="contact"
+                onChange={(e) => setContact(e.target.value)}
+                required
+              />
+            </div>
+            <div className="contact__group">
+              <label htmlFor="">Email</label>
+              <input
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
           </div>
-          <div className="contact__group">
-            <label htmlFor="">Email</label>
-            <input
-              type="email"
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          </div>
-         
+
           <input type="hidden" value={globalData?.total} />
+
+          <div className="contact__group">
+            <label htmlFor="">Inspiration photos (optional, up to {MAX_IMAGES})</label>
+            <input
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleImageChange}
+              disabled={images.length >= MAX_IMAGES}
+            />
+            {imageError && (
+              <span style={{ color: "red", fontSize: "0.85rem" }}>{imageError}</span>
+            )}
+
+            {images.length > 0 && (
+              <div
+                style={{
+                  display: "flex",
+                  gap: "8px",
+                  marginTop: "8px",
+                  flexWrap: "wrap",
+                  justifyContent : "center"
+                }}
+              >
+                {images.map((img, index) => (
+                  <div key={index} style={{ position: "relative" }}>
+                    <img
+                      src={img.preview}
+                      alt={`upload-${index}`}
+                      style={{
+                        width: "70px",
+                        height: "70px",
+                        objectFit: "cover",
+                        borderRadius: "6px",
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeImage(index)}
+                      style={{
+                        position: "absolute",
+                        top: "-6px",
+                        right: "-6px",
+                        background: "#000",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "50%",
+                        width: "18px",
+                        height: "18px",
+                        fontSize: "12px",
+                        cursor: "pointer",
+                        lineHeight: "16px",
+                      }}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
           <div className="contact__group">
             <label htmlFor="">Include a message (optional)</label>
             <textarea name="message" cols="30" rows="4"></textarea>
