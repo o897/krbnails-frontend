@@ -1369,7 +1369,7 @@ footer {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    right: 1px;
+    right: 19px;
   }
 
   .bars-icon,
@@ -1399,12 +1399,13 @@ footer {
   .header {
     display: flex;
     align-items: center;
-    margin: 10px 6vw;
+    margin: 10px;
   }
 
   .header img {
-    height: 47px;
-    width: 100px;
+    height: 50px;
+    width: 110px;
+    object-fit: fill;
   }
 
   .header__nav-socials {
@@ -2413,6 +2414,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
   /* End Booking form */
 
   /* Confirmation */

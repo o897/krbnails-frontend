@@ -29,7 +29,7 @@ const Navbar = () => {
         <img src="krb_logo.png" alt="logo" />
 
         <div className="bars-wrap" onClick={toggleWidth}>
-          <HiOutlineBars2 className={`bars-icon ${show ? "icon-hide" : "icon-show"}`} />
+          <HiOutlineBars2 strokeWidth={0.7} className={`bars-icon ${show ? "icon-hide" : "icon-show"}` } />
           <IoCloseOutline className={`close-icon ${show ? "icon-show" : "icon-hide"}`} />
         </div>
 

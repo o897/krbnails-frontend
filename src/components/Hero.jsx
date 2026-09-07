@@ -2,7 +2,7 @@ import { useState } from "react";
 import homeImg from "../assets/services/krbhome.jpeg";
 import designImg from "../assets/services/design.jpg";
 import pedicureImg from "../assets/services/krbhome.jpg";
-import acrylicImg from "../assets/services/acrylic.jpg";
+import acrylicImg from "../assets/services/acrylic.jpeg";
 import { images } from "../data";
 import Navbar from "../components/Navbar"
 import { IoIosArrowDropleft } from "react-icons/io";

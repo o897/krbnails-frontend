@@ -1,7 +1,7 @@
 import homeImg from "./assets/services/krbhome.jpg";
 import designImg from "./assets/services/design.jpg";
 import pedicureImg from "./assets/services/krbhome.jpg";
-import acrylicImg from "./assets/services/acrylic.jpg";
+import acrylic from "./assets/services/acrylic.jpeg";
 import feedb1Img from "./assets/reviews/feedb1.jpg";
 import feedb2Img from "./assets/reviews/feedb2.jpg";
 import feedb3Img from "./assets/reviews/feedb3.jpg";
@@ -10,7 +10,7 @@ import feedb5Img from "./assets/reviews/feedb5.jpg";
 import feedb6Img from "./assets/reviews/feedb6.jpg";
 import feedb7Img from "./assets/reviews/feedb7.jpg";
 import feedb8Img from "./assets/reviews/feedb8.jpg";
-
+import bns from "./assets/services/bns.jpeg"
 
 export const images = [
   {
@@ -30,7 +30,7 @@ export const images = [
   },
   {
     name: "acrylic",
-    source: acrylicImg,
+    source: acrylic,
     alt: "Acrylic Image",
   },
   {
@@ -89,7 +89,7 @@ export const services = [
   {
     title: "Acrylic Nail Service",
     duration: 40,
-    img: feedb1Img,
+    img: acrylic,
     description:
       "Beautiful, durable nail extensions designed to enhance length, style, and confidence.",
     options: [
@@ -132,7 +132,7 @@ export const services = [
     title: "Buff & Shine",
     price: 120,
     duration: 20,
-    img: feedb4Img,
+    img: bns,
     description:
       "A quick nail care service that leaves natural nails smooth, healthy-looking, and beautifully polished.",
     nb: "NB : Removal of old set will be R20"
