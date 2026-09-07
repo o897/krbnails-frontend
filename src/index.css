@@ -2409,6 +2409,49 @@ footer {
     transition: border-color 0.15s ease;
   }
 
+  .contact__group input[type="file"] {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    border: 1px dashed #d8c3b5;
+    border-radius: 10px;
+    background: #fbf6f2;
+    color: #6b4a33;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .contact__group input[type="file"]::file-selector-button {
+    height: 100%;
+    border: none;
+    padding: 0 14px;
+    background: #e8d5c4;
+    color: #6b4a33;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  /* Safari/old Chrome fallback */
+  .contact__group input[type="file"]::-webkit-file-upload-button {
+    height: 100%;
+    border: none;
+    padding: 0 14px;
+    background: #e8d5c4;
+    color: #6b4a33;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .contact__group input[type="file"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   .contact__group input:focus {
     border-color: #ced4da;
     box-shadow: none;
