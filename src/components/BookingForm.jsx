@@ -168,7 +168,7 @@ const BookingForm = () => {
             </div>
             <div className="table-row">
               <div>Total</div>
-              <div>{`${("R", globalData?.total ?? "")}`}</div>
+              <div>{`R ${globalData?.total ?? "0.00"}`}</div>
             </div>
             <div className="custom-hr "></div>
           </div>
@@ -183,6 +183,7 @@ const BookingForm = () => {
             <input
               type="text"
               name="from_username"
+              placeholder="Karabo Ontlametse Tlhopane"
               onChange={(e) => setName(e.target.value)}
               required
             />
@@ -193,6 +194,7 @@ const BookingForm = () => {
               <input
                 type="text"
                 name="contact"
+                placeholder="+2782 434 5469"
                 onChange={(e) => setContact(e.target.value)}
                 required
               />
@@ -202,6 +204,7 @@ const BookingForm = () => {
               <input
                 type="email"
                 name="email"
+                placeholder="karabo@tlhopane.com"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
@@ -230,7 +233,7 @@ const BookingForm = () => {
                   gap: "8px",
                   marginTop: "8px",
                   flexWrap: "wrap",
-                  justifyContent : "center"
+                  justifyContent: "center"
                 }}
               >
                 {images.map((img, index) => (
@@ -248,20 +251,7 @@ const BookingForm = () => {
                     <button
                       type="button"
                       onClick={() => removeImage(index)}
-                      style={{
-                        position: "absolute",
-                        top: "-6px",
-                        right: "-6px",
-                        background: "#000",
-                        color: "#fff",
-                        border: "none",
-                        borderRadius: "50%",
-                        width: "18px",
-                        height: "18px",
-                        fontSize: "12px",
-                        cursor: "pointer",
-                        lineHeight: "16px",
-                      }}
+                      className="rmvImage"
                     >
                       ×
                     </button>

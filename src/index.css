@@ -144,6 +144,7 @@ h2 {
   font-family: 'Raleway';
   position: relative;
   bottom: 20px;
+  margin: 0 8vw;
 }
 
 .carousel-dots {
@@ -459,6 +460,25 @@ footer p {
 }
 
 /* end policy */
+
+/* rmv image */
+
+.rmvimg {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 16px;
+}
+
+/* end */
 
 /* =========================
    TABLET
