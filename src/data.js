@@ -15,6 +15,7 @@ import bns from "./assets/services/bns.jpeg";
 import polygel from "./assets/services/polygel.jpeg";
 import pedicure from "./assets/services/pedicure.jpeg";
 import nailart from "./assets/services/nailart.jpg";
+import foot from "./assets/services/foot.png";
 
 export const images = [
   {
@@ -172,7 +173,7 @@ export const services = [
     title: "Foot Treatment",
     price: 170,
     duration: 25,
-    img: feedb6Img,
+    img: foot,
     description:
       "Revitalize tired feet with a relaxing treatment that softens skin and promotes overall foot care.",
   }

@@ -71,13 +71,12 @@ const BookingForm = () => {
     e.preventDefault();
 
     // send confirmation email to client
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        form.current,
-        { publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY }
-      )
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form.current,
+      { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+    )
       .then(
         () => console.log("Email sent!"),
         (error) => console.log("Email failed...", error.text)
@@ -98,7 +97,7 @@ const BookingForm = () => {
         images: imageBase64,
       };
 
-      const response = await fetch("https://imguploader.fun/appointment/book", {
+      const response = awaitfetch("https://api.tlamisgallery.site/appointment/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),

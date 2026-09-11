@@ -13,7 +13,7 @@ import dayjs from "dayjs";
 
 
 async function fetchAppointments(date, { signal }) {
-  const response = await fetch("https://imguploader.fun/bookings", { signal });
+  const response = await fetch("https://api.tlamisgallery.site/bookings", { signal });
 
   if (!response.ok) {
     throw new Error("Failed to fetch appointments");
