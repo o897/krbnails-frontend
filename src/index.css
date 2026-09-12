@@ -1427,11 +1427,15 @@ footer {
   /* Navbar socials*/
 
   .bars-wrap {
-    position: relative;
+    font-weight: 600;
+    top: 22px;
+    color: #fff;
+    position: absolute;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    right: 19px;
+    z-index: 20;
+    right: 33px;
   }
 
   .bars-icon,
@@ -1446,12 +1450,15 @@ footer {
   .icon-show {
     opacity: 1;
     transform: rotate(0deg) scale(1);
+    color: #ffff;
   }
 
   .icon-hide {
     opacity: 0;
     transform: rotate(-90deg) scale(0.5);
     pointer-events: none;
+    color: #000 !important;
+
   }
 
   .bars-icon {
@@ -1464,6 +1471,7 @@ footer {
     align-items: center;
     margin: 10px;
     padding-left: 10px;
+    display: none;
   }
 
   .header img {
@@ -1532,12 +1540,12 @@ footer {
     z-index: 10;
     left: 0;
     justify-content: center;
-    top: 66px;
+    top: 0;
     background-color: #fff;
     overflow-x: hidden;
     position: absolute;
     width: 100%;
-    height: 55vh;
+    height: 87vh;
     transition: 120ms transform ease-in-out;
 
   }
@@ -1610,7 +1618,7 @@ footer {
   .hero__welcome img {
     position: absolute;
     left: 50%;
-    top: 5px;
+    top: 0;
     transform: translate(-50%, 0%);
     opacity: .84;
     display: flex;

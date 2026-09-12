@@ -25,13 +25,14 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="header">
-        <img src="krb_logo.png" alt="logo" />
-
-        <div className="bars-wrap" onClick={toggleWidth}>
+      <div className="bars-wrap" onClick={toggleWidth}>
           <HiOutlineBars2 strokeWidth={0.7} className={`bars-icon ${show ? "icon-hide" : "icon-show"}` } />
           <IoCloseOutline className={`close-icon ${show ? "icon-show" : "icon-hide"}`} />
         </div>
+      <div className="header">
+        <img src="krb_logo.png" alt="logo" />
+
+      
 
         <div className="header_menu">
           <div
