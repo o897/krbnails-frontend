@@ -1456,6 +1456,7 @@ footer {
 
   .bars-icon {
     font-size: 2.5rem;
+    position: absolute;
   }
 
   .header {
@@ -1469,6 +1470,7 @@ footer {
     height: 40px;
     width: 110px;
     object-fit: fill;
+    display: none;
   }
 
   .header__nav-socials {
@@ -1614,7 +1616,7 @@ footer {
     display: flex;
     object-fit: cover;
     height: 87vh;
-    width: 90%;
+    width: 100%;
   }
 
   /* End home image */

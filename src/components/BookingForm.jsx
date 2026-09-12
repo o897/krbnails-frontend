@@ -97,9 +97,12 @@ const BookingForm = () => {
         images: imageBase64,
       };
 
-      const response = awaitfetch("https://api.tlamisgallery.site/appointment/book", {
+
+      const response = await fetch("https://api.tlamisgallery.site/appointment/book", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(bookingData),
       });
 
