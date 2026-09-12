@@ -8,7 +8,7 @@ import acrylicImage from "../assets/services/acrylic.jpeg";
 
 const slides = [
   {
-    label: "THE TLAMI EXPERIENCE",
+    label: "TLAMI EXPERIENCE",
     title: "Beauty, down to the last detail.",
     description:
       "Thoughtful nail care, clean finishes and a little time set aside entirely for you.",
