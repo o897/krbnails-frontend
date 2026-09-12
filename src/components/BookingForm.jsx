@@ -265,7 +265,13 @@ const BookingForm = () => {
 
           <div className="contact__group">
             <label htmlFor="">Include a message (optional)</label>
-            <textarea name="message" cols="30" rows="4"></textarea>
+            <textarea
+              name="message"
+              cols="30"
+              rows="4"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
           </div>
           <button className="contact__bookbtn" type="submit">
             Complete Booking
