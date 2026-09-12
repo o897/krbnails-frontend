@@ -1429,7 +1429,6 @@ footer {
   .bars-wrap {
     font-weight: 600;
     top: 22px;
-    color: #fff;
     position: absolute;
     width: 30px;
     height: 30px;
@@ -1442,27 +1441,33 @@ footer {
   .close-icon {
     position: absolute;
     inset: 0;
-    font-size: 1.8rem;
-    transition: transform 0.3s ease, opacity 0.3s ease;
     right: 9px;
+    font-size: 3.5rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: #fff;
+  }
+
+  .bars-icon.icon-show {
+    color: #fff;
+  }
+
+  .close-icon.icon-show {
+    color: #000;
   }
 
   .icon-show {
     opacity: 1;
     transform: rotate(0deg) scale(1);
-    color: #ffff;
   }
 
   .icon-hide {
     opacity: 0;
     transform: rotate(-90deg) scale(0.5);
     pointer-events: none;
-    color: #000 !important;
-
   }
 
   .bars-icon {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     position: absolute;
   }
 
@@ -1545,7 +1550,7 @@ footer {
     overflow-x: hidden;
     position: absolute;
     width: 100%;
-    height: 87vh;
+    height: 100vh;
     transition: 120ms transform ease-in-out;
 
   }
@@ -1623,7 +1628,7 @@ footer {
     opacity: .84;
     display: flex;
     object-fit: cover;
-    height: 87vh;
+    height: 100vh;
     width: 100%;
   }
 
