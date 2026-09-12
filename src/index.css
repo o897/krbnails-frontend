@@ -1912,7 +1912,9 @@ footer {
   }
 
   .gallery {
-    margin: 20px 0;
+    border: 1px solid #e2e2e2;
+    padding: 25px;
+    margin: 10px 4vw;
   }
 
   .gallery__container {
@@ -3128,7 +3130,7 @@ footer {
   object-fit: contain;
 }
 
-.mobile-menu__brand > div {
+.mobile-menu__brand>div {
   display: flex;
   flex-direction: column;
 }
@@ -3195,10 +3197,8 @@ footer {
   z-index: 2;
   padding: 24px 26px 26px;
   background:
-    linear-gradient(
-      rgba(250, 246, 243, 0),
-      #faf6f3 22%
-    );
+    linear-gradient(rgba(250, 246, 243, 0),
+      #faf6f3 22%);
 }
 
 .mobile-menu__book {
@@ -3285,6 +3285,7 @@ footer {
 /* Desktop navigation */
 
 @media (min-width: 1024px) {
+
   .bars-wrap,
   .mobile-menu {
     display: none;
