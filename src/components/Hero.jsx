@@ -1,5 +1,5 @@
 import { useState } from "react";
-import homeImg from "../assets/services/krbhome.jpeg";
+import ExperienceShowcase from "./ExperienceShowcase";
 import designImg from "../assets/services/design.jpg";
 import pedicureImg from "../assets/services/krbhome.jpg";
 import acrylicImg from "../assets/services/acrylic.jpeg";
@@ -137,31 +137,7 @@ function Hero() {
 
       <main className="main">
 
-        <section id="services" className="services">
-          <div className="services">
-            {renderService()}
-            <div className="services__container">
-              <Link to="menu"></Link>
-            </div>
-          </div>
-
-          {/* Arrows + bubble dots */}
-          <div className="slides-arrows">
-            <FaAngleLeft className="footer-icon" onClick={handlePrev} />
-
-            <div className="carousel-dots">
-              {services.map((service, i) => (
-                <div
-                  key={i}
-                  className={`carousel-dot ${service === selectedService ? "active" : "inactive"}`}
-                  onClick={() => setSelectedService(service)}
-                />
-              ))}
-            </div>
-
-            <FaAngleRight className="footer-icon" onClick={handleNext} />
-          </div>
-        </section>
+        <ExperienceShowcase />
 
         <section>
           <div className="book">
