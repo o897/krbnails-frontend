@@ -357,7 +357,7 @@ h2 {
 
 .reviews {
   /* background-image: url("reviews.gif"); */
-  background-color: #c3c3c3;
+  background-color: #f9f6f3;
   padding: 40px;
 }
 
@@ -674,7 +674,6 @@ footer p {
     z-index: 1;
     padding: 10px;
     border-radius: 8px;
-    background-color: #f9f6f3;
 
   }
 
@@ -1940,7 +1939,6 @@ footer {
   .reviews_section {
     display: flex;
     flex-direction: column;
-    background-color: #c3c3c3;
     align-items: center;
     /* background-image: url("reviews.gif"); */
   }
@@ -2019,8 +2017,6 @@ footer {
     z-index: 1;
     padding: 0 2px 3px;
     border-radius: 8px;
-    background-color: #f9f6f3;
-
 
   }
 
@@ -2633,6 +2629,7 @@ footer {
     gap: 10px;
     flex-direction: row-reverse;
     justify-items: center;
+    text-align: center;
 
   }
 
@@ -3371,7 +3368,7 @@ footer {
     color: #a16e61;
   }
 
-  .header_menu>a:not(:last-child) {
+  .header_menu > a:not(:last-child) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3382,17 +3379,17 @@ footer {
       transform 0.25s ease;
   }
 
-  .header_menu>a:not(:last-child):hover {
+  .header_menu > a:not(:last-child):hover {
     color: #a16e61;
     transform: translateY(-2px);
   }
 
-  .header_menu>a:nth-last-child(4) {
+  .header_menu > a:nth-last-child(4) {
     position: relative;
     margin-left: 15px;
   }
 
-  .header_menu>a:nth-last-child(4)::before {
+  .header_menu > a:nth-last-child(4)::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -3403,11 +3400,11 @@ footer {
     transform: translateY(-50%);
   }
 
-  .header_menu>a:last-child {
+  .header_menu > a:last-child {
     margin-left: 10px;
   }
 
-  .header_menu>a:last-child button {
+  .header_menu > a:last-child button {
     width: 200px;
     height: 58px;
     border: 1px solid #111;
@@ -3423,7 +3420,7 @@ footer {
       color 0.25s ease;
   }
 
-  .header_menu>a:last-child button:hover {
+  .header_menu > a:last-child button:hover {
     background-color: transparent;
     color: #111;
   }
@@ -3609,7 +3606,7 @@ footer {
     font-size: 0.9rem;
   }
 
-  .header_menu>a:last-child button {
+  .header_menu > a:last-child button {
     width: 165px;
   }
 

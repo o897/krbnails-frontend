@@ -46,16 +46,16 @@ export default function Footer() {
                         </div>
                         <div className="footer_table">
                             <div className="row">
-                                <div className="footer-th">Sunday</div>
-                                <div className="footer-tb">Closed</div>
+                                <p className="footer-th">Sunday</p>
+                                <p className="footer-tb">Closed</p>
                             </div>
                             <div className="row">
-                                <div className="footer-th">Mon-Fri</div>
-                                <div className="footer-tb">10:00-18:00</div>
+                                <p className="footer-th">Mon-Fri</p>
+                                <p className="footer-tb">10:00-18:00</p>
                             </div>
                             <div className="row">
-                                <div className="footer-th">Saturday</div>
-                                <div className="footer-tb ls">10:00-14:00</div>
+                                <p className="footer-th">Saturday</p>
+                                <p className="footer-tb ls">10:00-14:00</p>
                             </div>
                         </div>
 
