@@ -26,7 +26,7 @@ export default function Footer() {
                         <div className="footer-title">
                             Location
                         </div>
-                        <p>263 Odinburg Gardens</p>
+                        <p>262 Odinburg Gardens</p>
                     </div>
                     <div className="footer_header">
                         <div className="footer-top">

@@ -112,10 +112,12 @@ h2 {
 }
 
 .header {
+  z-index: 900;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  position: absolute;
   align-items: normal;
-  font-family: "Raleway", sans-serif;
+  font-family: Raleway, sans-serif;
 }
 
 
@@ -672,6 +674,7 @@ footer p {
     z-index: 1;
     padding: 10px;
     border-radius: 8px;
+    background-color: #f9f6f3;
 
   }
 
@@ -2016,6 +2019,8 @@ footer {
     z-index: 1;
     padding: 0 2px 3px;
     border-radius: 8px;
+    background-color: #f9f6f3;
+
 
   }
 
@@ -3289,5 +3294,347 @@ footer {
   .bars-wrap,
   .mobile-menu {
     display: none;
+  }
+}
+
+/* ==================================================
+   TLAMI'S NEW DESKTOP NAVIGATION AND HERO
+   Mobile and tablet designs remain unchanged.
+================================================== */
+
+.desktop-hero {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    width: 100%;
+    margin: 0;
+    background-color: #f8f4ef;
+  }
+
+  /* Hide the original hero on desktop */
+  .hero--mobile-tablet {
+    display: none;
+  }
+
+  /* =========================
+     DESKTOP NAVIGATION
+  ========================= */
+
+  .header {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    padding: 0 4.8vw;
+    border-bottom: 1px solid #d9d1ca;
+    background-color: #fbf8f4;
+  }
+
+  .header img {
+    display: block;
+    width: 145px;
+    height: 88px;
+    object-fit: contain;
+  }
+
+  .header_menu {
+    display: flex;
+    align-items: center;
+    gap: clamp(22px, 2.5vw, 45px);
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: 1rem;
+  }
+
+  .header_menu .header_menu-items {
+    width: auto;
+    height: auto;
+    padding: 9px 0;
+    border: none;
+    background: transparent;
+    color: #181818;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: color 0.25s ease;
+  }
+
+  .header_menu .header_menu-items:hover {
+    border: none;
+    background: transparent;
+    color: #a16e61;
+  }
+
+  .header_menu>a:not(:last-child) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    font-size: 1.65rem;
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .header_menu>a:not(:last-child):hover {
+    color: #a16e61;
+    transform: translateY(-2px);
+  }
+
+  .header_menu>a:nth-last-child(4) {
+    position: relative;
+    margin-left: 15px;
+  }
+
+  .header_menu>a:nth-last-child(4)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -27px;
+    width: 1px;
+    height: 36px;
+    background-color: #cdbeb5;
+    transform: translateY(-50%);
+  }
+
+  .header_menu>a:last-child {
+    margin-left: 10px;
+  }
+
+  .header_menu>a:last-child button {
+    width: 200px;
+    height: 58px;
+    border: 1px solid #111;
+    background-color: #111;
+    color: #fff;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    cursor: pointer;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .header_menu>a:last-child button:hover {
+    background-color: transparent;
+    color: #111;
+  }
+
+  .bars-wrap,
+  .mobile-menu {
+    display: none;
+  }
+
+  /* =========================
+     DESKTOP HERO
+  ========================= */
+
+  .desktop-hero {
+    display: grid;
+    grid-template-columns: 43% 57%;
+    width: 100%;
+    height: calc(100vh - 100px);
+    min-height: 650px;
+    max-height: 900px;
+    background-color: #fbf8f4;
+  }
+
+  .desktop-hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(65px, 7vh, 100px) clamp(45px, 4.8vw, 90px);
+    background-color: #fbf8f4;
+  }
+
+  .desktop-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 40px;
+    color: #252525;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: clamp(0.65rem, 0.72vw, 0.78rem);
+    font-weight: 500;
+    letter-spacing: 0.34em;
+    white-space: nowrap;
+  }
+
+  .desktop-hero__eyebrow-line {
+    display: block;
+    width: 72px;
+    height: 1px;
+    background-color: #c99b8d;
+  }
+
+  .desktop-hero__title {
+    margin: 0;
+    color: #080808;
+    font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+    font-size: clamp(4.5rem, 6.1vw, 7.5rem);
+    font-weight: 400;
+    line-height: 0.79;
+    letter-spacing: -0.055em;
+  }
+
+  .desktop-hero__description {
+    margin-top: 42px;
+    color: #282828;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: clamp(1.05rem, 1.35vw, 1.55rem);
+    font-weight: 300;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+  }
+
+  .desktop-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(30px, 3vw, 50px);
+    margin-top: 48px;
+  }
+
+  .desktop-hero__book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    height: 68px;
+    padding: 0 34px;
+    border: 1px solid #111;
+    background-color: #111;
+    color: #fff;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    white-space: nowrap;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .desktop-hero__book:hover {
+    background-color: transparent;
+    color: #111;
+    transform: translateY(-2px);
+  }
+
+  .desktop-hero__work {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 12px 0;
+    border: none;
+    background-color: transparent;
+    color: #222;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.19em;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .desktop-hero__work::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    height: 1px;
+    background-color: #bd8c7d;
+    transition: transform 0.25s ease;
+    transform-origin: left;
+  }
+
+  .desktop-hero__work:hover::after {
+    transform: scaleX(0.45);
+  }
+
+  .desktop-hero__statement {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    margin-top: auto;
+    color: #4d4a48;
+    font-family: "Jost", "Noto Sans", sans-serif;
+    font-size: clamp(0.58rem, 0.67vw, 0.7rem);
+    font-weight: 400;
+    letter-spacing: 0.27em;
+    white-space: nowrap;
+  }
+
+  .desktop-hero__statement-line {
+    display: block;
+    width: 67px;
+    height: 1px;
+    background-color: #c99b8d;
+  }
+
+  .desktop-hero__image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ddd2cd;
+  }
+
+  .desktop-hero__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 52% center;
+  }
+}
+
+/* Smaller desktop screens and laptops */
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .header {
+    padding-right: 3vw;
+    padding-left: 3vw;
+  }
+
+  .header_menu {
+    gap: 19px;
+    font-size: 0.9rem;
+  }
+
+  .header_menu>a:last-child button {
+    width: 165px;
+  }
+
+  .desktop-hero {
+    grid-template-columns: 46% 54%;
+  }
+
+  .desktop-hero__content {
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+
+  .desktop-hero__title {
+    font-size: clamp(4.2rem, 6.5vw, 5.5rem);
+  }
+
+  .desktop-hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .desktop-hero__book {
+    min-width: 270px;
+    height: 60px;
   }
 }

@@ -12,25 +12,86 @@ function Hero() {
   return (
     <div className="wrapper">
       <Navbar />
-      <section className="hero">
+
+      {/* Existing design for phones and tablets */}
+      <section className="hero hero--mobile-tablet">
         <div className="hero__welcome">
           <div className="hero__welcome-title">
-            Where beauty <span className="wht">meets your </span> <span className="wht">fing</span>ertips.
+            Where beauty <span className="wht">meets your </span>{" "}
+            <span className="wht">fing</span>ertips.
           </div>
+
           <div className="hero__welcome-sub">
             TLAMI'S NAIL GALLERY
           </div>
+
           <div className="hero__welcome-img">
-            <img src="krbhome.jpeg" />
+            <img
+              src="/krbhome.jpeg"
+              alt="Tlami's Nail Gallery manicure"
+            />
           </div>
-          <Link to="book">
-            <button className="hero__bookbtn">
-              <span className="">BOOK A</span>N APPOINTMENT
+
+          <Link to="/book">
+            <button type="button" className="hero__bookbtn">
+              BOOK AN APPOINTMENT
             </button>
           </Link>
         </div>
       </section>
 
+
+      {/* New desktop-only design */}
+      <section className="desktop-hero">
+        <div className="desktop-hero__content">
+          <div className="desktop-hero__eyebrow">
+            <span>TLAMI'S NAIL GALLERY</span>
+            <span className="desktop-hero__eyebrow-line"></span>
+          </div>
+
+          <h1 className="desktop-hero__title">
+            Nails designed
+            <br />
+            around you.
+          </h1>
+
+          <p className="desktop-hero__description">
+            Thoughtfully crafted sets for every
+            <br />
+            style, mood and occasion.
+          </p>
+
+          <div className="desktop-hero__actions">
+            <Link to="/book" className="desktop-hero__book">
+              BOOK AN APPOINTMENT
+            </Link>
+
+            <button
+              type="button"
+              className="desktop-hero__work"
+              onClick={() =>
+                document.getElementById("gallery")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+            >
+              EXPLORE OUR WORK
+            </button>
+          </div>
+
+          <div className="desktop-hero__statement">
+            <span className="desktop-hero__statement-line"></span>
+            <span>BEAUTIFUL DETAILS. LASTING CONFIDENCE.</span>
+          </div>
+        </div>
+
+        <div className="desktop-hero__image">
+          <img
+            src="/krbhome.jpeg"
+            alt="Elegant white and floral nail set by Tlami's Nail Gallery"
+          />
+        </div>
+      </section>
       <main className="main">
 
         <ExperienceShowcase />
