@@ -1029,6 +1029,8 @@ footer p {
 
   .gallery_wrapper {
     overflow-x: scroll;
+    display: flex;
+    justify-content: center;
   }
 
   /* =========================
@@ -3368,7 +3370,7 @@ footer {
     color: #a16e61;
   }
 
-  .header_menu > a:not(:last-child) {
+  .header_menu>a:not(:last-child) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3379,17 +3381,17 @@ footer {
       transform 0.25s ease;
   }
 
-  .header_menu > a:not(:last-child):hover {
+  .header_menu>a:not(:last-child):hover {
     color: #a16e61;
     transform: translateY(-2px);
   }
 
-  .header_menu > a:nth-last-child(4) {
+  .header_menu>a:nth-last-child(4) {
     position: relative;
     margin-left: 15px;
   }
 
-  .header_menu > a:nth-last-child(4)::before {
+  .header_menu>a:nth-last-child(4)::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -3400,11 +3402,11 @@ footer {
     transform: translateY(-50%);
   }
 
-  .header_menu > a:last-child {
+  .header_menu>a:last-child {
     margin-left: 10px;
   }
 
-  .header_menu > a:last-child button {
+  .header_menu>a:last-child button {
     width: 200px;
     height: 58px;
     border: 1px solid #111;
@@ -3420,7 +3422,7 @@ footer {
       color 0.25s ease;
   }
 
-  .header_menu > a:last-child button:hover {
+  .header_menu>a:last-child button:hover {
     background-color: transparent;
     color: #111;
   }
@@ -3606,7 +3608,7 @@ footer {
     font-size: 0.9rem;
   }
 
-  .header_menu > a:last-child button {
+  .header_menu>a:last-child button {
     width: 165px;
   }
 

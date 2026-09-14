@@ -149,6 +149,7 @@ export const services = [
     img: nailart,
     description:
       "Express your personality with creative nail designs, patterns, and decorative finishes.",
+    nb: "NB: Nail art is charged per nail.",
     options: [
       { name: "3D Art", price: 15 },
       { name: "Chrome", price: 20 },
