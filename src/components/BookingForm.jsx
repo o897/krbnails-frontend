@@ -437,18 +437,6 @@ const BookingForm = () => {
               </p>
             )}
 
-            {isSubmitting && (
-              <div className="booking-processing" role="status" aria-live="polite">
-                <span className="booking-spinner" aria-hidden="true"></span>
-                <div>
-                  <strong>Processing your booking...</strong>
-                  <span>
-                    Please stay on this page while we upload your images.
-                  </span>
-                </div>
-              </div>
-            )}
-
             <button
               className={`contact__bookbtn ${
                 isSubmitting ? "contact__bookbtn--loading" : ""
