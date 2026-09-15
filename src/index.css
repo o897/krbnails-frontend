@@ -3637,3 +3637,57 @@ footer {
     height: 60px;
   }
 }
+
+.image-processing-message,
+.image-error {
+  display: block;
+  width: 85%;
+  margin: 8px auto 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.image-processing-message {
+  color: #6b4a33;
+}
+
+.image-error {
+  color: #a32929;
+}
+
+.booking-image-previews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.booking-image-preview {
+  position: relative;
+}
+
+.booking-image-preview img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.booking-submit-error {
+  width: 85%;
+  margin: 20px auto 0;
+  padding: 12px 14px;
+  border: 1px solid #d7a5a5;
+  border-radius: 6px;
+  background-color: #fff2f2;
+  color: #9d2424;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.contact__bookbtn:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
