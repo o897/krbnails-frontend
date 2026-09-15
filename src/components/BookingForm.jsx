@@ -1,127 +1,262 @@
-import { useContext, useEffect, useRef, useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { PiArrowCircleLeftThin } from "react-icons/pi";
+import imageCompression from "browser-image-compression";
+import heic2any from "heic2any";
 import GlobalContext from "../GlobalContext";
-import emailjs from "@emailjs/browser";
 
 const MAX_IMAGES = 3;
+const MAX_ORIGINAL_IMAGE_SIZE = 20 * 1024 * 1024;
 
 const BookingForm = () => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [images, setImages] = useState([]); // { file, preview }[]
+  const [images, setImages] = useState([]);
   const [imageError, setImageError] = useState("");
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isProcessingImages, setIsProcessingImages] = useState(false);
+
+  const imagesRef = useRef([]);
+  const navigate = useNavigate();
   const { globalData } = useContext(GlobalContext);
   const { appointmentDate, appointmentTime } = globalData;
 
-  const form = useRef();
-  const navigate = useNavigate();
+  useEffect(() => {
+    imagesRef.current = images;
+  }, [images]);
 
-  const handleImageChange = (e) => {
-    const selected = Array.from(e.target.files || []);
-    if (!selected.length) return;
+  useEffect(() => {
+    return () => {
+      imagesRef.current.forEach((image) => {
+        URL.revokeObjectURL(image.preview);
+      });
+    };
+  }, []);
 
-    if (images.length + selected.length > MAX_IMAGES) {
+  const isHeicImage = (file) => {
+    const fileType = file.type.toLowerCase();
+    const fileName = file.name.toLowerCase();
+
+    return (
+      fileType === "image/heic" ||
+      fileType === "image/heif" ||
+      fileName.endsWith(".heic") ||
+      fileName.endsWith(".heif")
+    );
+  };
+
+  const convertHeicToJpeg = async (file) => {
+    const converted = await heic2any({
+      blob: file,
+      toType: "image/jpeg",
+      quality: 0.9,
+    });
+
+    const jpegBlob = Array.isArray(converted) ? converted[0] : converted;
+    const jpegName = file.name.replace(/\.(heic|heif)$/i, ".jpg");
+
+    return new File([jpegBlob], jpegName, {
+      type: "image/jpeg",
+      lastModified: Date.now(),
+    });
+  };
+
+  const prepareImage = async (file) => {
+    const imageFile = isHeicImage(file)
+      ? await convertHeicToJpeg(file)
+      : file;
+
+    const compressed = await imageCompression(imageFile, {
+      maxSizeMB: 0.8,
+      maxWidthOrHeight: 1600,
+      useWebWorker: true,
+      fileType: "image/jpeg",
+      initialQuality: 0.85,
+    });
+
+    const outputName = imageFile.name.replace(
+      /\.(jpg|jpeg|png|webp)$/i,
+      ".jpg"
+    );
+
+    return new File([compressed], outputName, {
+      type: "image/jpeg",
+      lastModified: Date.now(),
+    });
+  };
+
+  const handleImageChange = async (event) => {
+    const input = event.target;
+    const selectedFiles = Array.from(input.files || []);
+    input.value = "";
+
+    if (!selectedFiles.length) return;
+
+    if (images.length + selectedFiles.length > MAX_IMAGES) {
       setImageError(`You can attach up to ${MAX_IMAGES} images.`);
-      e.target.value = "";
+      return;
+    }
+
+    const invalidFile = selectedFiles.find((file) => {
+      const validType = file.type.startsWith("image/");
+      const validExtension = /\.(jpg|jpeg|png|webp|heic|heif)$/i.test(
+        file.name
+      );
+
+      return !validType && !validExtension;
+    });
+
+    if (invalidFile) {
+      setImageError(
+        "Please select JPEG, PNG, WebP or iPhone HEIC images only."
+      );
+      return;
+    }
+
+    const oversizedFile = selectedFiles.find(
+      (file) => file.size > MAX_ORIGINAL_IMAGE_SIZE
+    );
+
+    if (oversizedFile) {
+      setImageError(
+        `${oversizedFile.name} is too large. Each image must be smaller than 20 MB.`
+      );
       return;
     }
 
     setImageError("");
-    const newImages = selected.map((file) => ({
-      file,
-      preview: URL.createObjectURL(file),
-    }));
-    setImages((prev) => [...prev, ...newImages]);
-    e.target.value = ""; // allow re-selecting same file later
+    setSubmitError("");
+    setIsProcessingImages(true);
+
+    try {
+      const preparedImages = [];
+
+      for (const file of selectedFiles) {
+        const preparedFile = await prepareImage(file);
+
+        preparedImages.push({
+          file: preparedFile,
+          preview: URL.createObjectURL(preparedFile),
+        });
+      }
+
+      setImages((currentImages) => [
+        ...currentImages,
+        ...preparedImages,
+      ]);
+    } catch (error) {
+      console.error("Image processing failed:", error);
+      setImageError(
+        "We could not prepare one of the images. Please try uploading a screenshot of it instead."
+      );
+    } finally {
+      setIsProcessingImages(false);
+    }
   };
 
   const removeImage = (index) => {
-    setImages((prev) => {
-      URL.revokeObjectURL(prev[index].preview);
-      return prev.filter((_, i) => i !== index);
+    setImages((currentImages) => {
+      const imageToRemove = currentImages[index];
+
+      if (imageToRemove?.preview) {
+        URL.revokeObjectURL(imageToRemove.preview);
+      }
+
+      return currentImages.filter((_, imageIndex) => imageIndex !== index);
     });
+
+    setImageError("");
   };
 
-  // Clean up object URLs on unmount
-  useEffect(() => {
-    return () => {
-      images.forEach((img) => URL.revokeObjectURL(img.preview));
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Convert File objects to base64 so they can travel inside your JSON body
   const filesToBase64 = (files) =>
     Promise.all(
       files.map(
         (file) =>
           new Promise((resolve, reject) => {
             const reader = new FileReader();
+
             reader.onload = () => resolve(reader.result);
-            reader.onerror = reject;
+            reader.onerror = () =>
+              reject(new Error(`Failed to read ${file.name}.`));
             reader.readAsDataURL(file);
           })
       )
     );
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    // send confirmation email to client
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      form.current,
-      { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-    )
-      .then(
-        () => console.log("Email sent!"),
-        (error) => console.log("Email failed...", error.text)
-      );
+    if (isSubmitting || isProcessingImages) return;
+
+    setSubmitError("");
+    setIsSubmitting(true);
 
     try {
-      const imageBase64 = await filesToBase64(images.map((img) => img.file));
+      const imageBase64 = await filesToBase64(
+        images.map((image) => image.file)
+      );
 
       const bookingData = {
-        name,
-        email,
-        contact,
-        message,
+        name: name.trim(),
+        email: email.trim(),
+        contact: contact.trim(),
+        message: message.trim(),
         date: appointmentDate,
         time: appointmentTime,
-        services: globalData?.appointmentTitle,
-        total: globalData?.total,
+        services: globalData?.appointmentTitle || [],
+        total: globalData?.total || 0,
         images: imageBase64,
       };
 
+      const response = await fetch(
+        "https://api.tlamisgallery.site/appointment/book",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingData),
+        }
+      );
 
-      const response = await fetch("https://api.tlamisgallery.site/appointment/book", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bookingData),
-      });
+      const contentType = response.headers.get("content-type") || "";
+      const data = contentType.includes("application/json")
+        ? await response.json()
+        : null;
 
-      const data = await response.json();
-
-      if (response.ok) {
-        navigate("/confirmation");
-      } else {
-        setMessage(data.message || "Booking failed, please try again.");
+      if (!response.ok) {
+        throw new Error(
+          data?.message ||
+            `Booking could not be completed (${response.status}).`
+        );
       }
+
+      navigate("/confirmation");
     } catch (error) {
-      setMessage(`Something went wrong: ${error.message}`);
+      console.error("Booking submission failed:", error);
+
+      const isNetworkError =
+        error.message === "Failed to fetch" ||
+        error.message === "Load failed" ||
+        error.name === "TypeError";
+
+      setSubmitError(
+        isNetworkError
+          ? "The booking could not be sent. Please check your internet connection and try again."
+          : error.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
       <div className="bookform__header">
-        <Link to="/" style={{ color: "white" }}>
+        <Link to="/" style={{ color: "white" }} aria-label="Return home">
           <PiArrowCircleLeftThin className="angle-icon" />
         </Link>
         <div className="col">
@@ -129,131 +264,149 @@ const BookingForm = () => {
           <span className="st-txt">Enter details</span>
         </div>
       </div>
+
       <div className="review">
         <div className="review__heading">Review your Booking</div>
-        <div className="custom-hr "></div>
+        <div className="custom-hr"></div>
         <div className="table-row">
           <div>Location</div>
           <div>Odinburg Gardens</div>
         </div>
-        <div className="custom-hr "></div>
+        <div className="custom-hr"></div>
         <div className="table-row">
           <div>Date</div>
           <div>{appointmentDate}</div>
         </div>
-        <div className="custom-hr "></div>
+        <div className="custom-hr"></div>
         <div className="table-row">
           <div>Time</div>
           <div>{appointmentTime}</div>
         </div>
-        <div className="custom-hr "></div>
+        <div className="custom-hr"></div>
+
         <div className="table">
           <div className="header-row">
             <div>ITEMS</div>
             <div>COSTS</div>
           </div>
-          <div className="custom-hr "></div>
+          <div className="custom-hr"></div>
           <div className="table-body">
-            {globalData?.appointmentTitle &&
-              globalData.appointmentTitle.map((service, index) => (
-                <div key={index}>
-                  <div className="table-row">
-                    <div>{service.service}</div>
-                    <div>{service.price}</div>
-                  </div>
-                </div>
-              ))}
+            {globalData?.appointmentTitle?.map((service, index) => (
+              <div className="table-row" key={index}>
+                <div>{service.service}</div>
+                <div>{service.price}</div>
+              </div>
+            ))}
+
             <div className="table-row">
               <div className="nail-tech">
-                With <strong>Karabo Tlhopane</strong> @ {`${appointmentTime}`}
+                With <strong>Karabo Tlhopane</strong> @ {appointmentTime}
               </div>
             </div>
+
             <div className="table-row">
               <div>Total</div>
-              <div>{`R ${globalData?.total ?? "0.00"}`}</div>
+              <div>R {globalData?.total ?? "0.00"}</div>
             </div>
-            <div className="custom-hr "></div>
+            <div className="custom-hr"></div>
           </div>
         </div>
       </div>
 
-      <form ref={form} onSubmit={handleSubmit} method="post">
+      <form onSubmit={handleSubmit} method="post" aria-busy={isSubmitting}>
         <div className="contact">
           <div className="contact-header">Contact info</div>
+
           <div className="contact__group">
-            <label htmlFor="">Fullname</label>
+            <label htmlFor="booking-name">Full name</label>
             <input
+              id="booking-name"
               type="text"
               name="from_username"
               placeholder="Karabo Ontlametse Tlhopane"
-              onChange={(e) => setName(e.target.value)}
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              autoComplete="name"
               required
             />
           </div>
+
           <div className="contact_group-row">
             <div className="contact__group">
-              <label htmlFor="">Cell phone</label>
+              <label htmlFor="booking-contact">Cell phone</label>
               <input
-                type="text"
+                id="booking-contact"
+                type="tel"
                 name="contact"
                 placeholder="+2782 434 5469"
-                onChange={(e) => setContact(e.target.value)}
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
+                autoComplete="tel"
                 required
               />
             </div>
+
             <div className="contact__group">
-              <label htmlFor="">Email</label>
+              <label htmlFor="booking-email">Email</label>
               <input
+                id="booking-email"
                 type="email"
                 name="email"
                 placeholder="karabo@tlhopane.com"
-                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                autoComplete="email"
                 required
               />
             </div>
           </div>
 
-          <input type="hidden" value={globalData?.total} />
-
           <div className="contact__group">
-            <label htmlFor="">Inspiration photos (optional, up to {MAX_IMAGES})</label>
+            <label htmlFor="booking-images">
+              Inspiration photos (optional, up to {MAX_IMAGES})
+            </label>
             <input
+              id="booking-images"
               type="file"
-              accept="image/*"
+              accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif"
               multiple
               onChange={handleImageChange}
-              disabled={images.length >= MAX_IMAGES}
+              disabled={
+                images.length >= MAX_IMAGES ||
+                isProcessingImages ||
+                isSubmitting
+              }
             />
+
+            {isProcessingImages && (
+              <span className="image-processing-message">
+                Preparing your images...
+              </span>
+            )}
+
             {imageError && (
-              <span style={{ color: "red", fontSize: "0.85rem" }}>{imageError}</span>
+              <span className="image-error" role="alert">
+                {imageError}
+              </span>
             )}
 
             {images.length > 0 && (
-              <div
-                style={{
-                  display: "flex",
-                  gap: "8px",
-                  marginTop: "8px",
-                  flexWrap: "wrap",
-                  justifyContent: "center"
-                }}
-              >
-                {images.map((img, index) => (
-                  <div key={index} style={{ position: "relative" }}>
+              <div className="booking-image-previews">
+                {images.map((image, index) => (
+                  <div
+                    className="booking-image-preview"
+                    key={`${image.file.name}-${index}`}
+                  >
                     <img
-                      src={img.preview}
-                      alt={`upload-${index}`}
-                      style={{
-                        width: "70px",
-                        height: "70px",
-                        objectFit: "cover",
-                        borderRadius: "6px",
-                      }}
+                      src={image.preview}
+                      alt={`Selected inspiration ${index + 1}`}
                     />
                     <button
                       type="button"
                       onClick={() => removeImage(index)}
                       className="rmvImage"
+                      aria-label={`Remove inspiration image ${index + 1}`}
+                      disabled={isSubmitting || isProcessingImages}
                     >
                       ×
                     </button>
@@ -264,18 +417,57 @@ const BookingForm = () => {
           </div>
 
           <div className="contact__group">
-            <label htmlFor="">Include a message (optional)</label>
+            <label htmlFor="booking-message">
+              Include a message (optional)
+            </label>
             <textarea
+              id="booking-message"
               name="message"
               cols="30"
               rows="4"
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(event) => setMessage(event.target.value)}
             ></textarea>
           </div>
-          <button className="contact__bookbtn" type="submit">
-            Complete Booking
-          </button>
+
+          <div className="booking-submit-area">
+            {submitError && (
+              <p className="booking-submit-error" role="alert">
+                {submitError}
+              </p>
+            )}
+
+            {isSubmitting && (
+              <div className="booking-processing" role="status" aria-live="polite">
+                <span className="booking-spinner" aria-hidden="true"></span>
+                <div>
+                  <strong>Processing your booking...</strong>
+                  <span>
+                    Please stay on this page while we upload your images.
+                  </span>
+                </div>
+              </div>
+            )}
+
+            <button
+              className={`contact__bookbtn ${
+                isSubmitting ? "contact__bookbtn--loading" : ""
+              }`}
+              type="submit"
+              disabled={isSubmitting || isProcessingImages}
+            >
+              {isSubmitting && (
+                <span className="button-spinner" aria-hidden="true"></span>
+              )}
+              <span>
+                {isSubmitting
+                  ? "Processing..."
+                  : isProcessingImages
+                    ? "Preparing images..."
+                    : "Complete Booking"}
+              </span>
+            </button>
+          </div>
         </div>
       </form>
     </>
