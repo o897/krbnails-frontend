@@ -65,7 +65,7 @@ function Hero() {
             <Link to="/book" className="desktop-hero__book">
               BOOK AN APPOINTMENT
             </Link>
-
+{/* 
             <button
               type="button"
               className="desktop-hero__work"
@@ -76,7 +76,7 @@ function Hero() {
               }
             >
               EXPLORE OUR WORK
-            </button>
+            </button> */}
           </div>
 
           <div className="desktop-hero__statement">
