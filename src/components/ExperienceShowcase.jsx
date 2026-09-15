@@ -85,10 +85,10 @@ function ExperienceShowcase() {
             {slide.description}
           </p>
 
-          <a className="experience__link" href="#gallery">
+          {/* <a className="experience__link" href="#gallery">
             Explore our work
             <span aria-hidden="true">↗</span>
-          </a>
+          </a> */}
 
           <div className="experience__navigation">
             <button
