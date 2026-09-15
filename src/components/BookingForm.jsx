@@ -1,8 +1,8 @@
-
-import { Link, useNavigate } from "react-router-dom";
-import { PiArrowCircleLeftThin } from "react-icons/pi";
+import { useState, useEffect, useRef, useContext } from "react";
 import imageCompression from "browser-image-compression";
 import heic2any from "heic2any";
+import { Link, useNavigate } from "react-router-dom";
+import { PiArrowCircleLeftThin } from "react-icons/pi";
 import GlobalContext from "../GlobalContext";
 
 const MAX_IMAGES = 3;
