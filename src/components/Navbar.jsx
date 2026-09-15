@@ -62,6 +62,11 @@ const Navbar = () => {
       label: "Find Us",
       section: "address",
     },
+     {
+      number: "05",
+      label: "Policy",
+      section: "policy",
+    },
   ];
 
   return (
